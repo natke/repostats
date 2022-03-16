@@ -20,7 +20,7 @@ for index in list:
         for label in labels:
             if (label["name"] == 'component:documentation'):
                 print(x["id"])
-                if not pr in x:
+                if pr in x:
                     created = parser.isoparse(x["created_at"])
                     time_to_close =  ''
                     if (x["closed_at"]):
