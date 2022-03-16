@@ -16,7 +16,7 @@ while (num_prs == PAGE_SIZE):
   # Create an API request 
   url = 'https://api.github.com/repos/microsoft/onnxruntime/pulls'
   headers={'Authorization': f'access_token {TOKEN}'}  
-  params = {'per_page': 100, 'page': page, 'since': "2019-01-01", 'state': "all", 'direction': "asc", 'base': "microsoft:gh-pages"}
+  params = {'per_page': 100, 'page': page, 'since': "2019-01-01", 'state': "all", 'direction': "asc", 'base': "gh-pages"}
   response = requests.get(url, headers=headers, params=params)
 
   print("Status code: ", response.status_code)
@@ -27,7 +27,7 @@ while (num_prs == PAGE_SIZE):
 
     # Evaluate the results.
     num_prs = len(response_data)
-    print(f'Number of PRs in page {page} {num_issues}')
+    print(f'Number of PRs in page {page} {num_prs}')
 
     with open(f'data/prs-{page}.json', 'w', encoding='utf-8') as f:
       json.dump(response_data, f, ensure_ascii=False, indent=4)

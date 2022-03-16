@@ -6,7 +6,7 @@ from dateutil import parser
 c = csv.writer(open("data/prs.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'time_to_close', 'url'])
 
-list = [*range(1, 76)]
+list = [*range(1, 3)]
 for index in list:
 
     print(index)
@@ -20,7 +20,7 @@ for index in list:
             print(x["id"])
             created = parser.isoparse(x["created_at"])
             time_to_close =  ''
-            if (x["closed_at"]):
+            if x["state"] == 'closed':
                time_to_close = (parser.isoparse(x["closed_at"]) - created).days
-               c.writerow([x["id"], x["title"].encode('utf-8'), x["state"], x["created_at"], x["closed_at"], time_to_close, x["url"]])
+            c.writerow([x["id"], x["title"].encode('utf-8'), x["state"], x["created_at"], x["closed_at"], time_to_close, x["url"]])
 
