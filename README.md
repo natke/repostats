@@ -10,6 +10,7 @@ Create a Personal Access Token in GitHub. Set the starting page for issues and P
 export GITHUB_TOKEN=<value of personal access token>
 export GITHUB_ISSUE_START_PAGE=109
 export GITHUB_PR_START_PAGE=3
+```
 
 ## Pull issue data
 
