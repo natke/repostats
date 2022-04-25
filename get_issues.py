@@ -4,8 +4,8 @@ import json
 
 TOKEN=os.getenv('GITHUB_TOKEN')
 PAGE_SIZE=100
-START_PAGE=int(os.getenv('GITHUB_START_PAGE'))
-assert START_PAGE != None, "Set environment variable GITHUB_START_PAGE for issues query"
+START_PAGE=int(os.getenv('GITHUB_ISSUE_START_PAGE'))
+assert START_PAGE != None, "Set environment variable GITHUB_ISSUE_START_PAGE for issues query"
 
 num_issues = PAGE_SIZE
 page=START_PAGE

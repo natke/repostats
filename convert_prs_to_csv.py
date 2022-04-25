@@ -6,7 +6,7 @@ from dateutil import parser
 c = csv.writer(open("data/prs.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'time_to_close', 'url'])
 
-list = [*range(1, 3)]
+list = [*range(1, 4)]
 for index in list:
 
     print(index)
@@ -17,7 +17,7 @@ for index in list:
     for x in d:
         base = x["base"]
         if base["label"] == 'microsoft:gh-pages':
-            print(x["id"])
+            #print(x["id"])
             created = parser.isoparse(x["created_at"])
             time_to_close =  ''
             if x["state"] == 'closed':
