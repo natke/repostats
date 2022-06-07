@@ -18,11 +18,15 @@ export GITHUB_PR_START_PAGE=3
 python get_issues.py
 ```
 
+Gets all issues from the onnxruntime GitHub repo.
+
 ## Export all issue data to CSV
 
 ```bash
 python convert_issues_to_csv.py
 ```
+
+Filters issues that have the component:documentation label, and calculates the time to close, in days, and exports as CSV.
 
 ## Pull PR data
 
@@ -30,8 +34,12 @@ python convert_issues_to_csv.py
 python get_prs.py
 ```
 
+Gets all of the pull requests against the gh-pages branch from the onnxruntime GitHun repo
+
 ## Export all PR data to CSV
 
 ```bash
 python convert_prs_to_csv.py
 ```
+
+Calculates the time to close, in days, and exports as CSV.
