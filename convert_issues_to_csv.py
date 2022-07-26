@@ -6,7 +6,7 @@ from dateutil import parser
 c = csv.writer(open("data/issues.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'time_to_close', 'url'])
 
-list = [*range(1, 112)]
+list = [*range(1, 117)]
 for index in list:
 
     print(index)
