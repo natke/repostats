@@ -12,6 +12,12 @@ export GITHUB_ISSUE_START_PAGE=109
 export GITHUB_PR_START_PAGE=3
 ```
 
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Pull issue data
 
 ```bash
