@@ -1,8 +1,8 @@
 import json
-from dateutil import parser
 import os
 import requests
 import glob
+from dateutil import parser
 
 TOKEN=os.getenv('GITHUB_TOKEN')
 PAGE_SIZE=100
@@ -31,7 +31,7 @@ for index in list:
 
                 # Get the events for the current issue
                 url = f'{x["url"]}/events'
-                headers={'Authorization': f'access_token {TOKEN}'}  
+                headers={'Authorization': f'token {TOKEN}'}  
                 response = requests.get(url, headers=headers)
 
                 print("Status code for URL: ", response.status_code, url)

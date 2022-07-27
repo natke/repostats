@@ -15,8 +15,6 @@ c.writerow(['id', 'title','state','created','first_update', 'closed', 'time_to_u
 list = [*range(1, 117)]
 for index in list:
 
-    print(index)
-
     with open(f'data/issues-{index}.json', encoding="utf8") as f:
         d = json.load(f)
 
@@ -29,7 +27,7 @@ for index in list:
     for x in d:
         if not "pull_request" in x:
             id = x["number"]
-    #        print(id)
+            print(id)
             created = parser.isoparse(x["created_at"])
             time_to_close =  ''
             if (x["closed_at"]):
