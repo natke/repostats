@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/751546731",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6213#issuecomment-751546731",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6213",
+        "id": 751546731,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc1MTU0NjczMQ==",
+        "user": {
+            "login": "wschin",
+            "id": 3524474,
+            "node_id": "MDQ6VXNlcjM1MjQ0NzQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3524474?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wschin",
+            "html_url": "https://github.com/wschin",
+            "followers_url": "https://api.github.com/users/wschin/followers",
+            "following_url": "https://api.github.com/users/wschin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wschin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wschin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wschin/subscriptions",
+            "organizations_url": "https://api.github.com/users/wschin/orgs",
+            "repos_url": "https://api.github.com/users/wschin/repos",
+            "events_url": "https://api.github.com/users/wschin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wschin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2020-12-28T01:54:30Z",
+        "updated_at": "2020-12-28T01:54:30Z",
+        "author_association": "MEMBER",
+        "body": "Is it a warning or an error? I saw\r\n```\r\n    if (!force_inside && not_supported) {\r\n      if (not_supported) {\r\n        LOGS_DEFAULT(WARNING) << \"CUDA kernel not supported. Fallback to CPU execution provider for Op type: \" << node.OpType() << \" node name: \" << node.Name();\r\n      }\r\n    } else {\r\n      candidates.push_back(node.Index());\r\n    }\r\n```\r\nin `cuda_execution_provider.cc`. Could you paste full log of your run?",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/751546731/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

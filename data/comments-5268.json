@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/699783192",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/5268#issuecomment-699783192",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5268",
+        "id": 699783192,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDY5OTc4MzE5Mg==",
+        "user": {
+            "login": "tianleiwu",
+            "id": 30328909,
+            "node_id": "MDQ6VXNlcjMwMzI4OTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30328909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tianleiwu",
+            "html_url": "https://github.com/tianleiwu",
+            "followers_url": "https://api.github.com/users/tianleiwu/followers",
+            "following_url": "https://api.github.com/users/tianleiwu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tianleiwu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tianleiwu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tianleiwu/subscriptions",
+            "organizations_url": "https://api.github.com/users/tianleiwu/orgs",
+            "repos_url": "https://api.github.com/users/tianleiwu/repos",
+            "events_url": "https://api.github.com/users/tianleiwu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tianleiwu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2020-09-28T05:41:40Z",
+        "updated_at": "2020-09-28T15:23:22Z",
+        "author_association": "MEMBER",
+        "body": "The python script works well on my machines. I cannot reproduce the issue in both Windows and Linux machines.\r\n\r\nHere is my environment with Cuda 10.1 and cuDNN 7.6.5:\r\n```\r\n{\r\n \"python\": \"3.7.6.final.0 (64 bit)\",\r\n  \"os\": \"Windows-10-10.0.19041-SP0\",\r\n  \"onnxruntime\": {\r\n    \"version\": \"1.4.0\",\r\n    \"support_gpu\": true\r\n  },\r\n  \"pytorch\": {\r\n    \"version\": \"1.6.0\",\r\n    \"support_gpu\": true,\r\n    \"cuda\": \"10.1\"\r\n  }\r\n}\r\n```\r\n\r\nLinux machine setting (Ubuntu 18.04):\r\n```\r\n \"python\": \"3.6.12.final.0 (64 bit)\",\r\n  \"os\": \"Linux-5.4.0-1026-azure-x86_64-with-debian-buster-sid\",\r\n  \"onnxruntime\": {\r\n    \"version\": \"1.4.0\",\r\n    \"support_gpu\": true\r\n  },\r\n  \"pytorch\": {\r\n    \"version\": \"1.6.0+cu101\",\r\n    \"support_gpu\": true,\r\n    \"cuda\": \"10.1\"\r\n  }\r\n```\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/699783192/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

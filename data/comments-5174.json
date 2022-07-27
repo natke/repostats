@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/692840351",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/5174#issuecomment-692840351",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5174",
+        "id": 692840351,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDY5Mjg0MDM1MQ==",
+        "user": {
+            "login": "tracysh",
+            "id": 42477615,
+            "node_id": "MDQ6VXNlcjQyNDc3NjE1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/42477615?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tracysh",
+            "html_url": "https://github.com/tracysh",
+            "followers_url": "https://api.github.com/users/tracysh/followers",
+            "following_url": "https://api.github.com/users/tracysh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tracysh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tracysh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tracysh/subscriptions",
+            "organizations_url": "https://api.github.com/users/tracysh/orgs",
+            "repos_url": "https://api.github.com/users/tracysh/repos",
+            "events_url": "https://api.github.com/users/tracysh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tracysh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2020-09-15T16:49:51Z",
+        "updated_at": "2020-09-15T16:49:51Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Hello, there are changes in the tracysh/qlinearconv_u8s8 branch that enables a QLinearConv with activations=u8 and weights=s8. This implementation supports per-channel quantization, however only symmetric quantization, so the zero points for the weight tensor must be zero. These changes will be merged to master after the 1.5 release has branched.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/692840351/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

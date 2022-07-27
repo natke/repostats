@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/637752344",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/3266#issuecomment-637752344",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3266",
+        "id": 637752344,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDYzNzc1MjM0NA==",
+        "user": {
+            "login": "hariharans29",
+            "id": 9969784,
+            "node_id": "MDQ6VXNlcjk5Njk3ODQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9969784?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hariharans29",
+            "html_url": "https://github.com/hariharans29",
+            "followers_url": "https://api.github.com/users/hariharans29/followers",
+            "following_url": "https://api.github.com/users/hariharans29/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hariharans29/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hariharans29/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hariharans29/subscriptions",
+            "organizations_url": "https://api.github.com/users/hariharans29/orgs",
+            "repos_url": "https://api.github.com/users/hariharans29/repos",
+            "events_url": "https://api.github.com/users/hariharans29/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hariharans29/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2020-06-02T19:14:08Z",
+        "updated_at": "2020-06-02T19:14:08Z",
+        "author_association": "MEMBER",
+        "body": "1) It depends on what the model expects. If the model expects, 1x3x416x416, you would have to feed in the tensor with the extra dimension even though \"content-wise\"  1x3x416x416 and 3x416x416 are still the same.\r\n \r\nFor 2, 3, 4 - I guess the questions boil down to \"how to create a tensor (OrtValue) of a specific shape ?\". Please take a look at this and follow the flow from there - https://github.com/microsoft/onnxruntime/blob/baa0697982cdda2fbfa107127efbdb4947143e4b/samples/c_cxx/MNIST/MNIST.cpp#L20.\r\n\r\nFrom the above code, it should be clear how to add the extra dimension in c++ (your question 4), you just add it to the shape array the contructed Ortvalue now would have the extra dimension.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/637752344/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

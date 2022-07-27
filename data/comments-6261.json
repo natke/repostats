@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/755039206",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6261#issuecomment-755039206",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6261",
+        "id": 755039206,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc1NTAzOTIwNg==",
+        "user": {
+            "login": "Craigacp",
+            "id": 729696,
+            "node_id": "MDQ6VXNlcjcyOTY5Ng==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/729696?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Craigacp",
+            "html_url": "https://github.com/Craigacp",
+            "followers_url": "https://api.github.com/users/Craigacp/followers",
+            "following_url": "https://api.github.com/users/Craigacp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Craigacp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Craigacp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Craigacp/subscriptions",
+            "organizations_url": "https://api.github.com/users/Craigacp/orgs",
+            "repos_url": "https://api.github.com/users/Craigacp/repos",
+            "events_url": "https://api.github.com/users/Craigacp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Craigacp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-01-06T02:40:04Z",
+        "updated_at": "2021-01-06T21:33:58Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "The Java API doesn't currently support unsigned types or float16 as inputs. You can access them if they are model outputs, but there isn't a way to create an OnnxTensor with uint8 bits from the Java side.\r\n\r\nYou should be able to add a layer that converts the input from int16 (or any larger type) into uint8 before exporting it in the short term. This could be done either by modifying the model in TF, or by modifying the onnx model after it's been created.\r\n\r\nLonger term I'll look at adding support for creating unsigned or float16 types directly to the Java API, but it will be uncomfortable to work with either way until Panama & Valhalla land (these are two OpenJDK projects which will ease access to native code and allow for the creation of new primitive types respectively). For ORT there are two options, either interpret bytes as uint8, meaning that you'd have to specify negative values which ORT will interpret as the full unsigned values, or use larger types to represent smaller ones (i.e. use short for uint8). The latter approach won't work for uint64 as there is no larger primitive, so it'll probably be the former approach (as it's both easier to implement and can represent all the types).",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/755039206/reactions",
+            "total_count": 2,
+            "+1": 2,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

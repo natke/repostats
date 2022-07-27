@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1166278095",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11980#issuecomment-1166278095",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11980",
+        "id": 1166278095,
+        "node_id": "IC_kwDOCVq1mM5Fg_3P",
+        "user": {
+            "login": "fmscole",
+            "id": 8135902,
+            "node_id": "MDQ6VXNlcjgxMzU5MDI=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/8135902?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fmscole",
+            "html_url": "https://github.com/fmscole",
+            "followers_url": "https://api.github.com/users/fmscole/followers",
+            "following_url": "https://api.github.com/users/fmscole/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fmscole/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fmscole/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fmscole/subscriptions",
+            "organizations_url": "https://api.github.com/users/fmscole/orgs",
+            "repos_url": "https://api.github.com/users/fmscole/repos",
+            "events_url": "https://api.github.com/users/fmscole/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fmscole/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-06-25T12:53:34Z",
+        "updated_at": "2022-06-25T13:27:11Z",
+        "author_association": "NONE",
+        "body": "I have resolved my question by add the option `{ executionProviders: ['webgl'] `,like:\r\nhtml:\r\n `<script src=\"./ort.min.js\"></script>`\r\njs:\r\n`const session = await ort.InferenceSession.create('./mnist_cnn.onnx', { executionProviders: ['webgl'] });`\r\n\r\nThe docs and demo are too simple.\r\nI find the key when I find 'onnxruntime-master\\js\\web\\test\\e2e\\browser-test-webgl.js'.\r\n\r\nBut webgl do not surpport yolov5's op yet.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1166278095/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

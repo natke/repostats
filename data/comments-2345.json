@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/551270655",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/2345#issuecomment-551270655",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/2345",
+        "id": 551270655,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDU1MTI3MDY1NQ==",
+        "user": {
+            "login": "jywu-msft",
+            "id": 43355415,
+            "node_id": "MDQ6VXNlcjQzMzU1NDE1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/43355415?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jywu-msft",
+            "html_url": "https://github.com/jywu-msft",
+            "followers_url": "https://api.github.com/users/jywu-msft/followers",
+            "following_url": "https://api.github.com/users/jywu-msft/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jywu-msft/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jywu-msft/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jywu-msft/subscriptions",
+            "organizations_url": "https://api.github.com/users/jywu-msft/orgs",
+            "repos_url": "https://api.github.com/users/jywu-msft/repos",
+            "events_url": "https://api.github.com/users/jywu-msft/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jywu-msft/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-11-07T21:23:45Z",
+        "updated_at": "2019-11-07T21:27:08Z",
+        "author_association": "MEMBER",
+        "body": "Thanks for reporting the issue.\r\nIt's caused by https://github.com/microsoft/onnxruntime/pull/2243\r\nbetter to add an #else clause for #ifdef USE_CUDA \r\nwhich calls ORT_UNUSED_PARAMETER(session_state)\r\n@tianleiwu , FYI",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/551270655/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

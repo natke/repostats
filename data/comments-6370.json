@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/773043254",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6370#issuecomment-773043254",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6370",
+        "id": 773043254,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc3MzA0MzI1NA==",
+        "user": {
+            "login": "askhade",
+            "id": 6475296,
+            "node_id": "MDQ6VXNlcjY0NzUyOTY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6475296?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/askhade",
+            "html_url": "https://github.com/askhade",
+            "followers_url": "https://api.github.com/users/askhade/followers",
+            "following_url": "https://api.github.com/users/askhade/following{/other_user}",
+            "gists_url": "https://api.github.com/users/askhade/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/askhade/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/askhade/subscriptions",
+            "organizations_url": "https://api.github.com/users/askhade/orgs",
+            "repos_url": "https://api.github.com/users/askhade/repos",
+            "events_url": "https://api.github.com/users/askhade/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/askhade/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-02-04T05:35:28Z",
+        "updated_at": "2021-02-04T05:35:28Z",
+        "author_association": "MEMBER",
+        "body": "@daquexian : ONNX spec does not clearly specify whether to treat missing element type same as element type set to 0 .i.e. undefined or different. However both ONNX and ONNXRuntime treat them as being different. Moreover the IR does specify that -\r\n\r\n\"The number of inputs and outputs in a node, their types, the set of attributes specified in a node **and their types MUST satisfy the constraints imposed by the signature of the node’s operator**.\"\r\nand by this definition the current behavior seems right in that it is raising an error because the inferred type int64_t for node ConstantOfShape does not match type UNDEFINED. In order words undefinied is not a valid type for this op and hence the error.\r\n\r\n@gramalingam for comments.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/773043254/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

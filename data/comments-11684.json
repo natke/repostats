@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1145319188",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11684#issuecomment-1145319188",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11684",
+        "id": 1145319188,
+        "node_id": "IC_kwDOCVq1mM5ERC8U",
+        "user": {
+            "login": "tianleiwu",
+            "id": 30328909,
+            "node_id": "MDQ6VXNlcjMwMzI4OTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30328909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tianleiwu",
+            "html_url": "https://github.com/tianleiwu",
+            "followers_url": "https://api.github.com/users/tianleiwu/followers",
+            "following_url": "https://api.github.com/users/tianleiwu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tianleiwu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tianleiwu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tianleiwu/subscriptions",
+            "organizations_url": "https://api.github.com/users/tianleiwu/orgs",
+            "repos_url": "https://api.github.com/users/tianleiwu/repos",
+            "events_url": "https://api.github.com/users/tianleiwu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tianleiwu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-06-02T20:38:25Z",
+        "updated_at": "2022-06-02T20:38:25Z",
+        "author_association": "MEMBER",
+        "body": "It needs to change https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/python/tools/transformers/fusion_attention.py to add some new patterns in matching.\r\n\r\nI have not encountered such a model with pre layer norm yet. Most models from huggingface transformers does not have such pattern. I know that some other frameworks could support this. \r\n\r\nContributions are welcome for this if anyone has done such optimization.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1145319188/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

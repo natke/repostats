@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/792233968",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6925#issuecomment-792233968",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6925",
+        "id": 792233968,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc5MjIzMzk2OA==",
+        "user": {
+            "login": "SubjectNoi",
+            "id": 23569127,
+            "node_id": "MDQ6VXNlcjIzNTY5MTI3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/23569127?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SubjectNoi",
+            "html_url": "https://github.com/SubjectNoi",
+            "followers_url": "https://api.github.com/users/SubjectNoi/followers",
+            "following_url": "https://api.github.com/users/SubjectNoi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/SubjectNoi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/SubjectNoi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/SubjectNoi/subscriptions",
+            "organizations_url": "https://api.github.com/users/SubjectNoi/orgs",
+            "repos_url": "https://api.github.com/users/SubjectNoi/repos",
+            "events_url": "https://api.github.com/users/SubjectNoi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/SubjectNoi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-03-07T07:48:36Z",
+        "updated_at": "2021-03-07T07:48:36Z",
+        "author_association": "NONE",
+        "body": "Adjust the CMake content and succeed, closing. \r\nundefined onnx::[...] is caused by mismatching of onnxruntime directory\r\nonnxruntime::experimental is caused  by missing onnxruntime_flatbuffers.\r\n\r\n\r\ncmake_minimum_required(VERSION 3.10)\r\nproject(OpenCLTest)\r\nfind_package(OpenCL REQUIRED)\r\nfind_package(OpenMP REQUIRED)\r\nset(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} -O0 -g -pthread\")\r\nif (OPENMP_FOUND)\r\n    set(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}\")\r\nendif()\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/session\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/common\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/framework\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/graph\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/optimizer\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/platform\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime/core/providers\")\r\n\r\ninclude_directories(\"/home/zhliu/onnxruntime/include\")\r\ninclude_directories(\"/home/zhliu/onnxruntime/include/onnxruntime\")\r\nlink_directories(\"/home/zhliu/onnxruntime/build/Linux/RelWithDebInfo\")\r\nadd_executable(sess src/op_interference.cpp)\r\ntarget_link_libraries(sess onnxruntime_session onnxruntime_framework onnxruntime_common onnxruntime_graph onnxruntime_util onnxruntime_optimizer onnxruntime_mlas onnxruntime_providers onnxruntime_test_utils onnxruntime_flatbuffers)\r\ntarget_link_libraries(sess onnxruntime_util onnxruntime_framework onnxruntime_mlas onnxruntime_common)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/nsync/libnsync_cpp.a)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/onnx/libonnx_proto.a)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/onnx/libonnx.a)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/flatbuffers/libflatbuffers.a)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/protobuf/cmake/libprotobuf.a)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/protobuf/cmake/libprotoc.a)\r\ntarget_link_libraries(sess /home/zhliu/onnxruntime/build/Linux/RelWithDebInfo/external/re2/libre2.a)\r\ntarget_link_libraries(sess dl pthread)",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/792233968/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1170588420",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12040#issuecomment-1170588420",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12040",
+        "id": 1170588420,
+        "node_id": "IC_kwDOCVq1mM5FxcME",
+        "user": {
+            "login": "wschin",
+            "id": 3524474,
+            "node_id": "MDQ6VXNlcjM1MjQ0NzQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3524474?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wschin",
+            "html_url": "https://github.com/wschin",
+            "followers_url": "https://api.github.com/users/wschin/followers",
+            "following_url": "https://api.github.com/users/wschin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wschin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wschin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wschin/subscriptions",
+            "organizations_url": "https://api.github.com/users/wschin/orgs",
+            "repos_url": "https://api.github.com/users/wschin/repos",
+            "events_url": "https://api.github.com/users/wschin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wschin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-06-29T23:22:55Z",
+        "updated_at": "2022-06-29T23:23:11Z",
+        "author_association": "MEMBER",
+        "body": "It looks like this `opset16` is not really useful. This function iterates through all opsets in model folder.\r\n```csharp\r\n        public static IEnumerable<object[]> GetModelsForTest()\r\n        {\r\n            var modelsDir = GetTestModelsDir();\r\n            var modelsDirInfo = new DirectoryInfo(modelsDir);\r\n            var skipModels = GetSkippedModels(modelsDirInfo);\r\n\r\n            foreach (var opsetDir in modelsDirInfo.EnumerateDirectories())\r\n            {\r\n                //var modelRoot = new DirectoryInfo(Path.Combine(modelsDir, opsetDir.Name));\r\n                foreach (var modelDir in opsetDir.EnumerateDirectories())\r\n                {\r\n                    if (!skipModels.ContainsKey(modelDir.Name))\r\n                    {\r\n                        yield return new object[] { modelDir.Parent.Name, modelDir.Name };\r\n                    }\r\n                } //model\r\n            } //opset\r\n        }\r\n```\r\n\r\nThis function is used to generate inputs for\r\n```csharp\r\n[Theory(DisplayName = \"TestPreTrainedModels\")]\r\n        [MemberData(nameof(GetModelsForTest))]\r\n        [MemberData(nameof(GetSkippedModelForTest), Skip = \"Skipped due to Error, please fix the error and enable the test\")]\r\n        private void TestPreTrainedModels(string opset, string modelName)\r\n```\r\n\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1170588420/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/805097401",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/7107#issuecomment-805097401",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/7107",
+        "id": 805097401,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDgwNTA5NzQwMQ==",
+        "user": {
+            "login": "tianleiwu",
+            "id": 30328909,
+            "node_id": "MDQ6VXNlcjMwMzI4OTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30328909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tianleiwu",
+            "html_url": "https://github.com/tianleiwu",
+            "followers_url": "https://api.github.com/users/tianleiwu/followers",
+            "following_url": "https://api.github.com/users/tianleiwu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tianleiwu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tianleiwu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tianleiwu/subscriptions",
+            "organizations_url": "https://api.github.com/users/tianleiwu/orgs",
+            "repos_url": "https://api.github.com/users/tianleiwu/repos",
+            "events_url": "https://api.github.com/users/tianleiwu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tianleiwu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-03-23T17:39:09Z",
+        "updated_at": "2021-03-23T17:39:09Z",
+        "author_association": "MEMBER",
+        "body": "The tool is part of onnxruntime package, so you do not need onnxruntime_tools. It can run like \r\n```\r\npython -m onnxruntime.transformers.bert_perf_test --help\r\n\r\npython -m onnxruntime.transformers.bert_perf_test --model path_to_your_model.onnx --batch_size 1 --sequence_length 128 --samples 10 --test_times 100 --use_gpu --intra_op_num_threads 4 --input_ids_name input_ids --segment_ids_name tokent_type_ids --input_mask_name attention_mask\r\n```\r\n\r\nYou can follow https://stackoverflow.com/questions/46245844/pass-arguments-to-python-argparse-within-docker-container to run it in docker",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/805097401/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

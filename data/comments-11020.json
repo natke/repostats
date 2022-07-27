@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1081246666",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11020#issuecomment-1081246666",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11020",
+        "id": 1081246666,
+        "node_id": "IC_kwDOCVq1mM5AcoPK",
+        "user": {
+            "login": "chilo-ms",
+            "id": 54722500,
+            "node_id": "MDQ6VXNlcjU0NzIyNTAw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/54722500?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/chilo-ms",
+            "html_url": "https://github.com/chilo-ms",
+            "followers_url": "https://api.github.com/users/chilo-ms/followers",
+            "following_url": "https://api.github.com/users/chilo-ms/following{/other_user}",
+            "gists_url": "https://api.github.com/users/chilo-ms/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/chilo-ms/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/chilo-ms/subscriptions",
+            "organizations_url": "https://api.github.com/users/chilo-ms/orgs",
+            "repos_url": "https://api.github.com/users/chilo-ms/repos",
+            "events_url": "https://api.github.com/users/chilo-ms/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/chilo-ms/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-03-28T23:23:33Z",
+        "updated_at": "2022-03-28T23:28:27Z",
+        "author_association": "MEMBER",
+        "body": "We provide examples showing how to split the large dataset for calibration to prevent OOM:\r\n\r\n- https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/object_detection/trt/yolov3/e2e_user_yolov3_example.py#L88\r\n\r\n- https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/nlp/bert/trt/e2e_tensorrt_bert_example.py#L249\r\n\r\nWe want to give users the flexibility to decide how they want to deal with the dataset. Collect all the raw data first can give you the best performance, but if the dataset is large, we also support read in dataset stride by stride and then merge the data histograms. \r\nThanks for bringing it up, we will document it better so that user can understand how to use it.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1081246666/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]
