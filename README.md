@@ -1,6 +1,6 @@
 # ONNX Runtime website data
 
-Pull issue and pull request data from GitHub using the GitHub API, and export based on time to close.
+Pull issue and pull request data from GitHub using the GitHub API, and decaorate it with response time data.
 
 ## Setup
 
@@ -18,31 +18,59 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-## Pull issue data
+## Pull the data from GitHub
+
+### Issues
 
 ```bash
 python get_issues.py
 ```
 
-Gets all issues from the onnxruntime GitHub repo.
+Gets all issues from the onnxruntime GitHub repo. Stores the output in `data/issues-<page>.json`
 
-## Export all issue data to CSV
+### Events
 
 ```bash
-python convert_issues_to_csv.py
+python get_issues_events.py
 ```
 
-Filters issues that have the component:documentation label, and calculates the time to close, in days, and exports as CSV.
+For all of the issues fetched in the previous step, get all of the events (add label, assign, close etc) associated with each issue. Stores the output in `data/event-<issue>.json`.
 
-## Pull PR data
+### Comments
+
+```bash
+python get_issues_comments.py
+```
+
+For all of the issues fetched in the first step, get all of the comments associated with each issue. Stores the output in `data/comment-<issue>.json`.
+
+### Docs PR data
 
 ```bash
 python get_prs.py
 ```
 
-Gets all of the pull requests against the gh-pages branch from the onnxruntime GitHun repo
+Gets all of the pull requests against the gh-pages branch from the onnxruntime GitHub repo
 
-## Export all PR data to CSV
+## Export and decorate
+
+### SLA data for Issues
+
+```bash
+python extract_sla_data.py
+```
+
+Exports `data/sla.csv`, which contains first update, first comment, time to update, time to comment, time to close for each issue.
+
+### Docs issues
+
+```bash
+python convert_issues_to_csv.py
+```
+
+Filters issues that have the component:documentation label, and calculates the time to close, in days, and exports as `data/issues.csv`.
+
+### Docs PRs
 
 ```bash
 python convert_prs_to_csv.py
