@@ -1,5 +1,73 @@
 [
     {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3816",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3816/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3816/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3816/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/pull/3816",
+        "id": 612284987,
+        "node_id": "MDExOlB1bGxSZXF1ZXN0NDEzMjc2Njkx",
+        "number": 3816,
+        "title": "Publish gpu package to nuget feed",
+        "user": {
+            "login": "snnn",
+            "id": 856316,
+            "node_id": "MDQ6VXNlcjg1NjMxNg==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/856316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/snnn",
+            "html_url": "https://github.com/snnn",
+            "followers_url": "https://api.github.com/users/snnn/followers",
+            "following_url": "https://api.github.com/users/snnn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/snnn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/snnn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/snnn/subscriptions",
+            "organizations_url": "https://api.github.com/users/snnn/orgs",
+            "repos_url": "https://api.github.com/users/snnn/repos",
+            "events_url": "https://api.github.com/users/snnn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/snnn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 2,
+        "created_at": "2020-05-05T02:36:20Z",
+        "updated_at": "2020-05-05T04:49:21Z",
+        "closed_at": "2020-05-05T04:49:20Z",
+        "author_association": "MEMBER",
+        "active_lock_reason": null,
+        "draft": false,
+        "pull_request": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/3816",
+            "html_url": "https://github.com/microsoft/onnxruntime/pull/3816",
+            "diff_url": "https://github.com/microsoft/onnxruntime/pull/3816.diff",
+            "patch_url": "https://github.com/microsoft/onnxruntime/pull/3816.patch",
+            "merged_at": "2020-05-05T04:49:20Z"
+        },
+        "body": "**Description**: \r\n\r\nPublish gpu package to nuget feed\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\n\r\nBy request from an internal team. \r\n\r\n- If it fixes an open issue, please link to the issue here.\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3816/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3816/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+    },
+    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3817",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3817/labels{/name}",
@@ -32,22 +100,13 @@
         },
         "labels": [
             {
-                "id": 1122493986,
-                "node_id": "MDU6TGFiZWwxMTIyNDkzOTg2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:wontfix",
-                "name": "status:wontfix",
-                "color": "45b2d3",
-                "default": false,
-                "description": "This will not be worked on"
-            },
-            {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -83,7 +142,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3817/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3818",
@@ -120,11 +180,11 @@
             {
                 "id": 2014185961,
                 "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:coreruntime",
-                "name": "component:coreruntime",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "related to core runtime"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "closed",
@@ -160,7 +220,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3818/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3819",
@@ -193,17 +254,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1122493986,
-                "node_id": "MDU6TGFiZWwxMTIyNDkzOTg2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:wontfix",
-                "name": "status:wontfix",
-                "color": "45b2d3",
-                "default": false,
-                "description": "This will not be worked on"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -237,7 +288,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3819/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3820",
@@ -272,22 +324,13 @@
         },
         "labels": [
             {
-                "id": 1122493986,
-                "node_id": "MDU6TGFiZWwxMTIyNDkzOTg2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:wontfix",
-                "name": "status:wontfix",
-                "color": "45b2d3",
-                "default": false,
-                "description": "This will not be worked on"
-            },
-            {
                 "id": 1607058914,
                 "node_id": "MDU6TGFiZWwxNjA3MDU4OTE0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:quantization",
-                "name": "feature:quantization",
-                "color": "0052cc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/quantization",
+                "name": "quantization",
+                "color": "C2E0C6",
                 "default": false,
-                "description": "related to quantization of models or running quantized models"
+                "description": "issues related to quantization"
             }
         ],
         "state": "closed",
@@ -355,7 +398,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3820/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3821",
@@ -394,18 +438,18 @@
                 "node_id": "MDU6TGFiZWwyMjA0MDYxMzkx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:TensorRT",
                 "name": "ep:TensorRT",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to TensorRT EP"
+                "description": "issues related to TensorRT execution provider"
             },
             {
                 "id": 2286118846,
                 "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
                 "name": "stale",
-                "color": "ffffff",
+                "color": "C5DEF5",
                 "default": false,
-                "description": null
+                "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
         "state": "closed",
@@ -433,7 +477,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3821/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3822",
@@ -466,17 +511,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1758308176,
-                "node_id": "MDU6TGFiZWwxNzU4MzA4MTc2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:CSharp",
-                "name": "api:CSharp",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the C# API"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -502,7 +537,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3822/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3823",
@@ -539,11 +575,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -555,7 +591,7 @@
         "created_at": "2020-05-05T17:04:43Z",
         "updated_at": "2020-05-19T17:43:14Z",
         "closed_at": "2020-05-16T01:27:20Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -579,7 +615,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3823/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3824",
@@ -646,7 +683,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3824/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3825",
@@ -683,11 +721,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -823,7 +861,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3825/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3826",
@@ -866,7 +905,7 @@
         "created_at": "2020-05-05T18:25:34Z",
         "updated_at": "2020-05-05T23:52:35Z",
         "closed_at": "2020-05-05T23:52:34Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -890,7 +929,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3826/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3827",
@@ -957,7 +997,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3827/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3828",
@@ -1000,7 +1041,7 @@
         "created_at": "2020-05-05T20:10:52Z",
         "updated_at": "2020-05-06T07:05:16Z",
         "closed_at": "2020-05-06T07:05:16Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "We have some code to call the same `InferenceSession` in multiple threads. And we randomly see the following crashes:\r\n\r\n> Non-zero status code returned while running Conv node. Name:'onnx_op_2' Status Message: CUDNN error executing cudnnConvolutionForward(CudnnHandle(), &alpha, s_.x_tensor, x_data, s_.filter_desc, w_data, s_.conv_desc, s_.algo, workspace.get(), s_.workspace_bytes, &beta, s_.y_tensor, y_data)\r\n\r\n> Non-zero status code returned while running Conv node. Name:'' Status Message: CUDNN error executing cudnnAddTensor(CudnnHandle(), &alpha, s_.b_tensor, b_data, &alpha, s_.y_tensor, y_data)\r\n\r\nWe figured out this is a thread-safety problem in CUDA covolution implementation. Here are the detail explanation:\r\n\r\nIn the compute function of Conv, a mutex guards the following block in `cuda/nn/conv.cc`:\r\n\r\nhttps://github.com/microsoft/onnxruntime/blob/5dfc91db51c1c9fc63c046c8ff3dc682d9b7797d/onnxruntime/core/providers/cuda/nn/conv.cc#L55-L169\r\n\r\nHowever, just below this block, there are calls to cuDNN API using the shared cuDNN state `s_`:\r\n\r\nhttps://github.com/microsoft/onnxruntime/blob/5dfc91db51c1c9fc63c046c8ff3dc682d9b7797d/onnxruntime/core/providers/cuda/nn/conv.cc#L185\r\n\r\nhttps://github.com/microsoft/onnxruntime/blob/5dfc91db51c1c9fc63c046c8ff3dc682d9b7797d/onnxruntime/core/providers/cuda/nn/conv.cc#L202\r\n\r\nTherefore, when multi-thread evaluation hits `cudnnConvolutionForward` or `cudnnAddTensor` at the same time, the cuDNN call may fail when the shapes of tensors are different on different thread. Our solution for this is extend the mutex scope to include to two cuDNN calls.\r\n",
         "reactions": {
@@ -1016,7 +1057,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3828/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3829",
@@ -1053,11 +1095,11 @@
             {
                 "id": 1974915201,
                 "node_id": "MDU6TGFiZWwxOTc0OTE1MjAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/model:BERT",
-                "name": "model:BERT",
-                "color": "aee888",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/model:transformer",
+                "name": "model:transformer",
+                "color": "4EF6CD",
                 "default": false,
-                "description": "BERT Optimization"
+                "description": "issues related to a transformer model: BERT, GPT2, Hugging Face, Longformer, T5, etc."
             }
         ],
         "state": "closed",
@@ -1069,7 +1111,7 @@
         "created_at": "2020-05-05T20:39:05Z",
         "updated_at": "2020-05-12T19:26:24Z",
         "closed_at": "2020-05-12T19:26:23Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1093,7 +1135,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3829/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3830",
@@ -1136,7 +1179,7 @@
         "created_at": "2020-05-05T21:45:54Z",
         "updated_at": "2020-05-05T23:28:24Z",
         "closed_at": "2020-05-05T23:28:22Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1160,7 +1203,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3830/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3831",
@@ -1227,7 +1271,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3831/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3832",
@@ -1294,7 +1339,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3832/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3833",
@@ -1361,7 +1407,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3833/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3834",
@@ -1428,7 +1475,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3834/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3835",
@@ -1471,7 +1519,7 @@
         "created_at": "2020-05-06T00:16:13Z",
         "updated_at": "2020-05-07T20:32:22Z",
         "closed_at": "2020-05-07T20:32:20Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1495,7 +1543,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3835/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3836",
@@ -1562,7 +1611,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3836/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3837",
@@ -1629,7 +1679,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3837/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3838",
@@ -1696,7 +1747,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3838/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3839",
@@ -1739,7 +1791,7 @@
         "created_at": "2020-05-06T05:47:12Z",
         "updated_at": "2020-05-06T10:01:06Z",
         "closed_at": "2020-05-06T10:01:05Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1763,7 +1815,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3839/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3840",
@@ -1806,7 +1859,7 @@
         "created_at": "2020-05-06T08:18:08Z",
         "updated_at": "2020-05-08T21:31:09Z",
         "closed_at": "2020-05-08T21:31:07Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1830,7 +1883,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3840/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3841",
@@ -1897,7 +1951,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3841/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3842",
@@ -1940,7 +1995,7 @@
         "created_at": "2020-05-06T09:47:43Z",
         "updated_at": "2020-05-11T23:59:43Z",
         "closed_at": "2020-05-11T23:59:42Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1964,7 +2019,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3842/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3843",
@@ -2001,20 +2057,20 @@
             {
                 "id": 1122493981,
                 "node_id": "MDU6TGFiZWwxMTIyNDkzOTgx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:enhancement",
-                "name": "type:enhancement",
-                "color": "a2eeef",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature%20request",
+                "name": "feature request",
+                "color": "5319E7",
                 "default": false,
                 "description": "request for unsupported feature or enhancement"
             },
             {
-                "id": 1195353125,
-                "node_id": "MDU6TGFiZWwxMTk1MzUzMTI1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:Python",
-                "name": "api:Python",
-                "color": "0e8a16",
+                "id": 4419012097,
+                "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
+                "name": "api",
+                "color": "E67B8C",
                 "default": false,
-                "description": "related to the Python API"
+                "description": "issues related to all other APIs: C, C++, Python, etc."
             }
         ],
         "state": "open",
@@ -2024,7 +2080,7 @@
         "milestone": null,
         "comments": 4,
         "created_at": "2020-05-06T16:46:02Z",
-        "updated_at": "2020-09-20T18:34:26Z",
+        "updated_at": "2022-08-12T08:24:07Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -2042,7 +2098,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3843/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3844",
@@ -2075,17 +2132,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2041733582,
-                "node_id": "MDU6TGFiZWwyMDQxNzMzNTgy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:JavaScript",
-                "name": "api:JavaScript",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the Javascript API for Node.js binding, ORT Web and react-native"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": {
@@ -2159,7 +2206,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3844/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3845",
@@ -2196,11 +2244,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -2212,7 +2260,7 @@
         "created_at": "2020-05-06T18:33:04Z",
         "updated_at": "2020-05-27T22:21:37Z",
         "closed_at": "2020-05-27T22:21:36Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2236,7 +2284,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3845/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3846",
@@ -2303,7 +2352,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3846/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3847",
@@ -2370,7 +2420,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3847/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3848",
@@ -2437,7 +2488,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3848/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3849",
@@ -2504,7 +2556,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3849/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3850",
@@ -2541,11 +2594,11 @@
             {
                 "id": 1974915201,
                 "node_id": "MDU6TGFiZWwxOTc0OTE1MjAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/model:BERT",
-                "name": "model:BERT",
-                "color": "aee888",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/model:transformer",
+                "name": "model:transformer",
+                "color": "4EF6CD",
                 "default": false,
-                "description": "BERT Optimization"
+                "description": "issues related to a transformer model: BERT, GPT2, Hugging Face, Longformer, T5, etc."
             }
         ],
         "state": "closed",
@@ -2581,7 +2634,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3850/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3851",
@@ -2618,11 +2672,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -2658,7 +2712,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3851/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3852",
@@ -2701,7 +2756,7 @@
         "created_at": "2020-05-06T23:26:43Z",
         "updated_at": "2020-05-07T21:22:22Z",
         "closed_at": "2020-05-07T21:22:21Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2725,7 +2780,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3852/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3853",
@@ -2792,7 +2848,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3853/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3854",
@@ -2835,7 +2892,7 @@
         "created_at": "2020-05-06T23:36:06Z",
         "updated_at": "2020-05-13T03:38:28Z",
         "closed_at": "2020-05-13T03:38:27Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2859,7 +2916,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3854/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3855",
@@ -2926,7 +2984,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3855/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3856",
@@ -2993,7 +3052,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3856/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3857",
@@ -3030,11 +3090,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -3070,7 +3130,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3857/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3858",
@@ -3137,7 +3198,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3858/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3859",
@@ -3174,11 +3236,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -3214,7 +3276,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3859/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3860",
@@ -3281,7 +3344,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3860/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3861",
@@ -3348,7 +3412,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3861/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3862",
@@ -3381,17 +3446,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1273765791,
-                "node_id": "MDU6TGFiZWwxMjczNzY1Nzkx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:performance",
-                "name": "type:performance",
-                "color": "a2eeef",
-                "default": false,
-                "description": "performance related issues and questions"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -3417,7 +3472,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3862/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3863",
@@ -3484,7 +3540,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3863/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3864",
@@ -3543,7 +3600,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3864/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3865",
@@ -3602,7 +3660,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3865/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3866",
@@ -3639,11 +3698,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -3679,7 +3738,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3866/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3867",
@@ -3716,11 +3776,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -3756,7 +3816,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3867/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3868",
@@ -3823,7 +3884,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3868/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3869",
@@ -3866,7 +3928,7 @@
         "created_at": "2020-05-07T22:51:18Z",
         "updated_at": "2021-05-16T18:40:03Z",
         "closed_at": "2020-05-14T02:30:28Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3890,7 +3952,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3869/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3870",
@@ -3925,22 +3988,13 @@
         },
         "labels": [
             {
-                "id": 1122493986,
-                "node_id": "MDU6TGFiZWwxMTIyNDkzOTg2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:wontfix",
-                "name": "status:wontfix",
-                "color": "45b2d3",
-                "default": false,
-                "description": "This will not be worked on"
-            },
-            {
                 "id": 2286118846,
                 "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
                 "name": "stale",
-                "color": "ffffff",
+                "color": "C5DEF5",
                 "default": false,
-                "description": null
+                "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
         "state": "closed",
@@ -3976,7 +4030,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3870/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3871",
@@ -4043,7 +4098,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3871/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3872",
@@ -4110,7 +4166,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3872/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3873",
@@ -4147,9 +4204,9 @@
             {
                 "id": 1220611565,
                 "node_id": "MDU6TGFiZWwxMjIwNjExNTY1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:converter",
-                "name": "component:converter",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/converter",
+                "name": "converter",
+                "color": "0E8A16",
                 "default": false,
                 "description": "related to ONNX converters"
             }
@@ -4239,7 +4296,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3873/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3874",
@@ -4306,7 +4364,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3874/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3875",
@@ -4373,7 +4432,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3875/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3876",
@@ -4410,11 +4470,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -4450,7 +4510,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3876/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3877",
@@ -4517,7 +4578,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3877/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3878",
@@ -4576,7 +4638,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3878/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3879",
@@ -4613,11 +4676,11 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -4629,7 +4692,7 @@
         "created_at": "2020-05-08T20:38:52Z",
         "updated_at": "2022-02-01T09:09:20Z",
         "closed_at": "2020-07-09T06:17:51Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "Please consider simplifying the C++ [examples](https://github.com/microsoft/onnxruntime/tree/master/samples/c_cxx) and remove all windows-specific headers. As a new user of onnxruntime (in C++), it is extra difficult to run the examples when they rely on a Windows development environment.\r\n\r\nA cleaner more succinct example would be an application that runs inference over the MNIST test data from the command line (using linux).\r\n\r\nAs a suggestion, an alternative tutorial that I found to to be very informative for another framework is what Facebook provides for libTorch [here](https://pytorch.org/tutorials/advanced/cpp_frontend.html). It would be great if there was a similar kind of in-depth tutorial that walked a C++ dev through an onnxruntime example.",
         "reactions": {
@@ -4645,7 +4708,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3879/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3880",
@@ -4688,7 +4752,7 @@
         "created_at": "2020-05-08T22:41:26Z",
         "updated_at": "2020-05-12T22:38:44Z",
         "closed_at": "2020-05-08T22:43:00Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4712,7 +4776,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3880/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3881",
@@ -4749,11 +4814,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -4789,7 +4854,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3881/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3882",
@@ -4832,7 +4898,7 @@
         "created_at": "2020-05-08T23:35:42Z",
         "updated_at": "2020-12-02T22:48:42Z",
         "closed_at": "2020-05-12T21:11:12Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4856,7 +4922,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3882/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3883",
@@ -4923,7 +4990,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3883/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3884",
@@ -4990,7 +5058,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3884/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3885",
@@ -5033,7 +5102,7 @@
         "created_at": "2020-05-09T01:15:09Z",
         "updated_at": "2020-05-12T00:57:03Z",
         "closed_at": "2020-05-12T00:57:02Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5057,7 +5126,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3885/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3886",
@@ -5124,7 +5194,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3886/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3887",
@@ -5183,7 +5254,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3887/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3888",
@@ -5220,11 +5292,11 @@
             {
                 "id": 2014185961,
                 "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:coreruntime",
-                "name": "component:coreruntime",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "related to core runtime"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "closed",
@@ -5260,7 +5332,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3888/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3889",
@@ -5293,17 +5366,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2058958594,
-                "node_id": "MDU6TGFiZWwyMDU4OTU4NTk0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:dockerfiles",
-                "name": "component:dockerfiles",
-                "color": "303a93",
-                "default": false,
-                "description": "related to the supported Dockerfiles"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -5329,7 +5392,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3889/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3890",
@@ -5388,7 +5452,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3890/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3891",
@@ -5421,26 +5486,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1663918512,
-                "node_id": "MDU6TGFiZWwxNjYzOTE4NTEy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:NUPHAR",
-                "name": "ep:NUPHAR",
-                "color": "bfdadc",
-                "default": false,
-                "description": "questions/issues related to Nuphar EP"
-            },
-            {
-                "id": 2058958594,
-                "node_id": "MDU6TGFiZWwyMDU4OTU4NTk0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:dockerfiles",
-                "name": "component:dockerfiles",
-                "color": "303a93",
-                "default": false,
-                "description": "related to the supported Dockerfiles"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -5466,7 +5512,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3891/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3892",
@@ -5509,7 +5556,7 @@
         "created_at": "2020-05-11T04:55:37Z",
         "updated_at": "2020-05-11T06:29:01Z",
         "closed_at": "2020-05-11T06:29:00Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5533,7 +5580,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3892/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3893",
@@ -5576,7 +5624,7 @@
         "created_at": "2020-05-11T08:29:24Z",
         "updated_at": "2020-05-12T21:18:35Z",
         "closed_at": "2020-05-12T21:18:33Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5600,7 +5648,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3893/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3894",
@@ -5659,7 +5708,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3894/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3895",
@@ -5694,31 +5744,13 @@
         },
         "labels": [
             {
-                "id": 1122493986,
-                "node_id": "MDU6TGFiZWwxMTIyNDkzOTg2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:wontfix",
-                "name": "status:wontfix",
-                "color": "45b2d3",
-                "default": false,
-                "description": "This will not be worked on"
-            },
-            {
-                "id": 2058958594,
-                "node_id": "MDU6TGFiZWwyMDU4OTU4NTk0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:dockerfiles",
-                "name": "component:dockerfiles",
-                "color": "303a93",
-                "default": false,
-                "description": "related to the supported Dockerfiles"
-            },
-            {
                 "id": 2286118846,
                 "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
                 "name": "stale",
-                "color": "ffffff",
+                "color": "C5DEF5",
                 "default": false,
-                "description": null
+                "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
         "state": "closed",
@@ -5746,7 +5778,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3895/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3896",
@@ -5813,7 +5846,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3896/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3897",
@@ -5846,17 +5880,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1122493986,
-                "node_id": "MDU6TGFiZWwxMTIyNDkzOTg2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:wontfix",
-                "name": "status:wontfix",
-                "color": "45b2d3",
-                "default": false,
-                "description": "This will not be worked on"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -5882,7 +5906,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3897/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3898",
@@ -5941,7 +5966,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3898/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3899",
@@ -6008,7 +6034,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3899/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3900",
@@ -6067,7 +6094,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3900/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3901",
@@ -6134,7 +6162,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3901/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3902",
@@ -6201,7 +6230,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3902/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3903",
@@ -6268,7 +6298,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3903/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3904",
@@ -6311,7 +6342,7 @@
         "created_at": "2020-05-11T20:07:19Z",
         "updated_at": "2020-05-11T23:11:43Z",
         "closed_at": "2020-05-11T23:11:42Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6335,7 +6366,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3904/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3905",
@@ -6402,7 +6434,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3905/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3906",
@@ -6469,7 +6502,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3906/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3907",
@@ -6512,7 +6546,7 @@
         "created_at": "2020-05-11T22:14:00Z",
         "updated_at": "2020-05-12T16:40:54Z",
         "closed_at": "2020-05-12T16:40:54Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6536,7 +6570,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3907/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3908",
@@ -6603,7 +6638,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3908/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3909",
@@ -6640,11 +6676,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -6656,7 +6692,7 @@
         "created_at": "2020-05-12T03:11:11Z",
         "updated_at": "2020-05-13T21:15:19Z",
         "closed_at": "2020-05-13T21:15:19Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6680,7 +6716,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3909/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3910",
@@ -6717,11 +6754,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -6733,7 +6770,7 @@
         "created_at": "2020-05-12T04:10:36Z",
         "updated_at": "2020-05-13T01:11:27Z",
         "closed_at": "2020-05-13T01:11:26Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6757,7 +6794,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3910/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3911",
@@ -6800,7 +6838,7 @@
         "created_at": "2020-05-12T04:50:16Z",
         "updated_at": "2020-05-12T23:57:37Z",
         "closed_at": "2020-05-12T22:38:18Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6824,7 +6862,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3911/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3912",
@@ -6867,7 +6906,7 @@
         "created_at": "2020-05-12T07:10:00Z",
         "updated_at": "2020-05-12T10:43:00Z",
         "closed_at": "2020-05-12T10:42:59Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6891,7 +6930,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3912/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3913",
@@ -6950,7 +6990,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3913/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3914",
@@ -7017,7 +7058,8 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3914/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3915",
@@ -7054,11 +7096,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -7094,73 +7136,7 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3915/timeline",
-        "performed_via_github_app": null
-    },
-    {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3916",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3916/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3916/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3916/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/pull/3916",
-        "id": 616811572,
-        "node_id": "MDExOlB1bGxSZXF1ZXN0NDE2ODUwOTU5",
-        "number": 3916,
-        "title": "Refine ORTTrainer docstring descriptions (cherry-pick #3907)",
-        "user": {
-            "login": "thiagocrepaldi",
-            "id": 5469809,
-            "node_id": "MDQ6VXNlcjU0Njk4MDk=",
-            "avatar_url": "https://avatars.githubusercontent.com/u/5469809?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/thiagocrepaldi",
-            "html_url": "https://github.com/thiagocrepaldi",
-            "followers_url": "https://api.github.com/users/thiagocrepaldi/followers",
-            "following_url": "https://api.github.com/users/thiagocrepaldi/following{/other_user}",
-            "gists_url": "https://api.github.com/users/thiagocrepaldi/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/thiagocrepaldi/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/thiagocrepaldi/subscriptions",
-            "organizations_url": "https://api.github.com/users/thiagocrepaldi/orgs",
-            "repos_url": "https://api.github.com/users/thiagocrepaldi/repos",
-            "events_url": "https://api.github.com/users/thiagocrepaldi/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/thiagocrepaldi/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [],
-        "state": "closed",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 0,
-        "created_at": "2020-05-12T16:56:55Z",
-        "updated_at": "2020-05-12T16:58:50Z",
-        "closed_at": "2020-05-12T16:58:49Z",
-        "author_association": "MEMBER",
-        "active_lock_reason": null,
-        "draft": false,
-        "pull_request": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/3916",
-            "html_url": "https://github.com/microsoft/onnxruntime/pull/3916",
-            "diff_url": "https://github.com/microsoft/onnxruntime/pull/3916.diff",
-            "patch_url": "https://github.com/microsoft/onnxruntime/pull/3916.patch",
-            "merged_at": "2020-05-12T16:58:49Z"
-        },
-        "body": "ORTTrainer docstrings were improved for orttraining_rc1 branch and it can be reused here too",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3916/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3916/timeline",
-        "performed_via_github_app": null
+        "performed_via_github_app": null,
+        "state_reason": null
     }
 ]

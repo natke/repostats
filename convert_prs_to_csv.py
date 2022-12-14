@@ -1,17 +1,18 @@
 import csv
 import json
+import glob
 from dateutil import parser
 
 
 c = csv.writer(open("data/prs.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'time_to_close', 'url'])
 
-list = [*range(1, 4)]
-for index in list:
+pr_files = glob.glob('data/prs-*.json')
+for pr_file in pr_files:
 
-    print(index)
+    print(pr_file)
 
-    with open(f'data/prs-{index}.json', encoding="utf8") as f:
+    with open(pr_file, encoding="utf8") as f:
         d = json.load(f)
 
     for x in d:

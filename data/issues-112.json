@@ -102,11 +102,11 @@
             {
                 "id": 2014185961,
                 "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:coreruntime",
-                "name": "component:coreruntime",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "related to core runtime"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "closed",
@@ -364,26 +364,7 @@
             "type": "Bot",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2217709642,
-                "node_id": "MDU6TGFiZWwyMjE3NzA5NjQy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/dependencies",
-                "name": "dependencies",
-                "color": "0366d6",
-                "default": false,
-                "description": "Pull requests that update a dependency file"
-            },
-            {
-                "id": 3563029252,
-                "node_id": "LA_kwDOCVq1mM7UX4ME",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/javascript",
-                "name": "javascript",
-                "color": "168700",
-                "default": false,
-                "description": "Pull requests that update Javascript code"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -457,9 +438,9 @@
                 "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
                 "name": "ep:CUDA",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to CUDA EP"
+                "description": "issues related to the CUDA execution provider"
             }
         ],
         "state": "open",
@@ -531,7 +512,7 @@
         "created_at": "2022-06-02T15:00:18Z",
         "updated_at": "2022-06-09T00:04:31Z",
         "closed_at": "2022-06-09T00:04:30Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -599,7 +580,7 @@
         "created_at": "2022-06-02T16:45:05Z",
         "updated_at": "2022-06-02T16:45:56Z",
         "closed_at": "2022-06-02T16:45:56Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -707,7 +688,7 @@
         "created_at": "2022-06-02T17:28:46Z",
         "updated_at": "2022-06-07T17:00:33Z",
         "closed_at": "2022-06-07T17:00:29Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -765,17 +746,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2114490130,
-                "node_id": "MDU6TGFiZWwyMTE0NDkwMTMw",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:operator",
-                "name": "component:operator",
-                "color": "303a93",
-                "default": false,
-                "description": "related to specific ONNX operator support"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": {
@@ -825,7 +796,7 @@
         "created_at": "2022-06-02T20:17:00Z",
         "updated_at": "2022-06-30T20:38:36Z",
         "closed_at": "2022-06-30T20:38:35Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nTesting a module including OptionalHasElement operator and If operator on onnxruntime, and it errored out with no information but Segmentation fault when running onnxruntime.InferenceSession\r\n\r\n**System information**\r\n- onnx==1.11.0\r\n- onnxruntime==1.11.1\r\n- python==3.9.12\r\n\r\n**To Reproduce**\r\n```python\r\n\r\nfrom typing import Optional\r\nimport io\r\nimport torch\r\nimport copy\r\nimport onnxruntime\r\nimport onnx\r\n\r\n_ORT_PROVIDERS = [\"CPUExecutionProvider\"]\r\n\r\ndef convert_to_onnx(\r\n    model,\r\n    input=None,\r\n    opset_version=9,\r\n    do_constant_folding=True,\r\n    keep_initializers_as_inputs=True,\r\n    dynamic_axes=None,\r\n    input_names=None,\r\n    output_names=None,\r\n    fixed_batch_size=False,\r\n    training=None,\r\n    verbose=False,\r\n):\r\n    f = io.BytesIO()\r\n    input_copy = copy.deepcopy(input)\r\n    torch.onnx._export(\r\n        model,\r\n        input_copy,\r\n        f,\r\n        opset_version=opset_version,\r\n        do_constant_folding=do_constant_folding,\r\n        keep_initializers_as_inputs=keep_initializers_as_inputs,\r\n        dynamic_axes=dynamic_axes,\r\n        input_names=input_names,\r\n        output_names=output_names,\r\n        fixed_batch_size=fixed_batch_size,\r\n        training=training,\r\n        verbose=verbose,\r\n    )\r\n\r\n    print(\" === Checking ONNX === \")\r\n    m = onnx.load(f)\r\n    a = onnx.shape_inference.infer_shapes(m, True, True)\r\n    #onnx.checker.check_model(m)\r\n    print(\" === Check Ended === \")\r\n\r\n    # compute onnxruntime output prediction\r\n    so = onnxruntime.SessionOptions()\r\n    # suppress ort warnings.\r\n    # 0:Verbose, 1:Info, 2:Warning. 3:Error, 4:Fatal. Default is 2.\r\n    so.log_severity_level = 0\r\n    ort_sess = onnxruntime.InferenceSession(f.getvalue(), so, providers=_ORT_PROVIDERS)\r\n    return ort_sess\r\n\r\nclass Module(torch.nn.Module):\r\n    def forward(self, y: Optional[torch.Tensor]) -> Optional[torch.Tensor]:\r\n        if y is not None:\r\n            if y.shape[1] < 5:\r\n                if y.size(0) == 1:\r\n                    y = y + 4\r\n                # this generates seg fault\r\n                else:\r\n                    return y\r\n        return y\r\n\r\nf = io.BytesIO()\r\nmodel = torch.jit.script(Module())\r\ny = torch.ones((3, 4), dtype=torch.int)\r\n\r\nconvert_to_onnx(\r\n    model,\r\n    y,\r\n    opset_version=16,\r\n    dynamic_axes={\"y\": {0: \"y0\", 1: \"y1\"}},\r\n    input_names=[\"y\"],\r\n)\r\n\r\n\r\n```\r\n\r\n**Screenshots**\r\nError message:\r\n```bash\r\n2022-06-02 20:10:40.102593696 [I:onnxruntime:, inference_session.cc:324 operator()] Flush-to-zero and denormal-as-zero are off\r\n2022-06-02 20:10:40.102616796 [I:onnxruntime:, inference_session.cc:331 ConstructorCommon] Creating and using per session threadpools since use_per_session_threads_ is true\r\n2022-06-02 20:10:40.102631096 [I:onnxruntime:, inference_session.cc:351 ConstructorCommon] Dynamic block base set to 0\r\n2022-06-02 20:10:40.107129029 [I:onnxruntime:, inference_session.cc:1327 Initialize] Initializing session.\r\nSegmentation fault (core dumped)\r\n```\r\nONNX model in Netron:\r\n![test_uninitialized_optional](https://user-images.githubusercontent.com/18010845/171730105-c3c86519-cfe6-41ad-9846-bfb8017e19b7.png)\r\n\r\n",
         "reactions": {
@@ -875,17 +846,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1395147764,
-                "node_id": "MDU6TGFiZWwxMzk1MTQ3NzY0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:CC++",
-                "name": "api:CC++",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the  public API(and ABI) for onnxruntime"
-            }
-        ],
+        "labels": [],
         "state": "open",
         "locked": false,
         "assignee": null,
@@ -893,7 +854,7 @@
         "milestone": null,
         "comments": 7,
         "created_at": "2022-06-02T20:51:30Z",
-        "updated_at": "2022-06-07T17:46:55Z",
+        "updated_at": "2022-08-12T08:20:24Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -949,11 +910,11 @@
             {
                 "id": 2159809301,
                 "node_id": "MDU6TGFiZWwyMTU5ODA5MzAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:build",
-                "name": "component:build",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/build",
+                "name": "build",
+                "color": "D93F0B",
                 "default": false,
-                "description": "related to builds"
+                "description": "build issues; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -1059,20 +1020,11 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
-            },
-            {
-                "id": 2314849695,
-                "node_id": "MDU6TGFiZWwyMzE0ODQ5Njk1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:android",
-                "name": "platform:android",
-                "color": "d4ea72",
-                "default": false,
-                "description": ""
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -1202,26 +1154,7 @@
             "type": "Bot",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2217709642,
-                "node_id": "MDU6TGFiZWwyMjE3NzA5NjQy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/dependencies",
-                "name": "dependencies",
-                "color": "0366d6",
-                "default": false,
-                "description": "Pull requests that update a dependency file"
-            },
-            {
-                "id": 3563029252,
-                "node_id": "LA_kwDOCVq1mM7UX4ME",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/javascript",
-                "name": "javascript",
-                "color": "168700",
-                "default": false,
-                "description": "Pull requests that update Javascript code"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -1289,26 +1222,7 @@
             "type": "Bot",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2217709642,
-                "node_id": "MDU6TGFiZWwyMjE3NzA5NjQy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/dependencies",
-                "name": "dependencies",
-                "color": "0366d6",
-                "default": false,
-                "description": "Pull requests that update a dependency file"
-            },
-            {
-                "id": 3563029252,
-                "node_id": "LA_kwDOCVq1mM7UX4ME",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/javascript",
-                "name": "javascript",
-                "color": "168700",
-                "default": false,
-                "description": "Pull requests that update Javascript code"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -1448,9 +1362,9 @@
             {
                 "id": 1122493981,
                 "node_id": "MDU6TGFiZWwxMTIyNDkzOTgx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:enhancement",
-                "name": "type:enhancement",
-                "color": "a2eeef",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature%20request",
+                "name": "feature request",
+                "color": "5319E7",
                 "default": false,
                 "description": "request for unsupported feature or enhancement"
             }
@@ -1514,17 +1428,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2217709642,
-                "node_id": "MDU6TGFiZWwyMjE3NzA5NjQy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/dependencies",
-                "name": "dependencies",
-                "color": "0366d6",
-                "default": false,
-                "description": "Pull requests that update a dependency file"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -1652,26 +1556,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2365722603,
-                "node_id": "MDU6TGFiZWwyMzY1NzIyNjAz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/triage:approved",
-                "name": "triage:approved",
-                "color": "e4fc8d",
-                "default": false,
-                "description": "Used for release management; approved items for release"
-            },
-            {
-                "id": 4237029411,
-                "node_id": "LA_kwDOCVq1mM78i_Aj",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/release:1.12",
-                "name": "release:1.12",
-                "color": "15E3DE",
-                "default": false,
-                "description": ""
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -1681,7 +1566,7 @@
         "created_at": "2022-06-03T21:20:00Z",
         "updated_at": "2022-07-06T16:55:53Z",
         "closed_at": "2022-06-24T16:21:32Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2009,9 +1894,9 @@
                 "node_id": "MDU6TGFiZWwyMjA0MDYxMzkx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:TensorRT",
                 "name": "ep:TensorRT",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to TensorRT EP"
+                "description": "issues related to TensorRT execution provider"
             }
         ],
         "state": "open",
@@ -2139,9 +2024,9 @@
                 "node_id": "MDU6TGFiZWwyOTk3MzIwMTk3",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:RockchipNPU",
                 "name": "ep:RockchipNPU",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": ""
+                "description": "issues related to Rockchip execution provider"
             }
         ],
         "state": "open",
@@ -2203,17 +2088,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2190555590,
-                "node_id": "MDU6TGFiZWwyMTkwNTU1NTkw",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:optimizer",
-                "name": "component:optimizer",
-                "color": "303a93",
-                "default": false,
-                "description": "related to optimizers in ORT"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -2277,9 +2152,9 @@
             {
                 "id": 1122493981,
                 "node_id": "MDU6TGFiZWwxMTIyNDkzOTgx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:enhancement",
-                "name": "type:enhancement",
-                "color": "a2eeef",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature%20request",
+                "name": "feature request",
+                "color": "5319E7",
                 "default": false,
                 "description": "request for unsupported feature or enhancement"
             }
@@ -2353,7 +2228,7 @@
         "created_at": "2022-06-06T01:56:31Z",
         "updated_at": "2022-06-06T21:46:52Z",
         "closed_at": "2022-06-06T21:46:52Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2421,7 +2296,7 @@
         "created_at": "2022-06-06T06:08:25Z",
         "updated_at": "2022-06-07T01:37:17Z",
         "closed_at": "2022-06-07T01:37:16Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2617,7 +2492,7 @@
         "created_at": "2022-06-06T17:41:13Z",
         "updated_at": "2022-06-10T15:47:58Z",
         "closed_at": "2022-06-10T15:47:57Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2804,16 +2679,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 4,
         "created_at": "2022-06-06T21:02:27Z",
-        "updated_at": "2022-07-09T00:05:54Z",
-        "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "updated_at": "2022-07-29T17:25:00Z",
+        "closed_at": "2022-07-29T17:24:59Z",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2821,7 +2696,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11749",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11749.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11749.patch",
-            "merged_at": null
+            "merged_at": "2022-07-29T17:24:59Z"
         },
         "body": "**Description**: These workflows have been manually enabled until now\r\n",
         "reactions": {
@@ -3041,7 +2916,7 @@
         "created_at": "2022-06-06T23:01:15Z",
         "updated_at": "2022-06-10T18:21:15Z",
         "closed_at": "2022-06-10T18:21:15Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3177,7 +3052,7 @@
         "created_at": "2022-06-06T23:16:04Z",
         "updated_at": "2022-06-07T17:40:22Z",
         "closed_at": "2022-06-07T17:40:21Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3245,7 +3120,7 @@
         "created_at": "2022-06-06T23:24:09Z",
         "updated_at": "2022-06-07T17:42:20Z",
         "closed_at": "2022-06-07T17:42:20Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3381,7 +3256,7 @@
         "created_at": "2022-06-07T02:41:34Z",
         "updated_at": "2022-06-07T03:00:35Z",
         "closed_at": "2022-06-07T02:43:40Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "It's just a memo.\r\n\r\n**Describe the bug**\r\ncoverage report step in Android CI failed with the exception of `Principal 'aadapp=***;72f988bf-86f1-41af-91ab-2d7cd011db47' is not authorized to perform operation 'Ingest' on 'any database'.` since May 17th\r\n\r\n**Fix**\r\nRun Kusto script\r\n`.add database powerbi ingestors ('aadapp={application id};72f988bf-86f1-41af-91ab-2d7cd011db47')`\r\nref.\r\nhttps://docs.microsoft.com/en-us/azure/data-explorer/kusto/api/netfx/kusto-ingest-client-permissions\r\n\r\nApplicationID could be get from Devops' Project Settings->Service connections->...->Manage Service Principal.\r\n\r\n**Additional context**\r\nSo far, we don't know why it worked before May 17th.\r\n",
         "reactions": {
@@ -3441,7 +3316,7 @@
         "created_at": "2022-06-07T06:44:23Z",
         "updated_at": "2022-06-15T18:13:36Z",
         "closed_at": "2022-06-15T18:13:35Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3658,7 +3533,7 @@
         "id": 1263194250,
         "node_id": "PR_kwDOCVq1mM45PP7I",
         "number": 11762,
-        "title": "xnnpack with multi-thread",
+        "title": "[XNNPACK] Support running in multi-thread with seperate pthreadpool",
         "user": {
             "login": "wejoncy",
             "id": 9417365,
@@ -3685,11 +3560,11 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 0,
+        "comments": 3,
         "created_at": "2022-06-07T12:12:11Z",
-        "updated_at": "2022-06-08T08:19:22Z",
+        "updated_at": "2022-09-15T22:20:05Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3877,7 +3752,7 @@
         "created_at": "2022-06-07T17:20:45Z",
         "updated_at": "2022-06-08T22:01:56Z",
         "closed_at": "2022-06-08T22:01:55Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4009,9 +3884,9 @@
                 "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
                 "name": "ep:CUDA",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to CUDA EP"
+                "description": "issues related to the CUDA execution provider"
             }
         ],
         "state": "closed",
@@ -4021,11 +3896,11 @@
         "milestone": null,
         "comments": 6,
         "created_at": "2022-06-07T18:04:17Z",
-        "updated_at": "2022-07-01T14:06:35Z",
+        "updated_at": "2022-08-31T17:00:03Z",
         "closed_at": "2022-07-01T14:06:35Z",
         "author_association": "NONE",
         "active_lock_reason": null,
-        "body": "**Describe the bug**\r\nHi. My bug ressembles much [this one](https://github.com/microsoft/onnxruntime/issues/6320) but with FP16 type, but I find it odd since I do believe FP16 is supposed to be already compatible with onnxruntime, isn't it ? This bug happens when I try to run the model in onnxruntime. \r\n\r\n**To Reproduce**\r\n```\r\nimport torch\r\nimport torchvision\r\n\r\nexport_model = torchvision.models.resnet101().cuda().eval().half()\r\ninp = torch.from_numpy(np.zeros((8, 3, 224, 224))).cuda().half()\r\nwith torch.no_grad():\r\n    torch.onnx.export(\r\n        export_model,\r\n        inp,\r\n        \"model.onnx\",\r\n        input_names=[\"input\"],\r\n        output_names=[\"output\"],\r\n        export_params=True,\r\n    )\r\nimport onnxruntime as ort\r\nimport numpy as np\r\nort_sess = ort.InferenceSession('model.onnx', providers=['CUDAExecutionProvider'])\r\noutputs = ort_sess.run(None, {'input': inp.numpy()})\r\nprint(f'Predicted:', outputs)\r\n\r\n```\r\n\r\nThis results in the following error :\r\n```\r\n2022-06-08 12:21:10.005108537 [E:onnxruntime:, inference_session.cc:1587 operator()] Exception during initialization: /onnxruntime_src/onnxruntime/core/optimizer/transformer_memcpy.cc:374 bool onnxruntime::TransformerMemcpyImpl::ProcessInitializers(const onnxruntime::KernelRegistryManager&, const InitializedTensorSet&) status.IsOK() was false. Failed to find kernel for FusedConv(1) (node Conv_8). Op with name (Conv_8) and type (FusedConv) kernel is not supported in CUDAExecutionProvider. Encountered following errors: (Found kernel for Op with name (Conv_8) and type (FusedConv) in the supported version range (node_version: 1 kernel start version: 1 kernel_end_version: 2147483647). However the types are incompatible. This op has been implemented only for the following types (tensor(float),), but the node in the model has the following type (tensor(float16))\r\n)\r\n\r\nCRITICAL:main_logger:\r\nTraceback (most recent call last):\r\n  File \"pytorch/convert_model_to_torchscript.py\", line 142, in <module>\r\n    ort_sess = ort.InferenceSession('model.onnx', providers=['CUDAExecutionProvider'])\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py\", line 335, in __init__\r\n    self._create_inference_session(providers, provider_options, disabled_optimizers)\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py\", line 381, in _create_inference_session\r\n    sess.initialize_session(providers, provider_options, disabled_optimizers)\r\n Uncaught exception: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Exception during initialization: /onnxruntime_src/onnxruntime/core/optimizer/transformer_memcpy.cc:374 bool onnxruntime::TransformerMemcpyImpl::ProcessInitializers(const onnxruntime::KernelRegistryManager&, const InitializedTensorSet&) status.IsOK() was false. Failed to find kernel for FusedConv(1) (node Conv_8). Op with name (Conv_8) and type (FusedConv) kernel is not supported in CUDAExecutionProvider. Encountered following errors: (Found kernel for Op with name (Conv_8) and type (FusedConv) in the supported version range (node_version: 1 kernel start version: 1 kernel_end_version: 2147483647). However the types are incompatible. This op has been implemented only for the following types (tensor(float),), but the node in the model has the following type (tensor(float16))\r\n)\r\n\r\n```\r\n\r\nThose are regular 2d convolutions though, I'm very surprised. Isn't onnxruntime compatible with fp16 inference ?\r\n\r\nI have already tried converting the model to half after saving it with [this script](https://github.com/microsoft/onnxconverter-common/blob/master/onnxconverter_common/float16.py), but the same error appears.",
+        "body": "**Describe the bug**\r\nHi. My bug ressembles much [this one](https://github.com/microsoft/onnxruntime/issues/6320) but with FP16 type, but I find it odd since I do believe FP16 is supposed to be already compatible with onnxruntime, isn't it ? This bug happens when I try to run the model in onnxruntime. \r\n\r\n**To Reproduce**\r\n```\r\nimport torch\r\nimport torchvision\r\nimport numpy as np\r\nexport_model = torchvision.models.resnet101().cuda().eval().half()\r\ninp = torch.from_numpy(np.zeros((8, 3, 224, 224))).cuda().half()\r\nwith torch.no_grad():\r\n    torch.onnx.export(\r\n        export_model,\r\n        inp,\r\n        \"model.onnx\",\r\n        input_names=[\"input\"],\r\n        output_names=[\"output\"],\r\n        export_params=True,\r\n    )\r\n\r\nimport onnxruntime as ort\r\n\r\nort_sess = ort.InferenceSession('model.onnx', providers=['CUDAExecutionProvider'])\r\noutputs = ort_sess.run(None, {'input': inp.cpu().numpy()})\r\nprint(f'Predicted:', outputs)\r\n\r\n```\r\n\r\nThis results in the following error :\r\n```\r\n2022-06-08 12:21:10.005108537 [E:onnxruntime:, inference_session.cc:1587 operator()] Exception during initialization: /onnxruntime_src/onnxruntime/core/optimizer/transformer_memcpy.cc:374 bool onnxruntime::TransformerMemcpyImpl::ProcessInitializers(const onnxruntime::KernelRegistryManager&, const InitializedTensorSet&) status.IsOK() was false. Failed to find kernel for FusedConv(1) (node Conv_8). Op with name (Conv_8) and type (FusedConv) kernel is not supported in CUDAExecutionProvider. Encountered following errors: (Found kernel for Op with name (Conv_8) and type (FusedConv) in the supported version range (node_version: 1 kernel start version: 1 kernel_end_version: 2147483647). However the types are incompatible. This op has been implemented only for the following types (tensor(float),), but the node in the model has the following type (tensor(float16))\r\n)\r\n\r\nCRITICAL:main_logger:\r\nTraceback (most recent call last):\r\n  File \"pytorch/convert_model_to_torchscript.py\", line 142, in <module>\r\n    ort_sess = ort.InferenceSession('model.onnx', providers=['CUDAExecutionProvider'])\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py\", line 335, in __init__\r\n    self._create_inference_session(providers, provider_options, disabled_optimizers)\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py\", line 381, in _create_inference_session\r\n    sess.initialize_session(providers, provider_options, disabled_optimizers)\r\n Uncaught exception: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Exception during initialization: /onnxruntime_src/onnxruntime/core/optimizer/transformer_memcpy.cc:374 bool onnxruntime::TransformerMemcpyImpl::ProcessInitializers(const onnxruntime::KernelRegistryManager&, const InitializedTensorSet&) status.IsOK() was false. Failed to find kernel for FusedConv(1) (node Conv_8). Op with name (Conv_8) and type (FusedConv) kernel is not supported in CUDAExecutionProvider. Encountered following errors: (Found kernel for Op with name (Conv_8) and type (FusedConv) in the supported version range (node_version: 1 kernel start version: 1 kernel_end_version: 2147483647). However the types are incompatible. This op has been implemented only for the following types (tensor(float),), but the node in the model has the following type (tensor(float16))\r\n)\r\n\r\n```\r\n\r\nThose are regular 2d convolutions though, I'm very surprised. Isn't onnxruntime compatible with fp16 inference ?\r\n\r\nI have already tried converting the model to half after saving it with [this script](https://github.com/microsoft/onnxconverter-common/blob/master/onnxconverter_common/float16.py), but the same error appears.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11768/reactions",
             "total_count": 0,
@@ -4081,9 +3956,9 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2022-06-07T20:18:23Z",
-        "updated_at": "2022-06-09T18:36:34Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": true,
         "pull_request": {
@@ -4145,9 +4020,9 @@
             {
                 "id": 1122493981,
                 "node_id": "MDU6TGFiZWwxMTIyNDkzOTgx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:enhancement",
-                "name": "type:enhancement",
-                "color": "a2eeef",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature%20request",
+                "name": "feature request",
+                "color": "5319E7",
                 "default": false,
                 "description": "request for unsupported feature or enhancement"
             }
@@ -4201,7 +4076,7 @@
         "created_at": "2022-06-07T20:50:37Z",
         "updated_at": "2022-06-15T22:16:29Z",
         "closed_at": "2022-06-07T20:57:24Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nIt is common practice to set the `RPATH` configuration of a Linux shared library to `$ORIGIN` so that the linker will look in the local directory. This is a requirement for one of our applications where we are bundling the ORT binaries together in a nuget package as opposed to installing them in the Linux system directories.\r\n\r\nMost of the .so files in the official ORT release do have the `RPATH` set. However, `libonnxruntime_providers_cuda.so.1.*.*` and `libonnxruntime_providers_tensorrt.so.1.*.*` do not have it set. See the attached screenshot. Confirmed that this is true in 1.10.0 and forward, did not look earlier than that.\r\n\r\nSince the RPATH is missing, if we try to link these libraries the linker will not find the core ORT libraries if they are in the same folder (as shown). The ORT libs would have to be installed into the Linux system directories for linking to work, which is not feasible in our scenario (nuget packaging).\r\n\r\n**Urgency**\r\nUrgency is low since we are able to use the `patchelf` utility to manually add the RPATH value. That said, it would be good to be able to remove this step and not have to modify the official binaries.\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Linux Ubuntu 18.04\r\n- ONNX Runtime installed from (source or binary): binary\r\n- ONNX Runtime version: 1.10.0 and forward (possibly earlier as well)\r\n- Python version: N/A\r\n- Visual Studio version (if applicable): N/A \r\n- GCC/Compiler version (if compiling from source): N/A\r\n- CUDA/cuDNN version: N/A \r\n- GPU model and memory: N/A\r\n\r\n**To Reproduce**\r\nDownload and unpack any Linux gpu release `.tgz` file, then use `objdump` as shown in the screenshot to test for the presence of an RPATH config in the binaries.\r\n\r\n**Screenshots**\r\n![image](https://user-images.githubusercontent.com/44822281/172479786-517221fd-73ad-4734-bb51-7a2f87058d7d.png)\r\n\r\n",
         "reactions": {
@@ -4321,7 +4196,7 @@
         "created_at": "2022-06-07T21:18:46Z",
         "updated_at": "2022-06-07T21:45:26Z",
         "closed_at": "2022-06-07T21:31:56Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4448,16 +4323,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 10,
+        "comments": 12,
         "created_at": "2022-06-07T22:57:07Z",
-        "updated_at": "2022-07-18T21:21:51Z",
-        "closed_at": null,
-        "author_association": "NONE",
+        "updated_at": "2022-07-21T18:20:49Z",
+        "closed_at": "2022-07-21T18:20:49Z",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4465,7 +4340,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11776",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11776.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11776.patch",
-            "merged_at": null
+            "merged_at": "2022-07-21T18:20:49Z"
         },
         "body": "**Description**: Add MatMulInteger Op support for int8.\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\n  * MatMulInteger operator was missing in ROCm\r\n",
         "reactions": {
@@ -4525,7 +4400,7 @@
         "created_at": "2022-06-08T00:07:48Z",
         "updated_at": "2022-06-08T00:38:53Z",
         "closed_at": "2022-06-08T00:38:53Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4583,26 +4458,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2365722603,
-                "node_id": "MDU6TGFiZWwyMzY1NzIyNjAz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/triage:approved",
-                "name": "triage:approved",
-                "color": "e4fc8d",
-                "default": false,
-                "description": "Used for release management; approved items for release"
-            },
-            {
-                "id": 4237029411,
-                "node_id": "LA_kwDOCVq1mM78i_Aj",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/release:1.12",
-                "name": "release:1.12",
-                "color": "15E3DE",
-                "default": false,
-                "description": ""
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -4680,7 +4536,7 @@
         "created_at": "2022-06-08T02:00:26Z",
         "updated_at": "2022-06-14T03:11:27Z",
         "closed_at": "2022-06-14T03:11:26Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4876,7 +4732,7 @@
         "created_at": "2022-06-08T10:40:13Z",
         "updated_at": "2022-06-09T02:08:01Z",
         "closed_at": "2022-06-09T02:08:00Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5002,9 +4858,9 @@
         "milestone": null,
         "comments": 0,
         "created_at": "2022-06-08T18:14:16Z",
-        "updated_at": "2022-06-09T00:03:43Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5070,9 +4926,9 @@
         "milestone": null,
         "comments": 0,
         "created_at": "2022-06-08T18:16:32Z",
-        "updated_at": "2022-06-08T18:17:25Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5140,7 +4996,7 @@
         "created_at": "2022-06-08T18:27:44Z",
         "updated_at": "2022-06-08T18:38:15Z",
         "closed_at": "2022-06-08T18:38:14Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5208,7 +5064,7 @@
         "created_at": "2022-06-08T18:34:14Z",
         "updated_at": "2022-06-08T18:57:09Z",
         "closed_at": "2022-06-08T18:57:08Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5267,16 +5123,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 29,
+        "comments": 46,
         "created_at": "2022-06-08T19:55:08Z",
-        "updated_at": "2022-07-13T22:25:53Z",
-        "closed_at": null,
-        "author_association": "NONE",
+        "updated_at": "2022-07-27T09:13:16Z",
+        "closed_at": "2022-07-27T09:13:04Z",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5284,9 +5140,9 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11789",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11789.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11789.patch",
-            "merged_at": null
+            "merged_at": "2022-07-27T09:13:04Z"
         },
-        "body": "**Description**: Reinstate #11127 with Cuda fix.\r\n\r\n**Motivation and Context**\r\n- Fixes https://github.com/microsoft/onnxruntime/issues/11511\r\n\r\n**Details**\r\n- #11127 causes the Cuda crash because when data is external, it skips the `data_transfer_mgr.CopyTensor(*p_deserialize_tensor, *p_tensor)` that happens inside `DeserializeTensorProto`. `data_transfer_mgr.CopyTensor` copies tensor data from CPU memory to GPU memory. Skipping it yields an illegal memory access down the line.\r\n- Move `HasExternalData` from `SaveInitializedTensors` to `DeserializeTensorProto`\r\n- In `DeserializeTensorProto` the new logic is as follow:\r\n```\r\ntemp_tensor = Tensor()\r\nif tensor.location == 'CPU':\r\n    if tensor.has_external_data:\r\n        ExtDataTensorProtoToTensor(..., temp_tensor, ...)\r\n        ort_value.Init(temp_tensor, ...)\r\n        return\r\n    TensorProtoToTensor(..., temp_tensor, ...)\r\nelse:\r\n    # non-cpu destination\r\n    temp_deserialized_tensor = Tensor()\r\n    if tensor.location == 'CPU':\r\n        if tensor.has_external_data:\r\n            ExtDataTensorProtoToTensor(..., temp_deserialized_tensor, ...)\r\n        else:\r\n            TensorProtoToTensor(..., temp_deserialized_tensor, ...)\r\n    data_transfer_mgr.CopyTensor(temp_deserrialized_tensor, temp_tensor)\r\n    ort_value.Init(temp_tensor, ...)\r\n```\r\n- Built and tested on the following environment:\r\n  - centos 7\r\n  - cuda 11.3\r\n  - GCC 7.5\r\n  - python 3.7\r\n  - build command \r\n```\r\nCUDACXX=XXX ./build.sh --build_dir=$PWD/../build --config=Release --update --build --parallel --build_shared_lib \\\r\n    --build_wheel --use_cuda --cuda_home XXX --cudnn_home XXX --cmake_extra_defines \\\r\n    onnxruntime_RUN_ONNX_TESTS=OFF onnxruntime_BUILD_UNIT_TESTS=ON onnxruntime_BUILD_MS_EXPERIMENTAL_OPS=OFF \\\r\n    CMAKE_EXPORT_COMPILE_COMMANDS=ON CMAKE_INSTALL_PREFIX=$PWD/../install CMAKE_C_COMPILER=ZZZ CMAKE_CXX_COMPILER=ZZZ\r\n```\r\n- Confirmed that there is no segmentation fault when running the reproduction script from #11511.\r\n- Test suite passes\r\n```\r\n...\r\n[----------] Global test environment tear-down\r\n[==========] 3403 tests from 234 test suites ran. (99530 ms total)\r\n[  PASSED  ] 3403 tests.\r\n\r\n  YOU HAVE 7 DISABLED TESTS\r\n```",
+        "body": "**Description**: Reinstate #11127 with Cuda fix.\r\n\r\n**Motivation and Context**\r\n- Fixes https://github.com/microsoft/onnxruntime/issues/11511\r\n\r\n**Details**\r\n- #11127 causes the Cuda crash because when data is external, it skips the `data_transfer_mgr.CopyTensor(*p_deserialize_tensor, *p_tensor)` that happens inside `DeserializeTensorProto`. `data_transfer_mgr.CopyTensor` copies tensor data from CPU memory to GPU memory. Skipping it yields an illegal memory access down the line.\r\n- Move `HasExternalData` from `SaveInitializedTensors` to `DeserializeTensorProto`\r\n- In `DeserializeTensorProto` the new logic is as follow:\r\n```\r\ntemp_tensor = Tensor()\r\nif tensor.location == 'CPU':\r\n    if tensor.has_external_data:\r\n        ExtDataTensorProtoToTensor(..., temp_tensor, ...)\r\n        ort_value.Init(temp_tensor, ...)\r\n        return\r\n    TensorProtoToTensor(..., temp_tensor, ...)\r\nelse:\r\n    # non-cpu destination\r\n    temp_deserialized_tensor = Tensor()\r\n    if tensor.location == 'CPU':\r\n        if tensor.has_external_data:\r\n            ExtDataTensorProtoToTensor(..., temp_deserialized_tensor, ...)\r\n        else:\r\n            TensorProtoToTensor(..., temp_deserialized_tensor, ...)\r\n    data_transfer_mgr.CopyTensor(temp_deserrialized_tensor, temp_tensor)\r\n    ort_value.Init(temp_tensor, ...)\r\n```\r\n- Built and tested on the following environment:\r\n  - centos 7\r\n  - cuda 11.3\r\n  - GCC 7.5\r\n  - python 3.7\r\n  - build command \r\n```\r\nCUDACXX=XXX ./build.sh --build_dir=$PWD/../build --config=Release --update --build --parallel --build_shared_lib \\\r\n    --build_wheel --use_cuda --cuda_home XXX --cudnn_home XXX --cmake_extra_defines \\\r\n    onnxruntime_RUN_ONNX_TESTS=OFF onnxruntime_BUILD_UNIT_TESTS=ON onnxruntime_BUILD_MS_EXPERIMENTAL_OPS=OFF \\\r\n    CMAKE_EXPORT_COMPILE_COMMANDS=ON CMAKE_INSTALL_PREFIX=$PWD/../install CMAKE_C_COMPILER=ZZZ CMAKE_CXX_COMPILER=ZZZ\r\n```\r\n- Confirmed that there is no segmentation fault when running the reproduction script from #11511.\r\n- Test suite passes\r\n```\r\n...\r\n[----------] Global test environment tear-down\r\n[==========] 3403 tests from 234 test suites ran. (99530 ms total)\r\n[  PASSED  ] 3403 tests.\r\n\r\n  YOU HAVE 7 DISABLED TESTS\r\n```\r\n- Comparison between versions\r\n```\r\nort version 1.8.1 # after Chen's PR https://github.com/microsoft/onnxruntime/commit/4a4488baaead3479fec191fdd2d2686b6f243408\r\nVmPeak:  2398852 kB\r\nVmHWM:    620068 kB\r\nVmRSS:    620068 kB\r\nload time 1.6055119670927525\r\n###\r\nort version 1.12.0 # this PR\r\nVmPeak:  2397316 kB\r\nVmHWM:    605652 kB\r\nVmRSS:    605652 kB\r\nload time 0.6550158001482487\r\n###\r\nort version 1.7.0\r\nVmPeak:  2951908 kB\r\nVmHWM:    847712 kB\r\nVmRSS:    847712 kB\r\nload time 0.5580546036362648\r\n```\r\nWe note the significant reduction in memory thanks to @chenfucn 's PR going from 1.7 to 1.8. This PR retains this low memory footprint but also brings down the load time.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11789/reactions",
             "total_count": 0,
@@ -5344,7 +5200,7 @@
         "created_at": "2022-06-08T21:45:53Z",
         "updated_at": "2022-06-08T23:58:44Z",
         "closed_at": "2022-06-08T23:58:43Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5412,7 +5268,7 @@
         "created_at": "2022-06-08T22:03:50Z",
         "updated_at": "2022-06-09T14:49:02Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "A google search for \"onnxruntime nightly\" doesn't yield ways to install the nightly builds.",
         "reactions": {
@@ -5463,16 +5319,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 7,
+        "comments": 29,
         "created_at": "2022-06-08T22:11:53Z",
-        "updated_at": "2022-07-18T20:18:07Z",
-        "closed_at": null,
-        "author_association": "NONE",
+        "updated_at": "2022-08-12T07:54:49Z",
+        "closed_at": "2022-08-12T06:04:02Z",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5480,13 +5336,13 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11792",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11792.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11792.patch",
-            "merged_at": null
+            "merged_at": "2022-08-12T06:04:02Z"
         },
         "body": "**Description**: This add FusedConv op to ROCm and enables the corresponding unit tests for ROCm.\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\n    * The FusedConv is missing from ROCm contrib_ops, and this operator is used by ORT converter (See discussion in #11476)\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11792/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -5540,7 +5396,7 @@
         "created_at": "2022-06-08T22:22:20Z",
         "updated_at": "2022-06-10T21:37:31Z",
         "closed_at": "2022-06-10T21:37:31Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5608,7 +5464,7 @@
         "created_at": "2022-06-09T00:51:11Z",
         "updated_at": "2022-06-09T01:05:12Z",
         "closed_at": "2022-06-09T01:05:11Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5674,7 +5530,7 @@
         "milestone": null,
         "comments": 2,
         "created_at": "2022-06-09T00:57:01Z",
-        "updated_at": "2022-06-09T04:28:49Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
         "author_association": "MEMBER",
         "active_lock_reason": null,
@@ -5740,20 +5596,20 @@
                 "node_id": "MDU6TGFiZWwyMjMzMTAyNDg1",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:windows",
                 "name": "platform:windows",
-                "color": "d4ea72",
+                "color": "FEF2C0",
                 "default": false,
-                "description": ""
+                "description": "issues related to the Windows platform"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 11,
+        "comments": 12,
         "created_at": "2022-06-09T07:46:43Z",
-        "updated_at": "2022-06-21T20:46:07Z",
-        "closed_at": null,
+        "updated_at": "2022-09-01T16:04:29Z",
+        "closed_at": "2022-08-31T22:21:29Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "body": "It is partly repeated [the issue](https://github.com/microsoft/onnxruntime/issues/9923), but the previous one was closed without solution. The difference is that I built default ONNX Runtime without any execution providers and other specifics, but caught the similar error during linking stage.\r\n\r\n**Describe the bug**\r\nPython::Numpy not found when building onnxruntime from source on Windows\r\n\r\n**Urgency**\r\nLooks like it is local problem related to environment, but attention of community to previos issue shows that it meets periodically and should be fixed\r\n\r\n**System information**\r\n- OS system: Windows 10 Pro 64-bit.\r\n- ONNX Runtime installed from source:\r\n- ONNX Runtime version (master) branch: 40d2c98e4d64d7931fcbb682c81dc53988c48dcc\r\n- Python version: 3.10.5\r\n- Git version 2.36.1.windows.1\r\n- Cmake version 3.23.2\r\n- Visual Studio 17 2022\r\n\r\n**To Reproduce**\r\nbuilding with the following command line from source folder:\r\n`build.bat --config Release --build_wheel --parallel --cmake_generator \"Visual Studio 17 2022\"`\r\n\r\n**Expected behavior**\r\nBuild should pass.\r\n\r\n**Additional context**\r\nThe error logs of the failed build:\r\n```\r\nUse flatbuffers from submodule\r\n-- Configuring done\r\nCMake Error at CMakeLists.txt:1347 (target_compile_definitions):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_COMPILE_DEFINITIONS>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1347 (target_compile_definitions):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_COMPILE_DEFINITIONS>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1347 (target_compile_definitions):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_COMPILE_DEFINITIONS>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1347 (target_compile_definitions):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_COMPILE_DEFINITIONS>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\nCMake Error at CMakeLists.txt:1346 (target_include_directories):\r\n  Error evaluating generator expression:\r\n\r\n    $<TARGET_PROPERTY:Python::NumPy,INTERFACE_INCLUDE_DIRECTORIES>\r\n\r\n  Target \"Python::NumPy\" not found.\r\nCall Stack (most recent call first):\r\n  onnxruntime_python.cmake:76 (onnxruntime_add_include_to_target)\r\n  CMakeLists.txt:2124 (include)\r\n\r\n\r\n-- Generating done\r\nCMake Generate step failed.  Build files cannot be regenerated correctly.\r\nTraceback (most recent call last):\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 2725, in <module>\r\n    sys.exit(main())\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 2611, in main\r\n    generate_build_tree(\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 1226, in generate_build_tree\r\n    run_subprocess(\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 707, in run_subprocess\r\n    return run(*args, cwd=cwd, capture_stdout=capture_stdout, shell=shell, env=my_env)\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\python\\util\\run.py\", line 49, in run\r\n    completed_process = subprocess.run(\r\n  File \"C:\\Users\\Валерий\\AppData\\Local\\Programs\\Python\\Python310\\lib\\subprocess.py\", line 524, in run\r\n    raise CalledProcessError(retcode, process.args,\r\n```\r\n\r\nThere is additional note that before failure it also did not find numpy package in python but it exists:\r\n```\r\nRequirement already satisfied: numpy>=1.16.6 in c:\\users\\валерий\\appdata\\local\\programs\\python\\python310\\lib\\site-packages (1.22.4)\r\n...\r\n-- Could NOT find Python (missing: Python_NumPy_INCLUDE_DIRS NumPy) (found suitable version \"3.10.5\", minimum required is \"3.6\")\r\n```\r\nI checked is numpy installed in python:\r\n```\r\npip install numpy\r\nRequirement already satisfied: numpy in c:\\users\\валерий\\appdata\\local\\programs\\python\\python310\\lib\\site-packages (1.22.4)\r\n```\r\nAnd PATHs are expected:\r\n```\r\n>echo %PATH%\r\nC:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\CMake\\bin;C:\\Users\\Валерий\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Валерий\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Валерий\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Валерий\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\r\n```\r\n\r\nI also tried to build without python by the line (without \"build_wheel\" key):\r\n`build.bat --config Release --parallel --cmake_generator \"Visual Studio 17 2022\"`\r\nAs result the following error was raised:\r\n```\r\n  gpt_subgraph.cc\r\n  logits_processor.cc\r\n  sequences.cc\r\n  word_conv_embedding.cc\r\nTraceback (most recent call last):\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 2725, in <module>\r\n    sys.exit(main())\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 2644, in main\r\n    build_targets(args, cmake_path, build_dir, configs, num_parallel_jobs, args.target)\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 1287, in build_targets\r\n    run_subprocess(cmd_args, env=env)\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\ci_build\\build.py\", line 707, in run_subprocess\r\n    return run(*args, cwd=cwd, capture_stdout=capture_stdout, shell=shell, env=my_env)\r\n  File \"D:\\Workshop\\MSFT_ORT\\onnxruntime\\tools\\python\\util\\run.py\", line 49, in run\r\n    completed_process = subprocess.run(\r\n  File \"C:\\Users\\Валерий\\AppData\\Local\\Programs\\Python\\Python310\\lib\\subprocess.py\", line 524, in run\r\n    raise CalledProcessError(retcode, process.args,\r\nsubprocess.CalledProcessError: Command '['C:\\\\Program Files\\\\CMake\\\\bin\\\\cmake.EXE', '--build', 'D:\\\\Workshop\\\\MSFT_ORT\\\\onnxruntime\\\\\\\\build\\\\Windows\\\\Release', '--config', 'Release', '--', '/maxcpucount:8', '/nodeReuse:False']' returned non-zero exit status 1.\r\n```\r\n",
@@ -5771,7 +5627,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11796/timeline",
         "performed_via_github_app": null,
-        "state_reason": "reopened"
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11797",
@@ -5808,11 +5664,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -5824,7 +5680,7 @@
         "created_at": "2022-06-09T09:56:29Z",
         "updated_at": "2022-06-10T04:14:20Z",
         "closed_at": "2022-06-10T04:14:19Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5892,7 +5748,7 @@
         "created_at": "2022-06-09T12:56:59Z",
         "updated_at": "2022-06-15T21:01:42Z",
         "closed_at": "2022-06-15T21:01:41Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6084,9 +5940,9 @@
                 "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
                 "name": "ep:CUDA",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to CUDA EP"
+                "description": "issues related to the CUDA execution provider"
             }
         ],
         "state": "open",
@@ -6406,22 +6262,22 @@
         },
         "labels": [
             {
-                "id": 1273765791,
-                "node_id": "MDU6TGFiZWwxMjczNzY1Nzkx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:performance",
-                "name": "type:performance",
-                "color": "a2eeef",
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "performance related issues and questions"
+                "description": "issues related to core runtime"
             },
             {
                 "id": 2204061391,
                 "node_id": "MDU6TGFiZWwyMjA0MDYxMzkx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:TensorRT",
                 "name": "ep:TensorRT",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to TensorRT EP"
+                "description": "issues related to TensorRT execution provider"
             }
         ],
         "state": "open",
@@ -6431,7 +6287,7 @@
         "milestone": null,
         "comments": 0,
         "created_at": "2022-06-09T20:00:05Z",
-        "updated_at": "2022-07-11T22:52:09Z",
+        "updated_at": "2022-08-12T08:39:22Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -6485,42 +6341,33 @@
         },
         "labels": [
             {
-                "id": 1395147764,
-                "node_id": "MDU6TGFiZWwxMzk1MTQ3NzY0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:CC++",
-                "name": "api:CC++",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the  public API(and ABI) for onnxruntime"
-            },
-            {
                 "id": 2159809301,
                 "node_id": "MDU6TGFiZWwyMTU5ODA5MzAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:build",
-                "name": "component:build",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/build",
+                "name": "build",
+                "color": "D93F0B",
                 "default": false,
-                "description": "related to builds"
+                "description": "build issues; typically submitted using template"
             },
             {
                 "id": 2233102485,
                 "node_id": "MDU6TGFiZWwyMjMzMTAyNDg1",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:windows",
                 "name": "platform:windows",
-                "color": "d4ea72",
+                "color": "FEF2C0",
                 "default": false,
-                "description": ""
+                "description": "issues related to the Windows platform"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 1,
+        "comments": 3,
         "created_at": "2022-06-09T20:04:55Z",
-        "updated_at": "2022-07-11T23:04:05Z",
-        "closed_at": null,
+        "updated_at": "2022-09-08T20:19:02Z",
+        "closed_at": "2022-08-31T22:22:21Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "### Discussed in https://github.com/microsoft/onnxruntime/discussions/11765\r\n\r\n<div type='discussions-op-text'>\r\n\r\n<sup>Originally posted by **ae137** June  7, 2022</sup>\r\nI am trying to create a custom build of onnxruntime for C++ with CUDA execution provider and install it on Windows (the encountered issue is independent of the custom build). I have built the library as described [here](https://onnxruntime.ai/docs/build/eps.html#cuda), using the tag `v1.10.0`, CUDA 11.4, CMake 3.21.1 and MSVC 19.29. Building and testing works fine. \r\n\r\nHowever, when I switch to `build/Windows/Release` and type `cmake --install .`, the installation folder seems to be incomplete: There is a folder `include/onnxruntime/core/providers/cpu`, but none for `cuda`. In the source directory, there is a corresponding folder `onnxruntime/core/providers`, and I wonder which of its content should end up in the installation directory?\r\n\r\nI have found a somewhat similar discussion for Linux [here](https://github.com/microsoft/onnxruntime/issues/4725), but there are no direct equivalents for the scripts on Windows. Is it possible to bundle the installation files with CMake, or required to use Nuget?</div>\r\n\r\nThe same issue actually arises on Linux, too, using tag `v1.10.0`, Cmake 3.22.1, g++ 11.2 and CUDA 11.4.\r\n\r\nI noticed that the nuget package for ONNX Runtime with GPU only contains `cpu_provider_factory.h` and `tensorrt_provider_factory.h`, but no `cuda_provider_factory.h` (which existed in previous versions). Regarding libraries, there is one for `_cuda` and one for `_tensorrt`, tough. Having in mind that the package is called `Microsoft.ML.OnnxRuntime.Gpu`, does this suggest that it can be used for inference on a system with GPU and CUDA, but without TensorRT?\r\n",
@@ -6538,7 +6385,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11807/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11808",
@@ -6581,7 +6428,7 @@
         "created_at": "2022-06-09T23:15:19Z",
         "updated_at": "2022-06-17T19:49:26Z",
         "closed_at": "2022-06-17T19:49:25Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6645,9 +6492,9 @@
                 "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
                 "name": "ep:CUDA",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to CUDA EP"
+                "description": "issues related to the CUDA execution provider"
             }
         ],
         "state": "open",
@@ -6710,15 +6557,15 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 5,
         "created_at": "2022-06-10T02:16:34Z",
-        "updated_at": "2022-06-20T02:33:34Z",
-        "closed_at": null,
+        "updated_at": "2022-09-06T21:37:01Z",
+        "closed_at": "2022-09-01T16:43:04Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "I am trying to run GPT-NEO-1.3B with onnxruntime in phyton, but I can't get the correct output.\r\n\r\n**Enviroment**\r\nOS: Windows 10 64 bits\r\nIDE: PyCharm2021.3\r\nPyTorch: 1.10.0+cu113\r\nTransformers: 4.19.2\r\nOnnx: 1.11.0\r\nonnxruntime-gpu: 1.11.0\r\n\r\n\r\n**To reproduce**\r\n\r\nThis is my example python code and it run correctly.\r\n```\r\nfrom transformers import GPTNeoForCausalLM, GPT2Tokenizer\r\nmodel = GPTNeoForCausalLM.from_pretrained(\"EleutherAI/gpt-neo-1.3B\")\r\ntokenizer = GPT2Tokenizer.from_pretrained(\"EleutherAI/gpt-neo-1.3B\")\r\n\r\nprompt = \"I want to order a Pizza\"\r\ninput_ids = tokenizer(prompt, return_tensors=\"pt\").input_ids\r\ngen_tokens = model.generate(\r\n    input_ids,\r\n    do_sample=True,\r\n    temperature=0.9,\r\n    max_length=100,\r\n)\r\ngen_text = tokenizer.batch_decode(gen_tokens)[0]\r\n\r\nprint(\"------GPT-NEO-------\")\r\nprint(gen_text)\r\n```\r\nOutput\r\n\r\n```\r\n------GPT-NEO-------\r\nI want to order a Pizza from you guys. The place I am ordering from will be at the top of my list (even if I don't have a place to stay, or even if I am just there to have it for delivery and eat it later).\r\nWhat kind of pizza I want: Cheese + mushroom-crust, tomato-sauce, sausage, pepperoni, etc., plus a cup of soda. The food itself will be nice too. I'll be arriving from\r\n```\r\nI exported GPT-NEO with this command (I checked the model when it was exported):\r\n\r\n`python -m transformers.onnx --model=EleutherAI/gpt-neo-1.3B --feature=causal-lm onnx/`\r\n\r\n\r\n**My program with onnxruntime**\r\n\r\n```\r\nimport torch.onnx\r\nimport onnxruntime as ort\r\nfrom transformers import GPT2Tokenizer\r\n\r\noptions = ort.SessionOptions()\r\nort_session = ort.InferenceSession('C:\\\\Users\\\\Jorge\\\\PycharmProjects\\\\inteBERT\\\\onnx\\\\model.onnx', options)\r\n\r\ntokenizer = GPT2Tokenizer.from_pretrained(\"EleutherAI/gpt-neo-1.3B\")\r\n\r\nprompt = \"I want to order a Pizza\"\r\ntokens_ids = tokenizer(prompt, return_tensors=\"pt\").input_ids\r\n\r\nsize_sequence = 128\r\nsize_tokens = tokens_ids.size(dim=1)\r\nsize_complement = size_sequence - size_tokens\r\n\r\ninput_ids = torch.cat((tokens_ids, torch.zeros(1, size_complement, dtype=torch.int64)), dim=1)\r\nattention_mask = torch.cat((torch.ones(1, size_tokens, dtype=torch.int64), torch.zeros(1, size_complement, dtype=torch.int64)), dim=1)\r\nargs = {'input_ids': input_ids.numpy(), 'attention_mask': attention_mask.numpy()}\r\n\r\noutputs = ort_session.run(None, args,)\r\nres = outputs[0][0].argmax(axis=1)\r\n\r\n# Decoding the model output\r\ndeco = tokenizer.decode(res)\r\nprint(deco)\r\n```\r\n**Wrong Output**\r\n```\r\n'm to be a new from\r\n\r\nThe\r\nThe gunned Adds Adds\r\n\r\n andThes\r\n Adds and\r\n\r\n Adds\r\n\r\nThe\r\n\r\ns\r\n\r\n Adds�AAAandA\r\nandThe andand\r\ns\r\nTheTheA\r\n\r\nATheA and\r\n�\r\n```\r\nI haven't been able to find any documentation or a tutorial that can guide me to run gpt-neo correctly. Please, could someone give me some suggestion of my problem?\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
@@ -6736,7 +6583,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11810/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11811",
@@ -6833,9 +6680,9 @@
             {
                 "id": 1220611565,
                 "node_id": "MDU6TGFiZWwxMjIwNjExNTY1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:converter",
-                "name": "component:converter",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/converter",
+                "name": "converter",
+                "color": "0E8A16",
                 "default": false,
                 "description": "related to ONNX converters"
             }
@@ -6845,9 +6692,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 1,
+        "comments": 3,
         "created_at": "2022-06-10T03:56:07Z",
-        "updated_at": "2022-06-10T23:25:45Z",
+        "updated_at": "2022-08-26T08:19:08Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -6969,7 +6816,7 @@
         "created_at": "2022-06-10T10:21:07Z",
         "updated_at": "2022-06-10T22:04:50Z",
         "closed_at": "2022-06-10T22:04:49Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {

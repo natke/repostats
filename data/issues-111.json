@@ -1,5 +1,65 @@
 [
     {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11604",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11604/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11604/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11604/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11604",
+        "id": 1245913082,
+        "node_id": "I_kwDOCVq1mM5KQx_6",
+        "number": 11604,
+        "title": "Bad performance for QDQ model with openvino EP ",
+        "user": {
+            "login": "mengniwang95",
+            "id": 65003808,
+            "node_id": "MDQ6VXNlcjY1MDAzODA4",
+            "avatar_url": "https://avatars.githubusercontent.com/u/65003808?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mengniwang95",
+            "html_url": "https://github.com/mengniwang95",
+            "followers_url": "https://api.github.com/users/mengniwang95/followers",
+            "following_url": "https://api.github.com/users/mengniwang95/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mengniwang95/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mengniwang95/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mengniwang95/subscriptions",
+            "organizations_url": "https://api.github.com/users/mengniwang95/orgs",
+            "repos_url": "https://api.github.com/users/mengniwang95/repos",
+            "events_url": "https://api.github.com/users/mengniwang95/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mengniwang95/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 8,
+        "created_at": "2022-05-24T02:58:24Z",
+        "updated_at": "2022-06-02T04:05:02Z",
+        "closed_at": null,
+        "author_association": "NONE",
+        "active_lock_reason": null,
+        "body": "**Describe the bug**\r\nHi, I use openvino EP to test QDQ model performance but find QDQ model's performance is worse than original fp32 model.\\\r\n\r\n\r\n**System information**\r\n- ONNX Runtime installed from (source or binary):binary\r\n- ONNX Runtime version:1.10.0\r\n- Python version:3.6.12\r\n- openvino 2021.4.2\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11604/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11604/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+    },
+    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11605",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11605/labels{/name}",
@@ -34,11 +94,11 @@
             {
                 "id": 1607058914,
                 "node_id": "MDU6TGFiZWwxNjA3MDU4OTE0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:quantization",
-                "name": "feature:quantization",
-                "color": "0052cc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/quantization",
+                "name": "quantization",
+                "color": "C2E0C6",
                 "default": false,
-                "description": "related to quantization of models or running quantized models"
+                "description": "issues related to quantization"
             }
         ],
         "state": "closed",
@@ -110,7 +170,7 @@
         "created_at": "2022-05-24T06:36:24Z",
         "updated_at": "2022-05-30T19:04:42Z",
         "closed_at": "2022-05-30T19:04:41Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -172,11 +232,11 @@
             {
                 "id": 2014185961,
                 "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:coreruntime",
-                "name": "component:coreruntime",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "related to core runtime"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "open",
@@ -316,7 +376,7 @@
         "created_at": "2022-05-24T16:26:33Z",
         "updated_at": "2022-05-25T16:27:07Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -384,7 +444,7 @@
         "created_at": "2022-05-24T17:07:45Z",
         "updated_at": "2022-05-25T16:29:50Z",
         "closed_at": "2022-05-25T16:29:49Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -512,13 +572,13 @@
         },
         "labels": [
             {
-                "id": 2732589361,
-                "node_id": "MDU6TGFiZWwyNzMyNTg5MzYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:ortmodule",
-                "name": "component:ortmodule",
-                "color": "303a93",
+                "id": 1913759001,
+                "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to ortmodule"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "open",
@@ -526,11 +586,11 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 7,
+        "comments": 9,
         "created_at": "2022-05-24T18:03:37Z",
-        "updated_at": "2022-06-01T17:03:07Z",
+        "updated_at": "2022-08-12T08:28:11Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -592,20 +652,11 @@
             {
                 "id": 2159809301,
                 "node_id": "MDU6TGFiZWwyMTU5ODA5MzAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:build",
-                "name": "component:build",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/build",
+                "name": "build",
+                "color": "D93F0B",
                 "default": false,
-                "description": "related to builds"
-            },
-            {
-                "id": 4092201889,
-                "node_id": "LA_kwDOCVq1mM7z6guh",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:ci",
-                "name": "type:ci",
-                "color": "a2eeef",
-                "default": false,
-                "description": "continuous integration related issues"
+                "description": "build issues; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -675,7 +726,7 @@
         "milestone": null,
         "comments": 6,
         "created_at": "2022-05-24T18:07:50Z",
-        "updated_at": "2022-06-01T11:53:14Z",
+        "updated_at": "2022-06-17T12:30:30Z",
         "closed_at": null,
         "author_association": "MEMBER",
         "active_lock_reason": null,
@@ -799,20 +850,11 @@
             {
                 "id": 1913759001,
                 "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:training-core",
-                "name": "component:training-core",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "related to training core"
-            },
-            {
-                "id": 2190555590,
-                "node_id": "MDU6TGFiZWwyMTkwNTU1NTkw",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:optimizer",
-                "name": "component:optimizer",
-                "color": "303a93",
-                "default": false,
-                "description": "related to optimizers in ORT"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -824,7 +866,7 @@
         "created_at": "2022-05-24T22:56:30Z",
         "updated_at": "2022-06-03T06:23:52Z",
         "closed_at": "2022-06-03T06:23:51Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -950,18 +992,8 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1758308176,
-                "node_id": "MDU6TGFiZWwxNzU4MzA4MTc2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:CSharp",
-                "name": "api:CSharp",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the C# API"
-            }
-        ],
-        "state": "open",
+        "labels": [],
+        "state": "closed",
         "locked": false,
         "assignee": {
             "login": "skottmckay",
@@ -1006,17 +1038,17 @@
             }
         ],
         "milestone": null,
-        "comments": 4,
+        "comments": 10,
         "created_at": "2022-05-25T00:04:55Z",
-        "updated_at": "2022-05-25T16:34:27Z",
-        "closed_at": null,
-        "author_association": "MEMBER",
+        "updated_at": "2022-07-25T22:37:40Z",
+        "closed_at": "2022-07-25T22:37:40Z",
+        "author_association": "NONE",
         "active_lock_reason": null,
         "body": "## The Problem\r\n\r\nThe `Microsoft.ML.OnnxRuntime.*` NuGet Packages do not currently support  the new .NET 6.0 mobile libraries:\r\n- `net6.0-ios`\r\n- `net6.0-android`\r\n\r\nThese two new libraries were introduced in .NET 6.0 and they deprecate Xamarin.iOS and Xamarin.Android, respectively.\r\n\r\n.NET 6.0 also introduced .NET MAUI which deprecates Xamarin.Forms.\r\n\r\nGoing forward, all future C# Mobile Apps will be written using the `net6.0-ios` and `net6.0-android` libraries, and most will leverage .NET MAUI, the cross-platform UI Framework that runs on the `net6.0-ios` and `net6.0-android` libraries.\r\n\r\ntl;dr - .NET MAUI Developers cannot consume `Microsoft.ML.OnnxRuntime.*` NuGet Packages until we publish a new release/update that supports `net6.0-ios` and `net6.0-android`\r\n\r\n## Current Onnx Support of Xamarin.iOS + Xamarin.Android\r\n\r\nThe [Microsoft.ML.OnnxRuntime NuGet Package](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/) currently supports Xamarin.iOS + Xamarin.Android (aka MonoAndroid). \r\n\r\nThe **Dependencies** tab on its [NuGet page](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/), specifically, shows its support for Xamarin.iOS 1.0 and MonoAndroid 11.0 (aka Xamarin.Android):\r\n\r\n<img width=\"568\" alt=\"image\" src=\"https://user-images.githubusercontent.com/13558917/170148110-ba1c7d00-0797-4c66-9f4b-9e5a619fb93f.png\">\r\n\r\nThese NuGet Packages are incompatible for use in `net6.0-ios` and `net6.0-android` apps.\r\n\r\n# The Solution\r\n\r\nThe solution is actually pretty \"easy\".\r\n\r\nIn the `Microsoft.ML.OnnxRuntime.csproj`, we just need to replace `xamarinios10;monoandroid11.0` with `net6.0-ios` and `net6.0-android`, and add `net6.0`:\r\nhttps://github.com/microsoft/onnxruntime/blob/e3a2d5cca8bcefe064f83d57e46ea51ddb2b16e8/csharp/src/Microsoft.ML.OnnxRuntime/Microsoft.ML.OnnxRuntime.csproj#L12\r\n\r\nbecomes \r\n\r\n```xml\r\n<TargetFrameworks>netstandard1.1;netstandard2.0;net6.0-ios;net6.0-android;net5.0;net6.0;netcoreapp3.1</TargetFrameworks> \r\n```\r\n\r\nAfter forking the repo and making the above change, I was able to build + compile `Microsoft.ML.OnnxRuntime.csproj` successfully with no build errors.\r\n\r\nHowever, nothing is that easy....\r\n\r\n## Tests + Samples\r\n\r\n`OnnxRuntime.CSharp.sln` includes the following tests and samples that also need to be ported from Xamarin.Forms to .NET MAUI:\r\n- Test\r\n  - Microsoft.ML.OnnxRuntime.Tests.iOS\r\n  - Microsoft.ML.OnnxRuntime.Tests.Droid\r\n- Sample \r\n  - Microsoft.ML.OnnxRuntime.InferenceSample.Forms\r\n  - Microsoft.ML.OnnxRuntime.InferenceSample.Forms.Droid\r\n  - Microsoft.ML.OnnxRuntime.InferenceSample.Forms.iOS\r\n\r\n### Tests\r\nThe Tests projects run UI Tests to validate the ONNX libraries running inside a Xamarin.Forms app.\r\n\r\nUnfortunately, they will require a near re-write because they rely upon the following NuGet Packages which have no existing road map to add support for the .NET 6.0 Mobile Libraries:\r\n- Xamarin.TestCloud.Agent\r\n- unit.runner.devices\r\n\r\nThese UI Test projects will need to leverage a .NET MAUI UI Test framework, and I am not aware of any that currently exist\r\n\r\n### Samples\r\nThe Samples projects will be a bit easier to update as .NET MAUI is (nearly) identical to Xamarin.Forms. \r\n\r\nTo port the sample from Xamarin to MAUI, I recommend the following steps:\r\n1.  Create a new app using the .NET MAUI Template\r\n  - In the CLI, enter `dotnet new maui -n Microsoft.ML.OnnxRuntime.InferenceSample.Maui`\r\n2.  Copy/paste the Xamarin.Forms code into the newly created .NET MAUI library\r\n3. Change the namespaces from `Xamarin.Forms.*` to `Microsoft.Maui.*`\r\n\r\n### Resources for Porting Xamarin.Forms libraries to .NET MAUI\r\n\r\nWe have a few guest blog posts written by Microsoft MVPs where they've shared their experience and their tips after porting their libraries to .NET MAUI:\r\n- [Migrating MR.Gestures from Xamarin.Forms to .NET MAUI](https://devblogs.microsoft.com/xamarin/migrating-mrgestures-to-dotnet-maui/?WT.mc_id=dotnet-0000-bramin)\r\n- [Tips for Moving Your Xamarin Library to .NET MAUI](https://devblogs.microsoft.com/xamarin/tips-for-porting-your-xamarin-library-to-dotnet-maui/?WT.mc_id=dotnet-0000-bramin)\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11618/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -1027,7 +1059,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11618/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11619",
@@ -1472,11 +1504,11 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
         "state": "open",
@@ -1484,9 +1516,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 6,
+        "comments": 7,
         "created_at": "2022-05-25T15:10:59Z",
-        "updated_at": "2022-06-07T18:37:29Z",
+        "updated_at": "2022-07-20T22:40:05Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -1544,9 +1576,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 8,
+        "comments": 12,
         "created_at": "2022-05-25T15:19:56Z",
-        "updated_at": "2022-05-27T02:11:54Z",
+        "updated_at": "2022-07-13T18:06:14Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -1599,15 +1631,15 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 1,
+        "comments": 2,
         "created_at": "2022-05-25T17:36:44Z",
-        "updated_at": "2022-05-25T17:52:51Z",
-        "closed_at": null,
+        "updated_at": "2022-08-29T21:53:18Z",
+        "closed_at": "2022-08-29T21:53:17Z",
         "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": true,
@@ -1676,7 +1708,7 @@
         "created_at": "2022-05-25T17:55:37Z",
         "updated_at": "2022-05-27T22:50:17Z",
         "closed_at": "2022-05-27T22:50:16Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1812,7 +1844,7 @@
         "created_at": "2022-05-25T22:10:19Z",
         "updated_at": "2022-06-06T20:27:43Z",
         "closed_at": "2022-06-06T20:27:42Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1878,9 +1910,9 @@
         "milestone": null,
         "comments": 2,
         "created_at": "2022-05-25T22:21:57Z",
-        "updated_at": "2022-06-03T21:50:07Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1942,11 +1974,11 @@
             {
                 "id": 1607058914,
                 "node_id": "MDU6TGFiZWwxNjA3MDU4OTE0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:quantization",
-                "name": "feature:quantization",
-                "color": "0052cc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/quantization",
+                "name": "quantization",
+                "color": "C2E0C6",
                 "default": false,
-                "description": "related to quantization of models or running quantized models"
+                "description": "issues related to quantization"
             }
         ],
         "state": "closed",
@@ -1958,7 +1990,7 @@
         "created_at": "2022-05-26T06:02:10Z",
         "updated_at": "2022-05-31T21:29:45Z",
         "closed_at": "2022-05-31T21:29:45Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\n\r\n`quantize_static` failed with `shufflenet_v2_0_5.onnx` converted from `torchvision.models`.\r\n\r\n**Urgency**\r\n\r\nNone\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Ubuntu WSL 5.10.102.1-microsoft-standard-WSL2\r\n- ONNX Runtime installed from (source or binary): PIP\r\n- ONNX Runtime version: 1.11.1  \r\n- Python version: 3.8.10\r\n- Visual Studio version (if applicable):\r\n- GCC/Compiler version (if compiling from source):\r\n- CUDA/cuDNN version:\r\n- GPU model and memory:\r\n\r\n**To Reproduce**\r\n- Describe steps/code to reproduce the behavior.\r\n\r\nUsing the script here https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/image_classification/cpu/run.py to perform static quantization.\r\n\r\n- Model\r\n\r\n[shufflenet_v2_x0_5.zip](https://github.com/microsoft/onnxruntime/files/8776644/shufflenet_v2_x0_5.zip)\r\n\r\n\r\n\r\n**Expected behavior**\r\n\r\nIt works.\r\n\r\n**Additional context**\r\n\r\nStacktrace:\r\n\r\n```plaintext\r\nTraceback (most recent call last):\r\n  File \"quantize_onnx_model_static.py\", line 116, in <module>\r\n    main()\r\n  File \"quantize_onnx_model_static.py\", line 91, in main\r\n    quantize_static(input_model_path,\r\n  File \"/home/skyline/.local/lib/python3.8/site-packages/onnxruntime/quantization/quantize.py\", line 256, in quantize_static\r\n    calibrator.collect_data(calibration_data_reader)\r\n  File \"/home/skyline/.local/lib/python3.8/site-packages/onnxruntime/quantization/calibrate.py\", line 221, in collect_data\r\n    inputs = data_reader.get_next()\r\n  File \"quantize_onnx_model_static.py\", line 28, in get_next\r\n    session = onnxruntime.InferenceSession(self.augmented_model_path, None)\r\n  File \"/home/skyline/.local/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py\", line 335, in __init__\r\n    self._create_inference_session(providers, provider_options, disabled_optimizers)\r\n  File \"/home/skyline/.local/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py\", line 381, in _create_inference_session\r\n    sess.initialize_session(providers, provider_options, disabled_optimizers)\r\nonnxruntime.capi.onnxruntime_pybind11_state.RuntimeException: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Exception during initialization: /onnxruntime_src/onnxruntime/core/optimizer/transpose_optimizer/optimizer_api_impl.cc:201 virtual void onnxruntime::ApiValueInfo::PermuteDims(const std::vector<long int>&) perm.size() == gsl::narrow_cast<size_t>(shape_proto->dim_size()) was false. Permutation length 5 does not match rank 0\r\n```\r\n",
         "reactions": {
@@ -2078,7 +2110,7 @@
         "created_at": "2022-05-26T07:48:23Z",
         "updated_at": "2022-06-03T23:16:36Z",
         "closed_at": "2022-06-03T23:16:35Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2138,13 +2170,13 @@
         },
         "labels": [
             {
-                "id": 3105448033,
-                "node_id": "MDU6TGFiZWwzMTA1NDQ4MDMz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:orttrainer",
-                "name": "component:orttrainer",
-                "color": "303a93",
+                "id": 1913759001,
+                "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "ORTTrainer PyTorch Frontend"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "open",
@@ -2154,7 +2186,7 @@
         "milestone": null,
         "comments": 0,
         "created_at": "2022-05-26T08:44:48Z",
-        "updated_at": "2022-05-26T18:18:19Z",
+        "updated_at": "2022-08-12T18:42:58Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -2216,7 +2248,7 @@
         "created_at": "2022-05-26T09:08:55Z",
         "updated_at": "2022-05-27T22:04:28Z",
         "closed_at": "2022-05-27T22:04:27Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2346,23 +2378,14 @@
             {
                 "id": 1267486731,
                 "node_id": "MDU6TGFiZWwxMjY3NDg2NzMx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/status:contributions-welcome",
-                "name": "status:contributions-welcome",
-                "color": "45b2d3",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/contributions%20welcome",
+                "name": "contributions welcome",
+                "color": "FBCA04",
                 "default": false,
-                "description": "contributions welcome; lower priority items for the core teams on this project"
-            },
-            {
-                "id": 2235309445,
-                "node_id": "MDU6TGFiZWwyMjM1MzA5NDQ1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:onnx",
-                "name": "component:onnx",
-                "color": "303a93",
-                "default": false,
-                "description": ""
+                "description": "lower priority issues for the core ORT teams"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": {
             "login": "garymm",
@@ -2407,10 +2430,10 @@
             }
         ],
         "milestone": null,
-        "comments": 17,
+        "comments": 18,
         "created_at": "2022-05-26T17:54:35Z",
-        "updated_at": "2022-06-07T22:45:15Z",
-        "closed_at": null,
+        "updated_at": "2022-06-22T00:19:53Z",
+        "closed_at": "2022-06-22T00:19:53Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "We are releasing ONNX 1.12.0. A release branch is created (https://github.com/onnx/onnx/tree/rel-1.12.0). The planned release date is the week of 2022-06-06.\r\n\r\nIt is important to integrate ONNX release branch into ORT ASAP so that any issues and incompatibilities can be detected and resolved before the ONNX release. Please follow instructions at (https://github.com/microsoft/onnxruntime/blob/master/docs/How_To_Update_ONNX_Dev_Notes.md) to integrate with the ONNX release branch. Please implement CPU kernels for new and updated ONNX ops. A list of new and updated ops can be found at (https://github.com/onnx/onnx/wiki/Logistics-for-ONNX-Release-1.12.0).\r\n\r\nChanges in ONNX are documented in Logistics-for-ONNX-Release-1.12.0 wiki (or in the 1.12.0 release note). \r\n\r\nIn case a bug in ONNX is detected during integration of ONNX 1.12.0, please contact the ONNX Release Manager @etiotto so that the bug is fixed in the ONNX release branch for the Integration to continue.\r\n",
@@ -2428,7 +2451,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11640/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11641",
@@ -2530,18 +2553,18 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 9,
+        "comments": 10,
         "created_at": "2022-05-26T22:41:01Z",
-        "updated_at": "2022-06-03T00:29:57Z",
-        "closed_at": null,
+        "updated_at": "2022-06-29T22:14:02Z",
+        "closed_at": "2022-06-21T00:38:35Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
-        "draft": true,
+        "draft": false,
         "pull_request": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/11642",
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11642",
@@ -2549,7 +2572,7 @@
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11642.patch",
             "merged_at": null
         },
-        "body": "Fixes #11640",
+        "body": "Follow-ups that need to happen after this and before the next ORT release:\r\n* Support SequenceMap with https://github.com/microsoft/onnxruntime/pull/11731\r\n* Support signal ops with https://github.com/microsoft/onnxruntime/pull/11778\r\n\r\nFollow-ups that need to happen after this but don't necessarily need to happen before the release:\r\n* https://github.com/microsoft/onnxruntime/issues/11916\r\n\r\nFixes #11640",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11642/reactions",
             "total_count": 0,
@@ -2673,7 +2696,7 @@
         "milestone": null,
         "comments": 0,
         "created_at": "2022-05-26T23:15:28Z",
-        "updated_at": "2022-05-27T14:59:18Z",
+        "updated_at": "2022-06-29T22:14:04Z",
         "closed_at": "2022-05-27T14:59:18Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
@@ -2935,9 +2958,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 4,
+        "comments": 5,
         "created_at": "2022-05-27T03:46:59Z",
-        "updated_at": "2022-06-01T21:01:10Z",
+        "updated_at": "2022-06-29T14:36:46Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -3377,22 +3400,22 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
-        "state": "closed",
+        "state": "open",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 6,
         "created_at": "2022-05-27T12:23:47Z",
-        "updated_at": "2022-06-03T14:23:09Z",
-        "closed_at": "2022-06-03T14:23:09Z",
+        "updated_at": "2022-09-12T02:18:45Z",
+        "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nOnnxruntime refers to the external repository Onnxruntime-Extension which is 9 month old. It is unclear what benefits to include the latest master branch of  Onnxruntime-Extension. It is unclear for a given issue using Onnxruntime-extension in c#, which repository,  onnxruntime or onnxruntime-extension to file an issue.\r\n\r\nThere are no samples or test for c# in onnxruntime-extension repo. Most of them are in c++\r\n![image](https://user-images.githubusercontent.com/49812372/170698817-de494ccb-86b6-4e79-b729-06322a1aa16e.png)\r\n\r\nThere is one test for c# related to onnxruntime-extension in onnxruntime csharp folder. \r\n![image](https://user-images.githubusercontent.com/49812372/170698939-8a13f74f-eb2e-4c0f-828b-32772d9cf9bb.png)\r\n\r\n\r\n**System information**\r\n- ONNX Runtime version (latest):\r\n\r\n**Describe the solution you'd like**\r\n\r\nWe need an improvement supporting C# Custom Op development experience.\r\n\r\n[First]\r\nWe need to address these feature requests \r\n\r\n-  [**1**: Basic build instruction to generate custom_op_library.dll](https://github.com/microsoft/onnxruntime/issues/11654)\r\n-  [**2**: Provide custom_op_library.dll](https://github.com/microsoft/onnxruntime/issues/11653)\r\n\r\nto support better c# for onnxruntime-extension development experience. \r\n\r\n[Second]\r\nWe need documentation and if possible c# project which combines c++ custom opt dll generation and the c# test project to test-driven the generated custom opt dll. \r\n",
@@ -3410,7 +3433,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11655/timeline",
         "performed_via_github_app": null,
-        "state_reason": "completed"
+        "state_reason": "reopened"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11656",
@@ -3447,11 +3470,11 @@
             {
                 "id": 2159809301,
                 "node_id": "MDU6TGFiZWwyMTU5ODA5MzAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:build",
-                "name": "component:build",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/build",
+                "name": "build",
+                "color": "D93F0B",
                 "default": false,
-                "description": "related to builds"
+                "description": "build issues; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -3492,7 +3515,7 @@
         "id": 1250946694,
         "node_id": "I_kwDOCVq1mM5Kj-6G",
         "number": 11657,
-        "title": "[Documentation, Windows, c#] Add an entry on Build for Custom Op development",
+        "title": "WIP [Documentation]: C# Workflow for consuming \"Augmented\" Onnx model with Custom Operators",
         "user": {
             "login": "GeorgeS2019",
             "id": 49812372,
@@ -3517,11 +3540,11 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
         "state": "open",
@@ -3529,13 +3552,13 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 3,
         "created_at": "2022-05-27T16:22:31Z",
-        "updated_at": "2022-06-03T08:26:00Z",
+        "updated_at": "2022-09-12T02:58:42Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
-        "body": "**Is your feature request related to a problem? Please describe.**\r\n\r\nThe main build instruction page on [Build ONNX Runtime from source](https://onnxruntime.ai/docs/build/) does not provide the simplest step for building for custom op development \r\n\r\n==> In addition to what is listed below, perhaps we need a section on [**Build for Custom Op development**](https://onnxruntime.ai/docs/build/inferencing.html)\r\n\r\n[**Build for inferencing**](https://onnxruntime.ai/docs/build/inferencing.html)\r\n[**Build for training**](https://onnxruntime.ai/docs/build/training.html)\r\n[**Build with different EPs**](https://onnxruntime.ai/docs/build/eps.html)\r\n[**Build for Custom Op development**](https://onnxruntime.ai/docs/build/inferencing.html) <======\r\n\r\n\r\n![image](https://user-images.githubusercontent.com/49812372/170735550-69ecff70-38c6-4e9b-97e0-abbd7c9aa4e5.png)\r\n\r\n\r\n",
+        "body": "## [3 ways to add a new operator](https://github.com/alecona/onnx_clo/blob/master/docs/AddingCustomOp.md)\r\n> There is an [issue ](https://github.com/microsoft/onnxruntime/issues/12923) to missing link\r\n## Use Case: PyTorch exports a custom_op_test.onnx with TWO custom operators\r\n\r\n[**custom_op_test.onnx**](https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/test/testdata/custom_op_library/custom_op_test.onnx)\r\n  -  **CustomOpOne**\r\n  - **CustomOpTwo**\r\n\r\n![image](https://user-images.githubusercontent.com/49812372/189561685-20ba37f6-0f9c-48e7-99c9-f4f1c74191a6.png)\r\n\r\n> To consume in CSharp exported PyTorch Onnx with custom operators, it is necessary to **register these Custom Operators** (written in C++) and provided in a Shared Library\r\n\r\n## CSharp API for loading Shared Library with Custom Operators\r\n\r\n### Create Custom_op_library.dll\r\n- [ ]  **Custom_op_library.dll** : [source files](https://github.com/microsoft/onnxruntime/tree/main/onnxruntime/test/testdata/custom_op_library)\r\n> CSharp api for **loading**/**registrating** custom op shared library\r\n\r\n> **RegisterCustomOps**\r\n\r\n[custom_op_library.h](https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/test/testdata/custom_op_library/custom_op_library.h)\r\n```c++\r\n#pragma once\r\n#include \"onnxruntime_c_api.h\"\r\n\r\n#ifdef __cplusplus\r\nextern \"C\" {\r\n#endif\r\n\r\nORT_EXPORT OrtStatus* ORT_API_CALL RegisterCustomOps(OrtSessionOptions* options, const OrtApiBase* api);\r\n\r\n#ifdef __cplusplus\r\n}\r\n#endif\r\n```\r\n\r\n[custom_op_library.cc](https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/test/testdata/custom_op_library/custom_op_library.cc)\r\n- With 2 Custom Operators\r\n  -  **CustomOpOne**\r\n  - **CustomOpTwo**\r\n```c++\r\n\r\n#include \"custom_op_library.h\"\r\n\r\n#define ORT_API_MANUAL_INIT\r\n#include \"onnxruntime_cxx_api.h\"\r\n#undef ORT_API_MANUAL_INIT\r\n\r\n\r\nOrtStatus* ORT_API_CALL RegisterCustomOps(OrtSessionOptions* options, const OrtApiBase* api) {\r\n  OrtCustomOpDomain* domain = nullptr;\r\n  const OrtApi* ortApi = api->GetApi(ORT_API_VERSION);\r\n\r\n  if (auto status = ortApi->CreateCustomOpDomain(c_OpDomain, &domain)) {\r\n    return status;\r\n  }\r\n\r\n  AddOrtCustomOpDomainToContainer(domain, ortApi);\r\n\r\n  if (auto status = ortApi->CustomOpDomain_Add(domain, &c_CustomOpOne)) {\r\n    return status;\r\n  }\r\n\r\n  if (auto status = ortApi->CustomOpDomain_Add(domain, &c_CustomOpTwo)) {\r\n    return status;\r\n  }\r\n\r\n  return ortApi->AddCustomOpDomain(options, domain);\r\n}\r\n```\r\n### In CSharp Register Custom Operators within the Shared Library: Custom_op_library.dll\r\n\r\nCSharp UnitTest: [NetCoreApp/InferenceTest.netcore.c](https://github.com/microsoft/onnxruntime/blob/1e34440c370d40085fad5fd1b1002b4a04c5991d/csharp/test/Microsoft.ML.OnnxRuntime.Tests.NetCoreApp/InferenceTest.netcore.cs#L630)\r\n```cs\r\nprivate void TestRegisterCustomOpLibrary()\r\n{\r\n    using (var option = new SessionOptions())\r\n    {\r\n        string libName = \"custom_op_library.dll\";\r\n        string modelPath = \"custom_op_test.onnx\";\r\n\r\n``` \r\n> [The c++ unit tests discussion](https://github.com/microsoft/onnxruntime-extensions/issues/172#issuecomment-951368153)\r\n\r\n@natke \r\n\r\nWIP for CSharp\r\n[[Documentation] How to register custom operator in onnxruntime](https://github.com/microsoft/onnxruntime/issues/12896)\r\n\r\nOther references:\r\n- [NER transformers model packed in one onnx file with Sentencepiece Tokenizer](https://github.com/microsoft/onnxruntime-extensions/issues/164#top)\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11657/reactions",
             "total_count": 0,
@@ -3591,9 +3614,9 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2022-05-27T18:14:48Z",
-        "updated_at": "2022-05-27T19:45:44Z",
+        "updated_at": "2022-09-06T22:53:36Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3652,15 +3675,15 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 13,
+        "comments": 17,
         "created_at": "2022-05-27T19:45:01Z",
-        "updated_at": "2022-06-08T17:28:06Z",
-        "closed_at": null,
+        "updated_at": "2022-06-10T23:04:53Z",
+        "closed_at": "2022-06-10T23:04:53Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
@@ -3669,7 +3692,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11659",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11659.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11659.patch",
-            "merged_at": null
+            "merged_at": "2022-06-10T23:04:52Z"
         },
         "body": "This VSX code is compatible with Power8, Power9, and Power10\r\n",
         "reactions": {
@@ -3723,20 +3746,11 @@
             {
                 "id": 1607058914,
                 "node_id": "MDU6TGFiZWwxNjA3MDU4OTE0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:quantization",
-                "name": "feature:quantization",
-                "color": "0052cc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/quantization",
+                "name": "quantization",
+                "color": "C2E0C6",
                 "default": false,
-                "description": "related to quantization of models or running quantized models"
-            },
-            {
-                "id": 2190555590,
-                "node_id": "MDU6TGFiZWwyMTkwNTU1NTkw",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:optimizer",
-                "name": "component:optimizer",
-                "color": "303a93",
-                "default": false,
-                "description": "related to optimizers in ORT"
+                "description": "issues related to quantization"
             }
         ],
         "state": "closed",
@@ -3802,11 +3816,11 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
         "state": "closed",
@@ -3872,11 +3886,11 @@
             {
                 "id": 1311608287,
                 "node_id": "MDU6TGFiZWwxMzExNjA4Mjg3",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:documentation",
-                "name": "component:documentation",
-                "color": "303a93",
-                "default": false,
-                "description": "related to documentation"
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/documentation",
+                "name": "documentation",
+                "color": "1D76DB",
+                "default": true,
+                "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
         "state": "open",
@@ -3884,9 +3898,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 3,
         "created_at": "2022-05-27T23:58:11Z",
-        "updated_at": "2022-06-03T14:17:46Z",
+        "updated_at": "2022-09-12T00:32:21Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -3940,13 +3954,13 @@
         },
         "labels": [
             {
-                "id": 3105448033,
-                "node_id": "MDU6TGFiZWwzMTA1NDQ4MDMz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:orttrainer",
-                "name": "component:orttrainer",
-                "color": "303a93",
+                "id": 1913759001,
+                "node_id": "MDU6TGFiZWwxOTEzNzU5MDAx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/training",
+                "name": "training",
+                "color": "BFD4F2",
                 "default": false,
-                "description": "ORTTrainer PyTorch Frontend"
+                "description": "issues related to ONNX Runtime training; typically submitted using template"
             }
         ],
         "state": "open",
@@ -3956,9 +3970,9 @@
         "milestone": null,
         "comments": 2,
         "created_at": "2022-05-28T01:25:26Z",
-        "updated_at": "2022-06-02T17:19:25Z",
+        "updated_at": "2022-08-12T18:42:57Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\n\r\n```\r\n$ python -m onnxruntime.training.ortmodule.torch_cpp_extensions.install\r\n```\r\n\r\nreports `TypeError: Descriptors cannot not be created directly.`\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Ubuntu 20.04\r\n- ONNX Runtime installed from (source or binary): binary\r\n- ONNX Runtime version: onnxruntime-training 1.11.1\r\n- Python version: 3.8\r\n\r\n**To Reproduce**\r\n\r\n```\r\n$ pip install onnxruntime-training==1.11.1\r\n$ pip install torch==1.11.0\r\n$ python -m onnxruntime.training.ortmodule.torch_cpp_extensions.install\r\n\r\nTraceback (most recent call last):\r\n  File \"/usr/lib/python3.8/runpy.py\", line 185, in _run_module_as_main\r\n    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)\r\n  File \"/usr/lib/python3.8/runpy.py\", line 111, in _get_module_details\r\n    __import__(pkg_name)\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnxruntime/__init__.py\", line 32, in <module>\r\n    from onnxruntime.capi import onnxruntime_validation\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_validation.py\", line 138, in <module>\r\n    has_ortmodule, package_name, version, cuda_version = validate_build_package_info()\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_validation.py\", line 133, in validate_build_package_info\r\n    raise import_ortmodule_exception\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_validation.py\", line 66, in validate_build_package_info\r\n    from onnxruntime.training.ortmodule import ORTModule # noqa\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnxruntime/training/__init__.py\", line 11, in <module>\r\n    from .orttrainer import ORTTrainer, TrainStepInfo\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnxruntime/training/orttrainer.py\", line 4, in <module>\r\n    import onnx\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnx/__init__.py\", line 11, in <module>\r\n    from onnx.external_data_helper import load_external_data_for_model, write_external_data_tensors, convert_model_to_external_data\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnx/external_data_helper.py\", line 14, in <module>\r\n    from .onnx_pb import TensorProto, ModelProto\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnx/onnx_pb.py\", line 8, in <module>\r\n    from .onnx_ml_pb2 import *  # noqa\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/onnx/onnx_ml_pb2.py\", line 33, in <module>\r\n    _descriptor.EnumValueDescriptor(\r\n  File \"/home/ashari/venv/may27/lib/python3.8/site-packages/google/protobuf/descriptor.py\", line 755, in __new__\r\n    _message.Message._CheckCalledFromGeneratedFile()\r\nTypeError: Descriptors cannot not be created directly.\r\nIf this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.\r\nIf you cannot immediately regenerate your protos, some other possible workarounds are:\r\n 1. Downgrade the protobuf package to 3.20.x or lower.\r\n 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).\r\n\r\nMore information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates\r\n```\r\n\r\n",
         "reactions": {
@@ -4016,9 +4030,9 @@
         "milestone": null,
         "comments": 2,
         "created_at": "2022-05-28T01:29:59Z",
-        "updated_at": "2022-05-28T03:49:04Z",
+        "updated_at": "2022-06-15T07:32:19Z",
         "closed_at": "2022-05-28T01:50:53Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4086,7 +4100,7 @@
         "created_at": "2022-05-28T01:38:18Z",
         "updated_at": "2022-06-03T21:10:03Z",
         "closed_at": "2022-06-03T21:10:03Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4150,20 +4164,20 @@
                 "node_id": "MDU6TGFiZWwxNjczMDE4OTQ3",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:DML",
                 "name": "ep:DML",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to DML EP"
+                "description": "issues related to the DirectML execution provider"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 1,
+        "comments": 8,
         "created_at": "2022-05-28T03:13:30Z",
-        "updated_at": "2022-06-02T22:06:47Z",
-        "closed_at": null,
+        "updated_at": "2022-06-29T00:49:00Z",
+        "closed_at": "2022-06-27T22:19:51Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nNot a problem, i may miss something in the doc\r\n\r\n**System information**\r\n- ONNX Runtime version (you are using): 1.11.1 version (pip install onnxruntime-directml)\r\n\r\n**Describe the solution you'd like**\r\nI'd like the session to run normally\r\n\r\n**Describe alternatives you've considered**\r\nMultiple ways to change a value?...\r\n\r\n**Additional context**\r\nI tried [samples here](https://onnxruntime.ai/docs/api/python/api_summary.html), it runs well in the first iteration only, then the output remains the same during all other iterations.\r\nI am inference using [yolox](https://github.com/Megvii-BaseDetection/YOLOX)\r\n\r\n     # some code\r\n     net = ort.InferenceSession(weight, so, providers=['DmlExecutionProvider'])\r\n     io_binding = net.io_binding()\r\n     io_binding.bind_output('output')\r\n     io_binding.bind_cpu_input('input', img)\r\n\r\nI know there is something wrong with my code, but i dont know how to fix it, whatever i change img value, the result will not change anyway\r\n",
@@ -4181,7 +4195,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11666/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11667",
@@ -4218,14 +4232,14 @@
             {
                 "id": 1630303001,
                 "node_id": "MDU6TGFiZWwxNjMwMzAzMDAx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:DNNL",
-                "name": "ep:DNNL",
-                "color": "bfdadc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:oneDNN",
+                "name": "ep:oneDNN",
+                "color": "0052CC",
                 "default": false,
                 "description": "questions/issues related to DNNL EP"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": {
             "login": "jywu-msft",
@@ -4270,10 +4284,10 @@
             }
         ],
         "milestone": null,
-        "comments": 5,
+        "comments": 10,
         "created_at": "2022-05-28T06:41:46Z",
-        "updated_at": "2022-06-03T00:22:27Z",
-        "closed_at": null,
+        "updated_at": "2022-06-21T01:46:44Z",
+        "closed_at": "2022-06-20T17:41:05Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
@@ -4282,7 +4296,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11667",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11667.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11667.patch",
-            "merged_at": null
+            "merged_at": "2022-06-20T17:41:04Z"
         },
         "body": "This issue is similar to [1], where template two-phase lookups break the\r\nbuild. Apparently GCC 12 is now as strict as Clang:\r\n\r\n```\r\n[ 69%] Building CXX object CMakeFiles/onnxruntime_providers_dnnl.dir/build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.cc.o\r\nIn file included from /build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/common.h:36,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/shared_library/provider_api.h:19,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_subgraph.h:11,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.h:5,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.cc:3:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h: In instantiation of ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&) [with T = gsl::span<long int>; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:39:17:   recursively required from ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&, const Args& ...) [with T = long unsigned int; Args = {const char*, long int, const char*, gsl::span<long int>}; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:39:17:   required from ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&, const Args& ...) [with T = const char*; Args = {long unsigned int, const char*, long int, const char*, gsl::span<long int>}; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:46:17:   required from ‘std::string onnxruntime::detail::MakeStringImpl(const Args& ...) [with Args = {const char*, long unsigned int, const char*, long int, const char*, gsl::span<long int>}; std::string = std::__cxx11::basic_string<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:93:32:   required from ‘std::string onnxruntime::MakeString(const Args& ...) [with Args = {char [20], long unsigned int, char [23], long int, char [9], gsl::span<long int>}; std::string = std::__cxx11::basic_string<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.cc:276:11:   required from here\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: error: no match for ‘operator<<’ (operand types are ‘std::ostringstream’ {aka ‘std::__cxx11::basic_ostringstream<char>’} and ‘const gsl::span<long int>’)\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\nIn file included from /usr/include/c++/12.1.0/istream:39,\r\n                 from /usr/include/c++/12.1.0/sstream:38,\r\n                 from /build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/common.h:27:\r\n/usr/include/c++/12.1.0/ostream:108:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ostream_type& (*)(__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:108:36: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}\r\n  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))\r\n      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:117:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ios_type& (*)(__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; __ios_type = std::basic_ios<char>]’\r\n  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:117:32: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}\r\n  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))\r\n      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:127:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  127 |       operator<<(ios_base& (*__pf) (ios_base&))\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:127:30: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘std::ios_base& (*)(std::ios_base&)’\r\n  127 |       operator<<(ios_base& (*__pf) (ios_base&))\r\n      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:166:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  166 |       operator<<(long __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:166:23: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘long int’\r\n  166 |       operator<<(long __n)\r\n      |                  ~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:170:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  170 |       operator<<(unsigned long __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:170:32: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘long unsigned int’\r\n  170 |       operator<<(unsigned long __n)\r\n      |                  ~~~~~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:174:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  174 |       operator<<(bool __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:174:23: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘bool’\r\n  174 |       operator<<(bool __n)\r\n      |                  ~~~~~^~~\r\nIn file included from /usr/include/c++/12.1.0/ostream:833:\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:91:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’\r\n   91 |     basic_ostream<_CharT, _Traits>::\r\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:92:22: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘short int’\r\n   92 |     operator<<(short __n)\r\n      |                ~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:181:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  181 |       operator<<(unsigned short __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:181:33: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘short unsigned int’\r\n  181 |       operator<<(unsigned short __n)\r\n      |                  ~~~~~~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:105:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’\r\n  105 |     basic_ostream<_CharT, _Traits>::\r\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:106:20: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘int’\r\n  106 |     operator<<(int __n)\r\n      |                ~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:192:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  192 |       operator<<(unsigned int __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:192:31: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘unsigned int’\r\n  192 |       operator<<(unsigned int __n)\r\n      |                  ~~~~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:201:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  201 |       operator<<(long long __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:201:28: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘long long int’\r\n  201 |       operator<<(long long __n)\r\n      |                  ~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:205:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  205 |       operator<<(unsigned long long __n)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:205:37: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘long long unsigned int’\r\n  205 |       operator<<(unsigned long long __n)\r\n      |                  ~~~~~~~~~~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:220:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  220 |       operator<<(double __f)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:220:25: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘double’\r\n  220 |       operator<<(double __f)\r\n      |                  ~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:224:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  224 |       operator<<(float __f)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:224:24: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘float’\r\n  224 |       operator<<(float __f)\r\n      |                  ~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:232:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  232 |       operator<<(long double __f)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:232:30: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘long double’\r\n  232 |       operator<<(long double __f)\r\n      |                  ~~~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:245:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]’\r\n  245 |       operator<<(const void* __p)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:245:30: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘const void*’\r\n  245 |       operator<<(const void* __p)\r\n      |                  ~~~~~~~~~~~~^~~\r\n/usr/include/c++/12.1.0/ostream:250:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]’\r\n  250 |       operator<<(nullptr_t)\r\n      |       ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:250:18: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘std::nullptr_t’\r\n  250 |       operator<<(nullptr_t)\r\n      |                  ^~~~~~~~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:119:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; __streambuf_type = std::basic_streambuf<char>]’\r\n  119 |     basic_ostream<_CharT, _Traits>::\r\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:120:34: note:   no known conversion for argument 1 from ‘const gsl::span<long int>’ to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}\r\n  120 |     operator<<(__streambuf_type* __sbin)\r\n      |                ~~~~~~~~~~~~~~~~~~^~~~~~\r\nIn file included from /usr/include/c++/12.1.0/bits/basic_string.h:48,\r\n                 from /usr/include/c++/12.1.0/string:53,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_subgraph.h:7:\r\n/usr/include/c++/12.1.0/string_view:672:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)’\r\n  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/string_view:672:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   ‘gsl::span<long int>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/bits/basic_string.h:3883:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)’\r\n 3883 |     operator<<(basic_ostream<_CharT, _Traits>& __os,\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/bits/basic_string.h:3883:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   ‘const gsl::span<long int>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\nIn file included from /usr/include/c++/12.1.0/bits/ios_base.h:46,\r\n                 from /usr/include/c++/12.1.0/streambuf:41,\r\n                 from /usr/include/c++/12.1.0/bits/streambuf_iterator.h:35,\r\n                 from /usr/include/c++/12.1.0/iterator:66,\r\n                 from /usr/include/oneapi/dnnl/dnnl.hpp:28,\r\n                 from /usr/include/dnnl.hpp:20,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_subgraph.h:10:\r\n/usr/include/c++/12.1.0/system_error:279:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)’\r\n  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/system_error:279:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘const std::error_code&’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\nIn file included from /usr/include/c++/12.1.0/memory:77,\r\n                 from /usr/include/oneapi/dnnl/dnnl.hpp:29:\r\n/usr/include/c++/12.1.0/bits/shared_ptr.h:70:5: note: candidate: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __shared_ptr<_Tp, _Lp>&)’\r\n   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/bits/shared_ptr.h:70:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   ‘const gsl::span<long int>’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:507:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)’\r\n  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:507:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘gsl::span<long int>’)\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:517:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)’\r\n  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:517:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘char’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:523:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)’\r\n  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:523:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘char’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:534:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)’\r\n  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:534:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘signed char’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:539:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)’\r\n  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:539:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘unsigned char’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:598:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)’\r\n  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:598:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   mismatched types ‘const _CharT*’ and ‘gsl::span<long int>’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:302:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)’\r\n  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘const char*’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:615:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)’\r\n  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:615:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘const char*’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:628:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)’\r\n  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:628:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘const signed char*’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:633:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)’\r\n  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:633:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘t’ (type ‘const gsl::span<long int>’) to type ‘const unsigned char*’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\n/usr/include/c++/12.1.0/ostream:754:5: note: candidate: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’\r\n  754 |     operator<<(_Ostream&& __os, const _Tp& __x)\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/ostream:754:5: note:   template argument deduction/substitution failed:\r\n/usr/include/c++/12.1.0/ostream: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::__cxx11::basic_ostringstream<char>&; _Tp = gsl::span<long int>]’:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:39:17:   recursively required from ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&, const Args& ...) [with T = long unsigned int; Args = {const char*, long int, const char*, gsl::span<long int>}; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:39:17:   required from ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&, const Args& ...) [with T = const char*; Args = {long unsigned int, const char*, long int, const char*, gsl::span<long int>}; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:46:17:   required from ‘std::string onnxruntime::detail::MakeStringImpl(const Args& ...) [with Args = {const char*, long unsigned int, const char*, long int, const char*, gsl::span<long int>}; std::string = std::__cxx11::basic_string<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:93:32:   required from ‘std::string onnxruntime::MakeString(const Args& ...) [with Args = {char [20], long unsigned int, char [23], long int, char [9], gsl::span<long int>}; std::string = std::__cxx11::basic_string<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.cc:276:11:   required from here\r\n/usr/include/c++/12.1.0/ostream:754:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’\r\nIn file included from /build/python-onnxruntime/src/onnxruntime/build/_deps/abseil_cpp-src/absl/container/inlined_vector.h:40,\r\n                 from /build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/inlined_containers_fwd.h:18,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/shared_library/provider_api.h:21:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h: In instantiation of ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&) [with T = gsl::span<long int>; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:39:17:   recursively required from ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&, const Args& ...) [with T = long unsigned int; Args = {const char*, long int, const char*, gsl::span<long int>}; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:39:17:   required from ‘void onnxruntime::detail::MakeStringImpl(std::ostringstream&, const T&, const Args& ...) [with T = const char*; Args = {long unsigned int, const char*, long int, const char*, gsl::span<long int>}; std::ostringstream = std::__cxx11::basic_ostringstream<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:46:17:   required from ‘std::string onnxruntime::detail::MakeStringImpl(const Args& ...) [with Args = {const char*, long unsigned int, const char*, long int, const char*, gsl::span<long int>}; std::string = std::__cxx11::basic_string<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:93:32:   required from ‘std::string onnxruntime::MakeString(const Args& ...) [with Args = {char [20], long unsigned int, char [23], long int, char [9], gsl::span<long int>}; std::string = std::__cxx11::basic_string<char>]’\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.cc:276:11:   required from here\r\n/usr/include/c++/12.1.0/cstddef:123:5: note: candidate: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(byte, _IntegerType)’\r\n  123 |     operator<<(byte __b, _IntegerType __shift) noexcept\r\n      |     ^~~~~~~~\r\n/usr/include/c++/12.1.0/cstddef:123:5: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/include/onnxruntime/core/common/make_string.h:33:6: note:   cannot convert ‘ss’ (type ‘std::ostringstream’ {aka ‘std::__cxx11::basic_ostringstream<char>’}) to type ‘std::byte’\r\n   33 |   ss << t;\r\n      |   ~~~^~~~\r\nIn file included from /build/python-onnxruntime/src/onnxruntime/onnxruntime/gsl/gsl:25,\r\n                 from /build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/shared_library/provider_api.h:15:\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/gsl/gsl-lite.hpp:1477:37: note: candidate: ‘template<class IntegerType, class> constexpr gsl::byte gsl::operator<<(byte, IntegerType)’\r\n 1477 |   gsl_api inline gsl_constexpr byte operator<<(byte b, IntegerType shift) gsl_noexcept {\r\n      |                                     ^~~~~~~~\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/gsl/gsl-lite.hpp:1477:37: note:   template argument deduction/substitution failed:\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/gsl/gsl-lite.hpp:237:5: error: no type named ‘type’ in ‘struct std::enable_if<false, gsl::detail::enabler>’\r\n  237 |   , typename = typename std::enable_if<(VA), gsl::detail::enabler>::type\r\n      |     ^~~~~~~~\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/gsl/gsl-lite.hpp:1405:3: note: in expansion of macro ‘gsl_REQUIRES_T’\r\n 1405 |   gsl_REQUIRES_T((std::is_integral<T>::value))\r\n      |   ^~~~~~~~~~~~~~\r\n/build/python-onnxruntime/src/onnxruntime/onnxruntime/gsl/gsl-lite.hpp:1476:31: note: in expansion of macro ‘gsl_ENABLE_IF_INTEGRAL_T’\r\n 1476 |   template <class IntegerType gsl_ENABLE_IF_INTEGRAL_T(IntegerType)>\r\n      |                               ^~~~~~~~~~~~~~~~~~~~~~~~\r\nmake[2]: *** [CMakeFiles/onnxruntime_providers_dnnl.dir/build.make:342: CMakeFiles/onnxruntime_providers_dnnl.dir/build/python-onnxruntime/src/onnxruntime/onnxruntime/core/providers/dnnl/subgraph/dnnl_reduce.cc.o] Error 1\r\nmake[1]: *** [CMakeFiles/Makefile2:1611: CMakeFiles/onnxruntime_providers_dnnl.dir/all] Error 2\r\nmake: *** [Makefile:146: all] Error 2\r\n```\r\n\r\nError messages above are from gcc 12.1.0 on Arch Linux.\r\n\r\n[1] https://github.com/microsoft/onnxruntime/pull/10014\r\n\r\n**Description**: Describe your changes.\r\n\r\n**Motivation and Context**\r\n\r\nTo improve onnxruntime compatibility with the latest GCC.\r\n\r\nThere is no related issue but a related PR, and it's mentioned above.",
         "reactions": {
@@ -4332,15 +4346,25 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [],
+        "labels": [
+            {
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
+                "default": false,
+                "description": "issues related to core runtime"
+            }
+        ],
         "state": "open",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 0,
+        "comments": 1,
         "created_at": "2022-05-28T09:31:19Z",
-        "updated_at": "2022-05-28T09:35:52Z",
+        "updated_at": "2022-08-12T08:39:23Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -4452,17 +4476,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1195353125,
-                "node_id": "MDU6TGFiZWwxMTk1MzUzMTI1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:Python",
-                "name": "api:Python",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the Python API"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -4523,15 +4537,15 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 6,
+        "comments": 12,
         "created_at": "2022-05-29T12:50:07Z",
-        "updated_at": "2022-06-07T03:46:28Z",
-        "closed_at": null,
+        "updated_at": "2022-06-16T12:28:45Z",
+        "closed_at": "2022-06-14T22:18:12Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
@@ -4540,7 +4554,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11671",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11671.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11671.patch",
-            "merged_at": null
+            "merged_at": "2022-06-14T22:18:12Z"
         },
         "body": "**Description**: \r\n1. By default, imported libraries are only visible in the directory in which it is created, unlike normal libraries (https://cmake.org/cmake/help/v3.9/command/add_library.html#imported-libraries). It hinders onnxruntime to be used as a sub-project.\r\n2. The INTERFACE_INCLUDE_DIRECTORIES of the imported target is obviously wrong because of override.\r\n3. INTERFACE_COMPILE_DEFINITIONS (for example `ONNX_ML=1`) should also be populated (and all INTERFACE_* properties indeed). \r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\nI'm refactoring [onnxsim](https://github.com/daquexian/onnx-simplifier) to run it on the web.",
         "reactions": {
@@ -4592,33 +4606,33 @@
         },
         "labels": [
             {
-                "id": 2014185961,
-                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:coreruntime",
-                "name": "component:coreruntime",
-                "color": "303a93",
+                "id": 1220611565,
+                "node_id": "MDU6TGFiZWwxMjIwNjExNTY1",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/converter",
+                "name": "converter",
+                "color": "0E8A16",
                 "default": false,
-                "description": "related to core runtime"
+                "description": "related to ONNX converters"
             },
             {
-                "id": 2114490130,
-                "node_id": "MDU6TGFiZWwyMTE0NDkwMTMw",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:operator",
-                "name": "component:operator",
-                "color": "303a93",
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "related to specific ONNX operator support"
+                "description": "issues related to core runtime"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 10,
+        "comments": 14,
         "created_at": "2022-05-29T21:45:34Z",
-        "updated_at": "2022-06-08T00:38:24Z",
-        "closed_at": null,
+        "updated_at": "2022-06-13T21:50:33Z",
+        "closed_at": "2022-06-13T21:50:33Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nI converted a pytorch fast_pitch model to onnx and it converted OK. During the inference I get the following error. There seem to be some similar bug raised previously #[8020](https://github.com/microsoft/onnxruntime/issues/8020) \r\n\r\n**Warnings and finally Error message during inference**\r\n```\r\n2022-05-30 02:44:01.501728948 [W:onnxruntime:, constant_folding.cc:202 ApplyImpl] Unsupported output type of N11onnxruntime22SequenceTensorTypeBaseE. Can't constant fold SequenceEmpty node 'SequenceEmpty_2141'\r\n2022-05-30 02:44:01.545423718 [W:onnxruntime:, constant_folding.cc:202 ApplyImpl] Unsupported output type of N11onnxruntime22SequenceTensorTypeBaseE. Can't constant fold SequenceEmpty node 'SequenceEmpty_2141'\r\n2022-05-30 02:44:01.564558336 [W:onnxruntime:, constant_folding.cc:202 ApplyImpl] Unsupported output type of N11onnxruntime22SequenceTensorTypeBaseE. Can't constant fold SequenceEmpty node 'SequenceEmpty_2141'\r\n2022-05-30 02:44:01.896546494 [E:onnxruntime:, sequential_executor.cc:346 Execute] Non-zero status code returned while running ConcatFromSequence node. Name:'ConcatFromSequence_2162' Status Message: concat.cc:156 PrepareForCompute Non concat axis dimensions must match: Axis 1 has mismatched dimensions of 12 and 14\r\n```\r\n\r\n**Trace**\r\n\r\n```\r\n\r\n---------------------------------------------------------------------------\r\nFail                                      Traceback (most recent call last)\r\n/tmp/ipykernel_258100/3612290811.py in <module>\r\n     13 # # compute ONNX Runtime output prediction\r\n     14 ort_inputs = {'input_tensor': onnx_runtime_input, 'additional_params': params}\r\n---> 15 ort_outs = ort_session.run(['mel_post'], ort_inputs)\r\n\r\n~/.local/lib/python3.8/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py in run(self, output_names, input_feed, run_options)\r\n    190             output_names = [output.name for output in self._outputs_meta]\r\n    191         try:\r\n--> 192             return self._sess.run(output_names, input_feed, run_options)\r\n    193         except C.EPFail as err:\r\n    194             if self._enable_fallback:\r\n\r\nFail: [ONNXRuntimeError] : 1 : FAIL : Non-zero status code returned while running ConcatFromSequence node. Name:'ConcatFromSequence_2162' Status Message: concat.cc:156 PrepareForCompute Non concat axis dimensions must match: Axis 1 has mismatched dimensions of 12 and 14\r\n```\r\n\r\n**Inference Code**\r\n\r\n```\r\nimport onnxruntime\r\nonnx_runtime_input = np.array([[ 5, 10, 33, 15, 5, 14, 33, 19, 8, 5, 21, 37, 33, 11, 15, 5, 21, 37, 33, 18, 8]], dtype='int64')\r\nparams = np.array([1.15, 1.0, 1.0], np.dtype('float32'))\r\n\r\nort_session = onnxruntime.InferenceSession(\"fast_pitch.onnx\")\r\n\r\n# # compute ONNX Runtime output prediction\r\nort_inputs = {'input_tensor': onnx_runtime_input, 'additional_params': params}\r\nort_outs = ort_session.run(['mel_post'], ort_inputs)\r\n```\r\n\r\n**Input Data**\r\n\r\n`tensor([[ 5, 10, 33, 15,  5, 14, 33, 19,  8,  5, 21, 37, 33, 11, 15,  5, 21, 37, 33, 18,  8]])`\r\n\r\n**Expected Output Data (Pytorch inference)**\r\n\r\n```\r\nShape: torch.Size([1, 80, 120])\r\n\r\ntensor([[[-6.5814, -5.4778, -4.8955,  ..., -5.5355, -5.3995, -5.2439],\r\n         [-6.3145, -5.2096, -4.5703,  ..., -3.6377, -3.7430, -3.7918],\r\n         [-6.2930, -5.0865, -4.1757,  ..., -1.5816, -2.0812, -2.5433],\r\n         ...,\r\n         [-9.0989, -8.6579, -7.7678,  ..., -5.6325, -5.8552, -5.5436],\r\n         [-9.0711, -8.4552, -7.6035,  ..., -6.0442, -6.1953, -5.7863],\r\n         [-9.1945, -8.6019, -7.8147,  ..., -6.0601, -6.1908, -5.7653]]])\r\n```\r\n\r\n\r\n**Model download link**: \r\nLink updated to a google drive\r\n\r\nhttps://drive.google.com/file/d/1uzqMLYTLWM-wZKmWRpxpTLv4MEGMvFxD/view?usp=sharing\r\n\r\n\r\nhttps://we.tl/t-VjXsSBdwhs\r\n\r\n\r\n\r\n**Urgency**\r\nIt is urgent. Production functionality is stuck because of this.\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Ubuntu 20.04\r\n- ONNX Runtime installed from (source or binary): Source\r\n- ONNX Runtime version: Latest\r\n- Python version: 3.8\r\n\r\n**To Reproduce**\r\nDownload and run inference using the sample code and input provided",
@@ -4636,7 +4650,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11672/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11673",
@@ -4675,11 +4689,11 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 11,
+        "comments": 32,
         "created_at": "2022-05-30T06:09:19Z",
-        "updated_at": "2022-06-06T20:27:37Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "FIRST_TIME_CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4815,7 +4829,7 @@
         "created_at": "2022-05-30T08:25:03Z",
         "updated_at": "2022-06-06T23:51:27Z",
         "closed_at": "2022-06-06T23:51:26Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4995,13 +5009,13 @@
         },
         "labels": [
             {
-                "id": 2420599289,
-                "node_id": "MDU6TGFiZWwyNDIwNTk5Mjg5",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:customops",
-                "name": "feature:customops",
-                "color": "0052cc",
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "Issues related to the creation/usage of custom ops"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "open",
@@ -5011,7 +5025,7 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2022-05-30T10:09:28Z",
-        "updated_at": "2022-05-31T16:46:51Z",
+        "updated_at": "2022-08-12T08:40:02Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -5065,13 +5079,13 @@
         },
         "labels": [
             {
-                "id": 3001438923,
-                "node_id": "MDU6TGFiZWwzMDAxNDM4OTIz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:ort-web",
-                "name": "component:ort-web",
-                "color": "303a93",
+                "id": 3066979818,
+                "node_id": "MDU6TGFiZWwzMDY2OTc5ODE4",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:web",
+                "name": "platform:web",
+                "color": "FEF2C0",
                 "default": false,
-                "description": "related to ONNXRuntime Web (JavaScript/TypeScript code)"
+                "description": "issues related to ONNX Runtime web; typically submitted using template"
             }
         ],
         "state": "open",
@@ -5081,9 +5095,9 @@
         "milestone": null,
         "comments": 5,
         "created_at": "2022-05-30T10:39:20Z",
-        "updated_at": "2022-06-08T10:41:12Z",
+        "updated_at": "2022-08-12T08:30:42Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nCOEP/COOP headers must be set to cross-origin-isolate the page, which allows use of Wasm threads. If these headers are set, then the model doesn't load on iOS/iPad browsers. It simply \"hangs\" and never finishes initialization.\r\n\r\n**Urgency**\r\nThe app is in production for thousands of users per day, but I'm not in a position to hurry you along 😅 \r\n\r\n**System information**\r\n- ONNX Runtime version: https://cdn.jsdelivr.net/npm/onnxruntime-web@1.11.0/dist/ort.js\r\n\r\nThis bug only occurs on iOS and iPad browsers. I've tested the latest version of Chrome (v102) and Safari on iOS and iPad.\r\n\r\nThe bug does not occur on desktop browsers, including Safari and Mac. Every non-iOS/iPad browser that I've tested works fine.\r\n\r\n**To Reproduce**\r\n- Visit this minimal reproduction and try both links that you see: https://coop-coep-onnx-ios-1.joe64.repl.co/ The `/with-headers` page includes the COOP/COEP headers (which causes it to fail), and the `/without-headers` page doesn't have the headers (and it works normally/correctly)\r\n- Here's the code for those pages: https://replit.com/@joe64/coop-coep-onnx-ios-1#index.js\r\n\r\nNote that I've had to use Replit instead of a service like JSBin because JSBin doesn't allow you to set headers.\r\n\r\n**Additional context**\r\n* Note that, [as you can see in the front-end code](https://replit.com/@joe64/coop-coep-onnx-ios-1#test.html), I'm pre-downloading the file with `fetch` before passing it to `ort.InferenceSession.create`. This doesn't affect loading at all. I'm only doing this to ensure that the problem wasn't to do with model downloading.\r\n* For convenience, here's a direct link to the model being loaded in the above-linked minimal reproduction: https://huggingface.co/rocca/informative-drawings-line-art-onnx/resolve/main/model.onnx\r\n* The only way I was able to debug Chrome iOS was to visit `chrome://inspect` and start the logger. I didn't observe any error messages, but it could be that error messages aren't being correctly shown on that page, so perhaps it's failing with an error that I'm unable to see.",
         "reactions": {
@@ -5135,13 +5149,13 @@
         },
         "labels": [
             {
-                "id": 1195353125,
-                "node_id": "MDU6TGFiZWwxMTk1MzUzMTI1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:Python",
-                "name": "api:Python",
-                "color": "0e8a16",
+                "id": 4419012097,
+                "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
+                "name": "api",
+                "color": "E67B8C",
                 "default": false,
-                "description": "related to the Python API"
+                "description": "issues related to all other APIs: C, C++, Python, etc."
             }
         ],
         "state": "open",
@@ -5149,17 +5163,17 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 5,
+        "comments": 7,
         "created_at": "2022-05-30T12:33:29Z",
-        "updated_at": "2022-05-31T16:40:26Z",
+        "updated_at": "2022-08-12T08:24:01Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "OnnxRuntime is not available on python 3.10.* and it would be great if it could be \r\n\r\n```\r\nERROR: Could not find a version that satisfies the requirement onnxruntime (from ***) (from versions: none)\r\nERROR: No matching distribution found for onnxruntime\r\n```\r\n\r\n**System information**\r\nAccording to this issue https://github.com/Microsoft/onnxruntime/issues/250 and the project file https://pypi.org/project/onnxruntime/#files this is true for all systems. (no *cp310* release) \r\n\r\n**Additional Context**\r\n\r\nIt's been 8 months since its release, it's quite frustrating that it's not been incremented yet.\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11680/reactions",
-            "total_count": 3,
-            "+1": 3,
+            "total_count": 8,
+            "+1": 8,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -5213,7 +5227,7 @@
         "created_at": "2022-05-31T03:40:28Z",
         "updated_at": "2022-06-01T04:31:22Z",
         "closed_at": "2022-06-01T04:31:21Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5271,17 +5285,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1195353125,
-                "node_id": "MDU6TGFiZWwxMTk1MzUzMTI1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:Python",
-                "name": "api:Python",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the Python API"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -5345,9 +5349,9 @@
             {
                 "id": 1122493981,
                 "node_id": "MDU6TGFiZWwxMTIyNDkzOTgx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:enhancement",
-                "name": "type:enhancement",
-                "color": "a2eeef",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature%20request",
+                "name": "feature request",
+                "color": "5319E7",
                 "default": false,
                 "description": "request for unsupported feature or enhancement"
             }
@@ -5361,7 +5365,7 @@
         "created_at": "2022-05-31T07:04:25Z",
         "updated_at": "2022-06-02T20:38:25Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "The optimization tool for bert or transformer now only searches node path of post layer normalization pattern. Request to add support for pre layer norm.",
         "reactions": {
@@ -5417,9 +5421,9 @@
                 "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
                 "name": "ep:CUDA",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to CUDA EP"
+                "description": "issues related to the CUDA execution provider"
             }
         ],
         "state": "open",
@@ -5485,11 +5489,11 @@
             {
                 "id": 1607058914,
                 "node_id": "MDU6TGFiZWwxNjA3MDU4OTE0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:quantization",
-                "name": "feature:quantization",
-                "color": "0052cc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/quantization",
+                "name": "quantization",
+                "color": "C2E0C6",
                 "default": false,
-                "description": "related to quantization of models or running quantized models"
+                "description": "issues related to quantization"
             }
         ],
         "state": "closed",
@@ -5621,13 +5625,13 @@
         },
         "labels": [
             {
-                "id": 1273765791,
-                "node_id": "MDU6TGFiZWwxMjczNzY1Nzkx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:performance",
-                "name": "type:performance",
-                "color": "a2eeef",
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "performance related issues and questions"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "open",
@@ -5637,7 +5641,7 @@
         "milestone": null,
         "comments": 6,
         "created_at": "2022-05-31T15:08:16Z",
-        "updated_at": "2022-06-01T10:16:28Z",
+        "updated_at": "2022-08-12T08:39:22Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -5695,11 +5699,11 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 6,
         "created_at": "2022-05-31T20:59:28Z",
-        "updated_at": "2022-06-03T07:56:11Z",
+        "updated_at": "2022-08-10T00:46:32Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5758,16 +5762,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 9,
         "created_at": "2022-05-31T21:08:22Z",
-        "updated_at": "2022-06-08T08:23:43Z",
-        "closed_at": null,
-        "author_association": "NONE",
+        "updated_at": "2022-06-09T00:13:00Z",
+        "closed_at": "2022-06-09T00:13:00Z",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5775,7 +5779,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11690",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11690.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11690.patch",
-            "merged_at": null
+            "merged_at": "2022-06-09T00:13:00Z"
         },
         "body": "**Description**: Describe your changes.\r\n\r\nAdding URL_HASH so that an existing archive can be used from disk. Needed for building without an internet connection.\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\n\r\nNeeded for package maintenance that implies no internet connection at build time\r\n\r\n- If it fixes an open issue, please link to the issue here.\r\n\r\nNone\r\n",
         "reactions": {
@@ -5827,42 +5831,24 @@
         },
         "labels": [
             {
-                "id": 2041733582,
-                "node_id": "MDU6TGFiZWwyMDQxNzMzNTgy",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:JavaScript",
-                "name": "api:JavaScript",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the Javascript API for Node.js binding, ORT Web and react-native"
-            },
-            {
-                "id": 3001438923,
-                "node_id": "MDU6TGFiZWwzMDAxNDM4OTIz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:ort-web",
-                "name": "component:ort-web",
-                "color": "303a93",
-                "default": false,
-                "description": "related to ONNXRuntime Web (JavaScript/TypeScript code)"
-            },
-            {
                 "id": 3066979818,
                 "node_id": "MDU6TGFiZWwzMDY2OTc5ODE4",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:webassembly",
-                "name": "platform:webassembly",
-                "color": "d4ea72",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:web",
+                "name": "platform:web",
+                "color": "FEF2C0",
                 "default": false,
-                "description": ""
+                "description": "issues related to ONNX Runtime web; typically submitted using template"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 4,
+        "comments": 5,
         "created_at": "2022-05-31T21:09:02Z",
-        "updated_at": "2022-06-03T20:31:04Z",
-        "closed_at": null,
+        "updated_at": "2022-07-13T19:56:02Z",
+        "closed_at": "2022-07-13T19:56:02Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nWhen using the build process as specified at the following link: https://github.com/microsoft/onnxruntime/blob/master/js/README.md#Build-2 \r\nThere are no WASM or JS wrapper files being outputted. \r\nI was trying to build the wasm artifacts rather than pull them.\r\n\r\n**Urgency**\r\nAs soon as possible, this is the primary blocker in a sizeable project\r\n\r\n**System information**\r\nI have tried with Windows 10, Colab and Ubuntu 22.04 with Python 3.7.13 (Colab) 3.8.8 for Windows and 3.8 for Ubuntu.\r\n\r\n**To Reproduce**\r\nUse the build procedure specified in the build process for js/web with any of the system info I specified above. I tried building the wasm artifacts rather than pull them.\r\n\r\n**Expected behavior**\r\nWASM and JS files to be outputted with the build procedure\r\n",
@@ -5880,7 +5866,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11691/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11692",
@@ -5914,15 +5900,15 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 3,
         "created_at": "2022-05-31T22:39:25Z",
-        "updated_at": "2022-06-01T22:29:03Z",
-        "closed_at": null,
+        "updated_at": "2022-06-09T18:53:30Z",
+        "closed_at": "2022-06-09T18:53:25Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
@@ -5985,11 +5971,11 @@
             {
                 "id": 2014185961,
                 "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:coreruntime",
-                "name": "component:coreruntime",
-                "color": "303a93",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "related to core runtime"
+                "description": "issues related to core runtime"
             }
         ],
         "state": "open",
@@ -6052,16 +6038,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 3,
         "created_at": "2022-06-01T01:44:51Z",
-        "updated_at": "2022-06-01T03:11:58Z",
-        "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "updated_at": "2022-06-10T22:25:44Z",
+        "closed_at": "2022-06-10T22:25:44Z",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6069,9 +6055,9 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11694",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11694.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11694.patch",
-            "merged_at": null
+            "merged_at": "2022-06-10T22:25:44Z"
         },
-        "body": "Description: End to end run pass (on device training)\r\n\r\n- LRScheduler/SetExecutionProvider implementations.\r\n- interfaces.cc act as a bridge between user-facing public ORT data structures and internal ones. It is a intermediate place before we move it as a formal public cxx api.\r\n- Synthetic data loader.\r\n- Add perf measure code.\r\n- Avoid heavy session input CPU->GPU memory copy.\r\n- Training API test runner pass.\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\n- If it fixes an open issue, please link to the issue here.\r\n",
+        "body": "Description: End to end run pass (on device training)\r\n\r\n- interfaces.cc act as a bridge between user-facing public ORT data structures and internal ones. It is a intermediate place before we move it as a formal public cxx api.\r\n- Synthetic data loader.\r\n- Add perf measure code.\r\n- Avoid heavy session input CPU->GPU memory copy.\r\n- Training API test runner pass.\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\n- If it fixes an open issue, please link to the issue here.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11694/reactions",
             "total_count": 0,
@@ -6121,22 +6107,13 @@
         },
         "labels": [
             {
-                "id": 3001438923,
-                "node_id": "MDU6TGFiZWwzMDAxNDM4OTIz",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/component:ort-web",
-                "name": "component:ort-web",
-                "color": "303a93",
+                "id": 3066979818,
+                "node_id": "MDU6TGFiZWwzMDY2OTc5ODE4",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/platform:web",
+                "name": "platform:web",
+                "color": "FEF2C0",
                 "default": false,
-                "description": "related to ONNXRuntime Web (JavaScript/TypeScript code)"
-            },
-            {
-                "id": 4191066819,
-                "node_id": "LA_kwDOCVq1mM75zprD",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:WebGPU",
-                "name": "ep:WebGPU",
-                "color": "bfdadc",
-                "default": false,
-                "description": "questions/issues related to WebGPU"
+                "description": "issues related to ONNX Runtime web; typically submitted using template"
             }
         ],
         "state": "open",
@@ -6146,9 +6123,9 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2022-06-01T02:58:39Z",
-        "updated_at": "2022-06-01T22:32:19Z",
+        "updated_at": "2022-08-12T19:20:26Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nCPU/Wasm inference is slow on larger models. If a device has a GPU and the model is large, then using the CPU is not a good choice. The WebGL runtime has three problems:\r\n\r\n1. It is much harder to get it working due to op and data-type support issues. Examples: [1](https://github.com/microsoft/onnxruntime/issues/9724), [2](https://github.com/microsoft/onnxruntime/issues/10031)\r\n2. It is likely to be significantly slower than WebGPU.\r\n3. In my testing it is often unstable and can either throw an error that requires refreshing the tab to fix, or breaks WebGL across all tabs (requiring a browser restart) or even freezes my whole laptop. That said, this may just be specific to Ubuntu, or even my specific OS/hardware combination - I'm not sure. I'm guessing that in general it has to do with high memory usage.\r\n\r\n**Describe the solution you'd like**\r\nBy far the most important requirement is that there is very strong op support, just like the Wasm backend. The broad op support is what sets ORT Web (Wasm backend) apart from tfjs, and some other web runtimes.\r\n\r\nI still bump into ORT Web Wasm op support problems sometimes, but far less often than with other runtimes. I'm guessing this is due to the fact that the ops can be compiled from their C++/C/etc code rather than having to be re-written specifically for the web. I hope that the WebGPU backend would be able to do something similar, because otherwise I fear that lack of op support would make it far less useful. I am rarely able to get the WebGL backend working with my models because of op and data type support issues.\r\n\r\nMight it be possible to set up some sort of conversion pipeline (perhaps via SPIR-V) to WGSL using [Naga](https://github.com/gfx-rs/naga) and similar tools? This is beyond my pay grade, so I'm just guessing here.\r\n\r\n**Describe alternatives you've considered**\r\nSeems like there are people already working on this: https://github.com/webonnx/wonnx But it is unfortunately not stable or op/feature-complete.\r\n\r\n**Additional context**\r\nWebGPU is behind a flag in Chrome, and is expected to ship by default in Chrome this year or early next year. It might be useful to start working on this now so that the ORT Web team can perhaps [provide feedback](https://github.com/gpuweb/gpuweb/issues) on the WebGPU spec while there's an opportunity to make changes. The earlier the feedback, the easier it is to make changes to the spec which could be critical for getting maximum ML performance out of WebGPU.\r\n",
         "reactions": {
@@ -6267,16 +6244,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 6,
+        "comments": 13,
         "created_at": "2022-06-01T06:08:25Z",
-        "updated_at": "2022-06-07T06:47:54Z",
-        "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "updated_at": "2022-06-22T17:27:59Z",
+        "closed_at": "2022-06-22T17:27:58Z",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6284,7 +6261,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11697",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11697.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11697.patch",
-            "merged_at": null
+            "merged_at": "2022-06-22T17:27:58Z"
         },
         "body": "This pull request adds support for gradient clipping and also integrates with the `AdamWOptimizer` changes introduced in #11506.\r\n\r\nTo generate the onnx model for the `AdamW` optimizer, users can simply do\r\n\r\n```py\r\nadamw = onnxblock.optim.AdamW()\r\nwith onnxblock.onnx_model() as accessor:\r\n    output_names = adamw(training_model.parameters())\r\n```\r\n\r\nand to add gradient clipping:\r\n```py\r\nadamw = onnxblock.optim.AdamW(clip_grad=onnxblock.optim.ClipGradNorm(2.5))\r\nwith onnxblock.onnx_model() as accessor:\r\n    output_names = adamw(training_model.parameters())\r\n```\r\n\r\nThe gradient clipping looks like:\r\n![image](https://user-images.githubusercontent.com/12852605/171518901-e961a6dd-5875-499b-8cb7-0ce8e2738416.png)\r\n",
         "reactions": {
@@ -6334,17 +6311,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1273765791,
-                "node_id": "MDU6TGFiZWwxMjczNzY1Nzkx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:performance",
-                "name": "type:performance",
-                "color": "a2eeef",
-                "default": false,
-                "description": "performance related issues and questions"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -6410,11 +6377,11 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 0,
+        "comments": 3,
         "created_at": "2022-06-01T07:15:12Z",
-        "updated_at": "2022-06-02T23:20:56Z",
+        "updated_at": "2022-08-22T02:27:35Z",
         "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6473,16 +6440,16 @@
             "site_admin": false
         },
         "labels": [],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 4,
         "created_at": "2022-06-01T10:58:40Z",
-        "updated_at": "2022-06-08T18:13:19Z",
-        "closed_at": null,
-        "author_association": "CONTRIBUTOR",
+        "updated_at": "2022-06-09T07:38:40Z",
+        "closed_at": "2022-06-09T07:38:39Z",
+        "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6490,7 +6457,7 @@
             "html_url": "https://github.com/microsoft/onnxruntime/pull/11700",
             "diff_url": "https://github.com/microsoft/onnxruntime/pull/11700.diff",
             "patch_url": "https://github.com/microsoft/onnxruntime/pull/11700.patch",
-            "merged_at": null
+            "merged_at": "2022-06-09T07:38:39Z"
         },
         "body": "**Description**: \r\nRework the allocator sharing infrastructure to work for all device types.\r\nSimplify to make more device centric. \r\n\r\n**Motivation and Context**\r\nEnable sharing CPU allocator between more CPU based EPs",
         "reactions": {
@@ -6544,11 +6511,11 @@
             {
                 "id": 1607058914,
                 "node_id": "MDU6TGFiZWwxNjA3MDU4OTE0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/feature:quantization",
-                "name": "feature:quantization",
-                "color": "0052cc",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/quantization",
+                "name": "quantization",
+                "color": "C2E0C6",
                 "default": false,
-                "description": "related to quantization of models or running quantized models"
+                "description": "issues related to quantization"
             }
         ],
         "state": "open",
@@ -6556,17 +6523,17 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 2,
+        "comments": 3,
         "created_at": "2022-06-01T15:28:07Z",
-        "updated_at": "2022-06-02T12:04:19Z",
+        "updated_at": "2022-06-29T12:55:32Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Dynamicly quantized AlBert model shows poor performance**\r\nWhen I quantize fine-tuned albert-base-v2 model F1 score drops to 0.05 whereas on non quantized  version it is 0.8.   \r\n\r\n**System information**\r\n- OS Platform: Ubuntu (20.04)\r\n- onnx == 1.11.0     \r\n- onnxruntime == 1.11.1 \r\n- Python version: 3.8.10\r\n\r\n`quantize_dynamic(onnx_model_path,\r\n                     output_name,\r\n                     weight_type=QuantType.QInt8)\r\n`\r\n\r\nI assume that dynamic quantization adds ops to quantize on each layer of encoder part, but because Albert model has shared layers, it quantizes same  weights several times (to be precise 12 times). \r\n\r\nI tried to quantize only unique layers  by providing _nodes_to_quantize_ argument and close to original results but when I tried reduce model size by using solution from here https://github.com/onnx/onnx/issues/3278#issuecomment-781948998 and got same poor results.\r\nThanks in advance!\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11701/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -6670,17 +6637,7 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 1395147764,
-                "node_id": "MDU6TGFiZWwxMzk1MTQ3NzY0",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:CC++",
-                "name": "api:CC++",
-                "color": "0e8a16",
-                "default": false,
-                "description": "related to the  public API(and ABI) for onnxruntime"
-            }
-        ],
+        "labels": [],
         "state": "closed",
         "locked": false,
         "assignee": null,
@@ -6878,22 +6835,22 @@
         },
         "labels": [
             {
-                "id": 1273765791,
-                "node_id": "MDU6TGFiZWwxMjczNzY1Nzkx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/type:performance",
-                "name": "type:performance",
-                "color": "a2eeef",
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
                 "default": false,
-                "description": "performance related issues and questions"
+                "description": "issues related to core runtime"
             },
             {
                 "id": 2186357781,
                 "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
                 "name": "ep:CUDA",
-                "color": "bfdadc",
+                "color": "0052CC",
                 "default": false,
-                "description": "questions/issues related to CUDA EP"
+                "description": "issues related to the CUDA execution provider"
             }
         ],
         "state": "open",
@@ -6903,7 +6860,7 @@
         "milestone": null,
         "comments": 2,
         "created_at": "2022-06-01T20:18:37Z",
-        "updated_at": "2022-06-07T21:10:03Z",
+        "updated_at": "2022-08-12T08:39:22Z",
         "closed_at": null,
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
@@ -6921,74 +6878,6 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11706/timeline",
-        "performed_via_github_app": null,
-        "state_reason": null
-    },
-    {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11707",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11707/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11707/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11707/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/pull/11707",
-        "id": 1256993090,
-        "node_id": "PR_kwDOCVq1mM446aC9",
-        "number": 11707,
-        "title": "[js/web] use package 'wasm-feature-detect'",
-        "user": {
-            "login": "fs-eire",
-            "id": 7679871,
-            "node_id": "MDQ6VXNlcjc2Nzk4NzE=",
-            "avatar_url": "https://avatars.githubusercontent.com/u/7679871?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/fs-eire",
-            "html_url": "https://github.com/fs-eire",
-            "followers_url": "https://api.github.com/users/fs-eire/followers",
-            "following_url": "https://api.github.com/users/fs-eire/following{/other_user}",
-            "gists_url": "https://api.github.com/users/fs-eire/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/fs-eire/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/fs-eire/subscriptions",
-            "organizations_url": "https://api.github.com/users/fs-eire/orgs",
-            "repos_url": "https://api.github.com/users/fs-eire/repos",
-            "events_url": "https://api.github.com/users/fs-eire/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/fs-eire/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [],
-        "state": "open",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 0,
-        "created_at": "2022-06-01T20:42:01Z",
-        "updated_at": "2022-06-02T20:37:26Z",
-        "closed_at": null,
-        "author_association": "MEMBER",
-        "active_lock_reason": null,
-        "draft": false,
-        "pull_request": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/11707",
-            "html_url": "https://github.com/microsoft/onnxruntime/pull/11707",
-            "diff_url": "https://github.com/microsoft/onnxruntime/pull/11707.diff",
-            "patch_url": "https://github.com/microsoft/onnxruntime/pull/11707.patch",
-            "merged_at": null
-        },
-        "body": "**Description**: The old feature detection implementation seems not working on some of the devices/browser combination. (see #11679 #11567)\r\n\r\nThis change consumes [wasm-feature-detect](https://github.com/GoogleChromeLabs/wasm-feature-detect) to detect features.\r\n\r\nNeed tests on:\r\n- [ ] Windows/Chrome, No CO headers\r\n- [ ] Windows/Chrome, with CO headers\r\n- [ ] Mac/Safari, No CO headers\r\n- [ ] Mac/Safari, with CO headers\r\n- [ ] iOS/Safari, No CO headers\r\n- [ ] iOS/Safari, with CO headers",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11707/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11707/timeline",
         "performed_via_github_app": null,
         "state_reason": null
     }

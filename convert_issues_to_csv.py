@@ -1,18 +1,19 @@
 import csv
 import json
+import glob
 from dateutil import parser
 
 
 c = csv.writer(open("data/issues.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'time_to_close', 'url'])
 
-list = [*range(1, 117)]
-for index in list:
+issue_files = glob.glob('data/docs-issues-*.json')
+for issue_file in issue_files:
 
-    print(index)
+    print(issue_file)
 
-    with open(f'data/issues-{index}.json', encoding="utf8") as f:
-        d = json.load(f)
+    with open(issue_file, encoding="utf8") as f:
+        d = json.load(f)   
 
     pr = "pull_request"
     for x in d:

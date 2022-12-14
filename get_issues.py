@@ -14,11 +14,11 @@ page=START_PAGE
 while (num_issues == PAGE_SIZE):
   # Create an API request 
   url = 'https://api.github.com/repos/microsoft/onnxruntime/issues'
-  headers={'Authorization': f'access_token {TOKEN}'}  
+  headers={'Authorization': f'token {TOKEN}'}  
   params = {'per_page': 100, 'page': page, 'since': "2019-01-01", 'state': "all", 'direction': "asc"}
   response = requests.get(url, headers=headers, params=params)
 
-  print("Status code: ", response.status_code)
+  print(f'Request headers: {headers}; Response status code: {response.status_code}')
 
   # In a variable, save the API response.
   response_data = response.json()
