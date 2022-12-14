@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1172791420",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12048#issuecomment-1172791420",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12048",
+        "id": 1172791420,
+        "node_id": "IC_kwDOCVq1mM5F52B8",
+        "user": {
+            "login": "fs-eire",
+            "id": 7679871,
+            "node_id": "MDQ6VXNlcjc2Nzk4NzE=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/7679871?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fs-eire",
+            "html_url": "https://github.com/fs-eire",
+            "followers_url": "https://api.github.com/users/fs-eire/followers",
+            "following_url": "https://api.github.com/users/fs-eire/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fs-eire/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fs-eire/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fs-eire/subscriptions",
+            "organizations_url": "https://api.github.com/users/fs-eire/orgs",
+            "repos_url": "https://api.github.com/users/fs-eire/repos",
+            "events_url": "https://api.github.com/users/fs-eire/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fs-eire/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-07-02T00:05:51Z",
+        "updated_at": "2022-07-02T00:07:20Z",
+        "author_association": "MEMBER",
+        "body": "The reason is, in release build by default we pass flag `--disable_wasm_exception_catching` for performance concerns (see also https://emscripten.org/docs/porting/exceptions.html)\r\n\r\nThe test cases need exceptions enabled to work, so with exception catching disabled, we don't run the tests in release build.\r\n\r\nThere should be a warning for that; but for static library build, it somehow does not show up.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1172791420/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

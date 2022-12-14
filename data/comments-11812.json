@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1151908944",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11812#issuecomment-1151908944",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11812",
+        "id": 1151908944,
+        "node_id": "IC_kwDOCVq1mM5EqLxQ",
+        "user": {
+            "login": "ravindra-ut",
+            "id": 22090962,
+            "node_id": "MDQ6VXNlcjIyMDkwOTYy",
+            "avatar_url": "https://avatars.githubusercontent.com/u/22090962?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ravindra-ut",
+            "html_url": "https://github.com/ravindra-ut",
+            "followers_url": "https://api.github.com/users/ravindra-ut/followers",
+            "following_url": "https://api.github.com/users/ravindra-ut/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ravindra-ut/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ravindra-ut/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ravindra-ut/subscriptions",
+            "organizations_url": "https://api.github.com/users/ravindra-ut/orgs",
+            "repos_url": "https://api.github.com/users/ravindra-ut/repos",
+            "events_url": "https://api.github.com/users/ravindra-ut/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ravindra-ut/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-06-10T03:59:28Z",
+        "updated_at": "2022-06-10T03:59:28Z",
+        "author_association": "NONE",
+        "body": "The conversion also fails for opset 11 as well.\r\n```\r\n  File \"convert_to_onnx.py\", line 367, in <module>\r\n    main(args)\r\n  File \"convert_to_onnx.py\", line 357, in main\r\n    export_longformer(model, onnx_model_path, args.export_padding)\r\n  File \"convert_to_onnx.py\", line 307, in export_longformer\r\n    torch_onnx_export(\r\n  File \"/home/ubuntu/workspace/onnxruntime/onnxruntime/python/tools/transformers/models/longformer/../../torch_onnx_export_helper.py\", line 53, in torch_onnx_export\r\n    torch.onnx.export(\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/__init__.py\", line 316, in export\r\n    return utils.export(model, args, f, export_params, verbose, training,\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/utils.py\", line 107, in export\r\n    _export(model, args, f, export_params, verbose, training, input_names, output_names,\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/utils.py\", line 724, in _export\r\n    _model_to_graph(model, args, verbose, input_names,\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/utils.py\", line 497, in _model_to_graph\r\n    graph = _optimize_graph(graph, operator_export_type,\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/utils.py\", line 216, in _optimize_graph\r\n    graph = torch._C._jit_pass_onnx(graph, operator_export_type)\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/__init__.py\", line 373, in _run_symbolic_function\r\n    return utils._run_symbolic_function(*args, **kwargs)\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/utils.py\", line 1028, in _run_symbolic_function\r\n    symbolic_fn = _find_symbolic_in_registry(domain, op_name, opset_version, operator_export_type)\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/utils.py\", line 982, in _find_symbolic_in_registry\r\n    return sym_registry.get_registered_op(op_name, domain, opset_version)\r\n  File \"/home/ubuntu/anaconda3/envs/pytorch_p38/lib/python3.8/site-packages/torch/onnx/symbolic_registry.py\", line 125, in get_registered_op\r\n    raise RuntimeError(msg)\r\nRuntimeError: Exporting the operator resolve_conj to ONNX opset version 11 is not supported. Please feel free to request support or submit a pull request on PyTorch GitHub.\r\n\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1151908944/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

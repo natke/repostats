@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/900017806",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/8755#issuecomment-900017806",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/8755",
+        "id": 900017806,
+        "node_id": "IC_kwDOCVq1mM41pS6O",
+        "user": {
+            "login": "ke1337",
+            "id": 22626095,
+            "node_id": "MDQ6VXNlcjIyNjI2MDk1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/22626095?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ke1337",
+            "html_url": "https://github.com/ke1337",
+            "followers_url": "https://api.github.com/users/ke1337/followers",
+            "following_url": "https://api.github.com/users/ke1337/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ke1337/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ke1337/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ke1337/subscriptions",
+            "organizations_url": "https://api.github.com/users/ke1337/orgs",
+            "repos_url": "https://api.github.com/users/ke1337/repos",
+            "events_url": "https://api.github.com/users/ke1337/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ke1337/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-08-17T06:05:14Z",
+        "updated_at": "2021-08-17T06:05:14Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Please avoid using -1 as unknown shapes. ref [onnx doc](https://github.com/onnx/onnx/blob/master/docs/IR.md#static-tensor-shapes). The error Concat reporting is due to failed merge of dimension -1 with 1.\r\n\r\nIn the script above, if you replace **ALL** input dimensions of -1 with unique strings, the symbolic shape inference works.\r\n\r\ni.e. change\r\n\r\n```\r\nhelper.make_tensor_value_info('3363', TensorProto.FLOAT, [-1, -1])\r\n```\r\n\r\nto\r\n\r\n```\r\nhelper.make_tensor_value_info('3363', TensorProto.FLOAT, ['3363_d0', '3363_d1'])\r\n```\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/900017806/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

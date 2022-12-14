@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/778510352",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6258#issuecomment-778510352",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6258",
+        "id": 778510352,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc3ODUxMDM1Mg==",
+        "user": {
+            "login": "tianleiwu",
+            "id": 30328909,
+            "node_id": "MDQ6VXNlcjMwMzI4OTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30328909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tianleiwu",
+            "html_url": "https://github.com/tianleiwu",
+            "followers_url": "https://api.github.com/users/tianleiwu/followers",
+            "following_url": "https://api.github.com/users/tianleiwu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tianleiwu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tianleiwu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tianleiwu/subscriptions",
+            "organizations_url": "https://api.github.com/users/tianleiwu/orgs",
+            "repos_url": "https://api.github.com/users/tianleiwu/repos",
+            "events_url": "https://api.github.com/users/tianleiwu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tianleiwu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-02-12T23:24:30Z",
+        "updated_at": "2021-02-12T23:25:58Z",
+        "author_association": "MEMBER",
+        "body": "It is expected.\r\n\r\n--optimize_onnx will fuse the graph with custom operators like Attention. Since the Attention operator is not a standard ONNX operator, so the optimized model could only run in ONNX runtime but not in TensorFlow.\r\n\r\nWithout --optimize_onnx, the ONNX model uses standard ONNX operators.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/778510352/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

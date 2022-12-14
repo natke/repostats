@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/968200947",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9755#issuecomment-968200947",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9755",
+        "id": 968200947,
+        "node_id": "IC_kwDOCVq1mM45tZLz",
+        "user": {
+            "login": "nansravn",
+            "id": 9952451,
+            "node_id": "MDQ6VXNlcjk5NTI0NTE=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9952451?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nansravn",
+            "html_url": "https://github.com/nansravn",
+            "followers_url": "https://api.github.com/users/nansravn/followers",
+            "following_url": "https://api.github.com/users/nansravn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nansravn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nansravn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nansravn/subscriptions",
+            "organizations_url": "https://api.github.com/users/nansravn/orgs",
+            "repos_url": "https://api.github.com/users/nansravn/repos",
+            "events_url": "https://api.github.com/users/nansravn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nansravn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-11-14T03:51:54Z",
+        "updated_at": "2021-11-14T03:51:54Z",
+        "author_association": "MEMBER",
+        "body": "I found a workaround for my particular scenario. I've updated my Dockerfile for using a Python 3.8.12 base image instead of Python 3.7.12, and this error stopped appearing.\r\n\r\nI didn't need to change anything on my code or on the env requirements, I just changed the Dockerfile base image (`mcr.microsoft.com/azure-functions/python:3.0-python3.8`).\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/968200947/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

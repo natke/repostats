@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1087464143",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11101#issuecomment-1087464143",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11101",
+        "id": 1087464143,
+        "node_id": "IC_kwDOCVq1mM5A0WLP",
+        "user": {
+            "login": "VikasOjha666",
+            "id": 35727142,
+            "node_id": "MDQ6VXNlcjM1NzI3MTQy",
+            "avatar_url": "https://avatars.githubusercontent.com/u/35727142?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/VikasOjha666",
+            "html_url": "https://github.com/VikasOjha666",
+            "followers_url": "https://api.github.com/users/VikasOjha666/followers",
+            "following_url": "https://api.github.com/users/VikasOjha666/following{/other_user}",
+            "gists_url": "https://api.github.com/users/VikasOjha666/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/VikasOjha666/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/VikasOjha666/subscriptions",
+            "organizations_url": "https://api.github.com/users/VikasOjha666/orgs",
+            "repos_url": "https://api.github.com/users/VikasOjha666/repos",
+            "events_url": "https://api.github.com/users/VikasOjha666/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/VikasOjha666/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-04-04T11:58:15Z",
+        "updated_at": "2022-04-04T11:58:15Z",
+        "author_association": "NONE",
+        "body": "Found the solution to the above problem turns out the function _ortvalue_from_torch_tensor returns the object of onnxruntime.capi.onnxruntime_pybind11_state.OrtValue class which just stores the tensor val at pybind level. However the ORTValue we use belongs to onnxruntime.capi.onnxruntime_inference_collection.OrtValue class and _get_c_value function belongs to this class. Hence we can create a object of this class from the value we had formally and then everything will work as expected.\r\n\r\nImplementation in code:\r\n\r\nfrom onnxruntime import OrtValue\r\ninput_ids_o=OrtValue(input_ids_ort)\r\nattention_mask_o=OrtValue(attention_mask_ort)\r\ninput_dict={'input_ids':input_ids_o,'attention_mask':attention_mask_o}\r\nout=enc_session.run_with_ort_values(None,{**input_dict})\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1087464143/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

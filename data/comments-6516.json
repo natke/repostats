@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/771461558",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6516#issuecomment-771461558",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6516",
+        "id": 771461558,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc3MTQ2MTU1OA==",
+        "user": {
+            "login": "fs-eire",
+            "id": 7679871,
+            "node_id": "MDQ6VXNlcjc2Nzk4NzE=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/7679871?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fs-eire",
+            "html_url": "https://github.com/fs-eire",
+            "followers_url": "https://api.github.com/users/fs-eire/followers",
+            "following_url": "https://api.github.com/users/fs-eire/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fs-eire/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fs-eire/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fs-eire/subscriptions",
+            "organizations_url": "https://api.github.com/users/fs-eire/orgs",
+            "repos_url": "https://api.github.com/users/fs-eire/repos",
+            "events_url": "https://api.github.com/users/fs-eire/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fs-eire/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-02-02T08:29:43Z",
+        "updated_at": "2021-02-02T08:29:43Z",
+        "author_association": "MEMBER",
+        "body": "The following code in your example code does not work:\r\n```c++\r\n    std::vector<float> floatArray(count);\r\n    status=g_ort->GetTensorMutableData(m_tensor,(void**)floatArray.data());\r\n```\r\n\r\nThis is because API `GetTensorMutableData` does not copy data to a specified buffer. Instead, it modified the value of `out` to the correct address of the tensor's underlying buffer for read/write data from/to.\r\n\r\n\r\n```c++\r\n  /* from onnxruntime_c_api.h */\r\n\r\n  // This function doesn't work with string tensor\r\n  // this is a no-copy method whose pointer is only valid until the backing OrtValue is free'd.\r\n  ORT_API2_STATUS(GetTensorMutableData, _Inout_ OrtValue* value, _Outptr_ void** out);\r\n```\r\n\r\nthe correct way to call this API is:\r\n```c++\r\n    float *data;\r\n    status=g_ort->GetTensorMutableData(m_tensor, &data);\r\n```\r\n\r\nyou can access the data from `data` later:\r\n```c++\r\n//std::cout<<floatArray[index]<<\",\"<<count<<std::endl;\r\nstd::cout<<data[index]<<\",\"<<count<<std::endl;\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/771461558/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

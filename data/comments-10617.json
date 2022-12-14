@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1060108247",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10617#issuecomment-1060108247",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10617",
+        "id": 1060108247,
+        "node_id": "IC_kwDOCVq1mM4_L_fX",
+        "user": {
+            "login": "kmss1258",
+            "id": 19153385,
+            "node_id": "MDQ6VXNlcjE5MTUzMzg1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/19153385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kmss1258",
+            "html_url": "https://github.com/kmss1258",
+            "followers_url": "https://api.github.com/users/kmss1258/followers",
+            "following_url": "https://api.github.com/users/kmss1258/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kmss1258/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kmss1258/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kmss1258/subscriptions",
+            "organizations_url": "https://api.github.com/users/kmss1258/orgs",
+            "repos_url": "https://api.github.com/users/kmss1258/repos",
+            "events_url": "https://api.github.com/users/kmss1258/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kmss1258/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-03-07T01:49:09Z",
+        "updated_at": "2022-03-07T02:39:40Z",
+        "author_association": "NONE",
+        "body": "I solved this problem through onnxruntime build by myself. It seems like some bug in public pip package.\r\n\r\nThe build environment is as follows : \r\n\r\n> Windows 10 64bits, no gpu, python 3.7, onnxruntime 1.11.0 (own build), onnx 1.10.0 (for opset version 15, not 16), Visual Studio 2019\r\n\r\nBuild command as follows :\r\n> .\\build.bat --config RelWithDebInfo --build_shared_lib --build_wheel --parallel --cmake_generator \"Visual Studio 16 2019”\r\n\r\nAnd some additional command : \r\n> pip3 uninstall onnxruntime\r\npip3 install --upgrade ./build/Windows/RelWithDebInfo/RelWithDebInfo/dist/onnxruntime-1.11.0-cp37-cp37m-win_amd64.whl\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1060108247/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

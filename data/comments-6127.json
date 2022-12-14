@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/744258993",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6127#issuecomment-744258993",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6127",
+        "id": 744258993,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc0NDI1ODk5Mw==",
+        "user": {
+            "login": "pranav-prakash",
+            "id": 10335022,
+            "node_id": "MDQ6VXNlcjEwMzM1MDIy",
+            "avatar_url": "https://avatars.githubusercontent.com/u/10335022?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pranav-prakash",
+            "html_url": "https://github.com/pranav-prakash",
+            "followers_url": "https://api.github.com/users/pranav-prakash/followers",
+            "following_url": "https://api.github.com/users/pranav-prakash/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pranav-prakash/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pranav-prakash/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pranav-prakash/subscriptions",
+            "organizations_url": "https://api.github.com/users/pranav-prakash/orgs",
+            "repos_url": "https://api.github.com/users/pranav-prakash/repos",
+            "events_url": "https://api.github.com/users/pranav-prakash/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pranav-prakash/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2020-12-14T08:09:05Z",
+        "updated_at": "2020-12-14T08:29:38Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Not sure why I'm tagged as I'm not a member of the team. But I think your usage of the api isn't right. Per \r\n\r\nhttps://github.com/microsoft/onnxruntime/blob/d4dddd99d9e42d35247bbcbbb0c87feffb47f633/include/onnxruntime/core/session/onnxruntime_cxx_inline.h#L515\r\n\r\nthe `Run()` the second-to-last arg passed in should be a pointer into an array of `Value`. It's easier if you use the version with signature `std::vector<Value> Session::Run` which automatically allocates the proper array for you:\r\n\r\n```\r\n std::vector<Ort::Value> output_values;\r\n  for (size_t i = 0; i < output_names_count; i++)\r\n    output_values.emplace_back(nullptr);\r\n```\r\n\r\nSee the example in https://github.com/microsoft/onnxruntime/blob/d8f3e46d458397b3fb335477d3efc91e22e160d8/onnxruntime/test/shared_lib/test_nontensor_types.cc#L67-L86 of how to access the elements of the map from there.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/744258993/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

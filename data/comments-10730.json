@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1061337668",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10730#issuecomment-1061337668",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10730",
+        "id": 1061337668,
+        "node_id": "IC_kwDOCVq1mM4_QrpE",
+        "user": {
+            "login": "RyanUnderhill",
+            "id": 38674843,
+            "node_id": "MDQ6VXNlcjM4Njc0ODQz",
+            "avatar_url": "https://avatars.githubusercontent.com/u/38674843?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/RyanUnderhill",
+            "html_url": "https://github.com/RyanUnderhill",
+            "followers_url": "https://api.github.com/users/RyanUnderhill/followers",
+            "following_url": "https://api.github.com/users/RyanUnderhill/following{/other_user}",
+            "gists_url": "https://api.github.com/users/RyanUnderhill/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/RyanUnderhill/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/RyanUnderhill/subscriptions",
+            "organizations_url": "https://api.github.com/users/RyanUnderhill/orgs",
+            "repos_url": "https://api.github.com/users/RyanUnderhill/repos",
+            "events_url": "https://api.github.com/users/RyanUnderhill/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/RyanUnderhill/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-03-08T02:19:13Z",
+        "updated_at": "2022-03-08T02:19:13Z",
+        "author_association": "MEMBER",
+        "body": "It can deadlock when running and since common big OPs are typically internally parallel (especially with CUDA) there's not a real benefit to running multiple OPs in parallel. Some specially parallel crafted models did show some noticeable gains but it was more worth it for us to improve of individual ops so far.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1061337668/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

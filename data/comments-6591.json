@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/774310905",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6591#issuecomment-774310905",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6591",
+        "id": 774310905,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc3NDMxMDkwNQ==",
+        "user": {
+            "login": "AlexRibard",
+            "id": 12990800,
+            "node_id": "MDQ6VXNlcjEyOTkwODAw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/12990800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/AlexRibard",
+            "html_url": "https://github.com/AlexRibard",
+            "followers_url": "https://api.github.com/users/AlexRibard/followers",
+            "following_url": "https://api.github.com/users/AlexRibard/following{/other_user}",
+            "gists_url": "https://api.github.com/users/AlexRibard/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/AlexRibard/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/AlexRibard/subscriptions",
+            "organizations_url": "https://api.github.com/users/AlexRibard/orgs",
+            "repos_url": "https://api.github.com/users/AlexRibard/repos",
+            "events_url": "https://api.github.com/users/AlexRibard/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/AlexRibard/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-02-05T21:59:11Z",
+        "updated_at": "2021-02-05T22:00:20Z",
+        "author_association": "NONE",
+        "body": "I got it to work with the following procedure:\r\n- removed all CUDA installs\r\n- installed CUDA 10.2\r\n- installed cuDNN v8.1.0 for CUDA 10.2\r\n- set my env variable CUDA_PATH to point to C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.2\\\r\n- created a new python 3.7.9 env\r\n- installed only onnxruntime-gpu",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/774310905/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

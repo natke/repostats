@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1030421682",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10473#issuecomment-1030421682",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10473",
+        "id": 1030421682,
+        "node_id": "IC_kwDOCVq1mM49avyy",
+        "user": {
+            "login": "satyajandhyala",
+            "id": 26722914,
+            "node_id": "MDQ6VXNlcjI2NzIyOTE0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/26722914?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/satyajandhyala",
+            "html_url": "https://github.com/satyajandhyala",
+            "followers_url": "https://api.github.com/users/satyajandhyala/followers",
+            "following_url": "https://api.github.com/users/satyajandhyala/following{/other_user}",
+            "gists_url": "https://api.github.com/users/satyajandhyala/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/satyajandhyala/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/satyajandhyala/subscriptions",
+            "organizations_url": "https://api.github.com/users/satyajandhyala/orgs",
+            "repos_url": "https://api.github.com/users/satyajandhyala/repos",
+            "events_url": "https://api.github.com/users/satyajandhyala/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/satyajandhyala/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-02-04T23:14:00Z",
+        "updated_at": "2022-02-07T22:55:27Z",
+        "author_association": "MEMBER",
+        "body": "> The cast propagation graph transformer was not designed to be used with multiple instances working concurrently. It is originally designed to be used in training flow only if the user explicitly specifies the options on ORTModule to perform cast propagation. I understand ORTModule training flow instantiates only one active TrainingSession per process at a time. Having said that, I will make this graph transformation thread safe by replacing file-scope (static) non-constant variables with automatic variables.\r\n\r\nThread-safety is not required. However, we always supported using multiple `InferenceSessions` in the same process.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1030421682/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]
