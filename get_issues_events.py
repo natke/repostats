@@ -4,44 +4,34 @@ import requests
 import glob
 from dateutil import parser
 
-TOKEN=os.getenv('GITHUB_TOKEN')
-PAGE_SIZE=100
-
-num_issues = PAGE_SIZE
-
-
-#issue_files = glob.glob('data/issues-*.json')
-#for issue_file in issue_files:
-
-list = [*range(1, 117)]
-for index in list:
-
-    #print(issue_file)
-    #with open(issue_file, encoding="utf8") as f:
-    #    d = json.load(f)
-
+def issue_events_parse(index):
     print(index)
     with open(f'data/issues-{index}.json', encoding="utf8") as f:
-        d = json.load(f)
+        issues = json.load(f)
+        for issue in issues:
+            if "pull_request" in issue:
+                continue
+            id = issue["number"]
 
-        for x in d:
-            if not "pull_request" in x:
+            # Get the events for the current issue
+            url = f'{issue["url"]}/events'
+            headers={'Authorization': f'token {os.getenv("GITHUB_TOKEN")}'}
+            response = requests.get(url, headers=headers)
 
-                id = x["number"]
+            print("Status code for URL: ", response.status_code, url)
 
-                # Get the events for the current issue
-                url = f'{x["url"]}/events'
-                headers={'Authorization': f'token {TOKEN}'}  
-                response = requests.get(url, headers=headers)
+            if response.status_code == 200:
+                response_data = response.json()
+                with open(f'data/events-{id}.json', 'w', encoding='utf-8') as f:
+                    json.dump(response_data, f, ensure_ascii=False, indent=4)
 
-                print("Status code for URL: ", response.status_code, url)
+if __name__ == '__main__':
+    PAGE_SIZE = 100
+    issue_start = int(os.getenv('GITHUB_ISSUE_START_PAGE', '0'))
+    issue_files = glob.glob('data/issues-*.json')
 
-                if response.status_code == 200:
-
-                    response_data = response.json()
-
-                    with open(f'data/events-{id}.json', 'w', encoding='utf-8') as f:
-                        json.dump(response_data, f, ensure_ascii=False, indent=4)
-
-
-                    
+    for index, issue_file in enumerate(issue_files):
+        if issue_start != 0 and issue_start != index + 1:
+            continue
+        issue_events_parse(index + 1)
+        issue_start += 1

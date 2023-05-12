@@ -4,69 +4,67 @@ import glob
 import os
 from dateutil import parser
 
-c = csv.writer(open("data/sla.csv", "w", newline=''))
-c.writerow(['id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
+def calculate_time_difference(start_time, end_time):
+    time_difference = ''
+    if end_time:
+        time_difference = (parser.isoparse(end_time) - parser.isoparse(start_time)).days
+    return time_difference
 
-issue_files = glob.glob('data/issues-*.json')
-for issue_file in issue_files:
+if __name__ == '__main__':
+    csv_file = csv.writer(open("data/sla.csv", "w", newline=''))
+    csv_file.writerow(['id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
 
-    with open(issue_file, encoding="utf8") as f:
-        d = json.load(f)
+    issue_files = sorted(glob.glob('data/issues-*.json'))
+    for issue_file in issue_files:
+        with open(issue_file, encoding="utf8") as f:
+            issue_data = json.load(f)
 
+        for issue in issue_data:
+            if "pull_request" in issue:
+                continue
 
-    for x in d:
-        if not "pull_request" in x:
-            # Issue data
-            id = x["number"]
-            print(f'Issue: {id}')
-            created = parser.isoparse(x["created_at"])
-            time_to_close =  ''
-            if (x["closed_at"]):
-                time_to_close = (parser.isoparse(x["closed_at"]) - created).days
+            try:
+                id = issue["number"]
+                print(f'Issue: {id}')
 
-            # Events data: labeling etc
-            events_file=f'data/events-{id}.json'
-            first_update = ''
-            time_to_update = ''
-            update_type = ''
+                created = issue["created_at"]
+                closed = issue["closed_at"]
+                time_to_close = calculate_time_difference(created, closed)
 
-            if os.path.exists(events_file):
-                with open(events_file, encoding="utf8") as g:
-                    e = json.load(g)
+                events_file = f'data/events-{id}.json'
+                first_event = ''
+                time_to_event = ''
+                event_type = ''
+                if os.path.exists(events_file):
+                    with open(events_file, encoding="utf8") as g:
+                        events_data = json.load(g)
 
-                    for y in e:
-                        event_type = y["event"]
-                        event_time = parser.isoparse(y["created_at"])
-                        if first_update == '' or event_time < first_update:
-                            first_update = event_time
-                            update_type = event_type
-                            #print(f'Updating first update time for issue: {id} with {event_type} {event_time} {created} {(first_update - created).days}')
+                        for event in events_data:
+                            current_event_type = event["event"]
+                            current_event_time = event["created_at"]
+                            if not first_event or current_event_time < first_event:
+                                first_event = current_event_time
+                                event_type = current_event_type
 
-            if first_update != '':
-                time_to_update = (first_update - created).days
-            
-            # Comments data
-            comments_file=f'data/comments-{id}.json'
-            first_comment = ''
-            time_to_comment = ''
+                    if first_event:
+                        time_to_event = calculate_time_difference(created, first_event)
 
-            if os.path.exists(comments_file):
-                with open(comments_file, encoding="utf8") as h:
-                    d = json.load(h)
+                comments_file = f'data/comments-{id}.json'
+                first_comment = ''
+                time_to_comment = ''
+                if os.path.exists(comments_file):
+                    with open(comments_file, encoding="utf8") as h:
+                        comments_data = json.load(h)
 
-                    for z in d:
-                        comment_time = parser.isoparse(z["created_at"])
-                        if first_comment == '' or comment_time < first_comment:
-                            first_comment = comment_time
+                        for comment in comments_data:
+                            comment_time = comment["created_at"]
+                            if not first_comment or comment_time < first_comment:
+                                first_comment = comment_time
 
-            if first_comment != '':
-                time_to_comment = (first_comment - created).days
-              
-            c.writerow([id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+                    if first_comment:
+                        time_to_comment = calculate_time_difference(created, first_comment)
 
+                csv_file.writerow([id, issue["title"].encode('utf-8'), issue["state"], created, first_event, first_comment, closed, time_to_event, event_type, time_to_comment, time_to_close, issue["url"]])
 
-
-
-
-
-    
+            except KeyError:
+                print("No number found")
