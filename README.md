@@ -11,6 +11,7 @@ export GITHUB_TOKEN=<value of personal access token>
 export GITHUB_URL=microsoft/onnxruntime
 export GITHUB_ISSUE_START_PAGE=109
 export GITHUB_PR_START_PAGE=3
+export GITHUB_ISSUE_TAG="" # Can be used to filter issues by tag
 pip install -r requirements.txt
 ```
 

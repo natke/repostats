@@ -2,16 +2,24 @@ import os
 import sys
 import requests
 import json
-
+import urllib.parse
 
 def get_pr_info(page):
     # Create an API request
-    url = f"https://api.github.com/repos/{URL}/issues"
+
+# Construct the URL with the environment variable
+    github_issue_label = os.getenv("GITHUB_ISSUE_TAG")
+    if github_issue_label:
+        github_issue_label = urllib.parse.quote(github_issue_label)
+
+    # Construct the URL with the environment variable
+    url = f"https://api.github.com/repos/{URL}/issues?labels={github_issue_label}" if github_issue_label else f"https://api.github.com/repos/{URL}/issues"
+    print(url)
     headers = {"Authorization": f"Bearer {TOKEN}"}
     params = {
         "per_page": 100,
         "page": page,
-        "since": "2019-01-01",
+        "since": "2022-01-01",
         "state": "all",
         "direction": "asc",
         "base": "gh-pages",
@@ -41,6 +49,7 @@ def get_pr_info(page):
 if __name__ == "__main__":
     TOKEN = os.getenv("GITHUB_TOKEN")
     URL = os.getenv("GITHUB_URL")
+    github_issue_label = os.getenv("GITHUB_ISSUE_TAG")
     PAGE_SIZE = 100
     START_PAGE = int(os.getenv("GITHUB_PR_START_PAGE"))
 

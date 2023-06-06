@@ -1,9 +1,17 @@
 import os
 import requests
 import json
+import urllib.parse
 
 def get_github_issues():
-    url = f'https://api.github.com/repos/{os.getenv("GITHUB_URL")}/issues'
+    github_issue_label = os.getenv("GITHUB_ISSUE_TAG")
+    URL = os.getenv("GITHUB_URL")
+    if github_issue_label:
+        github_issue_label = urllib.parse.quote(github_issue_label)
+
+    # Construct the URL with the environment variable
+    url = f"https://api.github.com/repos/{URL}/issues?labels={github_issue_label}" if github_issue_label else f"https://api.github.com/repos/{URL}/issues"
+    print(url)
     headers = {'Authorization': f'Bearer {os.getenv("GITHUB_TOKEN")}'}
     page = int(os.getenv('GITHUB_ISSUE_START_PAGE', 1))
     page_size = 100
@@ -12,7 +20,7 @@ def get_github_issues():
         params = {
             'per_page': page_size,
             'page': page,
-            'since': '2019-01-01',
+            'since': '2022-01-01',
             'state': 'all',
             'direction': 'asc',
         }
