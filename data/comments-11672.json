@@ -27,7 +27,7 @@
         },
         "created_at": "2022-05-31T19:25:38Z",
         "updated_at": "2022-05-31T19:25:38Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@yuslepukhin why do you think this is a converter issue?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1142556215/reactions",
@@ -599,7 +599,7 @@
         },
         "created_at": "2022-06-13T21:50:33Z",
         "updated_at": "2022-06-13T21:50:33Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "The `TracerWarning` is probably telling you exactly what's going wrong here. I think if you get rid of it, you should be able to export properly.\r\nYou could try moving the problematic code into a function or module that is decorated with `torch.jit.script` or `torch.jit.script_if_tracing`.\r\nIf that doesn't work, please open an issue in the pytorch/pytorch repo.\r\n(Closing this since exporter issues are tracked in pytorch/pytorch repo, not to dismiss the issue)",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1154474002/reactions",

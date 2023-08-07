@@ -8,7 +8,7 @@ PAGE_SIZE=100
 
 num_issues = PAGE_SIZE
 
-list = [*range(1, 117)]
+list = [*range(1, 133)]
 for index in list:
 
     print(index)

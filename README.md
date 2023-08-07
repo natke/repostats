@@ -65,10 +65,12 @@ Exports `data/sla.csv`, which contains first update, first comment, time to upda
 ### Docs issues
 
 ```bash
-python convert_issues_to_csv.py
+python filter_docs_issues.py
 ```
 
-Filters issues that have the component:documentation label, and calculates the time to close, in days, and exports as `data/issues.csv`.
+Filters issues that have the component:documentation label, and calculates the time to close, in days, and exports as `data/docs-issues.csv`.
+Reads associated events and comments and figures out whether the issue is associated with a PR fix.
+
 
 ### Docs PRs
 

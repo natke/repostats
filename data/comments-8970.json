@@ -335,7 +335,7 @@
         },
         "created_at": "2021-10-26T22:24:08Z",
         "updated_at": "2021-10-26T22:24:08Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "This appears to match the PyTorch behavior, so I don't think it's a bug:\r\n\r\n```python\r\nimport torch\r\n\r\nm = torch.nn.RReLU(0.1, 0.3)\r\ninput = torch.tensor([0.5, -0.5])\r\nfor _ in range(3):\r\n  print(m(input))\r\n```\r\n\r\nPrints:\r\n```\r\ntensor([ 0.5000, -0.1394])\r\ntensor([ 0.5000, -0.0921])\r\ntensor([ 0.5000, -0.0792])\r\n```\r\n\r\nNotice it produces different results each time it runs on the same input.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/952374749/reactions",

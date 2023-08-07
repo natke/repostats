@@ -31,8 +31,8 @@
         "body": "Using multiple threading means sessions compete with limited system resource (like CPU cores, GPU etc), and the competition could slow each thread. Below is a simple guide that could reduce the competition by proper configuration:\r\n\r\nIf you need two models to run in a sequence, like run encoder model first then decoder model, then you do not need multiple thread. Use one thread to run sessions one by one.\r\n\r\nNote that two sessions might have extra overhead (like each session might have their own arena memory allocation or thread pool). If you are able to use [ORT C API](https://onnxruntime.ai/docs/get-started/with-c.html), you can pass shared allocator and a global thread pool to avoid the overhead. If you are able to run models in subgraph (like using workflow operators If, Loop or BeamSearch, or create your own custom op), you are able to use one session to do inference (although a session is created for each subgraph in ORT internally, ORT could arrange resources and share arena memory for them properly).\r\n\r\nIf your models are independent, it is better to have one process per model. Then you can use numactl to set CPU affinity for each process. If your computer have multiple GPUs, you might also assign different GPU to be visible to each process.\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1137791839/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

@@ -115,7 +115,7 @@
         },
         "created_at": "2022-05-26T23:07:57Z",
         "updated_at": "2022-05-26T23:07:57Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@snnn asking for help on these instructions from the \"How to Update ONNX\" page:\r\n\r\n> please tell Changming deploying the new test data along with other test models to our CI build machines\r\n\r\nI'm telling you :-) LMK if there's anything I need to do.\r\n\r\n> manually queue a build for every packaging pipeline for your branch.\r\n\r\nHow do I do that?\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1139131815/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2022-06-02T00:46:42Z",
         "updated_at": "2022-06-02T00:46:42Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Finally got the tests to run. Lots of failures: https://dev.azure.com/onnxruntime/onnxruntime/_build/results?buildId=658069&view=logs&j=7536d2cd-87d4-54fe-4891-bfbbf2741d83&t=47129eb0-b626-5be0-6e77-09fcb6185efd\r\n\r\nWill dig into them tomorrow.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1144296647/reactions",
@@ -247,7 +247,7 @@
         },
         "created_at": "2022-06-03T23:11:03Z",
         "updated_at": "2022-06-03T23:11:03Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Status update before I head off for the weekend:\r\n\r\nI figured out how to run the ONNX conformance tests via the nodeJS API. The tests that were initially failing were all for newly added ops.\r\n\r\nThis is what I've been using to build and test:\r\n```sh\r\n./build.sh --cmake_generator Ninja --config Debug --skip_submodule_sync --parallel --enable_onnx_tests --enable_transformers_tool_test --build_nodejs --update --build\r\ncd js/node\r\nnpm test -- --parallel --grep 'test_(blackmanwindow|blackmanwindow|dft|hammingwindow|hannwindow|layer_normalization|melweightmatrix|stft)'\r\n```\r\n\r\nAfter registering op implementations in https://github.com/microsoft/onnxruntime/pull/11733, the remaining test failures are in this file:\r\n[test-out.txt](https://github.com/microsoft/onnxruntime/files/8836128/test-out.txt)\r\n\r\nSome of the actual vs expected are quite close and I am hoping we can configure the test runner to ignore the diffs.\r\nSome of them are quite far and I fear there're bugs in either ORT or the function defs or the test data.\r\n\r\nCC @xadupre @smk2007",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1146442204/reactions",
@@ -423,7 +423,7 @@
         },
         "created_at": "2022-06-07T18:00:32Z",
         "updated_at": "2022-06-07T18:00:32Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "After incorporating https://github.com/onnx/onnx/pull/4249, I still see these failures (there are other failures but I don't expect those to have been fixed by the PR):\r\n```\r\ntest_blackmanwindow_symmetric_expanded\r\n[ERR_ASSERTION]: Expected values to be strictly deep-equal:\r\n+ actual - expected\r\n\r\n  [\r\n+   9\r\n-   10\r\n  ]\r\n      + expected - actual\r\n\r\n       [\r\n      -  9\r\n      +  10\r\n       ]\r\n\r\ntest_hammingwindow_symmetric_expanded\r\n[ERR_ASSERTION]: Expected values to be strictly deep-equal:\r\n+ actual - expected\r\n\r\n  [\r\n+   9\r\n-   10\r\n  ]\r\n      + expected - actual\r\n\r\n       [\r\n      -  9\r\n      +  10\r\n       ]\r\n\r\ntest_hannwindow_symmetric_expanded\r\n[ERR_ASSERTION]: Expected values to be strictly deep-equal:\r\n+ actual - expected\r\n\r\n  [\r\n+   9\r\n-   10\r\n  ]\r\n      + expected - actual\r\n\r\n       [\r\n      -  9\r\n      +  10\r\n       ]\r\n      \r\ntest_stft\r\n[ERR_ASSERTION]: actual[269]=0.00008392586460104212, expected[269]=-12.363648414611816\r\n```\r\n\r\n@smk2007 @xadupre can you PTAL?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1148998098/reactions",
@@ -511,7 +511,7 @@
         },
         "created_at": "2022-06-07T18:33:23Z",
         "updated_at": "2022-06-07T18:34:24Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@gramalingam I don't think that should apply to the `_expanded` tests which expand the function body before passing it to ORT. Please correct me.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1149027933/reactions",
@@ -599,7 +599,7 @@
         },
         "created_at": "2022-06-07T20:19:19Z",
         "updated_at": "2022-06-07T20:19:19Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "> These are different tests right? test_dft vs test_stft?\r\n\r\nOops, deleted comment",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1149124972/reactions",
@@ -643,7 +643,7 @@
         },
         "created_at": "2022-06-07T20:23:44Z",
         "updated_at": "2022-06-07T20:23:44Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "There's currently no way to specify a tolerance for a specific test. I'm looking into adding that.\r\nIt'd be ideal if we could find some small change to the implementation to make the output match the reference output more closely so we don't have to relax the tolerance, so if you have any ideas there LMK.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1149129228/reactions",
@@ -731,7 +731,7 @@
         },
         "created_at": "2022-06-07T22:45:15Z",
         "updated_at": "2022-06-07T22:45:15Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I put up a PR to support per-test tolerances: https://github.com/microsoft/onnxruntime/pull/11775\r\n\r\nDoes anyone know if the C++ `onnx_test_runner` runs in CI? If so then I'll need to update the PR to cover the C++ as well. So far I haven't found it actually being run in CI.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1149245321/reactions",

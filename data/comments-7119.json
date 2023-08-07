@@ -306,5 +306,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1345157018",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/7119#issuecomment-1345157018",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/7119",
+        "id": 1345157018,
+        "node_id": "IC_kwDOCVq1mM5QLXea",
+        "user": {
+            "login": "zhu-dq",
+            "id": 7258374,
+            "node_id": "MDQ6VXNlcjcyNTgzNzQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/7258374?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zhu-dq",
+            "html_url": "https://github.com/zhu-dq",
+            "followers_url": "https://api.github.com/users/zhu-dq/followers",
+            "following_url": "https://api.github.com/users/zhu-dq/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zhu-dq/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zhu-dq/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zhu-dq/subscriptions",
+            "organizations_url": "https://api.github.com/users/zhu-dq/orgs",
+            "repos_url": "https://api.github.com/users/zhu-dq/repos",
+            "events_url": "https://api.github.com/users/zhu-dq/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zhu-dq/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-12-10T06:45:47Z",
+        "updated_at": "2022-12-10T06:45:47Z",
+        "author_association": "NONE",
+        "body": "> @ledaiduongvnth First way, you can leverage OpenVINO Execution provider and it's options is by using the **onnxruntime_perf_test** tool which comes built in when you build onnxruntime with OpenVINO. (As george mentioned at the top)\r\n> \r\n> secondly, you can checkout my blog. https://nmaajidkhan.medium.com/onnx-runtime-openvino-c-inference-e682b075fdaf This blog talks about a cpp sample and it demonstrates complete end to end inferencing of an image using a squeezenet onnx model using onnxruntime-openvino.\r\n> \r\n> It will also help you understand different runtime options that are available with the API. code here: https://github.com/MaajidKhan/onnxruntime-openvino-cpp/tree/main/1_ONNXRT_OpenVINO_CPP_sample\r\n\r\n@MaajidKhan, The code link is lost, can you provide another one.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1345157018/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

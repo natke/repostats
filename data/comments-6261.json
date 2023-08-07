@@ -31,8 +31,8 @@
         "body": "The Java API doesn't currently support unsigned types or float16 as inputs. You can access them if they are model outputs, but there isn't a way to create an OnnxTensor with uint8 bits from the Java side.\r\n\r\nYou should be able to add a layer that converts the input from int16 (or any larger type) into uint8 before exporting it in the short term. This could be done either by modifying the model in TF, or by modifying the onnx model after it's been created.\r\n\r\nLonger term I'll look at adding support for creating unsigned or float16 types directly to the Java API, but it will be uncomfortable to work with either way until Panama & Valhalla land (these are two OpenJDK projects which will ease access to native code and allow for the creation of new primitive types respectively). For ORT there are two options, either interpret bytes as uint8, meaning that you'd have to specify negative values which ORT will interpret as the full unsigned values, or use larger types to represent smaller ones (i.e. use short for uint8). The latter approach won't work for uint64 as there is no larger primitive, so it'll probably be the former approach (as it's both easier to implement and can represent all the types).",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/755039206/reactions",
-            "total_count": 2,
-            "+1": 2,
+            "total_count": 3,
+            "+1": 3,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

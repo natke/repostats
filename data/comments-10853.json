@@ -27,7 +27,7 @@
         },
         "created_at": "2022-03-22T20:44:10Z",
         "updated_at": "2022-03-22T20:49:38Z",
-        "author_association": "MEMBER",
+        "author_association": "NONE",
         "body": "Hi @natke @xadupre , I am also seeing this issue on my end when working on my ONNX exported model, at this specific [line](https://github.com/mstfbl/riiid-acp-pub/blob/2800c89df8b6571f0bd88c63289e224a3dba85a1/05_inference_no_fastai_torch_export.py#L989), with the input being a Numpy `dtype('int64')`/`dtype('long')` matrix. It seems that int64/long Numpy tensors are currently buggy with ORT.\r\n\r\nCC @harishsk @harshithapv",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1075619696/reactions",
@@ -115,7 +115,7 @@
         },
         "created_at": "2022-03-22T22:51:06Z",
         "updated_at": "2022-03-22T22:51:06Z",
-        "author_association": "MEMBER",
+        "author_association": "NONE",
         "body": "@natke Yes, it does!",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1075727891/reactions",

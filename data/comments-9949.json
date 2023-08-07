@@ -31,8 +31,8 @@
         "body": "ONNX Runtime Transformer optimizer can't run with fp16 model. I suggest exporting a model to fp32 and optimize it using an [optimizer](https://github.com/microsoft/onnxruntime/tree/master/onnxruntime/python/tools/transformers) with a model type 'bert'.\r\n\r\nIf you need a smaller memory footprint on runtime, you can try to disable memory arena and memory pattern as follows,\r\n\r\nsession_option = onnxruntime.SessionOptions()\r\nsession_option.enable_mem_pattern = False\r\nsession_option.enable_cpu_mem_arena = False\r\nthe_session = onnxruntime.InferenceSession(model_dir, session_option)\r\n\r\nBut there will be a trade-off between memory and latency.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/988394157/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

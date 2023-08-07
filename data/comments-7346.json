@@ -207,11 +207,11 @@
         "body": "You can use the `--add-binary` of `pyinstller` to include the necessary dlls.\r\nFirst you need to locate where the ONNX Runtime pypi package is installed, for example `<root of you virtual env>\\Lib\\site-packages\\onnxruntime\\capi\\onnxruntime_providers_shared.dll`, now you will need to add this to,\r\n- Your pyinstaller command\r\n   `--add-binary=\"<root of you virtual env>\\Lib\\site-packages\\onnxruntime\\capi\\onnxruntime_providers_shared.dll;.\\onnxruntime\\capi\"`\r\n- OR add this entry to the spec file\r\n   `binaries=[('<root of you virtual env>\\\\Lib\\\\site-packages\\\\onnxruntime\\\\capi\\\\onnxruntime_providers_shared.dll', '.\\\\onnxruntime\\\\capi')],`\r\n\r\nYou can do the similar steps for `onnxruntime_providers_cuda.dll` and other similar dlls.\r\n\r\nFor more information, see pyinstaller manual, https://pyinstaller.readthedocs.io/en/stable/usage.html#cmdoption-add-binary\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1072025570/reactions",
-            "total_count": 0,
+            "total_count": 1,
             "+1": 0,
             "-1": 0,
             "laugh": 0,
-            "hooray": 0,
+            "hooray": 1,
             "confused": 0,
             "heart": 0,
             "rocket": 0,

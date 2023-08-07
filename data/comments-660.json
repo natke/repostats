@@ -27,7 +27,7 @@
         },
         "created_at": "2019-03-20T18:26:44Z",
         "updated_at": "2019-03-20T22:57:33Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "docker image: nvidia/cuda:9.1-cudnn7-devel-ubuntu16.04\r\ncom.nvidia.cuda.version: 9.1.85\r\nI got my on my linux box from: https://developer.nvidia.com/cuda-91-download-archive?target_os=Linux\r\n\r\nfor cudnn 7.1 7.3 7.4 are tested working with the package\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/474971793/reactions",
@@ -115,7 +115,7 @@
         },
         "created_at": "2019-03-22T17:54:23Z",
         "updated_at": "2019-03-22T18:30:29Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "@disktnk actually its a very good point. \r\nYes the docker image has cudnn 7.1, which we actually support. Previously list 7.3 is just one of our deploy environment, and putting it there seems to be not accurate. Ill update the README accordingly. \r\n\r\nAgain thanks for pointing out this 😃 \r\n\r\nTo clarify more: according to https://developer.nvidia.com/rdp/cudnn-archive please go ahead and using the package with 7.1.3 for cuda 9.1. If there is any issue please inform us and we'll look into it.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/475719136/reactions",
@@ -243,7 +243,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "created_at": "2021-08-18T23:10:44Z",
         "updated_at": "2021-08-18T23:10:44Z",

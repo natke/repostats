@@ -71,7 +71,7 @@
         },
         "created_at": "2021-05-05T16:23:35Z",
         "updated_at": "2021-05-05T16:23:35Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I'm mostly using custom build instructions but I had a change to dig into that a little more and here's more details (with perhaps a fix)\r\n\r\nThe problem happens when you say \r\n-Donnxruntime_BUILD_UNIT_TESTS=OFF \r\nand\r\n-Donnxruntime_ENABLE_TRAINING=ON\r\n\r\nWhat happens is that because because BUILD_UNIT_TESTS is OFF the cmake file onnxruntime_unittest.cmake doesnt get included which defines the variable TEST_SRC_DIR\r\nhttps://github.com/microsoft/onnxruntime/blob/94c97ac8c2b2d9459e054a304cdc985ea9499dfa/cmake/onnxruntime_unittests.cmake#L7\r\n\r\nThe variable is used in onnxruntime_training.cmake here:\r\n\r\nhttps://github.com/microsoft/onnxruntime/blob/94c97ac8c2b2d9459e054a304cdc985ea9499dfa/cmake/onnxruntime_training.cmake#L49\r\n\r\nThe exact error occurs at\r\nhttps://github.com/microsoft/onnxruntime/blob/94c97ac8c2b2d9459e054a304cdc985ea9499dfa/cmake/onnxruntime_training.cmake#L93\r\n\r\nbecause TEST_SRC_DIR expands to empty and the paths dont line up.\r\n\r\n\r\nperhaps the right fix would be to simply not use the variable but \r\nuse ${ONNXRUNTIME_ROOT}/test\r\nA better yet fix would probably be to check if we're building UNITTESTS or not in  onnxruntime_training.cmake and put them under the right IF\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/832829588/reactions",

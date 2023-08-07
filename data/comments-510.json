@@ -379,7 +379,7 @@
         },
         "created_at": "2019-02-22T03:38:46Z",
         "updated_at": "2019-02-22T03:41:27Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "hi sorry for replying late:\r\n1. for onnxruntime numpy issue: yes it is a known issue. upgrading to latest numpy version will solve it. we are looking into it.\r\n2. for onnx: currently conda-forge did not have a 3.7 protobuf package. We suggest u working on python 3.6 with conda installed 3.5.2 version protobuf library. 3.6.1 protobuf for python 3.6 is also missing some symbols. We are thinking of switching to build protobuf lib on the fly instead of using shipped binary soon. see https://github.com/onnx/onnx/blob/master/appveyor.yml for steps. \r\n\r\nThanks 😃 ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/466262151/reactions",

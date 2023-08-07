@@ -75,8 +75,8 @@
         "body": "\tstd::vector<std::string> availableProviders = Ort::GetAvailableProviders();\r\n\tauto cudaAvailable = std::find(availableProviders.begin(), availableProviders.end(), \"CUDAExecutionProvider\");\r\n\tOrtCUDAProviderOptions cudaOption;\r\n\r\n\tif ((cudaAvailable == availableProviders.end()))\r\n\t{\r\n\t\tstd::cout << \"GPU is not supported by your ONNXRuntime build. Fallback to CPU.\" << std::endl;\r\n\t\tstd::cout << \"Inference device: CPU\" << std::endl;\r\n\t}\r\n\telse if ((cudaAvailable != availableProviders.end()))\r\n\t{\r\n\t\tstd::cout << \"Inference device: GPU\" << std::endl;\r\n\t\tsession_options.AppendExecutionProvider_CUDA(cudaOption);\r\n\t\t//OrtSessionOptionsAppendExecutionProvider_CUDA(session_options, 0);\r\n\t}\r\n\telse\r\n\t{\r\n\t\tstd::cout << \"Inference device: CPU\" << std::endl;\r\n\t}\r\n\r\nthe cuda is available，but when run the session_options.AppendExecutionProvider_CUDA(cudaOption), break. so i must be use the OrtSessionOptionsAppendExecutionProvider_CUDA(session_options, 0);\r\nbut the speed is slowly, one frame with the gpu forward is 80ms, it is not right, the provide onnxruntime is only 30ms",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/962904381/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

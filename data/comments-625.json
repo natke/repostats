@@ -71,7 +71,7 @@
         },
         "created_at": "2019-03-14T21:55:31Z",
         "updated_at": "2019-03-14T21:55:31Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "Just tested 0.2.1 and newly published onnxruntime-gpu 0.3.0 on ubuntu, import succeed. please make sure there is no broken develop build in your environment (check if there is cached path in easy-install.pth)",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473080502/reactions",
@@ -159,7 +159,7 @@
         },
         "created_at": "2019-03-14T22:16:53Z",
         "updated_at": "2019-03-14T22:16:53Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "it shouldnt need anything else.. could you go to where your package is installed to check if  capi/onnxruntime_pybind11_state.so presents there?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473086800/reactions",
@@ -247,7 +247,7 @@
         },
         "created_at": "2019-03-14T22:21:25Z",
         "updated_at": "2019-03-14T22:21:25Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "ha thats weird. could you try delete the onnxruntime folder, then import, to see if you actually import from somewhere else?\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473088183/reactions",
@@ -291,7 +291,7 @@
         },
         "created_at": "2019-03-14T22:22:13Z",
         "updated_at": "2019-03-14T22:22:13Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "and onnxruntime_gpu-0.x.x.dist-info",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473088402/reactions",
@@ -379,7 +379,7 @@
         },
         "created_at": "2019-03-14T22:38:36Z",
         "updated_at": "2019-03-14T22:38:36Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "I actually tested the onnxruntime-gpu.. could u try install onnxruntime-gpu==0.3.0 to see if the error still presents?\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473092788/reactions",
@@ -467,7 +467,7 @@
         },
         "created_at": "2019-03-14T22:47:23Z",
         "updated_at": "2019-03-14T22:47:23Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "not sure on that tho.. just checked my environment list there's no other specific thing needs to point out.. I installed CUDA 9.1 and cuDNN 7.3 following https://docs.nvidia.com/cuda/archive/9.1/cuda-installation-guide-linux/index.html",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473094931/reactions",
@@ -555,7 +555,7 @@
         },
         "created_at": "2019-03-14T22:51:28Z",
         "updated_at": "2019-03-14T22:51:28Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "yes. We need cuda 9.1 and cudnn 7.3 in order to run. (we are working on upgrading it)",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473095855/reactions",
@@ -643,7 +643,7 @@
         },
         "created_at": "2019-03-14T22:59:32Z",
         "updated_at": "2019-03-14T22:59:32Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "We build the package with 9.1 as well on windows  ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473097695/reactions",
@@ -775,7 +775,7 @@
         },
         "created_at": "2019-03-15T01:55:33Z",
         "updated_at": "2019-03-15T01:55:33Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "no idea on that.. I ll inform the team 😅 ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473130045/reactions",
@@ -819,7 +819,7 @@
         },
         "created_at": "2019-03-15T01:57:10Z",
         "updated_at": "2019-03-15T01:57:10Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "@HectorSVC could u take a look on it? Thanks",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/473130384/reactions",
@@ -1079,7 +1079,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "created_at": "2019-03-27T20:50:41Z",
         "updated_at": "2019-03-27T20:50:41Z",
@@ -1215,7 +1215,7 @@
         },
         "created_at": "2019-03-29T22:17:26Z",
         "updated_at": "2019-03-29T22:17:26Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "@virgile-thermo because our package was build against cuda 9.1. That's the library it will be looking for in your environment once you import it",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/478166241/reactions",

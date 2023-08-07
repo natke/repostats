@@ -119,8 +119,8 @@
         "body": "As for my last question, in case someone would land here:\r\n\r\n> I understand that the output of `onnxruntime_tools` (e.g. `optimizer.optimize_model(...).save_model_to_file(...))` and `dynamic_quantization` is always ORT, not ONNX - am I correct?\r\n\r\nNo, this will be still ONNX (Protocol Buffers), whereas ORT (FlatBuffers) needs to be chosen explicitly, as it serves different purposes (applications in more constrained environments) and - as previously mentioned - can be loaded only by ONNX Runtime.\r\n\r\nBTW, there's a [whole new section devoted to ORT format](https://onnxruntime.ai/docs/reference/ort-model-format.html) in the docs now.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1030909075/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

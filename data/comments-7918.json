@@ -71,7 +71,7 @@
         },
         "created_at": "2021-06-02T04:55:53Z",
         "updated_at": "2021-06-02T04:55:53Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I think we discussed this issue in an earlier build issue #7583 where it was agreed that we can update googletest to a newer version as  a separate PR but we missed doing that.\r\n\r\nI pushed a PR out now.\r\n\r\nhttps://github.com/microsoft/onnxruntime/pull/7919\r\n\r\n\r\nMoving to the latest googletest commit fixes the issue",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/852721417/reactions",
@@ -115,7 +115,7 @@
         },
         "created_at": "2021-06-02T15:25:30Z",
         "updated_at": "2021-06-02T15:25:30Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "From the description of #7893 it does not attempt to address the -Wno-maybe-uninitialized issue ( which seems to be new to gcc11)\n\nA correct fix here would perhaps be to add this extra flag (I'm not sure where) to cflags if the compiler we detect is gcc>=11 (not sure how) ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/853122629/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2021-06-04T21:10:22Z",
         "updated_at": "2021-06-04T21:10:22Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@snnn \r\n\r\nLooks like #7893 already merged \r\nlet me verify it locally",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/854999290/reactions",
@@ -247,7 +247,7 @@
         },
         "created_at": "2021-06-04T22:07:33Z",
         "updated_at": "2021-06-04T22:07:33Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "still there\r\n\r\nonnxruntime.git/cmake/external/googletest/googletest/src/gtest-death-test.cc:1301:24\r\n\r\n```\r\n[57/1279] /usr/bin/c++ -DEIGEN_MPL2_ONLY -DENABLE_CPU_FP16_TRAINING_OPS -DENABLE_ORT_FORMAT_LOAD -I/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/include -I/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest -fPIC -ffunction-sections -fdata-sections -g -fPIC -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -MD -MT external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -MF external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d -o external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-all.cc\r\nFAILED: external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\r\n/usr/bin/c++ -DEIGEN_MPL2_ONLY -DENABLE_CPU_FP16_TRAINING_OPS -DENABLE_ORT_FORMAT_LOAD -I/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/include -I/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest -fPIC -ffunction-sections -fdata-sections -g -fPIC -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -MD -MT external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -MF external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d -o external/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-all.cc\r\nIn file included from /home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-all.cc:42:\r\n/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-death-test.cc: In function ‘bool testing::internal::StackGrowsDown()’:\r\n/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-death-test.cc:1301:24: error: ‘dummy’ may be used uninitialized [-Werror=maybe-uninitialized]\r\n 1301 |   StackLowerThanAddress(&dummy, &result);\r\n      |   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~\r\n/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-death-test.cc:1290:13: note: by argument 1 of type ‘const void*’ to ‘void testing::internal::StackLowerThanAddress(const void*, bool*)’ declared here\r\n 1290 | static void StackLowerThanAddress(const void* ptr, bool* result) {\r\n      |             ^~~~~~~~~~~~~~~~~~~~~\r\n/home/ankurv/onnxruntime.git/cmake/external/googletest/googletest/src/gtest-death-test.cc:1299:7: note: ‘dummy’ declared here\r\n 1299 |   int dummy;\r\n      |       ^~~~~\r\ncc1plus: all warnings being treated as errors\r\n```",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/855032150/reactions",
@@ -335,7 +335,7 @@
         },
         "created_at": "2021-06-05T00:06:41Z",
         "updated_at": "2021-06-05T00:06:41Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "This works ! Thanks",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/855147854/reactions",
@@ -423,7 +423,7 @@
         },
         "created_at": "2021-06-05T00:53:58Z",
         "updated_at": "2021-06-05T00:53:58Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Here you go https://github.com/microsoft/onnxruntime/pull/7957",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/855157844/reactions",

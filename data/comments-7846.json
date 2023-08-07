@@ -31,8 +31,8 @@
         "body": "There are multiple problems here.\r\n* ORT InferenceSession is not pickable which makes it impossible to use with multiprocessing.\r\n* The CUDA runtime does not support the fork start method; either the spawn or forkserver start method are required to use CUDA in subprocesses. See [this](https://pytorch.org/docs/master/notes/multiprocessing.html#cuda-in-multiprocessing).\r\n\r\nThe following program works.\r\n\r\n```\r\nimport onnxruntime as ort\r\nimport numpy as np\r\nimport multiprocessing as mp\r\n\r\ndef init_session(model_path):\r\n    EP_list = ['CUDAExecutionProvider', 'CPUExecutionProvider']\r\n    sess = ort.InferenceSession(model_path, providers=EP_list)\r\n    return sess\r\n\r\nclass PickableInferenceSession: # This is a wrapper to make the current InferenceSession class pickable.\r\n    def __init__(self, model_path):\r\n        self.model_path = model_path\r\n        self.sess = init_session(self.model_path)\r\n\r\n    def run(self, *args):\r\n        return self.sess.run(*args)\r\n\r\n    def __getstate__(self):\r\n        return {'model_path': self.model_path}\r\n\r\n    def __setstate__(self, values):\r\n        self.model_path = values['model_path']\r\n        self.sess = init_session(self.model_path)\r\n\r\nclass IOProcess (mp.Process):\r\n    def __init__(self):\r\n        super(IOProcess, self).__init__()\r\n        self.sess = PickableInferenceSession('model.onnx')\r\n\r\n    def run(self):\r\n        print(\"calling run\")\r\n        print(self.sess.run({}, {'a': np.zeros((3,4),dtype=np.float32), 'b': np.zeros((4,3),dtype=np.float32)}))\r\n        #print(self.sess)\r\n\r\nif __name__ == '__main__':\r\n    mp.set_start_method('spawn') # This is important and MUST be inside the name==main block.\r\n    io_process = IOProcess()\r\n    io_process.start()\r\n    io_process.join()\r\n```\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/850217402/reactions",
-            "total_count": 5,
-            "+1": 5,
+            "total_count": 9,
+            "+1": 9,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

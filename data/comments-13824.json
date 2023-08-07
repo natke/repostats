@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1335620608",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/13824#issuecomment-1335620608",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/13824",
+        "id": 1335620608,
+        "node_id": "IC_kwDOCVq1mM5Pm_QA",
+        "user": {
+            "login": "baijumeswani",
+            "id": 12852605,
+            "node_id": "MDQ6VXNlcjEyODUyNjA1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/12852605?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/baijumeswani",
+            "html_url": "https://github.com/baijumeswani",
+            "followers_url": "https://api.github.com/users/baijumeswani/followers",
+            "following_url": "https://api.github.com/users/baijumeswani/following{/other_user}",
+            "gists_url": "https://api.github.com/users/baijumeswani/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/baijumeswani/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/baijumeswani/subscriptions",
+            "organizations_url": "https://api.github.com/users/baijumeswani/orgs",
+            "repos_url": "https://api.github.com/users/baijumeswani/repos",
+            "events_url": "https://api.github.com/users/baijumeswani/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/baijumeswani/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-12-02T18:04:07Z",
+        "updated_at": "2022-12-02T18:04:07Z",
+        "author_association": "MEMBER",
+        "body": "@FRIEDparrot, is your intention to use `torch_ort_infer` to accelerate an inferene scenario or use `torch_ort` and `onnxruntime-training` to accelerate a training scenario? `onnxruntime-training` is only distributed for linux (not for windows) at the moment. Which is why you're probably not able to install it on your windows machine.\r\n\r\nIf you would like to install for Windows, I would suggest trying to build `onnxruntime-training` from source (I can provide the necessary steps if needed) and then install it. And then try using `torch_ort_infer` with this. I must caution you that we have not performed extensive testing for Windows+onnxruntime-training though.\r\n\r\nHaving said this, we might in the near future start publishing a Windows package for `onnxruntime-training`, but I don't have any timelines that I can share with you right now.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1335620608/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -27,7 +27,7 @@
         },
         "created_at": "2021-01-25T18:24:30Z",
         "updated_at": "2021-01-25T18:25:10Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "The problem is that you are using Onnx Opset 7, where specifying the bias(3rd input) is not optional. https://github.com/onnx/onnx/blob/master/docs/Changelog.md#gemm-7\r\nYou can try using a higher opset version.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/767018287/reactions",

@@ -159,7 +159,7 @@
         },
         "created_at": "2020-11-19T23:13:39Z",
         "updated_at": "2020-11-19T23:13:39Z",
-        "author_association": "MEMBER",
+        "author_association": "NONE",
         "body": "Hi @whitmark,\r\nBack in July 2019 there was very minimal onnx export functionality in ML.NET. While not still complete, it is a lot better today. We have added export support for many more transformers with support for more data types. \r\nWhile exporting a model the batch size needed for inferencing is not always known. To help with this, Onnx supports specifying inputs with dynamic shapes. Back in July last year, a model exported from ML.NET wouldn't have this support.  At the request of other customers, we have added this feature to export models that accept inputs of different sizes. ML.NET now always exports models with dynamic shapes for input. But you do not have to worry about it as long as you specify the correct valid dimensions for your input.\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/730696251/reactions",

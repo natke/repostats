@@ -23,7 +23,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "created_at": "2019-04-08T17:59:24Z",
         "updated_at": "2019-04-08T17:59:24Z",
@@ -71,7 +71,7 @@
         },
         "created_at": "2019-04-08T19:12:45Z",
         "updated_at": "2019-04-08T19:12:45Z",
-        "author_association": "CONTRIBUTOR",
+        "author_association": "NONE",
         "body": "IMO it's more like an onnx issue. see above example for general model loading. But it only showed the shape info (value_info) for the tensors. Weights are stored in initializer field at(https://github.com/onnx/onnx/blob/master/onnx/onnx.in.proto#L258). You can load the ModelProto from onnx.onnx_pb sub-module and access the fields listed in the .proto file.\r\n\r\nI'll close the issue for now and please feel free to follow up with any remaining questions here or in onnx/onnx repo. ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/480967590/reactions",

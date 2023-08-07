@@ -115,7 +115,7 @@
         },
         "created_at": "2022-04-04T23:55:31Z",
         "updated_at": "2022-04-04T23:55:31Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "> When you say == x above in the expected behavior, I think you mean Reverse(x)\r\n\r\nYes! Updated the issue desc.\r\n\r\nI agree with your interpretation of the Slice-10 spec.\r\nIf we're agreed then I guess we should also:\r\n* change the ONNX shape inference code to match.\r\n* change the description of Slice-10 to be explicit about the behavior, since it's sort of surprising.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1088131351/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2022-04-05T00:03:46Z",
         "updated_at": "2022-04-05T00:03:46Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Yes.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1088136507/reactions",
@@ -335,7 +335,7 @@
         },
         "created_at": "2022-04-06T19:09:50Z",
         "updated_at": "2022-04-06T19:09:50Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@hariharans29 discussed this with @gramalingam and we decided that the special casing in ORT is wrong even for Slice-10. The spec doesn't really say that INT_MAX should be treated as a special flag. The behavior going all the way to the end of an axis is meant to be a consequence of setting an index that's larger than all the valid indices.\r\nSpecial handling of INT_MAX could be problematic if the `end` is int32 and the axis has more than INT32_MAX elements.\r\nSo we think the behavior should be consistent for all op sets, and that the current behavior is wrong for negative step.\r\nCan you please update the implementation in accordance with this interpretation?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1090656720/reactions",
@@ -467,7 +467,7 @@
         },
         "created_at": "2022-04-12T17:18:16Z",
         "updated_at": "2022-04-12T17:18:16Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Both tensorflow-onnx and torch.onnx seem to have identical behavior for opset versions 10 and 11, so it seems pretty unlikely that anyone is relying on this difference to me. And even if someone is relying on it, IIUC they could also be relying on it for opset version 11 because the current ORT code doesn't differentiate. So if you want to maintain backwards compatibility, you're going to have to explicitly go against the ONNX spec.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1096990067/reactions",
@@ -599,7 +599,7 @@
         },
         "created_at": "2022-04-25T18:36:53Z",
         "updated_at": "2022-04-25T18:36:53Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Fully maintaining backwards-compatibility means clearly diverging from the ONNX spec for opset version 11, which seems bad to me.\r\nAnd if you're not going to break BC for version 11, it seems better to me to just make it consistent.\r\nJust my two cents, you're the owners of this, so do as you think is best.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1108909358/reactions",

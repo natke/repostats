@@ -207,8 +207,8 @@
         "body": "In case it helps anyone else I encountered the same issue after following these steps:\r\n\r\n* Trained an object detection model using https://customvision.au using a the compact domain\r\n* Exported the model (with example python script) which downloads it as a .zip file\r\n* Tried to run the example python script using `python3 python/predict.py testImage.png`\r\n\r\nI then received the error:\r\n\r\n```\r\nonnxruntime.capi.onnxruntime_pybind11_state.InvalidArgument: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Invalid Feed Input Name:data\r\n```\r\n\r\nThis error is almost identical to that of @Zjq9409 \r\n\r\nI then opened the file `model.onnx` using the tool [Netron](https://github.com/lutzroeder/netron) and clicked the first box in the model to see that the expected name for the inputs was \"image_tensor\" not \"data\" as was declared in the example script.\r\n\r\nUpdated the example script and replacing the line\r\n\r\n```python\r\nINPUT_TENSOR_NAME = 'data'\r\n```\r\n\r\nwith\r\n\r\n```python\r\nINPUT_TENSOR_NAME = 'image_tensor'\r\n```\r\n\r\nThis fixed the problem for me and I was able to successfully run the example script.\r\n\r\nIf anyone else encounters a similar issue maybe the above info will help you",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/946773006/reactions",
-            "total_count": 4,
-            "+1": 4,
+            "total_count": 8,
+            "+1": 8,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

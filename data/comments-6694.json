@@ -42,5 +42,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1316702189",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/6694#issuecomment-1316702189",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6694",
+        "id": 1316702189,
+        "node_id": "IC_kwDOCVq1mM5Oe0ft",
+        "user": {
+            "login": "deephudka005",
+            "id": 81625006,
+            "node_id": "MDQ6VXNlcjgxNjI1MDA2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/81625006?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/deephudka005",
+            "html_url": "https://github.com/deephudka005",
+            "followers_url": "https://api.github.com/users/deephudka005/followers",
+            "following_url": "https://api.github.com/users/deephudka005/following{/other_user}",
+            "gists_url": "https://api.github.com/users/deephudka005/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/deephudka005/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/deephudka005/subscriptions",
+            "organizations_url": "https://api.github.com/users/deephudka005/orgs",
+            "repos_url": "https://api.github.com/users/deephudka005/repos",
+            "events_url": "https://api.github.com/users/deephudka005/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/deephudka005/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-11-16T09:46:33Z",
+        "updated_at": "2022-11-16T09:48:16Z",
+        "author_association": "NONE",
+        "body": "Can you provide some example code to run inference of ort model on GPU for Android? I tried using session options and adding NNAPI to it but I am not aware if my method is correct or not.\r\n```kotlin\r\nval options = OrtSession.SessionOptions()\r\noptions.addNnapi()\r\nortSession = ortEnv?.createSession(onnxModel, options)\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1316702189/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

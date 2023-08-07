@@ -163,8 +163,8 @@
         "body": "The comparison is not apples to apples. In the pytorch script, you're making the input available on GPU (```input_tensor = input_tensor.cuda()```) before calling Run. The ORT python script doesn't have this capability. Hence the input is copied from CPU to GPU as part of the Run call. The same applies for output. In order to rule this out, I wrote a test using our internal C++ APIs where I made the input and output available on GPU apriori and measured only the Run call and found that this model takes about ~320 us. You can find the test [here](https://gist.github.com/pranavsharma/11a1468368a80d6b94a4d9f67b506861).",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/554593653/reactions",
-            "total_count": 10,
-            "+1": 10,
+            "total_count": 11,
+            "+1": 11,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

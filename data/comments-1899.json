@@ -119,8 +119,8 @@
         "body": "For anyone exploring this issue two or more years later: the optimizer part of onnx moved to a separate package, therefore you have to `$ pip install onnxoptimizer` and then update the code mentioned here accordingly.\r\n```python\r\nimport onnx\r\nimport onnxoptimizer\r\n\r\nonnx_model = onnx.load(onnxfile)\r\npasses = [\"extract_constant_to_initializer\", \"eliminate_unused_initializer\"]\r\noptimized_model = onnxoptimizer.optimize(onnx_model, passes)\r\n\r\nonnx.save(optimized_model, onnxfile)\r\n```\r\n\r\nOr at least that's what worked for me.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/840596510/reactions",
-            "total_count": 12,
-            "+1": 10,
+            "total_count": 13,
+            "+1": 11,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

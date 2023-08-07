@@ -115,7 +115,7 @@
         },
         "created_at": "2022-02-26T01:30:27Z",
         "updated_at": "2022-02-26T01:30:52Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@skottmckay would you approve a PR that makes strict enforcement the default, but lets people turn it off if they want? If not, what would you suggest instead?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1051422486/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2022-02-28T22:12:32Z",
         "updated_at": "2022-02-28T22:12:32Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@scottmckay as a user I would be OK if things break with an easy fix that's noted in the release notes. Would you be OK with a PR that does that?\r\n\r\nIf that's not acceptable, a session option to enable strict mode would be OK for the use case that originally prompted this bug. Would you approve a PR that does that?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1054713302/reactions",
@@ -379,7 +379,7 @@
         },
         "created_at": "2022-03-05T05:32:58Z",
         "updated_at": "2022-03-05T05:32:58Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I spent some time looking at this and could use some advice.\r\nIt seems like this might make sense as a `Graph` `ResolveOption`:\r\nhttps://github.com/microsoft/onnxruntime/blob/2679711bee9717f8ab77e20c163ddf2fe3a3f48d/include/onnxruntime/core/graph/graph.h#L1227\r\n\r\nHowever to get something from `SessionOptions` to the first call to `Resolve` seems tricky.\r\nIs it intentional that `Model::Model()` does not call `graph_->Resolve()` immediately after constructing it?\r\nE.g., here:\r\nhttps://github.com/microsoft/onnxruntime/blob/ec4362f8f326e076498ad2fde1aa44929b586f25/onnxruntime/core/graph/model.cc#L99\r\n\r\nIf we could call `graph_->Resolve()` there (and in the other constructor), then I propose:\r\n1. Add new bool to `SessionOptions`.\r\n2. Pass bool into `Model::Load()` calls from `inference_session.cc`.\r\n3. Pass bool into `Model::Model()`.\r\n4. Pass bool into `Graph::Resolve()` (via `ResolveOptions`).\r\n\r\nIf that is not acceptable, then another option would be to add the bool to `Graph::Graph()` constructor and have it save a member variable for use during `Resolve()`.\r\n\r\n(I tried setting it only [here](https://github.com/microsoft/onnxruntime/blob/d1b2fb15addaa369660d617c6d39595c00e2a963/onnxruntime/core/session/inference_session.cc#L1396) since that was minimally invasive, but it seems that Resolve() is often a no-op because the Graph has already been resolved)\r\n\r\n@skottmckay please advise.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1059695537/reactions",
@@ -423,7 +423,7 @@
         },
         "created_at": "2022-03-21T20:15:38Z",
         "updated_at": "2022-03-21T20:15:38Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@pranavsharma could you assign someone who could help advise me on this? See detailed questions above.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1074375193/reactions",
@@ -555,7 +555,7 @@
         },
         "created_at": "2022-03-22T18:27:51Z",
         "updated_at": "2022-03-22T18:27:51Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I personally agree that env variable is not as nice. It's essentially a global variable that goes around the layers of code in a way that is hard to trace.\r\nBut I will be happy to implement this however the code owners here prefer, please just tell me what to do :-)\r\nIf we're not going with an env variable, please see my detailed questions above.\r\n\r\n@pranavsharma @skottmckay \r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1075481358/reactions",
@@ -687,7 +687,7 @@
         },
         "created_at": "2022-03-24T18:33:07Z",
         "updated_at": "2022-03-24T18:33:07Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@pranavsharma to be clear I'd add the bool to the `Graph::Graph()` constructor and have it save a member variable for use later, right? I think there are a lot of overloads of the constructor so this will be a bit of a larger change in practice than it sounds like but I'm happy to do it that way.\r\n\r\nIf not that, can you please clarify how the bool would get from SessionOptions to the call to `MergeShapeInfo` ?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1077925979/reactions",
@@ -775,7 +775,7 @@
         },
         "created_at": "2022-03-31T22:27:05Z",
         "updated_at": "2022-03-31T22:27:05Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@pranavsharma sorry I guess it's the `Model` class that has a bunch of constructors and a bunch of Load functions, and the Model class is responsible for constructing the `Graph`. In any case I'll give it a shot.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1085189714/reactions",

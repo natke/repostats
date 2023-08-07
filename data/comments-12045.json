@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1240833476",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12045#issuecomment-1240833476",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12045",
+        "id": 1240833476,
+        "node_id": "IC_kwDOCVq1mM5J9Z3E",
+        "user": {
+            "login": "OvervCW",
+            "id": 60606100,
+            "node_id": "MDQ6VXNlcjYwNjA2MTAw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/60606100?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/OvervCW",
+            "html_url": "https://github.com/OvervCW",
+            "followers_url": "https://api.github.com/users/OvervCW/followers",
+            "following_url": "https://api.github.com/users/OvervCW/following{/other_user}",
+            "gists_url": "https://api.github.com/users/OvervCW/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/OvervCW/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/OvervCW/subscriptions",
+            "organizations_url": "https://api.github.com/users/OvervCW/orgs",
+            "repos_url": "https://api.github.com/users/OvervCW/repos",
+            "events_url": "https://api.github.com/users/OvervCW/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/OvervCW/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-09-08T14:56:12Z",
+        "updated_at": "2022-09-09T11:06:14Z",
+        "author_association": "NONE",
+        "body": "> The default optimization level is ALL, until this is fixed, please make it BASIC and try running the model. It shouldn't trigger this optimization.\r\n\r\nWhat do you mean by ALL/BASIC? Where should that be configured?\r\n\r\n**Update:** Never mind, found that it can be configured in Triton through the `level` parameter: https://github.com/triton-inference-server/onnxruntime_backend#model-config-options",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1240833476/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

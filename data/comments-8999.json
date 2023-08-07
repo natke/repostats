@@ -71,7 +71,7 @@
         },
         "created_at": "2021-09-10T07:00:26Z",
         "updated_at": "2021-09-10T07:00:26Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Hi @heaths, It looks like that the sequence type is already supported for `Identity` now. \r\nhttps://github.com/microsoft/onnxruntime/pull/7810\r\nhttps://github.com/microsoft/onnxruntime/pull/7335\r\n\r\nI guess here is one of the sample example, which can run successfully:\r\n```\r\nimport onnxruntime\r\nimport torch\r\nclass UninitializedListModel(torch.nn.Module):\r\n    def forward(self, x):\r\n        if x[0].shape[0] < 5:\r\n            if x.size(0) == 1:\r\n                x = x + 1\r\n            else:\r\n                return [x]\r\n        return [x]\r\n\r\nx = torch.ones((3, 4), dtype=torch.int)\r\ntorch.onnx.export(torch.jit.script(UninitializedListModel()), x, 'uninitializedListModel.onnx', opset_version=14, input_names=[\"input_1\"], \r\n                  dynamic_axes={\"input_1\": [0]})\r\n\r\nort_session = onnxruntime.InferenceSession(\"uninitializedListModel.onnx\")\r\ndef to_numpy(tensor):\r\n    return tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy()\r\n\r\nort_inputs = {ort_session.get_inputs()[0].name: to_numpy(x)}\r\nort_outs = ort_session.run(None, ort_inputs)\r\nprint(ort_outs)\r\n```",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/916677830/reactions",

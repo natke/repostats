@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1197711143",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11072#issuecomment-1197711143",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11072",
+        "id": 1197711143,
+        "node_id": "IC_kwDOCVq1mM5HY58n",
+        "user": {
+            "login": "michaelroyzen",
+            "id": 45830328,
+            "node_id": "MDQ6VXNlcjQ1ODMwMzI4",
+            "avatar_url": "https://avatars.githubusercontent.com/u/45830328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/michaelroyzen",
+            "html_url": "https://github.com/michaelroyzen",
+            "followers_url": "https://api.github.com/users/michaelroyzen/followers",
+            "following_url": "https://api.github.com/users/michaelroyzen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/michaelroyzen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/michaelroyzen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/michaelroyzen/subscriptions",
+            "organizations_url": "https://api.github.com/users/michaelroyzen/orgs",
+            "repos_url": "https://api.github.com/users/michaelroyzen/repos",
+            "events_url": "https://api.github.com/users/michaelroyzen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/michaelroyzen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-07-28T06:16:29Z",
+        "updated_at": "2022-07-28T06:18:03Z",
+        "author_association": "NONE",
+        "body": "@yufenglee I'm not sure this issue is fixed (tried using the latest onnxruntime-1.12.0 GPU). While disabling shape inference works for quantization, optimization is still broken for saving models such as albert-xxl. The issue seems to be that [write_external_data_tensors](https://github.com/onnx/onnx/blob/529f7cab88eed143fc9f0126147e9732585e4c5e/onnx/__init__.py#L195) isn't actually respecting the condition when it's set to true:\r\n\r\n> Traceback (most recent call last):\r\n  File \"examples/onnxruntime/optimization/question-answering/run_qa.py\", line 525, in <module>\r\n    main()\r\n  File \"examples/onnxruntime/optimization/question-answering/run_qa.py\", line 311, in main\r\n    optimizer.export(\r\n  File \"/home/mroyzen/train_files/optimum/optimum/onnxruntime/optimization.py\", line 149, in export\r\n    optimizer.save_model_to_file(onnx_optimized_model_output_path, use_external_data_format=True)\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnxruntime/transformers/models/gpt2/../../onnx_model.py\", line 934, in save_model_to_file\r\n    save_model(self.model, output_path)\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnx/__init__.py\", line 202, in save_model\r\n    s = _serialize(proto)\r\n  File \"/opt/conda/lib/python3.8/site-packages/onnx/__init__.py\", line 71, in _serialize\r\n    result = proto.SerializeToString()\r\nValueError: Message onnx.ModelProto exceeds maximum protobuf size of 2GB: 2215158499\r\n\r\nYour help would be appreciated. [Linking to my issue](https://github.com/huggingface/optimum/issues/222) in Huggingface's Optimum library, but everything seems to be working on their end as evidenced by the stack trace.\r\n\r\nYour help would be appreciated. Thanks",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1197711143/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

@@ -130,5 +130,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1275792991",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9332#issuecomment-1275792991",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9332",
+        "id": 1275792991,
+        "node_id": "IC_kwDOCVq1mM5MCw5f",
+        "user": {
+            "login": "chenzhaoqiJM",
+            "id": 51055743,
+            "node_id": "MDQ6VXNlcjUxMDU1NzQz",
+            "avatar_url": "https://avatars.githubusercontent.com/u/51055743?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/chenzhaoqiJM",
+            "html_url": "https://github.com/chenzhaoqiJM",
+            "followers_url": "https://api.github.com/users/chenzhaoqiJM/followers",
+            "following_url": "https://api.github.com/users/chenzhaoqiJM/following{/other_user}",
+            "gists_url": "https://api.github.com/users/chenzhaoqiJM/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/chenzhaoqiJM/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/chenzhaoqiJM/subscriptions",
+            "organizations_url": "https://api.github.com/users/chenzhaoqiJM/orgs",
+            "repos_url": "https://api.github.com/users/chenzhaoqiJM/repos",
+            "events_url": "https://api.github.com/users/chenzhaoqiJM/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/chenzhaoqiJM/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-10-12T08:33:23Z",
+        "updated_at": "2022-10-12T08:33:23Z",
+        "author_association": "NONE",
+        "body": "This seems to be due to the fact that the _WIN32 macro has already been defined causing the corresponding macro in the onnxruntime_c_api.h header file to skip the definition. I solved this problem by making sure that the definition appears in the error macro, located around line 41 of the onnxruntime_c_api.h file. Add the missing macro definition under #else as follows:\r\n//! @}\r\n// SAL2 Definitions\r\n#ifndef _WIN32\r\n#define _In_\r\n#define _In_z_\r\n#define _In_opt_\r\n#define _In_opt_z_\r\n#define _Out_\r\n#define _Outptr_\r\n#define _Out_opt_\r\n#define _Inout_\r\n#define _Inout_opt_\r\n#define _Frees_ptr_opt_\r\n#define _Ret_maybenull_\r\n#define _Ret_notnull_\r\n#define _Check_return_\r\n#define _Outptr_result_maybenull_\r\n#define _In_reads_(X)\r\n#define _Inout_updates_all_(X)\r\n#define _Out_writes_bytes_all_(X)\r\n#define _Out_writes_all_(X)\r\n#define _Success_(X)\r\n#define _Outptr_result_buffer_maybenull_(X)\r\n#define ORT_ALL_ARGS_NONNULL __attribute__((nonnull))\r\n#else\r\n#include <specstrings.h>\r\n#define ORT_ALL_ARGS_NONNULL\r\n#define _Frees_ptr_opt_\r\n#define _Outptr_result_buffer_maybenull_(X)\r\n#endif\r\n\r\nAmong them, _Frees_ptr_opt_ and _Outptr_result_buffer_maybenull_(X) are undefined macros that my compiler tells me, and if you are prompted for more undefined macros, try adding them here.\r\nWith this change, I successfully used the onnxruntime with the mingw730_64 compiler",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1275792991/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

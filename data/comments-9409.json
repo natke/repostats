@@ -86,5 +86,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1332133796",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9409#issuecomment-1332133796",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9409",
+        "id": 1332133796,
+        "node_id": "IC_kwDOCVq1mM5PZr-k",
+        "user": {
+            "login": "sanxincao",
+            "id": 36556811,
+            "node_id": "MDQ6VXNlcjM2NTU2ODEx",
+            "avatar_url": "https://avatars.githubusercontent.com/u/36556811?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sanxincao",
+            "html_url": "https://github.com/sanxincao",
+            "followers_url": "https://api.github.com/users/sanxincao/followers",
+            "following_url": "https://api.github.com/users/sanxincao/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sanxincao/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sanxincao/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sanxincao/subscriptions",
+            "organizations_url": "https://api.github.com/users/sanxincao/orgs",
+            "repos_url": "https://api.github.com/users/sanxincao/repos",
+            "events_url": "https://api.github.com/users/sanxincao/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sanxincao/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-11-30T13:10:39Z",
+        "updated_at": "2022-11-30T13:10:39Z",
+        "author_association": "NONE",
+        "body": "> **Describe the bug** when i try load yolov4 model and set options.AppendExecutionProvider_DML(0); below error thrown: Microsoft.ML.OnnxRuntime.OnnxRuntimeException:“[ErrorCode:RuntimeException] Exception during initialization: D:\\a_work\\1\\s\\onnxruntime\\core\\graph\\function.cc:459 onnxruntime::FunctionImpl::FunctionImpl status.IsOK() was false. This is an invalid model. Error: two nodes with same node name (StatefulPartitionedCall/model/tf_op_layer_strided_slice_1/strided_slice_1).\r\n> \r\n> but when i set options.AppendExecutionProvider_CPU(0); the model loaded.\r\n> \r\n> the yolov4 model is downloaded from: https://github.com/onnx/models/blob/master/vision/object_detection_segmentation/yolov4/model/yolov4.onnx\r\n> \r\n> btw: im using onnx in wpf application.\r\n> \r\n> **System information**\r\n> \r\n> * OS Platform and Distribution (windows 10 20H2):\r\n> * ONNX Runtime installed from (Microsoft.ML.OnnxRuntime.DirectML 1.9.0  / DirectML dll 1.7.0.0):\r\n> * ONNX Runtime version: 1.9.0\r\n> * Python version: N/A\r\n> * Visual Studio version (2019 16.11.4):\r\n> * GCC/Compiler version (if compiling from source):\r\n> * CUDA/cuDNN version: N/A\r\n> * GPU model and memory: GTX950 2G\r\n> \r\n> **To Reproduce** code: SessionOptions options = new SessionOptions(); options.LogSeverityLevel = OrtLoggingLevel.ORT_LOGGING_LEVEL_INFO; options.AppendExecutionProvider_DML(0); _onnxSession = new InferenceSession(model_path, options); //the line error thrown\r\n> \r\n> **Expected behavior** load model successfully\r\n> \r\n> **Screenshots** N/A\r\n> \r\n> **Additional context** N/A\r\n\r\n抄您的代码遇到同样的问题Google到此。。。。。",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1332133796/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

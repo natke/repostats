@@ -119,8 +119,8 @@
         "body": "I figured out that the env variable needs to be set _before_ the `onnxruntime` import. For instance,\r\n\r\n```\r\nimport os\r\nos.environ[\"OMP_NUM_THREADS\"] = \"1\"\r\nimport onnxruntime\r\n\r\n... rest of the code\r\n```\r\n\r\nIs it possible to have this behavior built into the `onnxruntime` package, so that intra/inter thread session options would have the expected effect? I think that would be less confusing for end users",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/601253364/reactions",
-            "total_count": 4,
-            "+1": 4,
+            "total_count": 5,
+            "+1": 5,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

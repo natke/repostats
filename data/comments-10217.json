@@ -163,8 +163,8 @@
         "body": "and much simpler (no need to recompile ORT) -> just provide the torch pointer to the output of your model, etc.:\r\n```python\r\nbinding = session.io_binding()\r\n...\r\n# test export to Torch tensor directly\r\n# https://onnxruntime.ai/docs/api/python/api_summary.html#iobinding\r\nlogit_output = torch.empty((2, 128, 50257), dtype=torch.float32, device='cuda')\r\nbinding.bind_output(name=onnx_named_outputs[0], device_type='cuda', device_id=0, element_type=np.float32, shape=tuple(logit_output.shape), buffer_ptr=logit_output.data_ptr())\r\n```",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1017705150/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

@@ -218,5 +218,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1257702711",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10888#issuecomment-1257702711",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10888",
+        "id": 1257702711,
+        "node_id": "IC_kwDOCVq1mM5K9wU3",
+        "user": {
+            "login": "fxmarty",
+            "id": 9808326,
+            "node_id": "MDQ6VXNlcjk4MDgzMjY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9808326?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fxmarty",
+            "html_url": "https://github.com/fxmarty",
+            "followers_url": "https://api.github.com/users/fxmarty/followers",
+            "following_url": "https://api.github.com/users/fxmarty/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fxmarty/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fxmarty/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fxmarty/subscriptions",
+            "organizations_url": "https://api.github.com/users/fxmarty/orgs",
+            "repos_url": "https://api.github.com/users/fxmarty/repos",
+            "events_url": "https://api.github.com/users/fxmarty/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fxmarty/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-09-26T08:47:33Z",
+        "updated_at": "2022-09-26T08:47:33Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "> TRT doesn't support dynamic quantization. It supports static quantization with QDQ format. Here is an example: https://github.com/microsoft/onnxruntime-inference-examples/tree/main/quantization/nlp/bert/trt. TRT does performance optimization for BERT model, but not for GPT* yet.\r\n> \r\n> @stevenlix\r\n\r\nAny idea why is that @yufenglee ? Maybe because operations as `MatMulInteger` can not be consumed by Tensor RT? Would the PR for QDQ for dynamic quantization https://github.com/microsoft/onnxruntime/pull/12705 allow dynamically quantized models to be used with TRT?",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1257702711/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

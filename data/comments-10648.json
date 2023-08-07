@@ -27,7 +27,7 @@
         },
         "created_at": "2022-04-13T23:14:51Z",
         "updated_at": "2022-04-13T23:14:51Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "In what sense is the model with apex incorrect?\r\ngraph-with-apex contains `com.microsoft::PythonOp`, which is how ORTModule handles custom autograd functions, which should work fine with ORTModule.\r\n\r\nIf we wanted to avoid `PythonOp`, we could in theory do that, but I don't think it should be necessary.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1098564937/reactions",

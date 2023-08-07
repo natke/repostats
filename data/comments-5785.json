@@ -423,7 +423,7 @@
         },
         "created_at": "2020-12-15T00:23:50Z",
         "updated_at": "2020-12-15T00:23:50Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "Yes, we should be partition out all subgraphs with unsupported datatypes (including UINT8). \r\n\r\n@joba01 can you share the log of your run? The logging in ORT-TRT is messy so it may be possible that this is not the point of failure.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/744876451/reactions",
@@ -511,7 +511,7 @@
         },
         "created_at": "2020-12-15T15:57:49Z",
         "updated_at": "2020-12-15T15:57:49Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "This line sticks out to me as the real point of failure:\r\n\r\n`2020-12-15 14:14:20.128606740 [W:onnxruntime:Default, cuda_execution_provider.cc:1843 GetCapability] CUDA kernel not found in registries for Op type: Pad node name: Pad__547`\r\n\r\nTo me it looks like the CUDA execution provider is failing on the fallback due to a missing kernel implementation for this specific pad operator. This may not fail when disabling TRT as the CPU provider may kick in to handle this op. @jywu-msft does my hypothesis make sense?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/745385284/reactions",

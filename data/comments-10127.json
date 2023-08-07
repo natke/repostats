@@ -27,7 +27,7 @@
         },
         "created_at": "2021-12-24T19:28:38Z",
         "updated_at": "2021-12-24T19:28:38Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Thanks for reporting this! I see this error when we install torch_ort first and then install onnxruntime. But you should be able to use onnxruntime with just torch_ort installation. However, if some features of onnxruntime are unavailable in torch_ort, then installing onnxruntime first and then installing torch_ort eliminates the problem.  ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1000920532/reactions",

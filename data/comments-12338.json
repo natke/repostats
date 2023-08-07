@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1255449493",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12338#issuecomment-1255449493",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12338",
+        "id": 1255449493,
+        "node_id": "IC_kwDOCVq1mM5K1KOV",
+        "user": {
+            "login": "diablodale",
+            "id": 679350,
+            "node_id": "MDQ6VXNlcjY3OTM1MA==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/679350?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diablodale",
+            "html_url": "https://github.com/diablodale",
+            "followers_url": "https://api.github.com/users/diablodale/followers",
+            "following_url": "https://api.github.com/users/diablodale/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diablodale/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diablodale/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diablodale/subscriptions",
+            "organizations_url": "https://api.github.com/users/diablodale/orgs",
+            "repos_url": "https://api.github.com/users/diablodale/repos",
+            "events_url": "https://api.github.com/users/diablodale/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diablodale/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-09-22T19:19:14Z",
+        "updated_at": "2022-09-22T19:19:14Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "@sophies927, something happened in your tagging change. You added `api` and somehow at the same time removed `api` and `api:CC++`. I suspect you wanted to keep at least one tag.\r\n\r\nHere is a code walk of one of the many exception issues.\r\n\r\n1. `Ort::Env` is `struct Env : Base<OrtEnv>`\r\n2. the move assign is declared noexcept `void Base::operator=(Base&& v) noexcept { OrtRelease(p_); ...`\r\n3. that release is macro `ORT_DEFINE_RELEASE(Env)` that expands to `inline void OrtRelease(OrtEnv* ptr) { GetApi().ReleaseEnv(ptr); }`\r\n4. the API `ReleaseEnv` is `OrtEnv::Release(value);`\r\n5. and finally `void OrtEnv::Release(OrtEnv* env_ptr)` can throw in either the `OrtMutex::lock()` or `ORT_ENFORCE()` which breaks the `noexcept` contract in step 2 which likely leads to a crash or unpredictable behavior if anything fails in the call stack",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1255449493/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

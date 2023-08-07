@@ -262,5 +262,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1212019541",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10131#issuecomment-1212019541",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10131",
+        "id": 1212019541,
+        "node_id": "IC_kwDOCVq1mM5IPfNV",
+        "user": {
+            "login": "AnakTeka",
+            "id": 3157407,
+            "node_id": "MDQ6VXNlcjMxNTc0MDc=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3157407?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/AnakTeka",
+            "html_url": "https://github.com/AnakTeka",
+            "followers_url": "https://api.github.com/users/AnakTeka/followers",
+            "following_url": "https://api.github.com/users/AnakTeka/following{/other_user}",
+            "gists_url": "https://api.github.com/users/AnakTeka/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/AnakTeka/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/AnakTeka/subscriptions",
+            "organizations_url": "https://api.github.com/users/AnakTeka/orgs",
+            "repos_url": "https://api.github.com/users/AnakTeka/repos",
+            "events_url": "https://api.github.com/users/AnakTeka/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/AnakTeka/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-11T13:51:43Z",
+        "updated_at": "2022-08-11T13:51:43Z",
+        "author_association": "NONE",
+        "body": "@igagoly\r\n\r\n> What's the most time-consuming process in python's `InferenceSession` class init? By profiling using `cProfile`, I have noticed that the `_create_inference_session` which runs in `InferenceSession`'s init is the most time-consuming.\r\n> \r\n> I consulted with the great @xadupre which explained to me that the process of `InferenceSession` is generally as follows: Model Loading -> Graph Optimization -> Data Structure Modifications.\r\n> \r\n> Xavier recommended that saving and using the optimized graph **may** save time. I've tried it, and even though a bit of time was saved, the change wasn't significant. You can try it yourself in this Colab notebook: https://colab.research.google.com/drive/1KwtH90g2NPC8P_bmTT31GdytV2OlS8Y7?usp=sharing\r\n> \r\n> If the Graph Optimization isn't the bottleneck, then I may assume that `Model Loading` or `Data Structure Modifications` is.\r\n> \r\n> I want to understand a bit more about the Model Loading process. If for example, instead of passing a string (file path) to `InferenceSession`, I'd pass model bytes buffer, will there still be a Model Loading process? I assume No because the model is already loaded in the memory and the CPP code should just get the pointer to the memory location.\r\n> \r\n> Also, I want to understand a bit better the Data Structure Modifying process. Why is it needed and what's happening in the process?\r\n\r\n@igaloly do you still have the Colab notebook? I'm trying to pickle the `InferenceSession objects` to no avail, would be great if you have any pointer to pickle the `InferenceSession objects` object.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1212019541/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

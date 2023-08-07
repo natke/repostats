@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1229261133",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12078#issuecomment-1229261133",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12078",
+        "id": 1229261133,
+        "node_id": "IC_kwDOCVq1mM5JRQlN",
+        "user": {
+            "login": "OriAlpha",
+            "id": 41699212,
+            "node_id": "MDQ6VXNlcjQxNjk5MjEy",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41699212?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/OriAlpha",
+            "html_url": "https://github.com/OriAlpha",
+            "followers_url": "https://api.github.com/users/OriAlpha/followers",
+            "following_url": "https://api.github.com/users/OriAlpha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/OriAlpha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/OriAlpha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/OriAlpha/subscriptions",
+            "organizations_url": "https://api.github.com/users/OriAlpha/orgs",
+            "repos_url": "https://api.github.com/users/OriAlpha/repos",
+            "events_url": "https://api.github.com/users/OriAlpha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/OriAlpha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-27T20:30:28Z",
+        "updated_at": "2022-08-27T22:27:30Z",
+        "author_association": "NONE",
+        "body": "```\r\nstart testing model...\r\n--------------------------------------------------\r\nTest PyTorch model and beam search with huggingface transformers...\r\ninput_ids tensor([[   259,  33644,    287,    259,  13439,    628,    807,  49285,    261,\r\n            259,  59569,  24901,    263,    783,  38186,    344,    259,   6097,\r\n            259, 120629,    304,    259,   1616,  55094,  12842,    305,    783,\r\n           2101,   2121, 214630,   7670,    702,  17358,    305,   8253,   9610,\r\n            261,    287,    259, 189663,    304,  28816,    305,  18623,    261,\r\n            305,    281,   8057,    259,  44326,    304,    259, 129447,    305,\r\n           6174,   9610,    305,   3182,    260,      1]])\r\nhuggingface transformers outputs:\r\nsequences tensor([[     0, 250099,    260,    259,  33644,    287,    259,  13439,    628,\r\n            807,  49285,    261,    259,  59569,  24901,    263,    783,  38186,\r\n            259, 120629,    304,    259,   1616,  55094,  12842, 250098,    260,\r\n            259,  33644,    287,    259,  13439,    628,    807,  49285,    261,\r\n            259,  59569,  24901,    263,    783,  38186,    259, 120629,    304,\r\n            259,   1616,  55094,  12842, 250097]])\r\n0: <extra_id_0>. Since the early 20th century, tiger populations have lost 93% of their historic range <extra_id_1>. Since the early 20th century, tiger populations have lost 93% of their historic range <extra_id_2>\r\n--------------------------------------------------\r\nTesting beam search with onnxruntime...\r\nORT outputs:\r\nsequences [[[     0 250099    783   2101   2121 175663    345    702    259 129447\r\n      305   8253   9610    305   3182    260    259  33644    287    259\r\n    13439    628    807  49285    261    259  59569  24901    263    783\r\n    38186   1388    259 120629    304    259   1616  55094  12842 250098\r\n      259  59569  24901    263    783   2101   2121 214630   7670    702]]]\r\nbatch 0 sequence 0: <extra_id_0> have been exterminated from Southeast and Central Asia and China. Since the early 20th century, tiger populations have lost about 93% of their historic range <extra_id_1> tiger populations have been extirpated from\r\n--------------------------------------------------\r\nTorch Sequences:\r\ntensor([[[     0, 250099,    260,    259,  33644,    287,    259,  13439,\r\n             628,    807,  49285,    261,    259,  59569,  24901,    263,\r\n             783,  38186,    259, 120629,    304,    259,   1616,  55094,\r\n           12842, 250098,    260,    259,  33644,    287,    259,  13439,\r\n             628,    807,  49285,    261,    259,  59569,  24901,    263,\r\n             783,  38186,    259, 120629,    304,    259,   1616,  55094,\r\n           12842, 250097]]])\r\n['<extra_id_0>. Since the early 20th century, tiger populations have lost 93% of their historic range <extra_id_1>. Since the early 20th century, tiger populations have lost 93% of their historic range <extra_id_2>']\r\n--------------------------------------------------\r\nORT Sequences:\r\ntensor([[[     0, 250099,    783,   2101,   2121, 175663,    345,    702,\r\n             259, 129447,    305,   8253,   9610,    305,   3182,    260,\r\n             259,  33644,    287,    259,  13439,    628,    807,  49285,\r\n             261,    259,  59569,  24901,    263,    783,  38186,   1388,\r\n             259, 120629,    304,    259,   1616,  55094,  12842, 250098,\r\n             259,  59569,  24901,    263,    783,   2101,   2121, 214630,\r\n            7670,    702]]])\r\n['<extra_id_0> have been exterminated from Southeast and Central Asia and China. Since the early 20th century, tiger populations have lost about 93% of their historic range <extra_id_1> tiger populations have been extirpated from']\r\n--------------------------------------------------\r\nTorch and ORT result is  different\r\nORT {'test_times': 1, 'latency_variance': '0.00', 'latency_90_percentile': '7002.78', 'latency_95_percentile': '7002.78', 'latency_99_percentile': '7002.78', 'average_latency_ms': '7002.78', 'QPS': '0.14', 'parity': False}\r\n\r\n```\r\nI have made more testing paraphases doesnt look good. \r\nORGINIAL_SENTENCE : \r\n```\r\n\"Since the early 20th century, tiger populations have lost at least 93% of their historic range and have been extirpated from Western and Central Asia, the islands of Java and Bali, and in large areas of Southeast and South Asia and China.\"\r\n```\r\n\r\nI have used mt5 large model for testing. ",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1229261133/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

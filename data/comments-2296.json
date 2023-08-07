@@ -339,8 +339,8 @@
         "body": "Oh, I see. \r\n```\r\n./build.sh --config RelWithDebInfo --build_shared_lib --parallel\r\n```\r\nDoesn't satisfy your needs. \r\n\r\nPlease append '--enable_pybind' to that.\r\n\r\nThen, when the script is finished, please run setup.py in the build dir. (e.g. ~/onnxruntime/build/Linux/Debug) \r\n\r\n--enable_pybind  : Enable Python Bindings\r\n--build_wheel: Build Python Wheel. \r\n\r\n--build_wheel implies --enable_pybind.\r\n\r\nIf you specified --build_wheel, then you don't need to run setup.py manually. \r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/554230658/reactions",
-            "total_count": 4,
-            "+1": 4,
+            "total_count": 5,
+            "+1": 5,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -683,7 +683,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "created_at": "2019-12-17T23:17:07Z",
         "updated_at": "2019-12-17T23:17:07Z",
@@ -779,8 +779,8 @@
         "body": "FWIW following command worked for me\r\n` ./build.sh --config Release --build_shared_lib --parallel --enable_pybind --skip_tests --build_wheel  --update --build`\r\nThis should generate whl file in the build directory (`build/Linux/Release/dist`) which can be installed using:\r\n`pip install onnxruntime-1.7.0-cp38-cp38-linux_x86_64.whl`\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/816430647/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1206402625",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12365#issuecomment-1206402625",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12365",
+        "id": 1206402625,
+        "node_id": "IC_kwDOCVq1mM5H6D5B",
+        "user": {
+            "login": "mayavijx",
+            "id": 64396810,
+            "node_id": "MDQ6VXNlcjY0Mzk2ODEw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/64396810?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mayavijx",
+            "html_url": "https://github.com/mayavijx",
+            "followers_url": "https://api.github.com/users/mayavijx/followers",
+            "following_url": "https://api.github.com/users/mayavijx/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mayavijx/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mayavijx/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mayavijx/subscriptions",
+            "organizations_url": "https://api.github.com/users/mayavijx/orgs",
+            "repos_url": "https://api.github.com/users/mayavijx/repos",
+            "events_url": "https://api.github.com/users/mayavijx/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mayavijx/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-05T12:43:07Z",
+        "updated_at": "2022-08-05T12:43:07Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Hi @Darshvino,\r\nYou can build onnxruntime from source after adding below lines after https://github.com/microsoft/onnxruntime/blob/master/onnxruntime/core/providers/openvino/backends/basic_backend.cc#L221\r\n```\r\n  if (global_context_.device_type.find(\"CPU\") != std::string::npos) {\r\n    config[\"CPU_THREADS_NUM\"] = \"1\";\r\n  }\r\n```\r\nThis will set no. of cpu threads to 1.\r\nPlease refer below link for build instruction: \r\nhttps://onnxruntime.ai/docs/build/eps.html#openvino",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1206402625/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

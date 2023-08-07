@@ -42,5 +42,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1207381295",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/8265#issuecomment-1207381295",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/8265",
+        "id": 1207381295,
+        "node_id": "IC_kwDOCVq1mM5H9y0v",
+        "user": {
+            "login": "talc23",
+            "id": 25937994,
+            "node_id": "MDQ6VXNlcjI1OTM3OTk0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/25937994?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/talc23",
+            "html_url": "https://github.com/talc23",
+            "followers_url": "https://api.github.com/users/talc23/followers",
+            "following_url": "https://api.github.com/users/talc23/following{/other_user}",
+            "gists_url": "https://api.github.com/users/talc23/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/talc23/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/talc23/subscriptions",
+            "organizations_url": "https://api.github.com/users/talc23/orgs",
+            "repos_url": "https://api.github.com/users/talc23/repos",
+            "events_url": "https://api.github.com/users/talc23/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/talc23/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-07T10:55:55Z",
+        "updated_at": "2022-08-07T10:55:55Z",
+        "author_association": "NONE",
+        "body": "System information\r\n\r\nOS Platform and Distribution (e.g., Linux Ubuntu 16.04): Ubuntu 20.04\r\nONNX Runtime installed from (source or binary): binary\r\nONNX Runtime version: 1.12.1\r\nPython version: 3.8.10\r\n\r\ncan be reproduced using this script:\r\n`\r\nimport onnxruntime as ort\r\nimport onnx\r\nfrom onnx import helper\r\nfrom onnx import TensorProto\r\nimport numpy as np\r\n\r\nN = 4\r\npadding = [N, 0]\r\nX = helper.make_tensor_value_info('X', TensorProto.FLOAT, [N])\r\npads = helper.make_tensor('pads', TensorProto.INT64, vals=padding, dims=[2])\r\nY = helper.make_tensor_value_info('Y', TensorProto.FLOAT, [N+N])\r\n\r\nnode_def = helper.make_node(\r\n    'Pad',                  # name\r\n    ['X', 'pads'], # inputs\r\n    ['Y'],                  # outputs\r\n    mode='reflect',        # attributes\r\n)\r\ngraph_def = helper.make_graph(\r\n    [node_def],        # nodes\r\n    'test-model',      # name\r\n    [X],\r\n    [Y],               # outputs\r\n    [pads]\r\n)\r\nmodel_def = helper.make_model(graph_def, producer_name='onnx-example')\r\nonnx.checker.check_model(model_def)\r\nprint('The model is checked!')\r\nonnx.save_model(model_def, 'pad.onnx')\r\nprint('The model is saved!')\r\n\r\nx = np.arange(N, dtype=np.float32)\r\nprint(f'input={x}')\r\nprint(f'padding={padding}')\r\nresult = np.pad(x, pad_width=(padding[0], padding[1]), mode='reflect')\r\nprint(f'numpy result={result}')\r\n\r\ny_ort = ort.InferenceSession(\"pad.onnx\", providers=['CPUExecutionProvider']).run([\"Y\"], {\"X\": x})[0]\r\nprint(f'onnxrt result={y_ort}')\r\n`\r\n\r\nresult should be:\r\n`\r\nThe model is checked!\r\nThe model is saved!\r\ninput=[0. 1. 2. 3.]\r\npadding=[4, 0]\r\nnumpy result=[2. 3. 2. 1. 0. 1. 2. 3.]\r\nonnxrt result=[0. 3. 2. 1. 0. 1. 2. 3.]\r\n`",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1207381295/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

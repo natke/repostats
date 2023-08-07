@@ -115,7 +115,7 @@
         },
         "created_at": "2021-11-19T23:02:24Z",
         "updated_at": "2021-11-19T23:02:24Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@SanjanaUdayashankar I'm guessing the code is exporting the op `MMCVDeformConv2d` by using [torch.onnx.register_custom_op_symbolic](https://pytorch.org/docs/master/onnx.html#custom-operators) or via [torch.autograd.Function](https://pytorch.org/docs/master/onnx.html#torch-autograd-functions).\r\n\r\nIf the exported ONNX model includes custom ops, you need to take steps to make sure ONNX Runtime knows how to run those ops. See <https://faxu.github.io/onnxruntime/docs/reference/operators/add-custom-op.html>.\r\n\r\nPlease feel free to open another issue with more details if you need help.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/974527833/reactions",

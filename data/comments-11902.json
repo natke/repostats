@@ -159,7 +159,7 @@
         },
         "created_at": "2022-06-20T15:44:26Z",
         "updated_at": "2022-06-20T15:44:26Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "@fdwr because `y_scale` is a scalar, `axis` should be ignored:\r\n\r\nFrom the [spec](https://github.com/onnx/onnx/blob/main/docs/Operators.md#QuantizeLinear):\r\n\r\n> axis : int (default is 1)\r\n(Optional) The axis of the quantization dimension of the input tensor. Ignored for per-tensor quantization.\r\n\r\nAnd per-tensor quantization is indicated by a scalar value of `y_scale`:\r\n\r\n> y_scale : tensor(float)\r\nScale for doing quantization to get 'y'. It can be a scalar, which means per-tensor/layer quantization, or a 1-D Tensor for per-axis quantization.\r\n\r\nSo the EP should not be checking `axis` in this case.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1160602792/reactions",

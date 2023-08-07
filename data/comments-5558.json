@@ -163,8 +163,8 @@
         "body": "> > It is thread-safe, but not const.\r\n> \r\n> thanks! But, could it be?\r\n\r\nOrt::Session is a thin wrapper around actual Session ptr that is returned and passed to C API. Technically, we can fake it being const since binary wise Ort::Session object is not being changed. So the answer is yes, but it might be misleading with regards to the actual onnxruntime::InferenceSession object which we reserve a right to mutate.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/726943953/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

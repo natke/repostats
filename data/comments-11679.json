@@ -218,5 +218,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1258687284",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/11679#issuecomment-1258687284",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/11679",
+        "id": 1258687284,
+        "node_id": "IC_kwDOCVq1mM5LBgs0",
+        "user": {
+            "login": "jobergum",
+            "id": 20928528,
+            "node_id": "MDQ6VXNlcjIwOTI4NTI4",
+            "avatar_url": "https://avatars.githubusercontent.com/u/20928528?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jobergum",
+            "html_url": "https://github.com/jobergum",
+            "followers_url": "https://api.github.com/users/jobergum/followers",
+            "following_url": "https://api.github.com/users/jobergum/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jobergum/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jobergum/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jobergum/subscriptions",
+            "organizations_url": "https://api.github.com/users/jobergum/orgs",
+            "repos_url": "https://api.github.com/users/jobergum/repos",
+            "events_url": "https://api.github.com/users/jobergum/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jobergum/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-09-26T22:00:33Z",
+        "updated_at": "2022-09-27T06:10:26Z",
+        "author_association": "NONE",
+        "body": "I'm also experiencing this issue with multi-threaded + COOP headers with browsers on IOS devices.  \r\n\r\n- https://github.com/jobergum/browser-ml-inference\r\n- Live demo over at https://aiserv.cloud/ \r\n\r\nI tried this [change](https://github.com/jobergum/browser-ml-inference/commit/7e5f2bff1e5b498b2a93a66e8f1b80668b192ffe) so in my case I'm not able to work-around this with `ort.env.wasm.numThreads = 1` \r\n\r\nUpdate: I had to remove COOP headers to make it work again on IOS devices,  my model is pretty large, though, 22MB. ",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1258687284/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

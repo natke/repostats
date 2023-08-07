@@ -295,13 +295,13 @@
         "body": "> > Thanks, the model is am using is showing similar behaviours to what you described above. If we only call for the output label, it works, but throws the error when we also try to get the probability. The type in our case is `sequence<map<string,float32>>`.\r\n> > Hopefully someone from the dev team can shed some light on how we can resolve this issue, as I imagine that almost all users want the output probabilities, it also exposes opportunities to improve error messages in the node run time.\r\n> \r\n> 💯 , my assumption at this point is that it has to do with [dtypes](https://www.tensorflow.org/api_docs/python/tf/dtypes/DType) and not handling more complex types than that.\r\n\r\nWe managed to find a resolution for this. Essentially it seems that ZipMap is the root cause of the problem. We changed our conversion code to the below:\r\n\r\n```\r\ninitial_type = [('float_input', FloatTensorType((1, 8)))]\r\noptions = {id(model): {'zipmap': False}} # enables getting probabilities in Node.\r\nonx = convert_sklearn(model, initial_types=initial_type, options=options)\r\n```\r\n\r\nI will leave this issue open for now, as I feel it is important that this needs to be documented **somewhere** for anybody attempting to convert from Python (SkLearn) and use in the ONNX NodeJS runtime.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/863266149/reactions",
-            "total_count": 2,
+            "total_count": 3,
             "+1": 0,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
             "confused": 0,
-            "heart": 1,
+            "heart": 2,
             "rocket": 1,
             "eyes": 0
         },

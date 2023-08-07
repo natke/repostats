@@ -159,7 +159,7 @@
         },
         "created_at": "2021-03-20T02:30:31Z",
         "updated_at": "2021-03-20T02:30:31Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "I also desire an API instead of env var's for my use case.\r\nI'm a Kinect Azure dev. This week's release of Azure Kinect Body Tracking v1.1.0 supports TensorRT. The Kinect Azure team suggests setting three env vars https://docs.microsoft.com/en-us/azure/kinect-dk/troubleshooting#specifying-onnx-runtime-execution-environment\r\nORT_TENSORRT_ENGINE_CACHE_ENABLE\r\nORT_TENSORRT_ENGINE_CACHE_PATH\r\nORT_TENSORRT_FP16_ENABLE\r\n\r\nMy software solution runs as a \"plugin\" by customers. So it is often difficult for me to set env vars because by the time my code runs, the main process has already started and the C-runtime already loaded. Therefore, it is easily possible that I can't use `SetEnvironmentVariableW()` or `_wputenv_s()` to set the above env vars in a way the ONX runtime can view (in addition, it might have already loaded before my code runs).\r\n\r\nWith an API, this is less an issue. Of course, only after an API is provided can then the Azure Kinect team update their API that I consume, and then I can call that Kinect API.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/803229671/reactions",

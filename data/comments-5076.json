@@ -130,5 +130,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1250607338",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/5076#issuecomment-1250607338",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5076",
+        "id": 1250607338,
+        "node_id": "IC_kwDOCVq1mM5KisDq",
+        "user": {
+            "login": "AvalonChang",
+            "id": 54426897,
+            "node_id": "MDQ6VXNlcjU0NDI2ODk3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/54426897?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/AvalonChang",
+            "html_url": "https://github.com/AvalonChang",
+            "followers_url": "https://api.github.com/users/AvalonChang/followers",
+            "following_url": "https://api.github.com/users/AvalonChang/following{/other_user}",
+            "gists_url": "https://api.github.com/users/AvalonChang/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/AvalonChang/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/AvalonChang/subscriptions",
+            "organizations_url": "https://api.github.com/users/AvalonChang/orgs",
+            "repos_url": "https://api.github.com/users/AvalonChang/repos",
+            "events_url": "https://api.github.com/users/AvalonChang/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/AvalonChang/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-09-19T06:11:48Z",
+        "updated_at": "2022-09-19T06:11:48Z",
+        "author_association": "NONE",
+        "body": "> Hey! I looked through the [onnxruntime-inference-examples](https://github.com/microsoft/onnxruntime-inference-examples)/[c_cxx](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/c_cxx)/[imagenet](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/c_cxx/imagenet)/main.cc and as I understood to use CUDA I have to add provider using Ort::ThrowOnError(OrtSessionOptionsAppendExecutionProvider_CUDA(sessionOptions, 0));. But looking through the docs I saw that this is the old way of giving option to infer models on GPU. What is the new way? Now my model works well on CPU (I do not supply any providers). How to transfer it to GPU?\r\n\r\nin my work (used onnxruntime-win-x64-gpu-1.12.0), OrtSessionOptionsAppendExecutionProvider_CUDA still work well.\r\njust remember copy the onnxruntime_providers_cuda.dll & onnxruntime_providers_shared.dll into your output directory.\r\n\r\nfor the new way, I think in C++ you can use SessionOptions::AppendExecutionProvider_CUDA.\r\nsuch as below\r\n```\r\nOrt::Env env;\r\nOrt::SessionOptions session_options;\r\nOrtCUDAProviderOptions cuda_options;\r\ncuda_options.device_id = 0;\r\nsession_options.AppendExecutionProvider_CUDA(cuda_options);\r\nOrt::Session session = Ort::Session(env, L\"model.onnx\", session_options);\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1250607338/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

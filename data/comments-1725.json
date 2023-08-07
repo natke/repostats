@@ -111,7 +111,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "created_at": "2019-11-11T22:13:36Z",
         "updated_at": "2019-11-11T22:13:36Z",
@@ -383,8 +383,8 @@
         "body": "Can you also try disabling the memory arena by calling OrtApi::DisableCpuMemArena? If that and memory pattern are disabled ORT will just call malloc/free for each individual request instead of maintaining it's own buffers/cache in an attempt to minimize allocations. If it still runs out of memory with that setup the model requires more memory than you have available, and the next question would be whether particular operator implementations could be more efficient. \r\n\r\nNote: There's currently no way to disable arena usage on GPU, so please test this on CPU only. ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/567723410/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1229690369",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10957#issuecomment-1229690369",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10957",
+        "id": 1229690369,
+        "node_id": "IC_kwDOCVq1mM5JS5YB",
+        "user": {
+            "login": "josephrocca",
+            "id": 1167575,
+            "node_id": "MDQ6VXNlcjExNjc1NzU=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1167575?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/josephrocca",
+            "html_url": "https://github.com/josephrocca",
+            "followers_url": "https://api.github.com/users/josephrocca/followers",
+            "following_url": "https://api.github.com/users/josephrocca/following{/other_user}",
+            "gists_url": "https://api.github.com/users/josephrocca/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/josephrocca/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/josephrocca/subscriptions",
+            "organizations_url": "https://api.github.com/users/josephrocca/orgs",
+            "repos_url": "https://api.github.com/users/josephrocca/repos",
+            "events_url": "https://api.github.com/users/josephrocca/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/josephrocca/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-29T02:54:28Z",
+        "updated_at": "2022-08-29T02:54:28Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "@fs-eire @hanbitmyths Wondering if there are any updates on this issue? The main two things are:\r\n\r\n* Raising Emscripten's `MAXIMUM_MEMORY` setting from 2GB to 4GB ([here](https://github.com/emscripten-core/emscripten/blob/798e36ef22b7f35b59c85a6abe03977e6741fa73/src/settings.js#L189))\r\n* Allowing for multiple inference sessions to be created that run in parallel (i.e. each with their own web worker).\r\n\r\nThe first one seems like it just involves changing a single number, and it would unblock [and others](https://github.com/BlinkDL/RWKV-LM/issues/7#issuecomment-1229382106) on a few projects. Any chance a pull request would be accepted for that?",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1229690369/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

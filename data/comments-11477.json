@@ -71,7 +71,7 @@
         },
         "created_at": "2022-05-11T01:00:06Z",
         "updated_at": "2022-05-11T01:00:06Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "> you think too much\r\n\r\nwhat do you mean?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1123064981/reactions",
@@ -114,9 +114,9 @@
             "site_admin": false
         },
         "created_at": "2022-05-13T02:42:42Z",
-        "updated_at": "2022-06-20T02:44:28Z",
-        "author_association": "NONE",
-        "body": "https://github.com/wangxiyuan/onnxruntime/pull/1  This is the POC code which is under develop. I'll complete it ASAP\r\n\r\nUPDATE(2022-06-20) The basic flow is done. `Add` operator can be ran on Ascend now",
+        "updated_at": "2022-08-16T09:20:22Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "This basic PR is ready for review now.\r\n\r\nThere are about 10 operators are added in the PR. With this change, the ResNet-v1.12 can runs well on Ascend backend with onnxruntime.\r\n\r\nAny committer can take a look? Thanks\r\n\r\nI'd like to know what should I do to push it forward. \r\n\r\nAbout the test environment, We can donate ascend based VM to community as well.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1125601971/reactions",
             "total_count": 0,

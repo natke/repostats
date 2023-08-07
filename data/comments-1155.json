@@ -75,8 +75,8 @@
         "body": "Configuration around running optimizations should be separate from configuration for logging. There is a session option for the optimization level. \r\n\r\nThere is the notion of a vlog level for the VERBOSE logging level which sounds like it matches better what you're after, however that's different to 'normal' logging with levels such as INFO, WARNING, ERROR.\r\n\r\nI would think it's relatively easy to add output of the input and output shapes to the executor with VLOG statements, as the number of inputs/outputs is known and the shape should be accessible.\r\n\r\nLogging full data would be more work as you would need some awareness of the data type involved for each input/output.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/498465125/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

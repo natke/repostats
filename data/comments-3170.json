@@ -75,8 +75,8 @@
         "body": "What about something like this? (I haven't checked it for syntactic correctness)\r\n\r\n```\r\nstatic const char* output_names[] = { \"6568\", \"6570\", \"6572\", \"6887\" };\r\nstatic const size_t NUM_OUTPUTS = sizeof( output_names ) / sizeof( output_names[ 0 ] );\r\n\r\nOrtValue* p_output_tensors[ NUM_OUTPUTS ] = {nullptr};\r\n\r\nOrtRun(session_, nullptr, input_names, &input_tensor_1, 1, output_names, NUM_OUTPUTS, p_output_tensors );\r\n```",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/596613449/reactions",
-            "total_count": 2,
-            "+1": 2,
+            "total_count": 3,
+            "+1": 3,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

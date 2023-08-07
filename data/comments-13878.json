@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1345233247",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/13878#issuecomment-1345233247",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/13878",
+        "id": 1345233247,
+        "node_id": "IC_kwDOCVq1mM5QLqFf",
+        "user": {
+            "login": "bbeaumatin",
+            "id": 35143645,
+            "node_id": "MDQ6VXNlcjM1MTQzNjQ1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/35143645?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bbeaumatin",
+            "html_url": "https://github.com/bbeaumatin",
+            "followers_url": "https://api.github.com/users/bbeaumatin/followers",
+            "following_url": "https://api.github.com/users/bbeaumatin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bbeaumatin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bbeaumatin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bbeaumatin/subscriptions",
+            "organizations_url": "https://api.github.com/users/bbeaumatin/orgs",
+            "repos_url": "https://api.github.com/users/bbeaumatin/repos",
+            "events_url": "https://api.github.com/users/bbeaumatin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bbeaumatin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-12-10T10:29:04Z",
+        "updated_at": "2022-12-10T10:29:04Z",
+        "author_association": "NONE",
+        "body": "Hi, got the same issue and got there. I'm not a Python developer but I managed to solve my issue by adding `delete=False` argument to the call of NamedTemporaryFile of onnxconverter_common/float16.py lib, line 325.  On windows the file seems to be deleted before the lib tries to read it later. I haven't checked if there is an update of onnxconverter_common as I don't have too much time ^^.\r\n\r\nHope this will help",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1345233247/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

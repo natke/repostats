@@ -207,8 +207,8 @@
         "body": "Hi @pranavsharma ,\r\nI figured out, your example really helped; especially the part you did\r\n```\r\n d = create_random_data(shape_arr, np.float32, 0, 1, None)\r\n```\r\nThe dataset I was feeding was of type np.float16, e.g.\r\n```\r\n'p_Eratio': array([0.40392396], dtype=float16),\r\n 'p_Reta': array([-0.64157045], dtype=float16),\r\n```\r\nI just change them to float32 by `final_sample1[key].astype(np.float32)` and it works with my code.\r\nThanks a lot,\r\nDebo.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/627258863/reactions",
-            "total_count": 5,
-            "+1": 4,
+            "total_count": 6,
+            "+1": 5,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

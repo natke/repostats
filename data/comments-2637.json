@@ -115,7 +115,7 @@
         },
         "created_at": "2019-12-16T07:19:56Z",
         "updated_at": "2019-12-16T07:19:56Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "> If I understand the FAQ correctly you can use a single underscore as long as it's not the first character in the test name and followed by an upper case character\r\n\r\nIt's more restrictive. Single underscores:\r\n\r\n* Can't be the first character in a test suite name if followed by an upper case character\r\n* Can't be the first character in a test name\r\n* Can't be the last character of a test suite name or test name\r\n\r\nAnd it's tricky to use since `_` is used as separator between the test suite name and test name (so `TEST(Time, Flies_Like_An_Arrow)` and `TEST(Time_Flies, Like_An_Arrow)` generate the same class name and a compilation or linking error). Since these rules are awkward, their recommendation is to simply not use _.\r\n\r\nI opened the issue to raise awareness of this (on our porting of WinML we're following their recommendation). Fixing the use of double underscores and keeping the safe usages of single underscores sounds fine to me, just be aware of the possible duplicate class name issue :)",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/565935895/reactions",

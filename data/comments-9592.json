@@ -350,5 +350,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1220328897",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9592#issuecomment-1220328897",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9592",
+        "id": 1220328897,
+        "node_id": "IC_kwDOCVq1mM5IvL3B",
+        "user": {
+            "login": "June1124",
+            "id": 52447302,
+            "node_id": "MDQ6VXNlcjUyNDQ3MzAy",
+            "avatar_url": "https://avatars.githubusercontent.com/u/52447302?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/June1124",
+            "html_url": "https://github.com/June1124",
+            "followers_url": "https://api.github.com/users/June1124/followers",
+            "following_url": "https://api.github.com/users/June1124/following{/other_user}",
+            "gists_url": "https://api.github.com/users/June1124/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/June1124/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/June1124/subscriptions",
+            "organizations_url": "https://api.github.com/users/June1124/orgs",
+            "repos_url": "https://api.github.com/users/June1124/repos",
+            "events_url": "https://api.github.com/users/June1124/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/June1124/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-19T07:08:40Z",
+        "updated_at": "2022-08-19T07:08:40Z",
+        "author_association": "NONE",
+        "body": "> I converted a TfLite model to a (quantized) onnx model. When using this onnx model, I get OutputTensorValues like {0,0,0,1,1,0,...}. So it seems to calculate with float values or something like that but it should be values between 0 and 255 (uint8_t).\r\n> \r\n> This is my code (if you need more, just ask):\r\n> \r\n> ```\r\n>         inputTensors.push_back(Ort::Value::CreateTensor<uint8_t>(m_memoryInfo,\r\n>                                                                  (uint8_t*)inputData,\r\n>                                                                  vectorProduct(m_inputDims),\r\n>                                                                  m_inputDims.data(),\r\n>                                                                  m_inputDims.size()));\r\n>         outputTensors.push_back(Ort::Value::CreateTensor<uint8_t>(m_memoryInfo,\r\n>                                                                  (uint8_t*)outputData,\r\n>                                                                  vectorProduct(m_outputDims),\r\n>                                                                  m_outputDims.data(),\r\n>                                                                  m_outputDims.size()));\r\n>         m_session.Run(Ort::RunOptions{nullptr}, m_inputNames.data(),\r\n>                       inputTensors.data(), 1, m_outputNames.data(),\r\n>                       outputTensors.data(), 1);\r\n> ```\r\n> \r\n> So the output data always holds only zeros and ones as values.\r\n> \r\n> I use ONNX Runtime 1.8.1 and run it on the NPU from i.MX 8M Plus.\r\n> \r\n> Here is my converted model. [mobilenet.zip](https://github.com/microsoft/onnxruntime/files/7432065/mobilenet.zip)\r\n> \r\n> My question is: Is there a problem with the onnx model (with the converter)? The Tflite model runs perfectly. Or is there a problem with my code? Do I need to note something special for using quantized models using onnxRuntime?\r\n> \r\n> If you need more information, just ask. Thank you for your help !\r\n\r\nHi, I have a similar problem with NXP imx8mp, developed in C++. The model is yolov5 exported onnx format, the model in 32-bit floating point format can be inferred with NPU, but the quantized model does not support NPU, have you solved this problem? Can you give me some suggestions.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1220328897/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

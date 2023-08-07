@@ -339,8 +339,8 @@
         "body": "@fdwr : I had to copy directml.dll into the folder. Also you must call DisableMemPattern and SetSessionExecutionMode functions:\r\n\r\n`Ort::ThrowOnError(OrtSessionOptionsAppendExecutionProvider_DML(session_options, 0));`\r\n`session_options.DisableMemPattern();`\r\n`session_options.SetExecutionMode(ExecutionMode::ORT_SEQUENTIAL);`\r\n`session_ = Ort::Session(env, L\"model.onnx\", session_options);`\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/597609532/reactions",
-            "total_count": 4,
-            "+1": 4,
+            "total_count": 5,
+            "+1": 5,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
