@@ -27,7 +27,7 @@
         },
         "created_at": "2022-09-19T17:45:53Z",
         "updated_at": "2022-09-19T17:45:53Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Hi,\r\n\r\nThanks for the detailed issue report.\r\nI tried to download the model you are referencing but the link leads to a folder with a lot of files - can you please share a link to the specific model file you are using to produce the issue ? this will help us to make sure I am following and using the exact setup you have on your end. \r\n\r\nThanks again",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1251342672/reactions",
@@ -159,7 +159,7 @@
         },
         "created_at": "2022-09-20T22:12:31Z",
         "updated_at": "2022-09-20T22:12:31Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Hey,\r\n\r\nI understand the urgency and limitations, no worries :). \r\nIs there a way you can share a description of how to download and reconstruct the model on my end ? that will be the fastest route to get it on my end\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1252970156/reactions",
@@ -247,7 +247,7 @@
         },
         "created_at": "2022-09-21T03:51:02Z",
         "updated_at": "2022-09-21T03:52:01Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Hey @edhyah \r\n\r\nThanks for sharing the details - I was able to reproduce the issue on my end.\r\nThe error was exactly the same - \r\n```\r\nDeserialize tensor onnx::MatMul_12479 failed.tensorprotoutils.cc:640 TensorProtoToTensor External initializer: onnx::MatMul_12479 offset: 0 size to read: 409600 given file_length: 32 are out of bounds or can not be read in full.\r\n```\r\n\r\nLet me try to dig a little deeper into this issue and I will try to get back to you in the following days.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1253170010/reactions",
@@ -335,7 +335,7 @@
         },
         "created_at": "2022-09-21T17:14:18Z",
         "updated_at": "2022-09-21T17:14:18Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Hi,\r\n\r\nSo we looked at the error and we think the cause is due to the size of the model it hits the 4GB address space limitation of WASM. Unfortunately at this time there are several limitation on getting this model running on ORT Web. The main challenge is at this stage is WASM 32bit addressing space (4GB limit).\r\nThere are several threads on the topic working on WASM 64bit - here are a few - \r\n- https://github.com/WebAssembly/memory64\r\n- https://github.com/bytecodealliance/wasmtime/pull/3153\r\n\r\nI also checked if we have a downsized version of Unet to try but as of now there isn't one that meets the accuracy requirements. So until WASM 64bit will be supported officially (we'll need to enable this support in ORT Web) or we'll have a trimmed down version of the model we can't run this on WASM. There might be a possibility to use WebGL but there are other concerns there that are related to performance (20> sec per inference on a very strong GPU)\r\n\r\nSorry I couldn't be of more help, please let me know if you have any comments or ideas to can try to enable your progress. \r\nWe'll be happy to help.\r\n ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1253998231/reactions",

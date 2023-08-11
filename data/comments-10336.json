@@ -31,13 +31,13 @@
         "body": "If you have dev environment handy, run this recursively on every of the below DLLs and find out which one is missing in your setup:\r\n\r\ndumpbin /DEPENDENTS onnxruntime_providers_cuda.dll\r\nMicrosoft (R) COFF/PE Dumper Version 14.29.30138.0\r\nCopyright (C) Microsoft Corporation.  All rights reserved.\r\n\r\n\r\nDump of file onnxruntime_providers_cuda.dll\r\n\r\nFile Type: DLL\r\n\r\n  Image has the following dependencies:\r\n\r\n    cublas64_11.dll\r\n    cudnn64_8.dll\r\n    cufft64_10.dll\r\n    onnxruntime_providers_shared.dll\r\n    cudart64_110.dll\r\n    KERNEL32.dll\r\n    MSVCP140D.dll\r\n    VCRUNTIME140D.dll\r\n    VCRUNTIME140_1D.dll\r\n    ucrtbased.dll\r\n\r\nThe above is the output from my debug build, your output will be somewhat different.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1017856291/reactions",
-            "total_count": 0,
+            "total_count": 1,
             "+1": 0,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
             "confused": 0,
-            "heart": 0,
+            "heart": 1,
             "rocket": 0,
             "eyes": 0
         },

@@ -383,8 +383,8 @@
         "body": "Hi @addisonklinke \r\nI wonder if you would like try the following package instead:\r\n\r\nhttps://pypi.org/project/onnxruntime-noopenmp/\r\n\r\nIt was built without openmp, so things would be simpler.  Please manually uninstall your existing onnxruntime package before installing the new one.\r\n\r\nThen all you need to do is just creating an SessionOptions object and set intra_op_num_threads to the number you want. like:\r\n\r\n```\r\nopts = onnxruntime.SessionOptions()\r\nopts.intra_op_num_threads = 12\r\nort_session = onnxruntime.InferenceSession('model.onnx', sess_options=opts)\r\n```\r\nIt is simpler, so it will give us less surprise.\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/742851549/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

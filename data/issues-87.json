@@ -1,73 +1,5 @@
 [
     {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9045",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9045/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9045/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9045/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/pull/9045",
-        "id": 995240938,
-        "node_id": "MDExOlB1bGxSZXF1ZXN0NzMzMDMyODQ5",
-        "number": 9045,
-        "title": " [C API Docs] Add docs for run options tag/log level accessors/modifiers.",
-        "user": {
-            "login": "edgchen1",
-            "id": 18449977,
-            "node_id": "MDQ6VXNlcjE4NDQ5OTc3",
-            "avatar_url": "https://avatars.githubusercontent.com/u/18449977?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/edgchen1",
-            "html_url": "https://github.com/edgchen1",
-            "followers_url": "https://api.github.com/users/edgchen1/followers",
-            "following_url": "https://api.github.com/users/edgchen1/following{/other_user}",
-            "gists_url": "https://api.github.com/users/edgchen1/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/edgchen1/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/edgchen1/subscriptions",
-            "organizations_url": "https://api.github.com/users/edgchen1/orgs",
-            "repos_url": "https://api.github.com/users/edgchen1/repos",
-            "events_url": "https://api.github.com/users/edgchen1/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/edgchen1/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [],
-        "state": "closed",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 0,
-        "created_at": "2021-09-13T19:21:37Z",
-        "updated_at": "2021-09-14T15:53:37Z",
-        "closed_at": "2021-09-14T15:53:36Z",
-        "author_association": "MEMBER",
-        "active_lock_reason": null,
-        "draft": false,
-        "pull_request": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/9045",
-            "html_url": "https://github.com/microsoft/onnxruntime/pull/9045",
-            "diff_url": "https://github.com/microsoft/onnxruntime/pull/9045.diff",
-            "patch_url": "https://github.com/microsoft/onnxruntime/pull/9045.patch",
-            "merged_at": "2021-09-14T15:53:36Z"
-        },
-        "body": "**Description**\r\nAdd documentation for these C API functions:\r\nRunOptionsGetRunLogSeverityLevel\r\nRunOptionsGetRunLogVerbosityLevel\r\nRunOptionsGetRunTag\r\nRunOptionsSetRunLogSeverityLevel\r\nRunOptionsSetRunLogVerbosityLevel\r\nRunOptionsSetRunTag\r\n\r\nUpdate some existing documentation.\r\n\r\n**Motivation and Context**\r\nDocumentation.\r\n",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9045/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9045/timeline",
-        "performed_via_github_app": null,
-        "state_reason": null
-    },
-    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9046",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9046/labels{/name}",
@@ -633,12 +565,12 @@
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": {
             "login": "thiagocrepaldi",
@@ -685,8 +617,8 @@
         "milestone": null,
         "comments": 12,
         "created_at": "2021-09-14T10:31:03Z",
-        "updated_at": "2022-08-12T18:42:59Z",
-        "closed_at": null,
+        "updated_at": "2022-10-20T00:43:44Z",
+        "closed_at": "2022-10-20T00:43:44Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "Hi,\r\nI know that ORTTrainer can be used to train pytorch models. Is there any way to train Onnx models using ORTTrainer?",
@@ -704,7 +636,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9053/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9054",
@@ -2058,7 +1990,7 @@
         "created_at": "2021-09-15T21:06:14Z",
         "updated_at": "2021-09-22T03:06:27Z",
         "closed_at": "2021-09-22T03:06:26Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4738,7 +4670,7 @@
                 "node_id": "MDU6TGFiZWwxODA1NzgxMTYw",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:Java",
                 "name": "api:Java",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to the Java API"
             }
@@ -4812,7 +4744,7 @@
         "created_at": "2021-09-17T23:58:39Z",
         "updated_at": "2021-09-20T14:56:42Z",
         "closed_at": "2021-09-20T14:56:41Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -6538,7 +6470,7 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2021-09-21T07:32:01Z",
-        "updated_at": "2021-09-21T08:10:27Z",
+        "updated_at": "2022-10-05T16:28:15Z",
         "closed_at": "2021-09-21T08:09:59Z",
         "author_association": "MEMBER",
         "active_lock_reason": null,
@@ -7193,7 +7125,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -7333,7 +7265,7 @@
         "created_at": "2021-09-22T05:11:27Z",
         "updated_at": "2021-09-29T05:46:13Z",
         "closed_at": "2021-09-29T05:46:13Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -7357,6 +7289,85 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9147/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9148",
+        "id": 1003829698,
+        "node_id": "I_kwDOCVq1mM471TnC",
+        "number": 9148,
+        "title": "Problem with include in provider_options.h",
+        "user": {
+            "login": "TejasT",
+            "id": 7990264,
+            "node_id": "MDQ6VXNlcjc5OTAyNjQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/7990264?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TejasT",
+            "html_url": "https://github.com/TejasT",
+            "followers_url": "https://api.github.com/users/TejasT/followers",
+            "following_url": "https://api.github.com/users/TejasT/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TejasT/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TejasT/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TejasT/subscriptions",
+            "organizations_url": "https://api.github.com/users/TejasT/orgs",
+            "repos_url": "https://api.github.com/users/TejasT/repos",
+            "events_url": "https://api.github.com/users/TejasT/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TejasT/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [
+            {
+                "id": 2186357781,
+                "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
+                "name": "ep:CUDA",
+                "color": "0052CC",
+                "default": false,
+                "description": "issues related to the CUDA execution provider"
+            },
+            {
+                "id": 2286118846,
+                "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
+                "name": "stale",
+                "color": "C5DEF5",
+                "default": false,
+                "description": "issues that have not been addressed in a while; categorized by a bot"
+            }
+        ],
+        "state": "open",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 3,
+        "created_at": "2021-09-22T05:37:36Z",
+        "updated_at": "2022-04-19T02:54:26Z",
+        "closed_at": null,
+        "author_association": "NONE",
+        "active_lock_reason": null,
+        "body": "Faced an issue while using onnxruntime-gpu on Visual Studio using nuget installation:\r\n\r\n**System used:**\r\nWindows 10\r\n(Not a GPU/CUDA specific issue)\r\n\r\n**Issue faced:**\r\ncuda_provider_factory.h has an include #include \"core/framework/provider_options.h\", while all header files are placed in a single folder after installation. \r\n\r\n**Fix:**\r\nFor me, changing #include \"core/framework/provider_options.h\" to #include \"provider_options.h\" worked. \r\n\r\nShouldn't this be taken care of by Visual studio/onnxruntime nuget package itself?",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/timeline",
         "performed_via_github_app": null,
         "state_reason": null
     }

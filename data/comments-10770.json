@@ -27,7 +27,7 @@
         },
         "created_at": "2022-03-14T17:47:35Z",
         "updated_at": "2022-03-14T17:47:35Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Could you check if the GPU memory is running out during inference?\r\nIf not, you may try to increase TRT workspace by setting environment variable ORT_TENSORRT_MAX_WORKSPACE_SIZE to bigger value, i.e. 4294967296 (4GB).",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1067112968/reactions",

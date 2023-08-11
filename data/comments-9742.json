@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1407736704",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9742#issuecomment-1407736704",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9742",
+        "id": 1407736704,
+        "node_id": "IC_kwDOCVq1mM5T6FuA",
+        "user": {
+            "login": "andy-ldai",
+            "id": 92756297,
+            "node_id": "U_kgDOBYdZSQ",
+            "avatar_url": "https://avatars.githubusercontent.com/u/92756297?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andy-ldai",
+            "html_url": "https://github.com/andy-ldai",
+            "followers_url": "https://api.github.com/users/andy-ldai/followers",
+            "following_url": "https://api.github.com/users/andy-ldai/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andy-ldai/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andy-ldai/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andy-ldai/subscriptions",
+            "organizations_url": "https://api.github.com/users/andy-ldai/orgs",
+            "repos_url": "https://api.github.com/users/andy-ldai/repos",
+            "events_url": "https://api.github.com/users/andy-ldai/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andy-ldai/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-29T18:29:50Z",
+        "updated_at": "2023-01-30T05:02:47Z",
+        "author_association": "NONE",
+        "body": "We hit the same issue with newer onnxruntime version.\r\nWe are using ORT for inference, with CUDA provider and CustomOps, to answer the question above, there is NO state in CustomOps, i.e, the inference result should be same among multiple inferences. \r\nWe are using C++ API to implement CustomOps, and use CUDAMalloc() to hold temporary calculation result, and use cudaMemcpy() to copy the result to outoput, seems it is cause issue. To diagnose, we tried move CUDAMalloc() in the constructor of CustomOps, and allocate a few bytes, does not work. \r\n\r\n    OS Platform and Distribution: 20.04\r\n    ONNX Runtime installed from (source or binary):binary\r\n    ONNX Runtime version:1.13.1 & 1.12.1\r\n    CUDA/cuDNN version:11.4\r\n\r\nWe are using python / c# API to run onnxruntime, checked API documents, there is no way to set comnpute_stream value of cuda_options like in c++ API:\r\n```\r\nOrtCUDAProviderOptions cuda_options{};\r\n  cuda_options.has_user_compute_stream = compute_stream != nullptr ? 1 : 0;\r\n  cuda_options.user_compute_stream = compute_stream != nullptr ? compute_stream : nullptr;\r\n  cuda_options.default_memory_arena_cfg = nullptr;\r\n```\r\nWe tried to use CUDA stream provided ORT Context, does not work\r\n``` \r\ncudaStream_t stream = reinterpret_cast<cudaStream_t>(ort_.KernelContext_GetGPUComputeStream(context));\r\n```\r\n\r\nAny suggestion? Thanks!\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1407736704/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

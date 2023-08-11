@@ -306,5 +306,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1505738368",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/13736#issuecomment-1505738368",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/13736",
+        "id": 1505738368,
+        "node_id": "IC_kwDOCVq1mM5Zv76A",
+        "user": {
+            "login": "jakebailey",
+            "id": 5341706,
+            "node_id": "MDQ6VXNlcjUzNDE3MDY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5341706?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jakebailey",
+            "html_url": "https://github.com/jakebailey",
+            "followers_url": "https://api.github.com/users/jakebailey/followers",
+            "following_url": "https://api.github.com/users/jakebailey/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jakebailey/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jakebailey/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jakebailey/subscriptions",
+            "organizations_url": "https://api.github.com/users/jakebailey/orgs",
+            "repos_url": "https://api.github.com/users/jakebailey/repos",
+            "events_url": "https://api.github.com/users/jakebailey/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jakebailey/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-12T18:27:27Z",
+        "updated_at": "2023-04-12T18:27:27Z",
+        "author_association": "MEMBER",
+        "body": "> the reason of shipping with the .ts files is because we want to enable debugging - we also ship the source map files.\r\n> we don't expect ts-loader or webpack to pick/compile those files, and I will try if this can be fixed by updating some fields in package.json\r\n\r\nFWIW the solution here if you really, really want to ship the TS source is to use `outDir` and have a `src` dir and a `dist` dir, such that no downstream code can accidentally attempt to use the TS code.\r\n\r\nAnd if you're wanting downstream users to use the TS source for anything else (including better downleveling), that's a bad idea in general.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1505738368/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

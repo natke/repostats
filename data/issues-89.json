@@ -1,73 +1,5 @@
 [
     {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/pull/9255",
-        "id": 1013885724,
-        "node_id": "PR_kwDOCVq1mM4slgzX",
-        "number": 9255,
-        "title": "Force Windows AI NuGet pipeline to use Windows SDK 19041",
-        "user": {
-            "login": "smk2007",
-            "id": 6754002,
-            "node_id": "MDQ6VXNlcjY3NTQwMDI=",
-            "avatar_url": "https://avatars.githubusercontent.com/u/6754002?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/smk2007",
-            "html_url": "https://github.com/smk2007",
-            "followers_url": "https://api.github.com/users/smk2007/followers",
-            "following_url": "https://api.github.com/users/smk2007/following{/other_user}",
-            "gists_url": "https://api.github.com/users/smk2007/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/smk2007/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/smk2007/subscriptions",
-            "organizations_url": "https://api.github.com/users/smk2007/orgs",
-            "repos_url": "https://api.github.com/users/smk2007/repos",
-            "events_url": "https://api.github.com/users/smk2007/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/smk2007/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [],
-        "state": "closed",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 0,
-        "created_at": "2021-10-02T02:09:17Z",
-        "updated_at": "2021-10-02T04:46:16Z",
-        "closed_at": "2021-10-02T04:46:15Z",
-        "author_association": "MEMBER",
-        "active_lock_reason": null,
-        "draft": false,
-        "pull_request": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/9255",
-            "html_url": "https://github.com/microsoft/onnxruntime/pull/9255",
-            "diff_url": "https://github.com/microsoft/onnxruntime/pull/9255.diff",
-            "patch_url": "https://github.com/microsoft/onnxruntime/pull/9255.patch",
-            "merged_at": "2021-10-02T04:46:15Z"
-        },
-        "body": "Force Windows AI NuGet pipeline to use Windows SDK 19041\r\n\r\nIssue: Build machines have 22000 installed, and will use that SDK version by default. However, this SDK is adding an import to LoadLibraryW which breaks downlevel.\r\n\r\nFix: Force Windows AI NuGet pipelines onto 19041.",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/timeline",
-        "performed_via_github_app": null,
-        "state_reason": null
-    },
-    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9256",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9256/labels{/name}",
@@ -252,9 +184,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 12,
+        "comments": 14,
         "created_at": "2021-10-03T06:07:43Z",
-        "updated_at": "2021-10-07T06:12:13Z",
+        "updated_at": "2022-12-03T04:16:25Z",
         "closed_at": "2021-10-07T06:12:13Z",
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -382,9 +314,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 16,
+        "comments": 19,
         "created_at": "2021-10-04T14:38:52Z",
-        "updated_at": "2022-09-13T10:16:45Z",
+        "updated_at": "2023-03-02T10:04:22Z",
         "closed_at": "2021-10-04T22:51:43Z",
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -580,7 +512,7 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2021-10-04T18:39:01Z",
-        "updated_at": "2021-10-06T01:03:37Z",
+        "updated_at": "2022-10-17T14:44:37Z",
         "closed_at": "2021-10-06T01:03:37Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
@@ -2290,7 +2222,7 @@
                 "node_id": "MDU6TGFiZWwxMjY3NDg2NzMx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/contributions%20welcome",
                 "name": "contributions welcome",
-                "color": "FBCA04",
+                "color": "545AB5",
                 "default": false,
                 "description": "lower priority issues for the core ORT teams"
             }
@@ -2309,8 +2241,8 @@
         "body": "### Discussed in https://github.com/microsoft/onnxruntime/discussions/9290\r\n\r\n<div type='discussions-op-text'>\r\n\r\n<sup>Originally posted by **cr-orkunst** October  6, 2021</sup>\r\nHi everyone,\r\nI'm pretty new with onnxruntime, so please be nice :)\r\nI'm having problems adjusting the build parameters and make them work as I would expect.\r\n\r\nEnvironment details:\r\n- Windows 10, 64-bit machine.\r\n- VS2019 , version 16.11.1.\r\n- MSVC v142 - VS 2019 C++ x64/x86 build tools (Latest)\r\n- MSVC v141 - VS 2017 C++ x64/x86 build tools (v14.16)\r\n- Windows 10 SDK (10.0.17763.0)\r\n\r\nFollowing the [instructions here](https://onnxruntime.ai/docs/build/inferencing.html), I'm trying to build onnxruntime.dll for 32-bit, using the following command: \"build.bat --config Release --x86 --build_shared_lib --parallel --msvc_toolset 14.16\"\r\nAccording to \"onnxruntime/tools/ci_build/build.py\" (master and rel-1.9.1), if the '--x86' parameter is passed, the '--msvc_toolset' parameter is ignored:\r\n```\r\n...\r\nelif cpu_arch == '32bit' or args.x86:\r\n    cmake_extra_args = [\r\n        '-A', 'Win32', '-T', 'host=x64', '-G', args.cmake_generator\r\n    ]\r\nelse:\r\n    if args.msvc_toolset:\r\n        toolset = 'host=x64,version=' + args.msvc_toolset\r\n    else:\r\n...\r\n```\r\n\r\nWhat am I missing? Is there a reason not to use both parameters at the same build?\r\nThanks!\r\n\r\n\r\n</div>",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9291/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -3056,7 +2988,7 @@
             "events_url": "https://api.github.com/users/almiliMSFT/events{/privacy}",
             "received_events_url": "https://api.github.com/users/almiliMSFT/received_events",
             "type": "User",
-            "site_admin": true
+            "site_admin": false
         },
         "labels": [],
         "state": "closed",
@@ -3068,7 +3000,7 @@
         "created_at": "2021-10-07T19:48:21Z",
         "updated_at": "2021-11-01T16:48:39Z",
         "closed_at": "2021-11-01T16:48:39Z",
-        "author_association": "MEMBER",
+        "author_association": "NONE",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3409,20 +3341,11 @@
                 "description": "issues related to the CUDA execution provider"
             },
             {
-                "id": 2286118846,
-                "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
-                "name": "stale",
-                "color": "C5DEF5",
-                "default": false,
-                "description": "issues that have not been addressed in a while; categorized by a bot"
-            },
-            {
                 "id": 4419012097,
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
@@ -3432,9 +3355,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 5,
+        "comments": 7,
         "created_at": "2021-10-08T06:27:00Z",
-        "updated_at": "2022-08-12T08:23:06Z",
+        "updated_at": "2023-07-11T06:21:41Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -3504,7 +3427,7 @@
         "milestone": null,
         "comments": 3,
         "created_at": "2021-10-08T15:14:06Z",
-        "updated_at": "2021-11-05T10:45:03Z",
+        "updated_at": "2023-01-13T11:04:39Z",
         "closed_at": "2021-11-05T10:45:03Z",
         "author_association": "MEMBER",
         "active_lock_reason": null,
@@ -3580,9 +3503,9 @@
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 14,
+        "comments": 18,
         "created_at": "2021-10-08T18:55:05Z",
-        "updated_at": "2022-05-21T20:56:47Z",
+        "updated_at": "2023-06-26T17:38:56Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -3791,7 +3714,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "assignees": [
             {
@@ -3812,7 +3735,7 @@
                 "events_url": "https://api.github.com/users/faxu/events{/privacy}",
                 "received_events_url": "https://api.github.com/users/faxu/received_events",
                 "type": "User",
-                "site_admin": false
+                "site_admin": true
             }
         ],
         "milestone": null,
@@ -3876,7 +3799,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -4250,15 +4173,15 @@
                 "description": "issues related to ONNX Runtime web; typically submitted using template"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 9,
+        "comments": 12,
         "created_at": "2021-10-10T17:04:39Z",
-        "updated_at": "2022-08-12T08:30:49Z",
-        "closed_at": null,
+        "updated_at": "2023-02-13T21:35:28Z",
+        "closed_at": "2023-02-13T21:35:28Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nA clear and concise description of what the bug is. To avoid repetition please make sure this is not one of the known issues mentioned on the respective release page.\r\n\r\nI have a project in react where I use onnx web to load a model.\r\nThe code shall be simplified in that way:\r\n\r\nconst ort = require('onnxruntime-web');\r\n\r\n//const session = await ort.InferenceSession.create(modelpath, {executionProviders: ['wasm']});\r\nconst session = await ort.InferenceSession.create(modelpath);\r\n\r\nbut when I load the model (that works correctly in python), I have follow error:\r\nError: unsupported data type: FLOAT16\r\n\r\nFurthermore, when I try to force a different provider, i.e. 'wasm' (see commented line above), I have follow error:\r\nError: no available backend found. ERR: [wasm] RuntimeError: abort(CompileError: WebAssembly.instantiate(): expected magic word 00 61 73 6d, found 3c 21 44 4f @+0). Build with -s ASSERTIONS=1 for more info..\r\n\r\n**Urgency**\r\nIf there are particular important use cases blocked by this or strict project-related timelines, please share more information and dates. If there are no hard deadlines, please specify none.\r\nthe load of model in web is the focus of application for our startup project, in this moment any more activity is locked by that\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): win10\r\n- ONNX Runtime installed from (source or binary): binary\r\n- ONNX Runtime version: \"onnxruntime-web\": \"1.8.0-dev.20210708.0\"\r\n- Python version: n.a.\r\n- Visual Studio version (if applicable): vs code\r\n- GCC/Compiler version (if compiling from source): na\r\n- CUDA/cuDNN version: na\r\n- GPU model and memory: na\r\n\r\n**To Reproduce**\r\n- Describe steps/code to reproduce the behavior.\r\n- Attach the ONNX model to the issue (where applicable) to expedite investigation.\r\n\r\n**Expected behavior**\r\nA clear and concise description of what you expected to happen.\r\n\r\n**Screenshots**\r\nIf applicable, add screenshots to help explain your problem.\r\n\r\n**Additional context**\r\nAdd any other context about the problem here. If the issue is about a particular model, please share the model details as well to facilitate debugging.\r\n",
@@ -4276,7 +4199,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9322/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9323",
@@ -4943,25 +4866,15 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [
-            {
-                "id": 2286118846,
-                "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
-                "name": "stale",
-                "color": "C5DEF5",
-                "default": false,
-                "description": "issues that have not been addressed in a while; categorized by a bot"
-            }
-        ],
+        "labels": [],
         "state": "open",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 3,
+        "comments": 4,
         "created_at": "2021-10-12T02:49:43Z",
-        "updated_at": "2022-08-12T08:20:20Z",
+        "updated_at": "2022-10-12T08:37:11Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -5930,7 +5843,7 @@
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
@@ -6637,7 +6550,7 @@
         "milestone": null,
         "comments": 1,
         "created_at": "2021-10-13T18:51:47Z",
-        "updated_at": "2021-10-14T17:17:11Z",
+        "updated_at": "2023-05-18T06:14:29Z",
         "closed_at": "2021-10-14T17:17:11Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
@@ -6949,9 +6862,9 @@
             }
         ],
         "milestone": null,
-        "comments": 1,
+        "comments": 3,
         "created_at": "2021-10-14T01:53:18Z",
-        "updated_at": "2022-08-31T02:54:58Z",
+        "updated_at": "2023-06-22T20:07:19Z",
         "closed_at": "2021-11-11T01:33:52Z",
         "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
@@ -7199,5 +7112,75 @@
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9367/timeline",
         "performed_via_github_app": null,
         "state_reason": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9368",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9368/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9368/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9368/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/9368",
+        "id": 1026297741,
+        "node_id": "I_kwDOCVq1mM49LA-N",
+        "number": 9368,
+        "title": "Crash with sigbus: illegal alignment on 32bit system when session run",
+        "user": {
+            "login": "zero15",
+            "id": 13267835,
+            "node_id": "MDQ6VXNlcjEzMjY3ODM1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/13267835?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zero15",
+            "html_url": "https://github.com/zero15",
+            "followers_url": "https://api.github.com/users/zero15/followers",
+            "following_url": "https://api.github.com/users/zero15/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zero15/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zero15/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zero15/subscriptions",
+            "organizations_url": "https://api.github.com/users/zero15/orgs",
+            "repos_url": "https://api.github.com/users/zero15/repos",
+            "events_url": "https://api.github.com/users/zero15/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zero15/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [
+            {
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
+                "default": false,
+                "description": "issues related to core runtime"
+            }
+        ],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 7,
+        "created_at": "2021-10-14T11:45:38Z",
+        "updated_at": "2021-10-15T21:51:12Z",
+        "closed_at": "2021-10-15T21:50:58Z",
+        "author_association": "NONE",
+        "active_lock_reason": null,
+        "body": "**Describe the bug**\r\nAt first it crashed when session create. According to https://github.com/onnx/onnx/pull/3626, I fixed problem.\r\nBut when the session runs, it crash again. In Release build it throw a SIGBUS: illegal alignment. In Debug build it throw a integer overflow.\r\nIt runs perfect in arm64-v8a onnxruntime.\r\nI don't familiar with Android develop, how should i debug with this?\r\n\r\nHere is the callstack\r\n```\r\nabort 0x00000000f1d90700\r\n__assert2 0x00000000f1d9099a\r\n::abort_message(const char *, ...) 0x00000000c50bb15e\r\ndemangling_terminate_handler() 0x00000000c50bb2d8\r\nstd::__terminate(void (*)()) 0x00000000c50c2962\r\n__cxxabiv1::failed_throw(__cxxabiv1::__cxa_exception*) 0x00000000c50c2212\r\n::__cxa_throw(void *, std::type_info *, void (*)(void *)) 0x00000000c50c21da\r\nOrt::ThrowOnError(OrtApi const&, OrtStatus*) onnxruntime_cxx_inline.h:17\r\nOrt::ThrowOnError(OrtStatus*) onnxruntime_cxx_inline.h:22\r\nOrt::Session::Run(Ort::RunOptions const&, char const* const*, Ort::Value const*, unsigned int, char const* const*, Ort::Value*, unsigned int) onnxruntime_cxx_inline.h:545\r\nOrt::Session::Run(Ort::RunOptions const&, char const* const*, Ort::Value const*, unsigned int, char const* const*, unsigned int) onnxruntime_cxx_inline.h:536\r\n```\r\n\r\n\r\n**Urgency**\r\nnull\r\n\r\n**System information**\r\n- OS Platform and Distribution: Android 11 on arm-v7a\r\n- ONNX Runtime installed from: source\r\n- ONNX Runtime version: 1.9.1\r\n- Python version: none\r\n- Visual Studio version: none\r\n- GCC/Compiler version: clang from NDK 19.\r\n- CUDA/cuDNN version: none\r\n- GPU model and memory: none\r\n\r\n**To Reproduce**\r\nI uploaded the model.[model.zip](https://github.com/microsoft/onnxruntime/files/7345727/model.zip)\r\n```\r\n        std::vector<int> vecInputIds = {1,2,3,4,5,6};\r\n        std::vector<int> vecInputTones = {0,0,0,0,0,0};\r\n\r\n        std::vector<int> vecOut;\r\n        float energy = 1.0;\r\n        float f0 = 1.0;\r\n        int speaker = 0;\r\n        float speed = 1.0;\r\n        std::vector<int64_t> param_dims = {1};\r\n        std::vector<int64_t> ids_dims = {1, (int64_t)vecInputIds.size()};\r\n\r\n        std::vector<Ort::Value> input_tensors;\r\n        input_tensors.push_back(Ort::Value::CreateTensor<float>(mem_info, &energy, 1, param_dims.data(), param_dims.size()));\r\n        input_tensors.push_back(Ort::Value::CreateTensor<float>(mem_info, &f0, 1, param_dims.data(), param_dims.size()));\r\n        input_tensors.push_back(Ort::Value::CreateTensor<int>(mem_info, vecInputIds.data(), vecInputIds.size(), ids_dims.data(), ids_dims.size()));\r\n        input_tensors.push_back(Ort::Value::CreateTensor<int>(mem_info, &speaker, 1, param_dims.data(), param_dims.size()));\r\n        input_tensors.push_back(Ort::Value::CreateTensor<float>(mem_info, &speed, 1, param_dims.data(), param_dims.size()));\r\n        input_tensors.push_back(Ort::Value::CreateTensor<int>(mem_info, vecInputTones.data(), vecInputTones.size(), ids_dims.data(), ids_dims.size()));\r\n\r\n        auto output_tensors = pSession->Run(Ort::RunOptions{nullptr}, input_node_names.data(), input_tensors.data(), input_tensors.size(), output_node_names.data(), num_output_nodes);\r\n```\r\n\r\n\r\n**Expected behavior**\r\nSession run without error\r\n\r\n\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9368/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9368/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
     }
 ]

@@ -1,84 +1,5 @@
 [
     {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/issues/9148",
-        "id": 1003829698,
-        "node_id": "I_kwDOCVq1mM471TnC",
-        "number": 9148,
-        "title": "Problem with include in provider_options.h",
-        "user": {
-            "login": "TejasT",
-            "id": 7990264,
-            "node_id": "MDQ6VXNlcjc5OTAyNjQ=",
-            "avatar_url": "https://avatars.githubusercontent.com/u/7990264?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/TejasT",
-            "html_url": "https://github.com/TejasT",
-            "followers_url": "https://api.github.com/users/TejasT/followers",
-            "following_url": "https://api.github.com/users/TejasT/following{/other_user}",
-            "gists_url": "https://api.github.com/users/TejasT/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/TejasT/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/TejasT/subscriptions",
-            "organizations_url": "https://api.github.com/users/TejasT/orgs",
-            "repos_url": "https://api.github.com/users/TejasT/repos",
-            "events_url": "https://api.github.com/users/TejasT/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/TejasT/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [
-            {
-                "id": 2186357781,
-                "node_id": "MDU6TGFiZWwyMTg2MzU3Nzgx",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/ep:CUDA",
-                "name": "ep:CUDA",
-                "color": "0052CC",
-                "default": false,
-                "description": "issues related to the CUDA execution provider"
-            },
-            {
-                "id": 2286118846,
-                "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
-                "name": "stale",
-                "color": "C5DEF5",
-                "default": false,
-                "description": "issues that have not been addressed in a while; categorized by a bot"
-            }
-        ],
-        "state": "open",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 3,
-        "created_at": "2021-09-22T05:37:36Z",
-        "updated_at": "2022-04-19T02:54:26Z",
-        "closed_at": null,
-        "author_association": "NONE",
-        "active_lock_reason": null,
-        "body": "Faced an issue while using onnxruntime-gpu on Visual Studio using nuget installation:\r\n\r\n**System used:**\r\nWindows 10\r\n(Not a GPU/CUDA specific issue)\r\n\r\n**Issue faced:**\r\ncuda_provider_factory.h has an include #include \"core/framework/provider_options.h\", while all header files are placed in a single folder after installation. \r\n\r\n**Fix:**\r\nFor me, changing #include \"core/framework/provider_options.h\" to #include \"provider_options.h\" worked. \r\n\r\nShouldn't this be taken care of by Visual studio/onnxruntime nuget package itself?",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9148/timeline",
-        "performed_via_github_app": null,
-        "state_reason": null
-    },
-    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9151",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9151/labels{/name}",
@@ -90,22 +11,22 @@
         "number": 9151,
         "title": "Fix to_dlpack Failure on PyTorch-1.10",
         "user": {
-            "login": "iK1D",
+            "login": "er3x3",
             "id": 11661208,
             "node_id": "MDQ6VXNlcjExNjYxMjA4",
             "avatar_url": "https://avatars.githubusercontent.com/u/11661208?v=4",
             "gravatar_id": "",
-            "url": "https://api.github.com/users/iK1D",
-            "html_url": "https://github.com/iK1D",
-            "followers_url": "https://api.github.com/users/iK1D/followers",
-            "following_url": "https://api.github.com/users/iK1D/following{/other_user}",
-            "gists_url": "https://api.github.com/users/iK1D/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/iK1D/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/iK1D/subscriptions",
-            "organizations_url": "https://api.github.com/users/iK1D/orgs",
-            "repos_url": "https://api.github.com/users/iK1D/repos",
-            "events_url": "https://api.github.com/users/iK1D/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/iK1D/received_events",
+            "url": "https://api.github.com/users/er3x3",
+            "html_url": "https://github.com/er3x3",
+            "followers_url": "https://api.github.com/users/er3x3/followers",
+            "following_url": "https://api.github.com/users/er3x3/following{/other_user}",
+            "gists_url": "https://api.github.com/users/er3x3/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/er3x3/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/er3x3/subscriptions",
+            "organizations_url": "https://api.github.com/users/er3x3/orgs",
+            "repos_url": "https://api.github.com/users/er3x3/repos",
+            "events_url": "https://api.github.com/users/er3x3/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/er3x3/received_events",
             "type": "User",
             "site_admin": false
         },
@@ -645,7 +566,7 @@
         "created_at": "2021-09-22T20:19:05Z",
         "updated_at": "2021-10-13T22:15:45Z",
         "closed_at": "2021-10-13T22:15:44Z",
-        "author_association": "MEMBER",
+        "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\n`import onnxruntime` in Python scripts cause to print the following logs to the console\r\n\r\n```\r\n>>> import onnxruntime\r\n[D ORT ort_aten.g.cpp:2383] ATen init\r\n[V ORT ort_guard.cpp:14] torch_ort::eager::ORTGuardImpl::ORTGuardImpl()()\r\n[D ORT ort_eager.cpp:38] pybind11 module init\r\n[D ORT ort_customops.g.cpp:308] GenerateCustomOpsBindings init\r\n```\r\n\r\n**Urgency**\r\nNone\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 20.04):\r\n- ONNX Runtime installed from (source  commit hash): 7f1e8806492014d0c7e14cfbef791a67b7cd7549\r\n- ONNX Runtime version:\r\n- Python version:\r\n- Visual Studio version (if applicable): N/A\r\n- GCC/Compiler version (if compiling from source): Clang-11\r\n- CUDA/cuDNN version: N/A\r\n- GPU model and memory: N/A\r\n\r\n**To Reproduce**\r\nCreate a python venv with onnxruntime installed. Then do\r\n```\r\n$python\r\nimport torch\r\nimport onnxruntime\r\n```\r\n\r\n**Expected behavior**\r\nNo log output\r\n\r\n",
         "reactions": {
@@ -989,15 +910,15 @@
                 "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 1,
         "created_at": "2021-09-23T03:15:52Z",
-        "updated_at": "2022-04-19T02:54:25Z",
-        "closed_at": null,
+        "updated_at": "2023-07-27T17:11:00Z",
+        "closed_at": "2023-07-27T17:11:00Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nIt seams SessionOptionsAppendExecutionProvider_DML was never added and documentation for OrtSessionOptionsAppendExecutionProvider_DML  was deleted.\r\n\r\n**System information**\r\n- ONNX Runtime version (1.8.0):\r\n\r\n**Describe the solution you'd like**\r\nAdd something along the lines of this\r\n```cpp\r\ntypedef struct DMLProviderOptions {\r\n    /** \\brief Hardware adapter with the given device_id, also known as the adapter index.\r\n    * The device ID corresponds to the enumeration order of hardware adapters as given by \r\n    * IDXGIFactory::EnumAdapters. A device_id of 0 always corresponds to the default adapter, which is typically the \r\n    * primary display GPU installed on the system. A negative device_id is invalid.\r\n    *   Defaults to 0.\r\n    */\r\n    int device_id;\r\n    \r\n    /** \\brief\r\n    * Creates a DirectML Execution Provider using the given DirectML device, and which executes work on the supplied D3D12\r\n    * command queue. The DirectML device and D3D12 command queue must have the same parent ID3D12Device, or an error will\r\n    * be returned. The D3D12 command queue must be of type DIRECT or COMPUTE (see D3D12_COMMAND_LIST_TYPE). If this \r\n    * function succeeds, the inference session maintains a strong reference on both the dml_device and the command_queue \r\n    * objects.\r\n    * See also: DMLCreateDevice\r\n    * See also: ID3D12Device::CreateCommandQueue\r\n    */\r\n    IDMLDevice* dml_device;\r\n\r\n    /** \\brief\r\n    * Creates a DirectML Execution Provider using the given DirectML device, and which executes work on the supplied D3D12\r\n    * command queue. The DirectML device and D3D12 command queue must have the same parent ID3D12Device, or an error will\r\n    * be returned. The D3D12 command queue must be of type DIRECT or COMPUTE (see D3D12_COMMAND_LIST_TYPE). If this \r\n    * function succeeds, the inference session maintains a strong reference on both the dml_device and the command_queue \r\n    * objects.\r\n    * See also: DMLCreateDevice\r\n    * See also: ID3D12Device::CreateCommandQueue\r\n    */\r\n    ID3D12CommandQueue* cmd_queue;\r\n} OrtDMLProviderOptions;\r\n\r\n/** \\brief Append DirectML provider to session options\r\n*\r\n* If DirectML is not available (due to a non DirectML enabled build, or if DirectML is not installed on the system), this function will return failure.\r\n*\r\n* \\param[in] options\r\n* \\param[in] DML_options\r\n*\r\n* \\snippet{doc} snippets.dox OrtStatus Return Value\r\n*/\r\nORT_API2_STATUS(SessionOptionsAppendExecutionProvider_DML, _In_ OrtSessionOptions* options, _In_ const OrtDMLProviderOptions* dml_options);\r\n```\r\n\r\nThe comments are just ripped from dml_provider_factory.h and the CUDA versions so they could use some work. The ID3D12CommandQueue* and IDMLDevice* fields should either be forward declared or just type erased.\r\n\r\n**Describe alternatives you've considered**\r\nYou can use OrtSessionOptionsAppendExecutionProvider_DML but it seems documentation for it has been deleted in 1.7.0, and client code using this would fail to compile/link if onnx was not compiled with DML support.\r\n```cpp\r\n  /** \\brief Create an ::OrtSessionOptions object\r\n  *\r\n  * To use additional providers, you must build ORT with the extra providers enabled. Then call one of these\r\n  * functions to enable them in the session:<br>\r\n  *   OrtSessionOptionsAppendExecutionProvider_CPU<br>\r\n  *   OrtSessionOptionsAppendExecutionProvider_CUDA<br>\r\n  *   OrtSessionOptionsAppendExecutionProvider_(remaining providers...)<br>\r\n  * The order they are called indicates the preference order as well. In other words call this method\r\n  * on your most preferred execution provider first followed by the less preferred ones.\r\n  * If none are called Ort will use its internal CPU execution provider.\r\n  *\r\n  * \\param[out] options The newly created OrtSessionOptions. Must be freed with OrtApi::ReleaseSessionOptions\r\n  *\r\n  * \\snippet{doc} snippets.dox OrtStatus Return Value\r\n  */\r\n  ORT_API2_STATUS(CreateSessionOptions, _Outptr_ OrtSessionOptions** options);\r\n```\r\nCreateSessionOptions seems to hint at this being the correct solution. Some care would also need to be taking if both dml_device and device_id were set.\r\n\r\n**Additional context**\r\nNone\r\n",
@@ -1015,7 +936,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9164/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9165",
@@ -1410,7 +1331,7 @@
                 "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": {
             "login": "souptc",
@@ -1475,10 +1396,10 @@
             }
         ],
         "milestone": null,
-        "comments": 2,
+        "comments": 3,
         "created_at": "2021-09-24T01:39:12Z",
-        "updated_at": "2022-04-19T01:54:33Z",
-        "closed_at": null,
+        "updated_at": "2022-12-16T22:06:26Z",
+        "closed_at": "2022-12-16T22:06:25Z",
         "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\n\r\nBuilding `onnxruntime` with eager mode enabled results in MKL libraries not found by the linker.\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Ubuntu 20.04\r\n- ONNX Runtime installed from (source or binary): source\r\n- ONNX Runtime version: commit hash 0888c6cc5926ac5debf85b105264933784591b82\r\n- Python version: 3.9.5\r\n- Visual Studio version (if applicable):\r\n- GCC/Compiler version (if compiling from source): Clang 12\r\n- CUDA/cuDNN version: None\r\n- GPU model and memory:\r\n- torch commit: `c78ab28441f5`\r\n\r\n**To Reproduce**\r\n\r\n```\r\n./build.sh --cmake_generator=Ninja --enable_training --enable_pybind --build_eager_mode\r\n```\r\n\r\n\r\n**Expected behavior**\r\nI expect a successful, but instead I observe:\r\n\r\n```\r\n[1335/1343] Linking CXX shared module onnxruntime_pybind11_state.so\r\nFAILED: onnxruntime_pybind11_state.so\r\n\r\n... \r\n\r\n/usr/bin/ld: cannot find -lmkl_intel_ilp64\r\n/usr/bin/ld: cannot find -lmkl_core\r\n/usr/bin/ld: cannot find -lmkl_intel_thread\r\n```\r\n\r\n\r\n**Additional context**\r\nI am noticing that `-lmkl_intel_ilp64  -lmkl_core  -lmkl_intel_thread  -pthread  -lrt  -lpthread` are getting added as part of the `LINK_LIBRARIES` property of the `onnxruntime_pybind11_state` target, but I don't understand why this is. I am not explicitly specifying that the MKL libraries should be linked against.\r\n\r\nIn a python interpreter\r\n```\r\n>>> import torch\r\n>>> torch.__config__.parallel_info()\r\n```\r\n\r\nresults in \r\n\r\n```\r\n'ATen/Parallel:\\n\\tat::get_num_threads() : 2\\n\\tat::get_num_interop_threads() : 2\\nOpenMP 201811\\n\\tomp_get_max_threads() : 2\\nIntel(R) oneAPI Math Kernel Library Version 2021.3-Product Build 20210617 for Intel(R) 64 architecture applications\\n\\tmkl_get_max_threads() : 2\\nMKLDNN not found\\nstd::thread::hardware_concurrency() : 4\\nEnvironment variables:\\n\\tOMP_NUM_THREADS : [not set]\\n\\tMKL_NUM_THREADS : [not set]\\nATen parallel backend: OpenMP\\n'\r\n```",
@@ -1496,7 +1417,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9170/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9171",
@@ -1567,7 +1488,7 @@
         "created_at": "2021-09-24T03:02:05Z",
         "updated_at": "2022-04-19T02:54:23Z",
         "closed_at": null,
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nWhen VideoFrame is \"bind\" to model input, it might be cropped and scaled per while maintaining aspect ratio. reference: https://github.com/microsoft/onnxruntime/blob/4e5bc8365b882563088542f877d4a83f4c08a958/winml/lib/Api/ImageFeatureValue.cpp#L126.  For use case such as Object detection, the BitmapBounds info is important to map the output tensor values to detected boxes in image under evaluation. So, the collection of the BitmapBounds need to exposed to the called of the bind.\r\n\r\n**System information**\r\n- ONNX Runtime version (you are using): Microsoft.AI.MachineLearning 1.8.1\r\n\r\n**Describe the solution you'd like**\r\nAPI need to be extended to return the BitmapBounds to the caller.\r\n\r\n**Describe alternatives you've considered**\r\n\r\n\r\n**Additional context**\r\nAdd any other context or screenshots about the feature request here.\r\n",
         "reactions": {
@@ -1646,16 +1567,16 @@
                 "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 1,
+        "comments": 2,
         "created_at": "2021-09-24T03:13:54Z",
-        "updated_at": "2022-04-19T02:54:18Z",
-        "closed_at": null,
-        "author_association": "NONE",
+        "updated_at": "2022-10-31T22:23:53Z",
+        "closed_at": "2022-10-31T22:23:53Z",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nCurrent VideoFrame binding process crop the image at middle to keep aspect ratio. https://github.com/microsoft/onnxruntime/blob/4e5bc8365b882563088542f877d4a83f4c08a958/winml/lib/Api/ImageFeatureValue.cpp#L126. That reduced Field of view under evaluation. It might matter for some use cases. \r\n\r\n**System information**\r\n- 1.8.1\r\n\r\n**Describe the solution you'd like**\r\nProvide option to ignore aspect ratio during scaling. In some use cases and models, training models already account for distortion caused by aspect ratio mismatch  between original image and tensor size.\r\n\r\n**Describe alternatives you've considered**\r\n\r\n**Additional context**\r\n\r\n",
         "reactions": {
@@ -1672,7 +1593,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9172/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9173",
@@ -1779,7 +1700,7 @@
                 "node_id": "MDU6TGFiZWwxMjY3NDg2NzMx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/contributions%20welcome",
                 "name": "contributions welcome",
-                "color": "FBCA04",
+                "color": "545AB5",
                 "default": false,
                 "description": "lower priority issues for the core ORT teams"
             },
@@ -2597,22 +2518,22 @@
         "number": 9186,
         "title": "Optimize Variadic Elementwise Ops",
         "user": {
-            "login": "iK1D",
+            "login": "er3x3",
             "id": 11661208,
             "node_id": "MDQ6VXNlcjExNjYxMjA4",
             "avatar_url": "https://avatars.githubusercontent.com/u/11661208?v=4",
             "gravatar_id": "",
-            "url": "https://api.github.com/users/iK1D",
-            "html_url": "https://github.com/iK1D",
-            "followers_url": "https://api.github.com/users/iK1D/followers",
-            "following_url": "https://api.github.com/users/iK1D/following{/other_user}",
-            "gists_url": "https://api.github.com/users/iK1D/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/iK1D/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/iK1D/subscriptions",
-            "organizations_url": "https://api.github.com/users/iK1D/orgs",
-            "repos_url": "https://api.github.com/users/iK1D/repos",
-            "events_url": "https://api.github.com/users/iK1D/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/iK1D/received_events",
+            "url": "https://api.github.com/users/er3x3",
+            "html_url": "https://github.com/er3x3",
+            "followers_url": "https://api.github.com/users/er3x3/followers",
+            "following_url": "https://api.github.com/users/er3x3/following{/other_user}",
+            "gists_url": "https://api.github.com/users/er3x3/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/er3x3/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/er3x3/subscriptions",
+            "organizations_url": "https://api.github.com/users/er3x3/orgs",
+            "repos_url": "https://api.github.com/users/er3x3/repos",
+            "events_url": "https://api.github.com/users/er3x3/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/er3x3/received_events",
             "type": "User",
             "site_admin": false
         },
@@ -3758,7 +3679,7 @@
         "created_at": "2021-09-27T18:39:17Z",
         "updated_at": "2021-09-27T20:42:21Z",
         "closed_at": "2021-09-27T20:42:20Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -4873,7 +4794,7 @@
         "created_at": "2021-09-29T03:02:35Z",
         "updated_at": "2021-10-01T17:50:33Z",
         "closed_at": "2021-10-01T17:50:24Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nLatest PyTorch commit tweaked an internal python function ` torch.onnx._export` args which seems to used in orttrainer.py\r\norttraining/orttraining/python/training/orttrainer.py:545\r\ncausing failures with ORTTrainer\r\n\r\n```\r\n   loss, _ = trainer.train_step(data, target)\r\npython_venv/lib/python3.9/site-packages/onnxruntime/training/orttrainer.py:348: in train_step\r\n    self._init_onnx_model(sample_input)\r\npython_venv/lib/python3.9/site-packages/onnxruntime/training/orttrainer.py:727: in _init_onnx_model\r\n    self._onnx_model = self._convert_torch_model_loss_fn_to_onnx(inputs, 'cpu')\r\npython_venv/lib/python3.9/site-packages/onnxruntime/training/orttrainer.py:543: in _convert_torch_model_loss_fn_to_onnx\r\n    torch.onnx._export(model, tuple(sample_inputs_copy), f,\r\n```\r\n\r\n**Urgency**\r\nTest failures\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04):\r\n- ONNX Runtime installed from (source or binary):\r\n- ONNX Runtime version:\r\n- Python version:\r\n- Visual Studio version (if applicable):\r\n- GCC/Compiler version (if compiling from source):\r\n- CUDA/cuDNN version:\r\n- GPU model and memory:\r\n\r\n**To Reproduce**\r\n- Describe steps/code to reproduce the behavior.\r\n- Attach the ONNX model to the issue (where applicable) to expedite investigation.\r\n\r\n**Expected behavior**\r\nA clear and concise description of what you expected to happen.\r\n\r\n**Screenshots**\r\nIf applicable, add screenshots to help explain your problem.\r\n\r\n**Additional context**\r\nAdd any other context about the problem here. If the issue is about a particular model, please share the model details as well to facilitate debugging.\r\n",
         "reactions": {
@@ -6611,7 +6532,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -6976,15 +6897,15 @@
                 "description": "improvements or additions to documentation; typically submitted using template"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 1,
         "created_at": "2021-10-01T11:28:03Z",
-        "updated_at": "2022-08-10T00:46:26Z",
-        "closed_at": null,
+        "updated_at": "2023-05-15T14:53:00Z",
+        "closed_at": "2023-05-15T14:53:00Z",
         "author_association": "MEMBER",
         "active_lock_reason": null,
         "draft": false,
@@ -7063,7 +6984,7 @@
                 "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": {
             "login": "yuslepukhin",
@@ -7110,8 +7031,8 @@
         "milestone": null,
         "comments": 3,
         "created_at": "2021-10-01T14:16:31Z",
-        "updated_at": "2022-04-19T02:54:16Z",
-        "closed_at": null,
+        "updated_at": "2023-04-12T18:25:48Z",
+        "closed_at": "2023-04-12T18:25:48Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nAn error is thrown while trying to do the inference on GPU, while the model works flawlessly on CPU\r\n\r\n**Urgency**\r\nI'd like to deploy my model with onnx on GPU, but this issue is blocking me. Help needed ASAP.\r\n\r\n**System information**\r\n- Linux Ubuntu 20.04\r\n- ONNX Runtime installed from (source or binary): pip\r\n- ONNX Runtime version: 1.9.0\r\n- Python version: 3.8\r\n- CUDA/cuDNN version: 11\r\n- GPU model and memory: RTX 3070, Tesla V100-SXM2-16GB\r\n\r\n**To Reproduce**\r\nonnx model: https://drive.google.com/file/d/1fTQWgXA9aRcLjgW9zzUHnQjOTuvbm3iA/view?usp=sharing\r\n```\r\nimport numpy as np\r\nimport onnxruntime as rt\r\n\r\nmodel_path = 'models/google_rand.onnx'\r\n\r\nproviders = ['CPUExecutionProvider', 'CUDAExecutionProvider']\r\n\r\ninp1 = np.array([[26, 117, 49, 119, 15, 21, 37, 29, 57, 22, 1, 13, 117, 72, 22, 15, 36, 1, 24, 117, 59, 21, 29, 30, 7,\r\n                  15, 106, 118, 59, 24, 58, 86, 117, 16, 72, 94, 57, 24, 1, 117, 52, 119, 15, 72, 118, 25, 98, 1, 21,\r\n                  117, 49, 119, 24, 30, 59, 24, 30, 1, 117, 59, 15, 72, 90, 72, 42, 1, 37, 24, 15, 1, 15, 72, 29, 21,\r\n                  117, 100, 32, 58, 86, 19, 1, 30, 117, 31, 119, 22, 1, 17, 52, 119, 86, 1, 29, 30, 117, 25, 119, 86,\r\n                  19, 30, 118, 59, 22, 58, 36, 1, 58, 86, 117, 12, 98, 24, 15, 1, 39, 57, 1, 64, 22, 117, 25, 98, 13,\r\n                  8, 33, 19, 119, 1, 49, 119, 86, 1, 15, 72, 32, 117, 59, 22, 57, 26, 72, 42, 1, 118, 16, 72, 117, 12,\r\n                  72, 1, 30, 59, 21, 24, 117, 49, 119, 22, 57, 15, 106, 19, 36, 1, 37, 24, 15, 1, 26, 86, 117, 49, 119,\r\n                  15, 100, 21, 30, 29, 1, 30, 57, 1, 30, 117, 16, 72, 21, 1, 21, 117, 59, 86, 1, 100, 32, 1, 117, 52,\r\n                  119, 22, 1, 39, 57, 1, 26, 86, 57, 15, 117, 100, 21, 94, 57, 24, 1, 26, 86, 117, 49, 119, 29, 59, 29,\r\n                  125, 36, 1, 29, 118, 25, 98, 1, 39, 37, 30, 1, 20, 31, 119, 1, 21, 37, 24, 1, 17, 117, 25, 98, 21,\r\n                  57, 29, 1, 117, 25, 98, 24, 22, 19, 1, 118, 52, 24, 1, 20, 98, 86, 1, 29, 30, 117, 25, 119, 86, 19,\r\n                  1, 21, 117, 49, 119, 24, 30, 59, 24, 30, 8]], dtype=np.int32)\r\n# inp1 = inp1[:, :176] # RTX 3070\r\n# inp1 = inp1[:, :278] # Tesla V100-SXM2-16GB\r\ninp2 = np.full_like(inp1, 1, dtype=np.int32)\r\n\r\nresults = []\r\nfor provider in providers:\r\n    session = rt.InferenceSession(model_path, providers=[provider])\r\n    res = session.run(['mel'], {'phonemes': inp1, 'speakers': inp2})[0]\r\n    print(provider, res.shape)\r\n    results.append(res)\r\nprint(np.allclose(results[0], results[1]), np.abs(results[0] - results[1]).max())\r\n```\r\n```\r\nError: onnxruntime.capi.onnxruntime_pybind11_state.RuntimeException: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : \r\n\r\nNon-zero status code returned while running Compress node. Name:'Compress__751' Status Message: \r\n\r\n/onnxruntime_src/onnxruntime/core/framework/op_kernel.cc:78 OrtValue* \r\n\r\nonnxruntime::OpKernelContext::OutputMLValue(int, const onnxruntime::TensorShape&) status.IsOK() was false. \r\n\r\nTensor shape cannot contain any negative value\r\n```\r\n\r\nInterestingly enough, if you uncomment this ( inp1 = inp1[:, :176] for RTX 3070 GPU or inp1 = inp1[:, :278] for Tesla V100-SXM2-16GB GPU ) the model doesn't throw any error.\r\n\r\n\r\n**Expected behavior**\r\nAn ideal behavior would be to have the output of allclose as True, but when running with uncommented line the max abs difference is close to 1e-2. At least, the model should be able to the inference with CUDA provider\r\nI accidentally found out that the issue is not present in version 1.8.1\r\n",
@@ -7129,7 +7050,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9247/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9248",
@@ -7375,7 +7296,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -7479,6 +7400,74 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9254/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/pull/9255",
+        "id": 1013885724,
+        "node_id": "PR_kwDOCVq1mM4slgzX",
+        "number": 9255,
+        "title": "Force Windows AI NuGet pipeline to use Windows SDK 19041",
+        "user": {
+            "login": "smk2007",
+            "id": 6754002,
+            "node_id": "MDQ6VXNlcjY3NTQwMDI=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6754002?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/smk2007",
+            "html_url": "https://github.com/smk2007",
+            "followers_url": "https://api.github.com/users/smk2007/followers",
+            "following_url": "https://api.github.com/users/smk2007/following{/other_user}",
+            "gists_url": "https://api.github.com/users/smk2007/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/smk2007/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/smk2007/subscriptions",
+            "organizations_url": "https://api.github.com/users/smk2007/orgs",
+            "repos_url": "https://api.github.com/users/smk2007/repos",
+            "events_url": "https://api.github.com/users/smk2007/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/smk2007/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2021-10-02T02:09:17Z",
+        "updated_at": "2021-10-02T04:46:16Z",
+        "closed_at": "2021-10-02T04:46:15Z",
+        "author_association": "MEMBER",
+        "active_lock_reason": null,
+        "draft": false,
+        "pull_request": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/9255",
+            "html_url": "https://github.com/microsoft/onnxruntime/pull/9255",
+            "diff_url": "https://github.com/microsoft/onnxruntime/pull/9255.diff",
+            "patch_url": "https://github.com/microsoft/onnxruntime/pull/9255.patch",
+            "merged_at": "2021-10-02T04:46:15Z"
+        },
+        "body": "Force Windows AI NuGet pipeline to use Windows SDK 19041\r\n\r\nIssue: Build machines have 22000 installed, and will use that SDK version by default. However, this SDK is adding an import to LoadLibraryW which breaks downlevel.\r\n\r\nFix: Force Windows AI NuGet pipelines onto 19041.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/9255/timeline",
         "performed_via_github_app": null,
         "state_reason": null
     }

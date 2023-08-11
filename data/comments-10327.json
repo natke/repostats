@@ -383,8 +383,8 @@
         "body": "Unfortunately, even the `_ortvalue_to_torch_tensor` is no longer in the onnxruntime-training package. This has been moved to OnnxRuntime but `to_dlpack` is only exposed when training is enabled.[[link](https://github.com/microsoft/onnxruntime/blob/86c5c07ea419b935541d0abd2a16bf204e19c6ed/onnxruntime/python/onnxruntime_pybind_ortvalue.cc#L282)]. Is there any plan to expose this at the inference time also?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1284615410/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -647,8 +647,8 @@
         "body": "Thank you for the explanation. I believe for the original [post](https://github.com/microsoft/onnxruntime/issues/10327#issue-1108641603) and this [reply](https://github.com/microsoft/onnxruntime/issues/10327#issuecomment-1205657944) we are all more interested in the use case that converts the IOBinding output OrtValue to tensor, not training.\r\n\r\nThe reason we need this: especially for text generation models, we need to call onnxruntime inference multiple times for the autoregressive decoding process. This is typically run on GPU and we would like the tensor to stay there. Generally the previous call's output will be the next call's input. If OrtValue needs to be converted to CPU then converted back for the next inference call (for the next step of generation), it will be very slow. We need a way to convert to the tensor on GPU, without copying to CPU due to numpy.\r\n\r\nInstalling both `onnxruntime-gpu` and `onnxruntime-training` can have issues. I've seen the same error as described in this [issue](https://github.com/microsoft/onnxruntime/issues/9754), after installing both `onnxruntime-gpu` and `onnxruntime-training` by pip. (these two replies [1](https://github.com/microsoft/onnxruntime/issues/9754#issuecomment-978198118) [2](https://github.com/microsoft/onnxruntime/issues/9754#issuecomment-1098097912) report the same thing). Plus for the inference we don't really need `onnxruntime-training` except for this function. This creates concerns when using onnxruntime in production for this instability. Ideally, we only want one library for our inference code.\r\n\r\nI believe moving OrtValue->torch.Tensor to Onnxruntime will benefit people with such use cases and save people time to seek workarounds or alternatives. @baijumeswani @xadupre can we consider that? ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1284918411/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

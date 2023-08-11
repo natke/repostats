@@ -86,5 +86,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1525884676",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/7745#issuecomment-1525884676",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/7745",
+        "id": 1525884676,
+        "node_id": "IC_kwDOCVq1mM5a8ycE",
+        "user": {
+            "login": "K024",
+            "id": 37726306,
+            "node_id": "MDQ6VXNlcjM3NzI2MzA2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37726306?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/K024",
+            "html_url": "https://github.com/K024",
+            "followers_url": "https://api.github.com/users/K024/followers",
+            "following_url": "https://api.github.com/users/K024/following{/other_user}",
+            "gists_url": "https://api.github.com/users/K024/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/K024/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/K024/subscriptions",
+            "organizations_url": "https://api.github.com/users/K024/orgs",
+            "repos_url": "https://api.github.com/users/K024/repos",
+            "events_url": "https://api.github.com/users/K024/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/K024/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-27T15:17:40Z",
+        "updated_at": "2023-04-28T08:55:26Z",
+        "author_association": "NONE",
+        "body": "~Although documented as supported, `MatMulInteger` and `DynamicQuantizeLinear` also won't work on CUDAExecutionProvider and the data is actually copied to/from host.~\r\n\r\n`DynamicQuantizeLinear` only generates uint8 weights, and `MatMulInteger` with CUDA only supports int8 weights.\r\n\r\nProfiling result (partial):\r\n\r\n```json\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8471713,\"ph\" : \"X\",\"name\" :\"Memcpy_token_284_fence_before\",\"args\" : {\"op_name\" : \"MemcpyToHost\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :107,\"ts\" :8471714,\"ph\" : \"X\",\"name\" :\"Memcpy_token_284_kernel_time\",\"args\" : {\"parameter_size\" : \"0\",\"provider\" : \"CUDAExecutionProvider\",\"op_name\" : \"MemcpyToHost\",\"input_type_shape\" : [{\"float\":[1,16,4096]}],\"node_index\" : \"2791\",\"output_type_shape\" : [{\"float\":[1,16,4096]}],\"activation_size\" : \"262144\",\"output_size\" : \"262144\",\"thread_scheduling_stats\" : {\"main_thread\": {\"thread_pool_name\": \"session-1-intra-op\", \"thread_id\": \"16524\", \"block_size\": [], \"core\": -1, \"Distribution\": 0, \"DistributionEnqueue\": 0, \"Run\": 0, \"Wait\": 0, \"WaitRevoke\": 0}, \"sub_threads\": {\"13968\": {\"num_run\": 0, \"core\": -1},\"12572\": {\"num_run\": 0, \"core\": -1},\"10736\": {\"num_run\": 0, \"core\": -1},\"10516\": {\"num_run\": 0, \"core\": -1},\"2212\": {\"num_run\": 0, \"core\": -1}}}}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8471842,\"ph\" : \"X\",\"name\" :\"Memcpy_token_284_fence_after\",\"args\" : {\"op_name\" : \"MemcpyToHost\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :3,\"ts\" :8471969,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/DynamicQuantizeLinear_fence_before\",\"args\" : {\"op_name\" : \"DynamicQuantizeLinear\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :118,\"ts\" :8471975,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/DynamicQuantizeLinear_kernel_time\",\"args\" : {\"parameter_size\" : \"0\",\"provider\" : \"CPUExecutionProvider\",\"op_name\" : \"DynamicQuantizeLinear\",\"input_type_shape\" : [{\"float\":[1,16,4096]}],\"node_index\" : \"37\",\"output_type_shape\" : [{\"uint8\":[1,16,4096]},{\"float\":[]},{\"uint8\":[]}],\"activation_size\" : \"262144\",\"output_size\" : \"65541\",\"thread_scheduling_stats\" : {\"main_thread\": {\"thread_pool_name\": \"session-1-intra-op\", \"thread_id\": \"16524\", \"block_size\": [], \"core\": -1, \"Distribution\": 0, \"DistributionEnqueue\": 0, \"Run\": 0, \"Wait\": 0, \"WaitRevoke\": 0}, \"sub_threads\": {\"13968\": {\"num_run\": 0, \"core\": -1},\"12572\": {\"num_run\": 0, \"core\": -1},\"10736\": {\"num_run\": 0, \"core\": -1},\"10516\": {\"num_run\": 0, \"core\": -1},\"2212\": {\"num_run\": 0, \"core\": -1}}}}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8472104,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/DynamicQuantizeLinear_fence_after\",\"args\" : {\"op_name\" : \"DynamicQuantizeLinear\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8472112,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/MatMulInteger_fence_before\",\"args\" : {\"op_name\" : \"MatMulInteger\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :10057,\"ts\" :8472113,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/MatMulInteger_kernel_time\",\"args\" : {\"parameter_size\" : \"1\",\"provider\" : \"CPUExecutionProvider\",\"op_name\" : \"MatMulInteger\",\"input_type_shape\" : [{\"uint8\":[1,16,4096]},{\"uint8\":[]},{\"int8\":[]}],\"node_index\" : \"39\",\"output_type_shape\" : [{\"int32\":[1,16,12288]}],\"activation_size\" : \"65537\",\"output_size\" : \"786432\",\"thread_scheduling_stats\" : {\"main_thread\": {\"thread_pool_name\": \"session-1-intra-op\", \"thread_id\": \"16524\", \"block_size\": [1], \"core\": 8, \"Distribution\": 7, \"DistributionEnqueue\": 5, \"Run\": 8991, \"Wait\": 978, \"WaitRevoke\": 0}, \"sub_threads\": {\"13968\": {\"num_run\": 1, \"core\": 3},\"12572\": {\"num_run\": 1, \"core\": 5},\"10736\": {\"num_run\": 1, \"core\": 7},\"10516\": {\"num_run\": 1, \"core\": 9},\"2212\": {\"num_run\": 1, \"core\": 10}}}}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8482183,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/MatMulInteger_fence_after\",\"args\" : {\"op_name\" : \"MatMulInteger\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8482200,\"ph\" : \"X\",\"name\" :\"Memcpy_token_3_fence_before\",\"args\" : {\"op_name\" : \"MemcpyFromHost\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :161,\"ts\" :8482201,\"ph\" : \"X\",\"name\" :\"Memcpy_token_3_kernel_time\",\"args\" : {\"parameter_size\" : \"0\",\"provider\" : \"CUDAExecutionProvider\",\"op_name\" : \"MemcpyFromHost\",\"input_type_shape\" : [{\"int32\":[1,16,12288]}],\"node_index\" : \"2510\",\"output_type_shape\" : [{\"int32\":[1,16,12288]}],\"activation_size\" : \"786432\",\"output_size\" : \"786432\",\"thread_scheduling_stats\" : {\"main_thread\": {\"thread_pool_name\": \"session-1-intra-op\", \"thread_id\": \"16524\", \"block_size\": [], \"core\": 8, \"Distribution\": 0, \"DistributionEnqueue\": 0, \"Run\": 0, \"Wait\": 0, \"WaitRevoke\": 0}, \"sub_threads\": {\"13968\": {\"num_run\": 1, \"core\": 3},\"12572\": {\"num_run\": 1, \"core\": 5},\"10736\": {\"num_run\": 1, \"core\": 7},\"10516\": {\"num_run\": 1, \"core\": 9},\"2212\": {\"num_run\": 1, \"core\": 10}}}}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8482372,\"ph\" : \"X\",\"name\" :\"Memcpy_token_3_fence_after\",\"args\" : {\"op_name\" : \"MemcpyFromHost\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8482377,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/Cast_fence_before\",\"args\" : {\"op_name\" : \"Cast\"}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :65,\"ts\" :8482378,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/Cast_kernel_time\",\"args\" : {\"parameter_size\" : \"0\",\"provider\" : \"CUDAExecutionProvider\",\"op_name\" : \"Cast\",\"input_type_shape\" : [{\"int32\":[1,16,12288]}],\"node_index\" : \"40\",\"output_type_shape\" : [{\"float\":[1,16,12288]}],\"activation_size\" : \"786432\",\"output_size\" : \"786432\",\"thread_scheduling_stats\" : {\"main_thread\": {\"thread_pool_name\": \"session-1-intra-op\", \"thread_id\": \"16524\", \"block_size\": [], \"core\": 8, \"Distribution\": 0, \"DistributionEnqueue\": 0, \"Run\": 0, \"Wait\": 0, \"WaitRevoke\": 0}, \"sub_threads\": {\"13968\": {\"num_run\": 1, \"core\": 3},\"12572\": {\"num_run\": 1, \"core\": 5},\"10736\": {\"num_run\": 1, \"core\": 7},\"10516\": {\"num_run\": 1, \"core\": 9},\"2212\": {\"num_run\": 1, \"core\": 10}}}}},\r\n{\"cat\" : \"Node\",\"pid\" :17556,\"tid\" :16524,\"dur\" :0,\"ts\" :8482449,\"ph\" : \"X\",\"name\" :\"/layers.0/attn/qkv_proj/Cast_fence_after\",\"args\" : {\"op_name\" : \"Cast\"}},\r\n```\r\n\r\nWindows 11\r\nNVIDIA-SMI 512.15       Driver Version: 512.15       CUDA Version: 11.6\r\ntorch                     1.13.1+cu117\r\nonnxruntime-gpu 1.14.1",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1525884676/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

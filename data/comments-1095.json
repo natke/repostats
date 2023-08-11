@@ -115,7 +115,7 @@
         },
         "created_at": "2019-05-24T22:38:53Z",
         "updated_at": "2019-05-24T22:38:53Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "This is where failure happened,\r\n[2019-05-23 15:29:51   ERROR] Parameter check failed at: ../builder/Network.cpp::addInput::432, condition: isValidDims(dims)\r\n\r\nAre there dynamic shapes on the inputs?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/495806099/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2019-05-24T23:35:10Z",
         "updated_at": "2019-05-24T23:35:10Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "TRT parser won't check dynamic shape until this PR (https://github.com/microsoft/onnxruntime/pull/1012) checked in. Please try the latest master code, or if possible share the model so that I can take a look.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/495814084/reactions",

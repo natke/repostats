@@ -339,8 +339,8 @@
         "body": "Well - you are right - symbolic dimension could be treated as 1 - and hence the shape of the input will then be [1, 7].\r\nShape = [1, 7] -> Rank = 2. \r\n\r\nWhat you are feeding in is - shape = [7] -> Rank = 1. That is the complaint from ORT. \r\n\r\nIn Python, the input would look like this -> [[1, 1, 1, 1, 1, 1, 1]] (rank 2) as opposed to [1, 1, 1, 1, 1, 1, 1,] (rank 1).\r\n\r\nHope this helps\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/674736266/reactions",
-            "total_count": 2,
-            "+1": 2,
+            "total_count": 4,
+            "+1": 4,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

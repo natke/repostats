@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1620726961",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/16564#issuecomment-1620726961",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/16564",
+        "id": 1620726961,
+        "node_id": "IC_kwDOCVq1mM5gmlSx",
+        "user": {
+            "login": "divideconcept",
+            "id": 3392900,
+            "node_id": "MDQ6VXNlcjMzOTI5MDA=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3392900?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/divideconcept",
+            "html_url": "https://github.com/divideconcept",
+            "followers_url": "https://api.github.com/users/divideconcept/followers",
+            "following_url": "https://api.github.com/users/divideconcept/following{/other_user}",
+            "gists_url": "https://api.github.com/users/divideconcept/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/divideconcept/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/divideconcept/subscriptions",
+            "organizations_url": "https://api.github.com/users/divideconcept/orgs",
+            "repos_url": "https://api.github.com/users/divideconcept/repos",
+            "events_url": "https://api.github.com/users/divideconcept/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/divideconcept/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-07-04T20:44:52Z",
+        "updated_at": "2023-07-04T20:44:52Z",
+        "author_association": "NONE",
+        "body": "Ok, this seems very similar to https://github.com/microsoft/onnxruntime/issues/13429\r\nSo I eventually got it to work with C++, but to do so I had to grab the DirectML.dll that came with onnxruntime-directml on Python, located in `python\\Lib\\site-packages\\onnxruntime\\capi\\DirectML.dll` and copy it next to onnxruntime.dll and my .exe.\r\n\r\nThis should probably require a proper rebundling of the release packages so that this dll is included along with onnruntime.dll. @wchao1115 @fdwr @yuslepukhin",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1620726961/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

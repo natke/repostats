@@ -119,8 +119,8 @@
         "body": "> @jw-msft thank you, I've managed to make it work. Is there any way to make inference via onnxruntime + OpenVINO while using the optimized models .bin .xml instead of the .onnx model? Because right now I don't see a huge difference between running the model via CPU and via OpenVino EP (on NCS2). It king of defeats the purpose of using OpenVINO EP.\r\n\r\nThat's great.\r\nWere there any special/additional steps you had to do? or did the instructions in that linked issue work directly?\r\nre: .bin/.xml OpenVINO format. Unfortunately, no. OnnxRuntime only accepts .onnx files as input.\r\nThe benefit of using OnnxRuntime is OpenVINO does not support all ONNX operators. OnnxRuntime + OpenVINO can support more models than native OpenVINO by falling back to our CPU implementations for the unsupported subgraphs.\r\nAlso using OnnxRuntime allows one to have a consistent api yet deploy on multiple hardware targets by enabling a supported Execution Providers.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1139732501/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

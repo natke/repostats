@@ -218,5 +218,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1567741463",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/3611#issuecomment-1567741463",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/3611",
+        "id": 1567741463,
+        "node_id": "IC_kwDOCVq1mM5dcdYX",
+        "user": {
+            "login": "oneengineer",
+            "id": 10483031,
+            "node_id": "MDQ6VXNlcjEwNDgzMDMx",
+            "avatar_url": "https://avatars.githubusercontent.com/u/10483031?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/oneengineer",
+            "html_url": "https://github.com/oneengineer",
+            "followers_url": "https://api.github.com/users/oneengineer/followers",
+            "following_url": "https://api.github.com/users/oneengineer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/oneengineer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/oneengineer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/oneengineer/subscriptions",
+            "organizations_url": "https://api.github.com/users/oneengineer/orgs",
+            "repos_url": "https://api.github.com/users/oneengineer/repos",
+            "events_url": "https://api.github.com/users/oneengineer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/oneengineer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-05-30T04:32:48Z",
+        "updated_at": "2023-05-30T04:32:48Z",
+        "author_association": "NONE",
+        "body": "Thanks!\r\n\r\nSo the key is to providing the resource with normal dx12 APIs and wrap it into `Ort::Value`.\r\nThen feed it into `session::run` API.\r\n\r\nEverything here is just standard APIs without modifying the source code onnxruntime?\r\n\r\n> Hi, this is possible now. Please a look at this sample!\r\n> \r\n> https://github.com/microsoft/Windows-Machine-Learning/tree/master/Samples/WinMLSamplesGallery/WinMLSamplesGallery/Samples/DXResourceBindingORT\r\n\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1567741463/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

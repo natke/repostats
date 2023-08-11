@@ -42,5 +42,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1426124959",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/12927#issuecomment-1426124959",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/12927",
+        "id": 1426124959,
+        "node_id": "IC_kwDOCVq1mM5VAPCf",
+        "user": {
+            "login": "KoKuToru",
+            "id": 1866790,
+            "node_id": "MDQ6VXNlcjE4NjY3OTA=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1866790?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/KoKuToru",
+            "html_url": "https://github.com/KoKuToru",
+            "followers_url": "https://api.github.com/users/KoKuToru/followers",
+            "following_url": "https://api.github.com/users/KoKuToru/following{/other_user}",
+            "gists_url": "https://api.github.com/users/KoKuToru/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/KoKuToru/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/KoKuToru/subscriptions",
+            "organizations_url": "https://api.github.com/users/KoKuToru/orgs",
+            "repos_url": "https://api.github.com/users/KoKuToru/repos",
+            "events_url": "https://api.github.com/users/KoKuToru/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/KoKuToru/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-02-10T17:32:24Z",
+        "updated_at": "2023-02-10T17:32:24Z",
+        "author_association": "NONE",
+        "body": "I get the the same error but with pytorch.\r\nI suspect the `F.interpolate` function...\r\n\r\n```python\r\nclass ScaleDown(nn.Module):\r\n    def __init__(self, a=1):\r\n        super().__init__()\r\n        self.a = a\r\n    def forward(self, x):\r\n        return F.interpolate(x, (x.size(-2)//self.a, x.size(-1)//self.a), mode='area')\r\n\r\nclass ScaleUp(nn.Module):\r\n    def __init__(self, a=1):\r\n        super().__init__()\r\n        self.a = a\r\n    def forward(self, x):\r\n        return F.interpolate(x, (x.size(-2)*self.a, x.size(-1)*self.a), mode='nearest')\r\n```\r\n\r\nHere is my onnx file https://drive.google.com/file/d/1mBZjxBCBNATeqvaE9BWpOC32YOysMwd-/view?usp=sharing",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1426124959/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

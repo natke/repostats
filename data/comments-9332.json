@@ -75,8 +75,8 @@
         "body": "I solve this problem. I set the toolchains to the vs environment instead of using the mingw installed.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/946310473/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -163,8 +163,8 @@
         "body": "This seems to be due to the fact that the _WIN32 macro has already been defined causing the corresponding macro in the onnxruntime_c_api.h header file to skip the definition. I solved this problem by making sure that the definition appears in the error macro, located around line 41 of the onnxruntime_c_api.h file. Add the missing macro definition under #else as follows:\r\n//! @}\r\n// SAL2 Definitions\r\n#ifndef _WIN32\r\n#define _In_\r\n#define _In_z_\r\n#define _In_opt_\r\n#define _In_opt_z_\r\n#define _Out_\r\n#define _Outptr_\r\n#define _Out_opt_\r\n#define _Inout_\r\n#define _Inout_opt_\r\n#define _Frees_ptr_opt_\r\n#define _Ret_maybenull_\r\n#define _Ret_notnull_\r\n#define _Check_return_\r\n#define _Outptr_result_maybenull_\r\n#define _In_reads_(X)\r\n#define _Inout_updates_all_(X)\r\n#define _Out_writes_bytes_all_(X)\r\n#define _Out_writes_all_(X)\r\n#define _Success_(X)\r\n#define _Outptr_result_buffer_maybenull_(X)\r\n#define ORT_ALL_ARGS_NONNULL __attribute__((nonnull))\r\n#else\r\n#include <specstrings.h>\r\n#define ORT_ALL_ARGS_NONNULL\r\n#define _Frees_ptr_opt_\r\n#define _Outptr_result_buffer_maybenull_(X)\r\n#endif\r\n\r\nAmong them, _Frees_ptr_opt_ and _Outptr_result_buffer_maybenull_(X) are undefined macros that my compiler tells me, and if you are prompted for more undefined macros, try adding them here.\r\nWith this change, I successfully used the onnxruntime with the mingw730_64 compiler",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1275792991/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

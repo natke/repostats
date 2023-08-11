@@ -18,8 +18,6 @@ while (num_issues == PAGE_SIZE):
   params = {'per_page': 100, 'page': page, 'since': "2019-01-01", 'state': "all", 'direction': "asc"}
   response = requests.get(url, headers=headers, params=params)
 
-  print(f'Request headers: {headers}; Response status code: {response.status_code}')
-
   # In a variable, save the API response.
   response_data = response.json()
 

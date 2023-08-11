@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1397871059",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/7300#issuecomment-1397871059",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/7300",
+        "id": 1397871059,
+        "node_id": "IC_kwDOCVq1mM5TUdHT",
+        "user": {
+            "login": "nightflight-dk",
+            "id": 9641988,
+            "node_id": "MDQ6VXNlcjk2NDE5ODg=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9641988?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nightflight-dk",
+            "html_url": "https://github.com/nightflight-dk",
+            "followers_url": "https://api.github.com/users/nightflight-dk/followers",
+            "following_url": "https://api.github.com/users/nightflight-dk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nightflight-dk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nightflight-dk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nightflight-dk/subscriptions",
+            "organizations_url": "https://api.github.com/users/nightflight-dk/orgs",
+            "repos_url": "https://api.github.com/users/nightflight-dk/repos",
+            "events_url": "https://api.github.com/users/nightflight-dk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nightflight-dk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-20T03:06:49Z",
+        "updated_at": "2023-01-20T03:09:00Z",
+        "author_association": "NONE",
+        "body": "@yufenglee I can reproduce this as well. ORT-GPU 1.13.1  \r\n\r\n(Roberta-large)\r\nFail: [ONNXRuntimeError] : 1 : FAIL : Load model from quantized/model_quantized.onnx failed:This is an invalid model. Error: two nodes with same node name (/roberta/embeddings/LayerNorm/Add_1_output_0_QuantizeLinear).\r\n \r\n(deberta-large-mnli)\r\nFail: [ONNXRuntimeError] : 1 : FAIL : Load model from quantized/model_quantized_infs.onnx failed:This is an invalid model. Error: two nodes with same node name (/deberta/encoder/layer.0/attention/self/Div_1_output_0_QuantizeLinear).\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1397871059/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

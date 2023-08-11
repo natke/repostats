@@ -207,8 +207,8 @@
         "body": "everything get down, onnx custom op should got domain which match your custom op, when register custom op in \"Custom\" domain in your cpp file, you open onnx file custom op should have \"Custom\" domain. and if ORT_API_VERSION in C++ is 12 and python onnxruntime only support 1-11, change source onnxruntime_c_api.h in /core/session/ in line 33 OPT_API_VERSION to 11, then run ./build.sh again, InferenceSession will get done.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1175825441/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

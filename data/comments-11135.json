@@ -119,8 +119,8 @@
         "body": "#  view.py\r\nimport onnxruntime\r\nproviders = ['CPUExecutionProvider']\r\nprint('1')\r\nself.session = onnxruntime.InferenceSession(model, providers=providers)\r\nprint('2')\r\n\r\nbml@jupyter-qni6itm5q6045973-0:~/storage/app$ python view.py\r\n1\r\nSegmentation fault (core dumped)\r\n\r\nThere is no prompt",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1107789899/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

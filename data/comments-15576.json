@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1604467016",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/15576#issuecomment-1604467016",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/15576",
+        "id": 1604467016,
+        "node_id": "IC_kwDOCVq1mM5fojlI",
+        "user": {
+            "login": "flip1995",
+            "id": 9744647,
+            "node_id": "MDQ6VXNlcjk3NDQ2NDc=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9744647?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/flip1995",
+            "html_url": "https://github.com/flip1995",
+            "followers_url": "https://api.github.com/users/flip1995/followers",
+            "following_url": "https://api.github.com/users/flip1995/following{/other_user}",
+            "gists_url": "https://api.github.com/users/flip1995/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/flip1995/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/flip1995/subscriptions",
+            "organizations_url": "https://api.github.com/users/flip1995/orgs",
+            "repos_url": "https://api.github.com/users/flip1995/repos",
+            "events_url": "https://api.github.com/users/flip1995/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/flip1995/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-06-23T15:44:34Z",
+        "updated_at": "2023-06-23T15:51:15Z",
+        "author_association": "NONE",
+        "body": "This feature didn't make it into release `v1.15.*` AFAICT. So the opset 19 support claimed in the [compatibility documentation](https://onnxruntime.ai/docs/reference/compatibility.html) is not fully met IIUC. Was this left out intentionally or just missed?\r\n\r\nWithout this fix, graphs generated with ONNX 1.14 cannot be run with ORT 1.15. Cherry-picking onto the `v1.15.1` tag and then running the ONNX 1.14 graph works.\r\n\r\nAny chance that this can get into a `v1.15.2` point release? I would really appreciate that. Thanks for implementing it! :)\r\n\r\nFriendly ping @snnn, because you ran the `v1.15.*` release.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1604467016/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

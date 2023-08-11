@@ -339,14 +339,14 @@
         "body": "@FraLupo\r\nThey're warnings as your model has a lot of unused initializers that could be cleaned up. Ideally you'd fix the model, but if you just want to ignore the warnings you can set the default logger to ERROR level with this:\r\n```\r\nimport onnxruntime as ort\r\nort.set_default_logger_severity(3)\r\n```\r\n\r\nOr when setting the session or run options you must pass in the options when creating the session or calling `run`. You code is creating a new instance of SessionOptions or RunOptions but essentially throwing it away before using it.\r\n\r\ne.g.\r\n```\r\n    so = ort.SessionOptions()\r\n    so.log_severity_level = 3\r\n    s = ort.InferenceSession(<model_path>, so)  # <-- pass in the SessionOptions instance here\r\n```\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/843945505/reactions",
-            "total_count": 21,
-            "+1": 17,
+            "total_count": 28,
+            "+1": 22,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
             "confused": 0,
             "heart": 4,
-            "rocket": 0,
+            "rocket": 2,
             "eyes": 0
         },
         "performed_via_github_app": null

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1516663558",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/15603#issuecomment-1516663558",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/15603",
+        "id": 1516663558,
+        "node_id": "IC_kwDOCVq1mM5aZnMG",
+        "user": {
+            "login": "tianleiwu",
+            "id": 30328909,
+            "node_id": "MDQ6VXNlcjMwMzI4OTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30328909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tianleiwu",
+            "html_url": "https://github.com/tianleiwu",
+            "followers_url": "https://api.github.com/users/tianleiwu/followers",
+            "following_url": "https://api.github.com/users/tianleiwu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tianleiwu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tianleiwu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tianleiwu/subscriptions",
+            "organizations_url": "https://api.github.com/users/tianleiwu/orgs",
+            "repos_url": "https://api.github.com/users/tianleiwu/repos",
+            "events_url": "https://api.github.com/users/tianleiwu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tianleiwu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-20T17:01:49Z",
+        "updated_at": "2023-04-20T17:02:14Z",
+        "author_association": "MEMBER",
+        "body": "I could reproduce the issue. The issue shall be resolved in main branch. \r\n\r\n@trajepl, you can try out our nightly package like the following:\r\n```\r\npip uninstall onnxruntime-gpu\r\npip install ort-nightly-gpu -i https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ORT-Nightly/pypi/simple/\r\npython -m onnxruntime.transformers.convert_generation -m t5-small --model_type t5 --output ./models/t5/onnx_models/t5_small_beam_search.onnx -p fp16 --use_gpu\r\n```\r\n\r\nIn my machine, the output is like the following:\r\n```\r\n--------------------------------------------------\r\nTesting beam search with onnxruntime...\r\nuse CUDAExecutionProvider\r\nORT outputs:\r\nsequences [[[    0   312  5789   259 20624   302   154     0     0     0     0\r\n       0     0     0     0     0     0     0     0     0     0     0\r\n       0     0     0     0     0     0     0     0     0     0     0\r\n       0     0     0     0     0     0     0     0     0     0     0\r\n       0     0     0     0     0     0]]\r\n\r\n [[    0   585  3256    12   504    24  8636   830   490   533  1393\r\n      12    70  2713     3     5   578     3     9  1782   300    54\r\n     991    12  1364  1425    13  2189    21   321  3513    11  1082\r\n       3     5     0     0     0     0     0     0     0     0     0\r\n       0     0     0     0     0     0]]]\r\nbatch 0 sequence 0: Le produit est diffusé\r\nbatch 1 sequence 0: research continues to show that pets bring real health benefits to their owners. having a dog around can lead to lower levels of stress for both adults and kids.\r\n--------------------------------------------------\r\nTorch Sequences:\r\ntensor([[[    0,   312,  5789,   259, 20624,   302,   154,     1,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0]],\r\n\r\n        [[    0,   585,  3256,    12,   504,    24,  8636,   830,   490,   533,\r\n           1393,    12,    70,  2713,     3,     5,   578,     3,     9,  1782,\r\n            300,    54,   991,    12,  1364,  1425,    13,  2189,    21,   321,\r\n           3513,    11,  1082,     3,     5,     1]]])\r\n['Le produit est diffusé', 'research continues to show that pets bring real health benefits to their owners. having a dog around can lead to lower levels of stress for both adults and kids.']\r\n--------------------------------------------------\r\nORT Sequences:\r\ntensor([[[    0,   312,  5789,   259, 20624,   302,   154,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0]],\r\n\r\n        [[    0,   585,  3256,    12,   504,    24,  8636,   830,   490,   533,\r\n           1393,    12,    70,  2713,     3,     5,   578,     3,     9,  1782,\r\n            300,    54,   991,    12,  1364,  1425,    13,  2189,    21,   321,\r\n           3513,    11,  1082,     3,     5,     0,     0,     0,     0,     0,\r\n              0,     0,     0,     0,     0,     0,     0,     0,     0,     0]]])\r\n['Le produit est diffusé', 'research continues to show that pets bring real health benefits to their owners. having a dog around can lead to lower levels of stress for both adults and kids.']\r\n--------------------------------------------------\r\nTorch and ORT result is  same\r\nORT {'test_times': 1, 'latency_variance': '0.00', 'latency_90_percentile': '376.61', 'latency_95_percentile': '376.61', 'latency_99_percentile': '376.61', 'average_latency_ms': '376.61', 'QPS': '5.31', 'parity': True}\r\n```\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1516663558/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

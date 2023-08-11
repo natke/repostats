@@ -339,13 +339,13 @@
         "body": "If anyone interested in linking onnxruntime statically on Windows, here are the steps I followed:\r\n- Download onnxruntime (e.g. in C:\\Software)\r\n```\r\n git clone --recursive https://github.com/Microsoft/onnxruntime\r\n cd onnxruntime\r\n```\r\n- Build onnxruntime w/o the shared library option (as suggested in #1472.\r\n`.\\build.bat --config Release --parallel`\r\n\r\nThis will create all required `.lib` files into the build/config folder you specified. Note that there is no `onnxruntime.lib`. In your application, you just need to link multiple libraries that onnxrunime uses.\r\n\r\n- I used CMake to create a test application. In CMakeLists.txt file, add the following:\r\n```\r\ntarget_include_directories(\r\n    ${PROJECT_NAME} PRIVATE \r\n    C:/Software/onnxruntime/include/onnxruntime\r\n)\r\n\r\ntarget_link_directories(\r\n    ${PROJECT_NAME} PRIVATE\r\n    C:/Software/onnxruntime/build/Windows/Release\r\n)\r\n\r\ntarget_link_libraries(\r\n    ${PROJECT_NAME}\r\n    Release/onnxruntime_session\r\n    Release/onnxruntime_optimizer\r\n    Release/onnxruntime_providers\r\n    Release/onnxruntime_util\r\n    Release/onnxruntime_framework\r\n    Release/onnxruntime_graph\r\n    Release/onnxruntime_mlas\r\n    Release/onnxruntime_common\r\n    Release/onnxruntime_flatbuffers\r\n    Release/onnx_test_data_proto\r\n    external/onnx/Release/onnx\r\n    external/onnx/Release/onnx_proto\r\n    external/protobuf/cmake/Release/libprotobuf-lite\r\n    external/re2/Release/re2\r\n    external/abseil-cpp/absl/base/Release/absl_base\r\n    external/abseil-cpp/absl/base/Release/absl_throw_delegate\r\n    external/abseil-cpp/absl/container/Release/absl_raw_hash_set\r\n    external/abseil-cpp/absl/hash/Release/absl_hash\r\n    external/abseil-cpp/absl/hash/Release/absl_city\r\n    external/abseil-cpp/absl/hash/Release/absl_low_level_hash\r\n)\r\n```\r\n- Finally, include the .h file in your main.cpp:\r\n`#include \"core/session/onnxruntime_cxx_api.h\"`",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1106681476/reactions",
-            "total_count": 10,
-            "+1": 8,
+            "total_count": 14,
+            "+1": 10,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
             "confused": 0,
-            "heart": 2,
+            "heart": 4,
             "rocket": 0,
             "eyes": 0
         },

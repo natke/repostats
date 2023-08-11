@@ -71,7 +71,7 @@
         },
         "created_at": "2021-12-17T08:51:21Z",
         "updated_at": "2021-12-17T08:51:21Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "@ytaous No, I have not installed `onnxruntime-gpu` nor do I have a compatible GPU for testing. Or are you saying that the `CPUExecutionProvider` does not exhibit this issue if `onnxruntime-gpu` is installed?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/996542122/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2022-04-18T16:31:41Z",
         "updated_at": "2022-04-18T16:31:41Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "This issue has been extensively explored on the Eigen issue tracker as mentioned earlier: https://gitlab.com/libeigen/eigen/-/issues/2413\r\n\r\nThe gist of the discussion is that depending on the memory alignment Eigen chooses different code paths for different \"rows\" of the input. One can think of the situation as having two competing use-cases: One of uncompromising optimal performance (Eigen default) and one of \"reproducibility\" (i.e. a prediction can always be reproduced without knowledge of the previous input's batch size). The latter is our use case. We have to guarantee such reproducibility for several reasons including regulatory ones.\r\n\r\nThere are a couple of compile time flags (`EIGEN_FAST_MATH` and `EIGEN_DONT_VECTORIZE`) that Eigen offers to mitigate the issue, but I have not yet found the time to try them out with `onnxruntime`.\r\n\r\nIt would be great to know if `onnxruntime` is interested in officially supporting the \"reproducible\" use-case by providing its own (optional) compile time flags?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1101547034/reactions",

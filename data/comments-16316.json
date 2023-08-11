@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1587869351",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/16316#issuecomment-1587869351",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/16316",
+        "id": 1587869351,
+        "node_id": "IC_kwDOCVq1mM5epPan",
+        "user": {
+            "login": "kunal-vaishnavi",
+            "id": 115581922,
+            "node_id": "U_kgDOBuOj4g",
+            "avatar_url": "https://avatars.githubusercontent.com/u/115581922?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kunal-vaishnavi",
+            "html_url": "https://github.com/kunal-vaishnavi",
+            "followers_url": "https://api.github.com/users/kunal-vaishnavi/followers",
+            "following_url": "https://api.github.com/users/kunal-vaishnavi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kunal-vaishnavi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kunal-vaishnavi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kunal-vaishnavi/subscriptions",
+            "organizations_url": "https://api.github.com/users/kunal-vaishnavi/orgs",
+            "repos_url": "https://api.github.com/users/kunal-vaishnavi/repos",
+            "events_url": "https://api.github.com/users/kunal-vaishnavi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kunal-vaishnavi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-06-12T18:33:43Z",
+        "updated_at": "2023-06-12T18:33:43Z",
+        "author_association": "MEMBER",
+        "body": "The `BpeDecoder` op is a custom op created by [ONNX Runtime extensions](https://github.com/microsoft/onnxruntime-extensions) for Whisper. You will need to provide the library path for ONNX Runtime extensions in order to convert from ONNX to ORT.\r\n\r\nYou can get the library path as follows:\r\n```\r\nfrom onnxruntime_extensions import get_library_path\r\n\r\nprint(get_library_path())\r\n```\r\n\r\nThen you can pass the library path to `convert_onnx_models_to_ort` as follows:\r\n\r\n```\r\n$ python -m onnxruntime.tools.convert_onnx_models_to_ort --custom_op_library <output from get_library_path> models/whisper_cpu_int8_cpu-cpu_model.onnx\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1587869351/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

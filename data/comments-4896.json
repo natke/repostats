@@ -115,7 +115,7 @@
         },
         "created_at": "2020-08-25T09:35:03Z",
         "updated_at": "2020-08-25T09:35:03Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "Thanks for the fast reply!\r\nAfter installing the latest dev version and deploying to our Cloud Service I can see that the instances do start to work (this is progress!!!), but the issue continues now on the service it self.\r\n\r\nThis is the exception we see each time the service tries to use the method which uses the ML model:\r\nouterType: _System.TypeInitializationException_\r\nouterMessage: _The type initializer for 'Microsoft.Azure.Monitoring.LSA.Shared.OptimizationFlowUtils' threw an exception._\r\nstackTrace:    _at Microsoft.Azure.Monitoring.LSA.Shared.OptimizationFlowUtils.ShouldUpdateOptimizationFlowProperties(OptimizationFlowProperties optimizationFlowProperties, String tableListInQuery)\r\n   at Microsoft.OI.Alerting.Common.Adapters.ScheduledSearchAdapter.<ProcessInternalAsync>d__10.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at Microsoft.OI.Alerting.Common.Adapters.ScheduledSearchAdapter.<ProcessInternalAsync>d__10.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.Common.Processor`2.<ProcessAsync>d__29.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.Common.Processors.ExecuteSearchProcessor.<ProcessInternalAsync>d__2.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.Common.Processor`2.<ProcessAsync>d__29.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.ProcessingRole.Runners.QueueWorker.<InvokeProcessorAsync>d__35.MoveNext()_\r\ninnermostType: _System.DllNotFoundException_\r\ninnermostMessage: _Unable to load DLL 'onnxruntime': The specified module could not be found. (Exception from HRESULT: 0x8007007E)_\r\n\r\nThe source of the exception is from our \"Shared\" project which has the NuGets installed, the Worker Role project which is \"ProcessingRole\" also has those NuGets installed.\r\nThis is the usage of the NuGets in our code:\r\n![image](https://user-images.githubusercontent.com/40732386/91158106-de924200-e6ce-11ea-8ac1-6a581cbe960d.png)\r\nWe are creating an instance of KustoQueryAnalyzer with an instance of the wrapper of the model which is called IsQueryIncreasingMLModel.\r\n![image](https://user-images.githubusercontent.com/40732386/91158301-18fbdf00-e6cf-11ea-85fd-e17578f1b2d2.png)\r\nHere we create an InferenceSession and use it to get the score of the model.\r\n\r\nRegarding what ML.NET version we use, we use the two NuGets provided, we do not use the Microsoft.ML NuGet, should we install it as well? We tried to but it didn't help, now that the dev version makes the instance work will the Microsoft.ML NuGet help somehow?\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/679917691/reactions",
@@ -203,7 +203,7 @@
         },
         "created_at": "2020-08-25T11:12:55Z",
         "updated_at": "2020-08-25T11:12:55Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "Providing the entire code:\r\n\r\n    public class IsQueryIncreasingMLModel : IMLModel\r\n    {\r\n        private const string ModelsFolderName = \"MLModels\";\r\n        private const string ModelFileName = \"onnx_model.onnx\";\r\n\r\n        private readonly InferenceSession _inferenceSession;\r\n\r\n        public IsQueryIncreasingMLModel()\r\n        {\r\n            _inferenceSession = new InferenceSession(Path.Combine(Directory.GetCurrentDirectory(), ModelsFolderName, ModelFileName));\r\n        }\r\n\r\n        /// <inheritdoc />\r\n        public double GetScore(List<long> features, ITracer tracer = null)\r\n        {\r\n            try\r\n            {\r\n                var onnxValues = new List<NamedOnnxValue>();\r\n\r\n                foreach (string name in _inferenceSession.InputMetadata.Keys)\r\n                {\r\n                    // In this case the model has features in the second parameter and the first parameter is -1 to signify \r\n                    // Possible running of several queries in a batch, but we run a single evaluation so we set this to 1\r\n                    onnxValues.Add(NamedOnnxValue.CreateFromTensor(\r\n                        name,\r\n                        new DenseTensor<long>(\r\n                            features.ToArray(),\r\n                            new int[2]\r\n                            {\r\n                                1,\r\n                                _inferenceSession.InputMetadata[name].Dimensions[1]\r\n                            })));\r\n                }\r\n\r\n                using (IDisposableReadOnlyCollection<DisposableNamedOnnxValue> outputs = _inferenceSession.Run(onnxValues))\r\n                {\r\n                    foreach (DisposableNamedOnnxValue output in outputs)\r\n                    {\r\n                        if (output.Name.Equals(\"output_probability\"))\r\n                        {\r\n                            return output.AsEnumerable<NamedOnnxValue>()\r\n                                .First()\r\n                                .AsEnumerable<KeyValuePair<long, float>>()\r\n                                .ElementAt(1)\r\n                                .Value;\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n            catch (Exception e)\r\n            {\r\n                tracer?.LogTrace(\"Unable to use ml model for prediction\");\r\n                tracer?.LogException(e);\r\n            }\r\n\r\n            return 0;\r\n        }\r\n    }\r\n\r\nSo the IMLModel doesn't implement IDisposable, and we are actually holding to the same instance of the InferenceSession, should we change that? Should we create a new session each time we use \"GetScore\"?\r\nI believe I read somewhere that this is thread safe so I assumed using the same instance is alright.\r\n\r\nDidn't see anything related to IDisposable.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/679961239/reactions",
@@ -335,7 +335,7 @@
         },
         "created_at": "2020-08-26T15:07:31Z",
         "updated_at": "2020-08-26T15:07:31Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "Thanks everyone, tried the experiment.\r\nDecided to create the session in each call instead of making the Model IDisposable as for now it is quicker to test.\r\nSince it isn't created now on the initialization of the class but on the first call we get a better stack trace to investigate:\r\n\r\nSystem.TypeInitializationException: The type initializer for 'Microsoft.ML.OnnxRuntime.NativeMethods' threw an exception. ---> System.DllNotFoundException: Unable to load DLL 'onnxruntime': The specified module could not be found. (Exception from HRESULT: 0x8007007E)\r\n   at Microsoft.ML.OnnxRuntime.NativeMethods.OrtGetApiBase()\r\n   at Microsoft.ML.OnnxRuntime.NativeMethods..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at Microsoft.ML.OnnxRuntime.SessionOptions..ctor()\r\n   at Microsoft.ML.OnnxRuntime.InferenceSession..ctor(String modelPath)\r\n   at Microsoft.Azure.Monitoring.LSA.Shared.MLModels.IsQueryIncreasingMLModel.GetScore(List`1 features, ITracer tracer)\r\n   at Microsoft.Azure.Monitoring.LSA.Shared.MLModels.KustoQueryAnalyzer.IsIncreasing(String query, Boolean isMetricMeasurement, ITracer tracer)\r\n   at Microsoft.Azure.Monitoring.LSA.Shared.OptimizationFlowUtils.IsAlertRuleInvariant(LogSearchRuleConfiguration ruleConfig, ScheduleEntity scheduleEntity, ITracer tracer)\r\n   at Microsoft.Azure.Monitoring.LSA.Shared.OptimizationFlowUtils.CreateOptimizationProperties(LogSearchRuleConfiguration ruleConfig, ScheduleEntity scheduleEntity, Query query, String kustoTableTypeInSearchQuery, ITracer tracer)\r\n   at Microsoft.OI.Alerting.Common.Adapters.ScheduledSearchAdapter.<ProcessInternalAsync>d__10.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at Microsoft.OI.Alerting.Common.Adapters.ScheduledSearchAdapter.<ProcessInternalAsync>d__10.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.Common.Processor`2.<ProcessAsync>d__29.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.Common.Processors.ExecuteSearchProcessor.<ProcessInternalAsync>d__2.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.Common.Processor`2.<ProcessAsync>d__29.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()\r\n   at Microsoft.OI.Alerting.ProcessingRole.Runners.QueueWorker.<InvokeProcessorAsync>d__35.MoveNext()\r\n\r\nThe same exception as before but now it is possible to the the OrtGetApiBase method failing.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/680939357/reactions",
@@ -467,7 +467,7 @@
         },
         "created_at": "2020-08-27T08:56:36Z",
         "updated_at": "2020-08-27T08:56:36Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "Since we do see the dll in the package deployed it must be an issue somewhere in the Azure Cloud Service.\r\nAs @yuslepukhin suggested we will next try to verify that the cloud service contains all needed dependencies.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/681818942/reactions",
@@ -511,7 +511,7 @@
         },
         "created_at": "2020-09-06T15:38:20Z",
         "updated_at": "2020-09-06T15:38:20Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "We have finally managed to make this work.\r\nThe solution though was to not use the 1.4 version, but the 1.2 version of those NuGets.\r\nI am still not sure if the issue is on the dll side or something related to Azure Cloud Services, although it does seem to work fine with 1.2.\r\n\r\nI'm going to work with Azure Cloud Service to see if they find the issue, and would like to take this offline with you guys as well only to narrow down the issue so in the future it will be possible to use 1.4 on Azure Cloud Services.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/687822375/reactions",
@@ -555,7 +555,7 @@
         },
         "created_at": "2020-09-07T13:32:19Z",
         "updated_at": "2020-09-07T13:32:19Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "After investigating this a bit more with a support engineer from the Visual Studio team we narrowed the issue and found out that our service creates a different onnxruntime.dll file than other projects.\r\n\r\nWhat we did is to create a different console app and use the NuGets (version 1.4.0). The console app runs without any issues.\r\nWe copied the console app to the Azure Cloud Service machine and it worked there as well.\r\nWhen we replaced the onnxruntime.dll file in the console app bin folder with the one created from our service (also version 1.4.0) we see that the console app fails on the same exception as our service.\r\nAfter looking at the two onnxruntime.dll files we see that the console app created a one with 4,830KB size and the service created a one with 5,545KB size, so we see that they are different although the NuGets are the same.\r\n\r\nWe couldn't open them with ILDASM and not with ILSpy, getting the next exception:\r\n_ICSharpCode.Decompiler.Metadata.PEFileNotSupportedException: PE file does not contain any managed metadata.\r\n   at ICSharpCode.Decompiler.Metadata.PEFile..ctor(String fileName, PEReader reader, MetadataReaderOptions metadataOptions)\r\n   at ICSharpCode.ILSpy.LoadedAssembly.LoadAssembly(Object state)\r\n   at System.Threading.Tasks.Task`1.InnerInvoke()\r\n   at System.Threading.Tasks.Task.Execute()_\r\n\r\n@skottmckay Could you provide a little info on how this dll is created, what are its dependencies?\r\nMaybe you have an idea how we can open them and see the differences?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/688328725/reactions",
@@ -731,7 +731,7 @@
         },
         "created_at": "2020-11-23T22:49:53Z",
         "updated_at": "2020-11-23T22:52:16Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "@yuslepukhin \r\nSorry for the delay, due to the previous version solving the issue we had to finish few things before getting back to this.\r\n\r\nSo regarding new information not so much.\r\nAs said before it seems like there is a mismatch between the dll we are building and the dll expected.\r\nI will now try to repro it again and try to solve it in case it reproduces.\r\nHope to provide an explanation for that in the next few days.\r\n\r\nPS. Small question related to performance, it was mentioned in the thread that the InferenceSession is an IDisposable and should be disposed once done using, but it is thread safe.\r\nWe saw in our service that the initialization of the InferenceSession is a bit expensive regarding to performance.\r\nIs it wise (or 100% should be avoided) to use a single static InferenceSession object for all the uses of the ML Model? If it is thread safe of course...",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/732471675/reactions",
@@ -779,8 +779,8 @@
         "body": "@yuslepukhin I'm having a similar issue where when I deploy to a cloud service:\r\n\r\n- `Microsoft.ML.OnnxRuntime.dll` is always x86\r\n- `onnxruntime.dll` is always x64\r\n\r\nSo I get the exception: \r\n\r\n> Message: Unable to load DLL 'onnxruntime': The specified module could not be found. (Exception from HRESULT: 0x8007007E)\r\n\r\nThis happens when I deploy on both \"Any CPU\" and \"x64\" project settings. This surely must be an issue with your nuget package? I deploy heaps of other packages and they don't have this issue. This is on 1.6.0. I also tried 1.2.0 and similar thing happened (though with huge inner exception trace).\r\n\r\nIs there anything I should try?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/750673523/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -863,7 +863,7 @@
         },
         "created_at": "2021-04-04T16:08:33Z",
         "updated_at": "2021-04-04T16:08:33Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "@patrickmurray18 Sadly we don't have any input, as we are currently moving to work with Azure Service Fabric instead of Azure Cloud Service and it didn't provide us the same issues.\r\nAs well as using the previous version worked for us in CS (1.2 instead of 1.4).\r\nThis thread will be closed now as we don't need further assistance, thanks everyone for the insights.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/813058108/reactions",
@@ -955,6 +955,50 @@
         "body": "Hello everyone!\r\nCurrently I have the same problem when deploying Onnx with windows 7 x64 professional sp1 (on windows 10 it works properly)\r\nI installed and used\r\n- NetFramework 4.5.2 and 4.7.2\r\n- C++ 2015-2019 Redistributable (x64) 14.2\r\n- C++ 2015-2019 Redistributable (x64) 14.2\r\n- Microsoft.ML.OnnxRuntime 1.13.1 from Nuget\r\nBut when running on windows 7 error as below:\r\nUnable to load DLL 'onnxruntime': The specified module could not be found. (Exception from HRESULT: 0x8007007E) at Microsoft.ML.OnnxRuntime.NativeMethods.OrtGetApiBase()\r\nThe type initializer for 'Microsoft.ML.OnnxRuntime.NativeMethods' threw an exception.\r\n\r\nDo you have any suggestions for me in this case? Am i missing something?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1326120118/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1357498824",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/4896#issuecomment-1357498824",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/4896",
+        "id": 1357498824,
+        "node_id": "IC_kwDOCVq1mM5Q6cnI",
+        "user": {
+            "login": "benjamin32561",
+            "id": 62675494,
+            "node_id": "MDQ6VXNlcjYyNjc1NDk0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/62675494?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjamin32561",
+            "html_url": "https://github.com/benjamin32561",
+            "followers_url": "https://api.github.com/users/benjamin32561/followers",
+            "following_url": "https://api.github.com/users/benjamin32561/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjamin32561/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjamin32561/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjamin32561/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjamin32561/orgs",
+            "repos_url": "https://api.github.com/users/benjamin32561/repos",
+            "events_url": "https://api.github.com/users/benjamin32561/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjamin32561/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-12-19T11:27:53Z",
+        "updated_at": "2022-12-19T11:29:52Z",
+        "author_association": "NONE",
+        "body": "I am encountering the same error when running a program through Docker, when I am running the program on my local device it works fine.\r\n.net: 6.0\r\nMicrosoft.ML.OnnxRuntime: 1.13.1\r\nwhen running InferenceSession(model_path); i get this exception:\r\nDllNotFoundException: Unable to load DLL 'onnxruntime' or one of its dependencies: The specified module could not be found. ",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1357498824/reactions",
             "total_count": 0,
             "+1": 0,
             "-1": 0,

@@ -295,8 +295,8 @@
         "body": "Supporting empty input shape in TfidfVectorizer looks reasonable to me. For example, if we tokenized a document (i.e., a very long string) into a [C]-tensor, but unfortunately remove all the elements in StringNormalizer, and finally TfidfVectorizer gets [0]-tensor. What should be the TFIDF-representation of this document? I'd guess that representation is a [D]-vector where all elements are zeros, because the count of every vocabulary is 0. Note that D is the dictionary's max index in TfidfVectorizer.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/476398841/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

@@ -1384,7 +1384,7 @@
         "created_at": "2019-03-14T22:13:56Z",
         "updated_at": "2019-03-18T19:50:41Z",
         "closed_at": "2019-03-14T23:06:22Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -1656,7 +1656,7 @@
         "created_at": "2019-03-15T03:27:58Z",
         "updated_at": "2019-03-18T19:50:44Z",
         "closed_at": "2019-03-15T05:25:17Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2727,8 +2727,8 @@
         "body": "**Describe the bug**\r\nLoading inference session I get an error with not much helpful message\r\n\r\n\r\n```text\r\nRuntimeError: [ONNXRuntimeError] : 1 : GENERAL ERROR : Load model from output/some.onnx failed:Type Error: Type parameter (T) bound to different types (tensor(float) and tensor(double) in node ().\r\n```\r\n\r\n\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Ubuntu 16.04\r\n- ONNX Runtime installed from (source or binary): binary (pip)\r\n- ONNX Runtime version: 0.3.0\r\n- Python version: 3.5.2\r\n\r\n**To Reproduce**\r\nLoad a previously saved model with `sess = rt.InferenceSession(\"some.onnx\")`\r\n\r\n**Expected behavior**\r\nTo load the model or give more helpful error\r\n\r\n**Additional context**\r\nWill share the model offline.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/649/reactions",
-            "total_count": 3,
-            "+1": 3,
+            "total_count": 4,
+            "+1": 4,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -4710,7 +4710,7 @@
             "events_url": "https://api.github.com/users/shengyfu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/shengyfu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -5042,7 +5042,7 @@
         "created_at": "2019-03-22T00:03:44Z",
         "updated_at": "2019-03-25T19:11:35Z",
         "closed_at": "2019-03-22T00:08:04Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -5552,7 +5552,7 @@
         "created_at": "2019-03-22T20:00:18Z",
         "updated_at": "2019-03-25T19:11:26Z",
         "closed_at": "2019-03-22T21:46:58Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {

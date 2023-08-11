@@ -251,8 +251,8 @@
         "body": "I had same problem. Just changed \r\n\r\n```\r\nfrom \r\nOrt::MemoryInfo memory_info = Ort::MemoryInfo(\"Cuda:0\", OrtAllocatorType::OrtArenaAllocator, 0, OrtMemTypeDefault);\r\nto\r\nauto memory_info = Ort::MemoryInfo::CreateCpu(OrtArenaAllocator, OrtMemTypeDefault);\r\n```\r\n\r\nBelow parameters remain same.\r\n```\r\nOrtCUDAProviderOptions cudaOptions;\r\ncudaOptions.device_id = 0;\r\nsession_options.AppendExecutionProvider_CUDA(cudaOptions);\r\n```\r\n\r\nThen it works fine. It uses GPU and onnx model on GPU is faster x8 than CPU.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1285547557/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

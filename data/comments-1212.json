@@ -306,5 +306,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1435508492",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/1212#issuecomment-1435508492",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/1212",
+        "id": 1435508492,
+        "node_id": "IC_kwDOCVq1mM5VkB8M",
+        "user": {
+            "login": "un-certainty",
+            "id": 102007104,
+            "node_id": "U_kgDOBhSBQA",
+            "avatar_url": "https://avatars.githubusercontent.com/u/102007104?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/un-certainty",
+            "html_url": "https://github.com/un-certainty",
+            "followers_url": "https://api.github.com/users/un-certainty/followers",
+            "following_url": "https://api.github.com/users/un-certainty/following{/other_user}",
+            "gists_url": "https://api.github.com/users/un-certainty/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/un-certainty/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/un-certainty/subscriptions",
+            "organizations_url": "https://api.github.com/users/un-certainty/orgs",
+            "repos_url": "https://api.github.com/users/un-certainty/repos",
+            "events_url": "https://api.github.com/users/un-certainty/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/un-certainty/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-02-18T07:07:47Z",
+        "updated_at": "2023-02-18T07:09:03Z",
+        "author_association": "NONE",
+        "body": "Hi @hariharans29 @faxu \r\n\r\nI encountered a similar `TypeInferenceError` while loading an ONNX model with `onnxruntime.InferenceSession`. It was a `torch.jit.script` model and exported with `torch.onnx.export`. There is a loop implemented in the computation graph.\r\n\r\nThe error message was:\r\n```\r\n[ONNXRuntimeError] : 1 : FAIL : Node (/Loop) Op (Loop) [TypeInferenceError] Graph attribute inferencing failed: Type Error: Type (seq(tensor(float16))) of output arg (/model/model/glm/transformer/layers.0/attention/SplitToSequence_output_0) of node (/model/model/glm/transformer/layers.0/attention/SplitToSequence) does not match expected type (seq(tensor(float))).\r\n```\r\n\r\nAnd here is the graph of `layers.0/attention/SplitToSequence`:\r\n![image](https://user-images.githubusercontent.com/102007104/219846527-38400cfe-e315-4282-b5c8-b73dbda588f7.png)\r\n\r\nRelated codes are:\r\n\r\n```python\r\ndef split_tensor_along_last_dim(tensor, num_partitions: int):\r\n    \"\"\"Split a tensor along its last dimension.\r\n    Arguments:\r\n        tensor: input tensor.\r\n        num_partitions: number of partitions to split the tensor\r\n    \"\"\"\r\n    return torch.tensor_split(tensor, num_partitions, dim=-1)\r\n\r\n# self.query_key_value = Linear(hidden_size, 3 * hidden_size)\r\nmixed_x_layer = self.query_key_value(hidden_states)\r\nmixed_query_layer, mixed_key_layer, mixed_value_layer) = split_tensor_along_last_dim(mixed_x_layer, 3)\r\nquery_layer = self._transpose_for_scores(mixed_query_layer)\r\nkey_layer = self._transpose_for_scores(mixed_key_layer)\r\nvalue_layer = self._transpose_for_scores(mixed_value_layer)\r\n```\r\n\r\nI am not able to share the ONNX file. Could you provide some directions on where to start to debug the problem? I have completely no idea why a tensor(float) is expected, since all my weights and tensors are in float16.\r\n\r\nNot sure if this is related: https://github.com/pytorch/pytorch/issues/72498",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1435508492/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

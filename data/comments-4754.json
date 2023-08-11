@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1380133266",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/4754#issuecomment-1380133266",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/4754",
+        "id": 1380133266,
+        "node_id": "IC_kwDOCVq1mM5SQymS",
+        "user": {
+            "login": "j-suyako",
+            "id": 30832854,
+            "node_id": "MDQ6VXNlcjMwODMyODU0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30832854?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/j-suyako",
+            "html_url": "https://github.com/j-suyako",
+            "followers_url": "https://api.github.com/users/j-suyako/followers",
+            "following_url": "https://api.github.com/users/j-suyako/following{/other_user}",
+            "gists_url": "https://api.github.com/users/j-suyako/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/j-suyako/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/j-suyako/subscriptions",
+            "organizations_url": "https://api.github.com/users/j-suyako/orgs",
+            "repos_url": "https://api.github.com/users/j-suyako/repos",
+            "events_url": "https://api.github.com/users/j-suyako/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/j-suyako/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-12T10:40:15Z",
+        "updated_at": "2023-01-12T10:40:15Z",
+        "author_association": "NONE",
+        "body": "same problem, you should use **api_(not api!)** when initialize kernel, in this case:\r\n`KernelFurthestPointSampling(OrtApi api): api_(api), ort_(api_){}`",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1380133266/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

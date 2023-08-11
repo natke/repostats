@@ -163,8 +163,8 @@
         "body": "`synchronize_inputs/outputs` has been recently exposed so it may not have made to the generated published documentation. [Here ](https://github.com/microsoft/onnxruntime/blob/master/csharp/src/Microsoft.ML.OnnxRuntime/OrtIoBinding.shared.cs#L91)how it is worded in C# code\r\n\r\nThe functionality of it is device specific. For CUDA GPU it means a call to `cudaSynchronize()`. You use it to ensure that the content of the memory you are binding as inputs finished copying the device before inference. And for outputs, you want all of the CUDA operations to finish before reading the bound outputs. If you see that you are getting wrong or inconsistent results, you may try calling it.\r\n\r\n[Here ](https://pytorch.org/docs/stable/generated/torch.cuda.synchronize.html)is how Pytorch docs put it.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1019009119/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

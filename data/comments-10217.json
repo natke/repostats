@@ -394,5 +394,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1436666087",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10217#issuecomment-1436666087",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10217",
+        "id": 1436666087,
+        "node_id": "IC_kwDOCVq1mM5Vocjn",
+        "user": {
+            "login": "JoachimMoe",
+            "id": 47081217,
+            "node_id": "MDQ6VXNlcjQ3MDgxMjE3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/47081217?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JoachimMoe",
+            "html_url": "https://github.com/JoachimMoe",
+            "followers_url": "https://api.github.com/users/JoachimMoe/followers",
+            "following_url": "https://api.github.com/users/JoachimMoe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JoachimMoe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JoachimMoe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JoachimMoe/subscriptions",
+            "organizations_url": "https://api.github.com/users/JoachimMoe/orgs",
+            "repos_url": "https://api.github.com/users/JoachimMoe/repos",
+            "events_url": "https://api.github.com/users/JoachimMoe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JoachimMoe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-02-20T10:00:27Z",
+        "updated_at": "2023-02-20T10:00:27Z",
+        "author_association": "NONE",
+        "body": "I have tried reading through some of the discussions posted here, and I am still in doubt as to how to do this correctly with dynamic outputs. For example, I have a RetinaNet instance, and I wish to pre-process my images on the GPU directly without having host-device communication in the InferenceSesssion. Therefore, I can not create an IObinding as the output shapes can change. This solution:\r\n\r\n```\r\ndef run_with_data_on_device(x):\r\n    session = create_session(MODEL_FILE)\r\n\r\n    \r\n    x_ortvalue = ort.OrtValue._ortvalue_to_torch_tensor(x, DEVICE_NAME, DEVICE_INDEX)\r\n\r\n    io_binding = session.io_binding()\r\n    io_binding.bind_input(name='images', device_type=x_ortvalue.device_name(), device_id=0, element_type=x.dtype, shape=x_ortvalue.shape(), buffer_ptr=x_ortvalue.data_ptr())\r\n    io_binding.bind_output(name=session.get_outputs()[-1].name, device_type=DEVICE_NAME, device_id=DEVICE_INDEX, element_type=x.dtype, shape=x_ortvalue.shape())\r\n    session.run_with_iobinding(io_binding)\r\n\r\n    z = io_binding.get_outputs()\r\n\r\n    return z[0]\r\n```\r\n\r\nWorks wonderfully, but I would wish that I could simply avoid the ```from_numpy``` call and simply pass a Tensor already on device as such:\r\n\r\n```\r\ndef run_with_torch_tensors_on_device(x: torch.Tensor, CURR_SIZE: int, torch_type: torch.dtype = torch.float) -> torch.Tensor:\r\n    session = create_session(MODEL_FILE)\r\n    binding = session.io_binding()\r\n    x_tensor = x.contiguous()\r\n\r\n   ## PROBLEMATIC TENSOR CREATION HERE, PREDICTIONS CHANGE SO NO WAY TO KNOW BEFOREHAND..\r\n   ## torch.zeros(None, None) WOULD BE AWESOME :D \r\n z_tensor = torch.zeros((CURR_SIZE,1000), dtype=torch_type, device=DEVICE).contiguous()\r\n\r\n \r\n\r\n\r\n    binding.bind_input(\r\n        name=session.get_inputs()[0].name,\r\n        device_type=DEVICE_NAME,\r\n        device_id=DEVICE_INDEX,\r\n        element_type=np.float32,\r\n        shape=tuple(x_tensor.shape),\r\n        buffer_ptr=x_tensor.data_ptr())\r\n\r\n\r\n    binding.bind_output(\r\n        name=session.get_outputs()[-1].name,\r\n        device_type=DEVICE_NAME,\r\n        device_id=DEVICE_INDEX,\r\n        element_type=np.float32,\r\n        shape=tuple(z_tensor.shape),\r\n        buffer_ptr=z_tensor.data_ptr())\r\n\r\n    session.run_with_iobinding(binding)\r\n\r\n    return z_tensor.squeeze(0)\r\n\r\n```\r\n\r\nAm I overlooking something? ",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1436666087/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

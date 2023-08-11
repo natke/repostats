@@ -1,75 +1,5 @@
 [
     {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6567",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6567/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6567/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6567/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/issues/6567",
-        "id": 801117605,
-        "node_id": "MDU6SXNzdWU4MDExMTc2MDU=",
-        "number": 6567,
-        "title": "[c api] Why there will be about 300MB GPU memory cost when i infer on cpu ?",
-        "user": {
-            "login": "wnzhyee",
-            "id": 28294770,
-            "node_id": "MDQ6VXNlcjI4Mjk0Nzcw",
-            "avatar_url": "https://avatars.githubusercontent.com/u/28294770?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/wnzhyee",
-            "html_url": "https://github.com/wnzhyee",
-            "followers_url": "https://api.github.com/users/wnzhyee/followers",
-            "following_url": "https://api.github.com/users/wnzhyee/following{/other_user}",
-            "gists_url": "https://api.github.com/users/wnzhyee/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/wnzhyee/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/wnzhyee/subscriptions",
-            "organizations_url": "https://api.github.com/users/wnzhyee/orgs",
-            "repos_url": "https://api.github.com/users/wnzhyee/repos",
-            "events_url": "https://api.github.com/users/wnzhyee/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/wnzhyee/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [
-            {
-                "id": 2286118846,
-                "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
-                "name": "stale",
-                "color": "C5DEF5",
-                "default": false,
-                "description": "issues that have not been addressed in a while; categorized by a bot"
-            }
-        ],
-        "state": "open",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 1,
-        "created_at": "2021-02-04T09:52:48Z",
-        "updated_at": "2022-08-12T08:20:17Z",
-        "closed_at": null,
-        "author_association": "NONE",
-        "active_lock_reason": null,
-        "body": "**Describe the bug**\r\nIt's strange when i use c api to inference, there will always cost 300MB GPU memory. But if i use CUDA_VISIBLE_DEVICES=\"\"，gpu memory doesn't cost anymore and the inference speed don't slow down. Why this happen?\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Linux Ubuntu 16.04\r\n- ONNX Runtime installed from (source or binary): source built so\r\n- ONNX Runtime version: 1.6.0 cpu\r\n- Python version: /\r\n- Visual Studio version (if applicable): /\r\n- GCC/Compiler version (if compiling from source): 4.8.5\r\n- CUDA/cuDNN version: 10.2/7.x\r\n- GPU model and memory: /\r\n",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6567/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6567/timeline",
-        "performed_via_github_app": null,
-        "state_reason": null
-    },
-    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6568",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6568/labels{/name}",
@@ -279,22 +209,22 @@
         "number": 6571,
         "title": "Google colab crashes when trying to load the model (containing a custom operator) for inferencing using ORT.",
         "user": {
-            "login": "MLDLwizard",
+            "login": "mldlwizard",
             "id": 65349303,
             "node_id": "MDQ6VXNlcjY1MzQ5MzAz",
             "avatar_url": "https://avatars.githubusercontent.com/u/65349303?v=4",
             "gravatar_id": "",
-            "url": "https://api.github.com/users/MLDLwizard",
-            "html_url": "https://github.com/MLDLwizard",
-            "followers_url": "https://api.github.com/users/MLDLwizard/followers",
-            "following_url": "https://api.github.com/users/MLDLwizard/following{/other_user}",
-            "gists_url": "https://api.github.com/users/MLDLwizard/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/MLDLwizard/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/MLDLwizard/subscriptions",
-            "organizations_url": "https://api.github.com/users/MLDLwizard/orgs",
-            "repos_url": "https://api.github.com/users/MLDLwizard/repos",
-            "events_url": "https://api.github.com/users/MLDLwizard/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/MLDLwizard/received_events",
+            "url": "https://api.github.com/users/mldlwizard",
+            "html_url": "https://github.com/mldlwizard",
+            "followers_url": "https://api.github.com/users/mldlwizard/followers",
+            "following_url": "https://api.github.com/users/mldlwizard/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mldlwizard/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mldlwizard/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mldlwizard/subscriptions",
+            "organizations_url": "https://api.github.com/users/mldlwizard/orgs",
+            "repos_url": "https://api.github.com/users/mldlwizard/repos",
+            "events_url": "https://api.github.com/users/mldlwizard/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mldlwizard/received_events",
             "type": "User",
             "site_admin": false
         },
@@ -1351,7 +1281,7 @@
                 "node_id": "MDU6TGFiZWwxODA1NzgxMTYw",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api:Java",
                 "name": "api:Java",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to the Java API"
             }
@@ -2118,7 +2048,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "assignees": [
             {
@@ -2139,7 +2069,7 @@
                 "events_url": "https://api.github.com/users/faxu/events{/privacy}",
                 "received_events_url": "https://api.github.com/users/faxu/received_events",
                 "type": "User",
-                "site_admin": false
+                "site_admin": true
             }
         ],
         "milestone": null,
@@ -3273,7 +3203,7 @@
         "created_at": "2021-02-08T23:05:59Z",
         "updated_at": "2021-02-09T08:46:15Z",
         "closed_at": "2021-02-09T08:46:15Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -3855,9 +3785,9 @@
             }
         ],
         "milestone": null,
-        "comments": 3,
+        "comments": 6,
         "created_at": "2021-02-09T13:04:29Z",
-        "updated_at": "2021-03-12T09:06:28Z",
+        "updated_at": "2023-04-13T14:00:07Z",
         "closed_at": "2021-02-12T03:47:29Z",
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -3907,7 +3837,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -6523,7 +6453,7 @@
             "events_url": "https://api.github.com/users/faxu/events{/privacy}",
             "received_events_url": "https://api.github.com/users/faxu/received_events",
             "type": "User",
-            "site_admin": false
+            "site_admin": true
         },
         "labels": [],
         "state": "closed",
@@ -7105,6 +7035,74 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6667/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6668",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6668/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6668/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6668/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/pull/6668",
+        "id": 807511658,
+        "node_id": "MDExOlB1bGxSZXF1ZXN0NTcyNzQ5NTQw",
+        "number": 6668,
+        "title": "Change Linux python packaging pipeline compile flags",
+        "user": {
+            "login": "snnn",
+            "id": 856316,
+            "node_id": "MDQ6VXNlcjg1NjMxNg==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/856316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/snnn",
+            "html_url": "https://github.com/snnn",
+            "followers_url": "https://api.github.com/users/snnn/followers",
+            "following_url": "https://api.github.com/users/snnn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/snnn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/snnn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/snnn/subscriptions",
+            "organizations_url": "https://api.github.com/users/snnn/orgs",
+            "repos_url": "https://api.github.com/users/snnn/repos",
+            "events_url": "https://api.github.com/users/snnn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/snnn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2021-02-12T20:02:10Z",
+        "updated_at": "2021-02-12T23:28:57Z",
+        "closed_at": "2021-02-12T23:28:57Z",
+        "author_association": "MEMBER",
+        "active_lock_reason": null,
+        "draft": false,
+        "pull_request": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/6668",
+            "html_url": "https://github.com/microsoft/onnxruntime/pull/6668",
+            "diff_url": "https://github.com/microsoft/onnxruntime/pull/6668.diff",
+            "patch_url": "https://github.com/microsoft/onnxruntime/pull/6668.patch",
+            "merged_at": "2021-02-12T23:28:57Z"
+        },
+        "body": "**Description**: \r\n\r\nChange Linux python packaging pipeline compile flags\r\n\r\n1. Add security related flags\r\n2. strip the symbols.  (unfortunately currently we don't have a good place to store the symbols. we will address it in the future)\r\n\r\n**Motivation and Context**\r\n- Why is this change required? What problem does it solve?\r\nWithout this change, the gpu wheel would be too large to fit in https://pypi.org/\r\n\r\n- If it fixes an open issue, please link to the issue here.\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6668/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/6668/timeline",
         "performed_via_github_app": null,
         "state_reason": null
     }

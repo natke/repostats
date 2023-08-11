@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1665967390",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/16255#issuecomment-1665967390",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/16255",
+        "id": 1665967390,
+        "node_id": "IC_kwDOCVq1mM5jTKUe",
+        "user": {
+            "login": "tianleiwu",
+            "id": 30328909,
+            "node_id": "MDQ6VXNlcjMwMzI4OTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30328909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tianleiwu",
+            "html_url": "https://github.com/tianleiwu",
+            "followers_url": "https://api.github.com/users/tianleiwu/followers",
+            "following_url": "https://api.github.com/users/tianleiwu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tianleiwu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tianleiwu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tianleiwu/subscriptions",
+            "organizations_url": "https://api.github.com/users/tianleiwu/orgs",
+            "repos_url": "https://api.github.com/users/tianleiwu/repos",
+            "events_url": "https://api.github.com/users/tianleiwu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tianleiwu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-08-04T17:40:46Z",
+        "updated_at": "2023-08-04T17:40:46Z",
+        "author_association": "MEMBER",
+        "body": "It is likely your model has FP16 weights, and CPU provider does not support FP16 natively for many operators so weights are casted to FP32 so that computation can be done in CPU. That means more memory consumption. You can set a session option to output the optimized model to verify this.\r\n\r\nTo resolve this, you need use quantization to convert weights to int8 for CPU provider. See example in\r\nhttps://github.com/microsoft/onnxruntime-inference-examples/tree/main/quantization/language_model/llama\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1665967390/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

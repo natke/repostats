@@ -27,7 +27,7 @@
         },
         "created_at": "2021-12-14T18:58:59Z",
         "updated_at": "2021-12-14T18:58:59Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I run your script in ORT1.9+TRT8.0+CUDA11.3 and it finished without error.\r\nHowever I see NaN in output. Can you share your FP32 model? ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/993884681/reactions",
@@ -115,7 +115,7 @@
         },
         "created_at": "2021-12-14T20:14:52Z",
         "updated_at": "2021-12-14T20:14:52Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Thanks. It's ok to use ORT1.10 or ORT master. But please use TRT8.0 with it. TRT8.2 is not officially supported in ORT yet.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/993944361/reactions",
@@ -159,7 +159,7 @@
         },
         "created_at": "2021-12-14T20:24:57Z",
         "updated_at": "2021-12-14T20:24:57Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I run your FP32 model in ORT1.9+TRT8.0+CUDA11.3. The script finished successfully and generated correct output. The NaN issue on the FP16 model is probably because certain attribute constants in the FP16 model is underflowed (too small) in FP16 precision. \r\nYou can actually directly run FP32 model in TRT EP. Just enable trt_fp16_enable to run it in FP16 precision. No FP16 model is needed for TRT.\r\nI will try your model in ORT1.10+TRT8.0 to see if there is any issue.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/993951992/reactions",
@@ -247,7 +247,7 @@
         },
         "created_at": "2021-12-14T21:13:35Z",
         "updated_at": "2021-12-14T21:13:35Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "TRT may handle FP32->FP16 conversion differently to CUDA implementation. We see similar behavior before.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/994015989/reactions",
@@ -335,7 +335,7 @@
         },
         "created_at": "2021-12-14T21:23:52Z",
         "updated_at": "2021-12-14T21:23:52Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "https://github.com/microsoft/onnxruntime/releases/tag/v1.10.0\r\n\"Starting from ORT1.10, Python GPU package now includes both TensorRT and CUDA EPs. Note: EPs need to be explicitly registered to ensure the correct provider is used. e.g. InferenceSession('model.onnx', providers=['TensorrtExecutionProvider', 'CUDAExecutionProvider']). Please also ensure you have appropriate TensorRT dependencies and CUDA dependencies installed.\"\r\nHere is the python wheel, https://pypi.org/project/onnxruntime-gpu/#files\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/994027519/reactions",

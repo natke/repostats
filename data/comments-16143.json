@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1566803501",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/16143#issuecomment-1566803501",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/16143",
+        "id": 1566803501,
+        "node_id": "IC_kwDOCVq1mM5dY4Yt",
+        "user": {
+            "login": "Chaoran-F",
+            "id": 66406639,
+            "node_id": "MDQ6VXNlcjY2NDA2NjM5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/66406639?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Chaoran-F",
+            "html_url": "https://github.com/Chaoran-F",
+            "followers_url": "https://api.github.com/users/Chaoran-F/followers",
+            "following_url": "https://api.github.com/users/Chaoran-F/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Chaoran-F/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Chaoran-F/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Chaoran-F/subscriptions",
+            "organizations_url": "https://api.github.com/users/Chaoran-F/orgs",
+            "repos_url": "https://api.github.com/users/Chaoran-F/repos",
+            "events_url": "https://api.github.com/users/Chaoran-F/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Chaoran-F/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-05-29T09:08:24Z",
+        "updated_at": "2023-05-29T09:14:46Z",
+        "author_association": "NONE",
+        "body": "I found a interesting things, \r\ni use \r\ndef get_loaded_libraries():\r\n    import os\r\n    import psutil\r\n    p = psutil.Process(os.getpid())\r\n    for lib in p.memory_maps():\r\n      print(lib.path)\r\nto check did it load all libraries, I only get \r\nibcurand 10.2.5.120\r\nlibcublasLt 11.6.6.84\r\nlibcublas 11.6.6.84\r\nlibcudnn 8.6.0\r\n,even I have \r\nlibcudart 11.4.108\r\nlibcufft 10.5.2.100 which in the same location with libcublas and libcublasLt , this is so weird",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1566803501/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

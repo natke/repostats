@@ -27,7 +27,7 @@
         },
         "created_at": "2022-06-20T17:10:19Z",
         "updated_at": "2022-06-20T17:11:18Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "The augmented model is only used internally for collecting dynamic range of tensors and it's not QDQ model. In ORT-TRT, there are two approaches for quantization. One is FP32 model plus calibration table. In the end to end examples, Resnet and Yolo model are using this approach. The other approach is QDQ, where calibration parameters are imbedded in QDQ model when the model is generated in the tool. BERT is using this approach. If you run BERT example, you will see a new onnx model (with QDQ nodes in it) in the directory (besides the augmented model).",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1160677578/reactions",
@@ -115,7 +115,7 @@
         },
         "created_at": "2022-06-21T17:34:24Z",
         "updated_at": "2022-06-21T17:34:24Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Thanks for the suggestion. Will update ORT document to make it clearer.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1162067411/reactions",

@@ -603,11 +603,11 @@
         "body": "From ONNX [spec](https://github.com/onnx/onnx/blob/master/docs/Operators.md#MaxPool) and [implementation](https://github.com/onnx/onnx/blob/master/onnx/defs/nn/defs.cc#L138-L140), it seems to only support pooling2D for 4D input, and pooling3D for 5D input. The model exported from CNTK has a 5D input for pooling ops, but the kernel shape is 2D. In the same model, there are conv ops having reshape before/after to make sure input is 4D, and IMO Pooling ops should do the same in CNTK exporter.\r\n\r\nFor Netron and python onnx module, shape inference is either not invoked or silently ignored. Before the bug is fixed, a workaround is to edit the MaxPool/AveragePool nodes in the model, with Squeeze/Unsqueeze (assuming batch==1) before and after to make sure the input to pooling ops are 4D:\r\n```\r\nimport onnx\r\nfrom onnx import helper, shape_inference\r\nmp = onnx.load('/path/to/model')\r\nmp_fix = onnx.ModelProto()\r\nmp_fix.CopyFrom(mp)\r\nmp_fix.graph.ClearField('node')\r\nmp_fix.graph.ClearField('value_info')\r\nfor n in mp.graph.node:\r\n  if n.op_type in ['MaxPool', 'AveragePool']:\r\n    mp_fix.graph.node.add().CopyFrom(helper.make_node('Squeeze', n.input, [n.input[0] + '_squeezed'], n.name + '_squeeze_before', axes=[1]))\r\n    pool_node = mp_fix.graph.node.add()\r\n    pool_node.CopyFrom(n)\r\n    pool_node.input[0] += '_squeezed'\r\n    pool_node.output[0] += '_before_unsqueeze'\r\n    mp_fix.graph.node.add().CopyFrom(helper.make_node('Unsqueeze', pool_node.output, n.output, n.name + '_unsqueeze_after', axes=[1]))\r\n  else:\r\n    mp_fix.graph.node.add().CopyFrom(n)\r\nmp_fix = shape_inference.infer_shapes(mp_fix)\r\nonnx.save(mp_fix, '/path/to/fixed_model')\r\n```\r\n\r\nNow the fixed model should have no issue in loading in ONNX runtime.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/566769995/reactions",
-            "total_count": 0,
+            "total_count": 1,
             "+1": 0,
             "-1": 0,
             "laugh": 0,
-            "hooray": 0,
+            "hooray": 1,
             "confused": 0,
             "heart": 0,
             "rocket": 0,

@@ -1,75 +1,5 @@
 [
     {
-        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5846",
-        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
-        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5846/labels{/name}",
-        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5846/comments",
-        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5846/events",
-        "html_url": "https://github.com/microsoft/onnxruntime/issues/5846",
-        "id": 745621061,
-        "node_id": "MDU6SXNzdWU3NDU2MjEwNjE=",
-        "number": 5846,
-        "title": "Question: C# API Inferencing of Tabular Data (1D Tensors) with Different Dimensions",
-        "user": {
-            "login": "whitmark",
-            "id": 8396992,
-            "node_id": "MDQ6VXNlcjgzOTY5OTI=",
-            "avatar_url": "https://avatars.githubusercontent.com/u/8396992?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/whitmark",
-            "html_url": "https://github.com/whitmark",
-            "followers_url": "https://api.github.com/users/whitmark/followers",
-            "following_url": "https://api.github.com/users/whitmark/following{/other_user}",
-            "gists_url": "https://api.github.com/users/whitmark/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/whitmark/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/whitmark/subscriptions",
-            "organizations_url": "https://api.github.com/users/whitmark/orgs",
-            "repos_url": "https://api.github.com/users/whitmark/repos",
-            "events_url": "https://api.github.com/users/whitmark/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/whitmark/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "labels": [
-            {
-                "id": 1220611565,
-                "node_id": "MDU6TGFiZWwxMjIwNjExNTY1",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/converter",
-                "name": "converter",
-                "color": "0E8A16",
-                "default": false,
-                "description": "related to ONNX converters"
-            }
-        ],
-        "state": "closed",
-        "locked": false,
-        "assignee": null,
-        "assignees": [],
-        "milestone": null,
-        "comments": 6,
-        "created_at": "2020-11-18T12:34:25Z",
-        "updated_at": "2020-11-24T05:57:00Z",
-        "closed_at": "2020-11-24T05:57:00Z",
-        "author_association": "NONE",
-        "active_lock_reason": null,
-        "body": "**Describe the bug**\r\nLooking to update C# code to accommodate latest ML.net and onnxruntime versions.  Getting hung-up on a similar issue as my original post [#1417](https://github.com/microsoft/onnxruntime/issues/1417) that was working under a previous onnxruntime v0.4.0 but is no longer under v1.5.2.\r\n\r\n**Urgency**\r\nOn critical path to update production code and operations.\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04):  Win 10 Pro 19041\r\n- ONNX Runtime installed from (source or binary):  binary\r\n- ONNX Runtime version:  1.5.2\r\n- ONNX Runtime\r\n- Visual Studio version (if applicable):  16.8.1\r\n- Microsoft.ML.OnnxConverter: 0.17.2\r\n\r\n**To Reproduce**\r\nWhen building the model, I have 100 input columns of which 1 is a binary Label (0,1) and 96 are used as Features with the remaining 3 are reference columns I can use to identify the source of the record.  When I attempt to inference a test record with one dummy label column and 96 feature values, I get an unhandled exception when I attempt to assign the dense tensor: \r\n\r\n> System.ArgumentOutOfRangeException: 'Dimensions must be non-negative Parameter name: dimensions'\r\n\r\nSee attached image below.\r\n\r\n- Describe steps/code to reproduce the behavior.\r\n```csharp\r\n Console.WriteLine(\"=============== Inference Onnx Model Begin ===============\");\r\n\r\n // Optional : Create session options and set the graph optimization level for the session\r\n SessionOptions sessOptions = new SessionOptions();\r\n sessOptions.GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_BASIC;\r\n\r\n using (var session = new InferenceSession(onnxModelPath, sessOptions))\r\n {\r\n        var inputMeta = session.InputMetadata;\r\n        var container = new List<NamedOnnxValue>();\r\n\r\n         float[] inputData1 = new float[97] { 1f,   // Dummy Label Column\r\n                                            35f, 24f, 13.4883f, 25f, 99f, 62.7967f, 48f, 47f, 28.4488f, 60f,\r\n                                            75f, 49.3083f, 19f, 11f, 12.4294f, 12f, 28f, 20.8595f, 31f, 17f,\r\n                                            8.4301f, 13f, 6f, 4.718f, 33.25f, 133f, 99f, 62.7967f, 41.0069f, 35.8817f,\r\n                                            135.1481f, 133.6822f, 0.71f, 1.37f, 1.71f, 0.54f, 0.4f, 0.65f, 1.63f, 2.58f,\r\n                                            4.13f, 1.96f, 3.13f, 0.46f, 0.23f, 0.36f, 1.55f, 0.61f, 4.66f, 2.11f,\r\n                                            3.66f, 0.44f, 0.92f, 0.3f, 0.68f, 0.4f, 0.5833f, 0f, 0.8f, 0.4833f,\r\n                                            1f, 0.7833f, 0f, 0.2286f, 0.6762f, 0.781f, 0.9429f, 1f, 0f, 0.1998f,\r\n                                            0.6212f, 0.8053f, 0.9301f, 1f, 0.4177f, 0.4271f, 0.4469f, 0.4555f, 0.4613f, 0.4646f,\r\n                                            0.2025f, 0.2039f, 0.2067f, 0.2079f, 0.2088f, 0.2092f, 0.5125f, 0.5112f, 0.5276f, 0.5574f,\r\n                                            0.5458f, 0.698f, 1.1195f, 1.1928f, 0.9797f, 1.01f };\r\n\r\n        int i = 0;\r\n        int startSlot = 3;\r\n        foreach (var name in inputMeta.Keys)\r\n        {\r\n           if (i >= startSlot) // Skip reference Fields except rHProf\r\n            { \r\n                Console.WriteLine(name);\r\n                var tensor = new DenseTensor<float>(new float[] { inputData1[i - startSlot] }, inputMeta[name].Dimensions);\r\n                 container.Add(NamedOnnxValue.CreateFromTensor<float>(name, tensor));\r\n            }\r\n            i++;\r\n        }\r\n\r\n        // Run the inference\r\n        // results is an IDisposableReadOnlyCollection<DisposableNamedOnnxValue> container\r\n        using (var results = session.Run(container))  \r\n        {\r\n              // dump the results\r\n               foreach (var r in results)\r\n               {\r\n                     Console.WriteLine(string.Format(\"Output for {0} = \", r.Name));\r\n                     Console.WriteLine(string.Format(\"{0}\", r.AsTensor<float>().GetArrayString()));\r\n                }\r\n         }\r\n  }\r\n\r\n    Console.WriteLine(\"=============== Inference Onnx Model End ===============\");\r\n}\r\ncatch (Exception ex)\r\n{\r\n    Console.WriteLine(\"Error: {0}\\nCallStack: {1}\\n Inner Exception: {2}\", ex.Message, ex.StackTrace, ex.InnerException != null ? ex.InnerException.Message : \"No Inner Exception\");\r\n    throw ex;\r\n}\r\n\r\n```\r\n- Attach the ONNX model to the issue (where applicable) to expedite investigation.\r\n[MES_4Range_UpFPP_ZZ16_HP12_20200101_20201031_ONNX_Model.zip](https://github.com/microsoft/onnxruntime/files/5559863/MES_4Range_UpFPP_ZZ16_HP12_20200101_20201031_ONNX_Model.zip)\r\n\r\n**Expected behavior**\r\nLooking for a straightforward way to inference an onnx model when the dimensions of the training/testiing data, features, and inferencing data do not precisely line up.  Model building is an iterative process whereby I am constantly performing different experiments by adding/removing features and would prefer not to have to build or modify a schema each time if I can properly manage the sequence of feature columns within the block between training/testing and inferencing.  Plus I will always want to maintain a few reference data items in the first few columns of each record to know the source of the data.    \r\n\r\n**Screenshots**\r\nIf applicable, add screenshots to help explain your problem.\r\n\r\nUnhandled Exception:\r\n![Snag_5045147](https://user-images.githubusercontent.com/8396992/99527705-3d342880-296b-11eb-9415-4970bb992fa4.png)\r\n\r\nInference Session inputMetaData:\r\n![Snag_5049322](https://user-images.githubusercontent.com/8396992/99527734-491fea80-296b-11eb-9112-ef8f57fa297a.png)\r\n\r\n**Additional context**\r\n",
-        "reactions": {
-            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5846/reactions",
-            "total_count": 0,
-            "+1": 0,
-            "-1": 0,
-            "laugh": 0,
-            "hooray": 0,
-            "confused": 0,
-            "heart": 0,
-            "rocket": 0,
-            "eyes": 0
-        },
-        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5846/timeline",
-        "performed_via_github_app": null,
-        "state_reason": "completed"
-    },
-    {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5847",
         "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
         "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5847/labels{/name}",
@@ -1031,7 +961,7 @@
                 "node_id": "MDU6TGFiZWwxMjY3NDg2NzMx",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/contributions%20welcome",
                 "name": "contributions welcome",
-                "color": "FBCA04",
+                "color": "545AB5",
                 "default": false,
                 "description": "lower priority issues for the core ORT teams"
             }
@@ -1935,7 +1865,7 @@
         "created_at": "2020-11-20T01:47:50Z",
         "updated_at": "2020-11-20T05:41:14Z",
         "closed_at": "2020-11-20T05:41:13Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "active_lock_reason": null,
         "draft": false,
         "pull_request": {
@@ -2138,15 +2068,6 @@
                 "color": "0052CC",
                 "default": false,
                 "description": "issues related to TensorRT execution provider"
-            },
-            {
-                "id": 2286118846,
-                "node_id": "MDU6TGFiZWwyMjg2MTE4ODQ2",
-                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/stale",
-                "name": "stale",
-                "color": "C5DEF5",
-                "default": false,
-                "description": "issues that have not been addressed in a while; categorized by a bot"
             }
         ],
         "state": "open",
@@ -2194,9 +2115,9 @@
             }
         ],
         "milestone": null,
-        "comments": 5,
+        "comments": 6,
         "created_at": "2020-11-20T02:42:34Z",
-        "updated_at": "2022-04-19T08:54:47Z",
+        "updated_at": "2023-03-15T19:07:37Z",
         "closed_at": null,
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -3410,7 +3331,7 @@
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
@@ -3474,16 +3395,26 @@
             "type": "User",
             "site_admin": false
         },
-        "labels": [],
-        "state": "open",
+        "labels": [
+            {
+                "id": 2014185961,
+                "node_id": "MDU6TGFiZWwyMDE0MTg1OTYx",
+                "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/core%20runtime",
+                "name": "core runtime",
+                "color": "006B75",
+                "default": false,
+                "description": "issues related to core runtime"
+            }
+        ],
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
-        "comments": 0,
+        "comments": 2,
         "created_at": "2020-11-23T14:38:27Z",
-        "updated_at": "2022-08-12T08:39:42Z",
-        "closed_at": null,
+        "updated_at": "2022-09-23T21:49:16Z",
+        "closed_at": "2022-09-23T21:49:16Z",
         "author_association": "MEMBER",
         "active_lock_reason": null,
         "body": "**Describe the bug**\r\nImplementation of Einsum is much slower than pytorch or tensorflow for some equations. For equation `bsnh,btnh->bnts`, the Einsum decomposition does 3 transpose, 1 matrix multiplication, 1 final transpose. This last transpose has a huge cost. Transpose is never parallelized on CPU.\r\n\r\n![image](https://user-images.githubusercontent.com/22452781/99974560-6278ca80-2da1-11eb-95d9-3874cd4a50ae.png)\r\n\r\nFirst graph is computing time, second graph is the ratio `numpy / tested implementation`. The current onnxruntime implementation is twice faster than numpy, as fast as an implementation which does not transpose.\r\n\r\n**System information**\r\n- OS Platform and Distribution (e.g., Linux Ubuntu 16.04): Windows\r\n- ONNX Runtime installed from (source or binary): from github\r\n- ONNX Runtime version:\r\n- Python version: 3.7\r\n- Visual Studio version (if applicable): Community Edition\r\n\r\n**Expected behavior**\r\nThe operator is much slower than \r\n",
@@ -3501,7 +3432,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5897/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5898",
@@ -4243,7 +4174,7 @@
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
@@ -4972,7 +4903,7 @@
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
@@ -5952,9 +5883,9 @@
             }
         ],
         "milestone": null,
-        "comments": 1,
+        "comments": 2,
         "created_at": "2020-11-25T11:55:09Z",
-        "updated_at": "2020-11-25T18:22:29Z",
+        "updated_at": "2023-06-09T09:30:48Z",
         "closed_at": "2020-11-25T18:22:29Z",
         "author_association": "NONE",
         "active_lock_reason": null,
@@ -6089,20 +6020,20 @@
                 "node_id": "LA_kwDOCVq1mM8AAAABB2TGAQ",
                 "url": "https://api.github.com/repos/microsoft/onnxruntime/labels/api",
                 "name": "api",
-                "color": "E67B8C",
+                "color": "F9D0C4",
                 "default": false,
                 "description": "issues related to all other APIs: C, C++, Python, etc."
             }
         ],
-        "state": "open",
+        "state": "closed",
         "locked": false,
         "assignee": null,
         "assignees": [],
         "milestone": null,
         "comments": 2,
         "created_at": "2020-11-25T14:09:06Z",
-        "updated_at": "2022-08-12T08:23:10Z",
-        "closed_at": null,
+        "updated_at": "2022-10-14T10:50:48Z",
+        "closed_at": "2022-10-14T10:50:48Z",
         "author_association": "NONE",
         "active_lock_reason": null,
         "body": "**Is your feature request related to a problem? Please describe.**\r\nThe OrtSessionOptionsAppendExecutionProvider_DML is using just the enumeration order of the hardware adapter. \r\nThis order number can change (e.g. when devices are added or removed).\r\n\r\n**System information**\r\nonnxruntime 1.5.2\r\n\r\n**Describe the solution you'd like**\r\nChange (or extend) the interface to pass an ID of the hardware adapter (e.g. the AdapterLuid) instead of the order number.\r\n\r\n**Describe alternatives you've considered**\r\nUser can do the mapping of ID to enumeration order, just before calling OrtSessionOptionsAppendExecutionProvider_DML.\r\nBut this still leaves a small time window when order numbers can change.\r\n\r\n**Additional context**\r\nThis is most likely only relevant for systems with multiple varying GPUs, e.g. laptops with Hydra, or eGPUs.",
@@ -6120,7 +6051,7 @@
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5933/timeline",
         "performed_via_github_app": null,
-        "state_reason": null
+        "state_reason": "completed"
     },
     {
         "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5934",
@@ -7094,6 +7025,74 @@
             "eyes": 0
         },
         "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5947/timeline",
+        "performed_via_github_app": null,
+        "state_reason": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5948",
+        "repository_url": "https://api.github.com/repos/microsoft/onnxruntime",
+        "labels_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5948/labels{/name}",
+        "comments_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5948/comments",
+        "events_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5948/events",
+        "html_url": "https://github.com/microsoft/onnxruntime/pull/5948",
+        "id": 751210314,
+        "node_id": "MDExOlB1bGxSZXF1ZXN0NTI3NzY2NzQ2",
+        "number": 5948,
+        "title": "[OpenVINO]Fix memory leak in `IsDebugEnabled()` under Windows",
+        "user": {
+            "login": "mosdav",
+            "id": 13720509,
+            "node_id": "MDQ6VXNlcjEzNzIwNTA5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/13720509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mosdav",
+            "html_url": "https://github.com/mosdav",
+            "followers_url": "https://api.github.com/users/mosdav/followers",
+            "following_url": "https://api.github.com/users/mosdav/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mosdav/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mosdav/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mosdav/subscriptions",
+            "organizations_url": "https://api.github.com/users/mosdav/orgs",
+            "repos_url": "https://api.github.com/users/mosdav/repos",
+            "events_url": "https://api.github.com/users/mosdav/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mosdav/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": null,
+        "assignees": [],
+        "milestone": null,
+        "comments": 20,
+        "created_at": "2020-11-26T01:16:46Z",
+        "updated_at": "2020-12-04T00:08:49Z",
+        "closed_at": "2020-11-26T23:10:38Z",
+        "author_association": "MEMBER",
+        "active_lock_reason": null,
+        "draft": false,
+        "pull_request": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/pulls/5948",
+            "html_url": "https://github.com/microsoft/onnxruntime/pull/5948",
+            "diff_url": "https://github.com/microsoft/onnxruntime/pull/5948.diff",
+            "patch_url": "https://github.com/microsoft/onnxruntime/pull/5948.patch",
+            "merged_at": "2020-11-26T23:10:38Z"
+        },
+        "body": "- As per [MSFT doc](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/dupenv-s-wdupenv-s?view=msvc-160), it is the calling program's responsibility to free the memory by calling `free`.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5948/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "timeline_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5948/timeline",
         "performed_via_github_app": null,
         "state_reason": null
     }

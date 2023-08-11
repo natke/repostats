@@ -31,13 +31,13 @@
         "body": "This is expected. If you disable Arena, heap memory allocation will take time, so inference latency will increase. One drawback of default Arena extend strategy is that it might allocate more memory than needed, which could be a waste.\r\n\r\nIf you want to save memory, but do not want to impact latency. I recommend to set execution provider options like the following python code:\r\n```\r\nimport onnxruntime as ort\r\nsess_options = ort.SessionOptions()\r\ncuda_provider_options = {\r\n\"gpu_mem_limit\": \"17179869184\", # 16GB.\r\n\"arena_extend_strategy\": \"kSameAsRequested\",\r\n}\r\ncpu_provider_options = {\r\n\"arena_extend_strategy\": \"kSameAsRequested\",\r\n}\r\nexecution_providers = [(\"CUDAExecutionProvider\", cuda_provider_options), (\"CPUExecutionProvider\", cpu_provider_options)]\r\nort_sess = ort.InferenceSession(onnx_path, sess_options, providers=execution_providers)\r\n```\r\n\r\nThen use one input (warm up query) that need most memory to inference after session is created. That will allocate just enough memory for your need, and also ensure that future inference does not allocate heap memory.\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1137668551/reactions",
-            "total_count": 2,
+            "total_count": 3,
             "+1": 0,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
             "confused": 0,
-            "heart": 2,
+            "heart": 3,
             "rocket": 0,
             "eyes": 0
         },

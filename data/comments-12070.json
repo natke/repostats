@@ -119,8 +119,8 @@
         "body": "@[nicken](https://github.com/nicken)\r\n\r\nSometime, the default arena extend strategy might allocate more memory than needed.\r\n\r\nCould you try set execution provider options like the following python code:\r\n```\r\nimport onnxruntime as ort\r\nsess_options = ort.SessionOptions()\r\ncuda_provider_options = {\r\n\"arena_extend_strategy\": \"kSameAsRequested\",\r\n}\r\nexecution_providers = [(\"CUDAExecutionProvider\", cuda_provider_options), \"CPUExecutionProvider\"]\r\nort_sess = ort.InferenceSession(onnx_path, sess_options, providers=execution_providers)\r\n```\r\n\r\nThen use one input (warm up query) that need most memory to inference after session is created. That will allocate just enough memory for your need, and also ensure that future inference does not allocate heap memory.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1173012175/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

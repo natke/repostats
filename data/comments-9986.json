@@ -471,8 +471,8 @@
         "body": "This worked for me\r\n\r\n1. Find out where your `tensorrt` pip wheel was installed with `pip show nvidia-tensorrt`\r\n```bash\r\nName: nvidia-tensorrt\r\nVersion: 8.0.3.4\r\nSummary: A high performance deep learning inference library\r\nHome-page: UNKNOWN\r\nAuthor: NVIDIA\r\nAuthor-email: None\r\nLicense: Proprietary\r\nLocation: /usr/local/lib/python3.8/dist-packages  <<HERE>>\r\nRequires: nvidia-cudnn, nvidia-cuda-nvrtc, nvidia-cuda-runtime, nvidia-cublas\r\nRequired-by: \r\n```\r\n2. Add path to `LD_LIBRARY_PATH`\r\n```\r\nexport LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/python3.8/dist-packages/tensorrt/\r\n```",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1043170366/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

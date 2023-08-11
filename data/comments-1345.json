@@ -438,5 +438,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1586253128",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/1345#issuecomment-1586253128",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/1345",
+        "id": 1586253128,
+        "node_id": "IC_kwDOCVq1mM5ejE1I",
+        "user": {
+            "login": "liaohaiou",
+            "id": 65709176,
+            "node_id": "MDQ6VXNlcjY1NzA5MTc2",
+            "avatar_url": "https://avatars.githubusercontent.com/u/65709176?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/liaohaiou",
+            "html_url": "https://github.com/liaohaiou",
+            "followers_url": "https://api.github.com/users/liaohaiou/followers",
+            "following_url": "https://api.github.com/users/liaohaiou/following{/other_user}",
+            "gists_url": "https://api.github.com/users/liaohaiou/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/liaohaiou/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/liaohaiou/subscriptions",
+            "organizations_url": "https://api.github.com/users/liaohaiou/orgs",
+            "repos_url": "https://api.github.com/users/liaohaiou/repos",
+            "events_url": "https://api.github.com/users/liaohaiou/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/liaohaiou/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-06-11T17:15:54Z",
+        "updated_at": "2023-06-11T17:15:54Z",
+        "author_association": "NONE",
+        "body": "> ok now it works, sorry for my delay.\r\n\r\nhello,I have encountered the same problem. \r\nerror: no matching function for call to ‘Ort::Session::Session(Ort::Env&, const wchar_t*, Ort::SessionOptions&)’\r\n   45 |  ort_session = new Session(env, widestr.c_str(), sessionOptions);\r\nso, how do you solve this problem? Did you solve the problem by compiling the onnxruntime in default config rather than cuda?",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1586253128/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

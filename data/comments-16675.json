@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1633124381",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/16675#issuecomment-1633124381",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/16675",
+        "id": 1633124381,
+        "node_id": "IC_kwDOCVq1mM5hV4Ad",
+        "user": {
+            "login": "wschin",
+            "id": 3524474,
+            "node_id": "MDQ6VXNlcjM1MjQ0NzQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3524474?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wschin",
+            "html_url": "https://github.com/wschin",
+            "followers_url": "https://api.github.com/users/wschin/followers",
+            "following_url": "https://api.github.com/users/wschin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wschin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wschin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wschin/subscriptions",
+            "organizations_url": "https://api.github.com/users/wschin/orgs",
+            "repos_url": "https://api.github.com/users/wschin/repos",
+            "events_url": "https://api.github.com/users/wschin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wschin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-07-12T19:55:50Z",
+        "updated_at": "2023-07-12T19:57:17Z",
+        "author_association": "MEMBER",
+        "body": "Ideally, GPU driver should be backward compatible to previousl CUDA version. E.g, if you install driver which supports CUDA 12, then CUDA 11.6 should also work. There is probably one situation you have to match GPU driver version and CUDA version --- it happens when you want to profile your GPU program because [Nvidia's profiler](https://developer.nvidia.com/nsight-systems) doesn't maintain backward or forward compatibility.\r\n\r\nNot officially supporting CUDA 12 doesn't mean ONNXRuntime can't build with it. It just means we didn't test it fully. If you don't hit any problem, just go with it.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1633124381/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

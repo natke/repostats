@@ -251,8 +251,8 @@
         "body": "I'm also experiencing this issue with multi-threaded + COOP headers with browsers on IOS devices.  \r\n\r\n- https://github.com/jobergum/browser-ml-inference\r\n- Live demo over at https://aiserv.cloud/ \r\n\r\nI tried this [change](https://github.com/jobergum/browser-ml-inference/commit/7e5f2bff1e5b498b2a93a66e8f1b80668b192ffe) so in my case I'm not able to work-around this with `ort.env.wasm.numThreads = 1` \r\n\r\nUpdate: I had to remove COOP headers to make it work again on IOS devices,  my model is pretty large, though, 22MB. ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1258687284/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

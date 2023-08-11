@@ -119,8 +119,8 @@
         "body": "The `Slice`s and `Concat`s that are being forced down to CPU are part of shape subgraphs - if you look at what they are doing, they slice out one int and concatenate 2 ints and so on. There is no need for these ops to be hardware accelerated (in fact they are detrimental). So ORT has logic to force these to CPU to save device bandwidth for ops that actually require hardware acceleration. So, I don't believe this is the cause for the poor perf.\r\n\r\nHave you tried using nvprof and checking which kernel takes up the most time ? That is the best way to move forward with this.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1241326235/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -823,8 +823,8 @@
         "body": "I ran into a similar issue where an ONNX model was much slower than it's PyTorch counterpart on the GPU. I tried all the suggestions here including io_binding but nothing worked.\r\n\r\nTo solve the issue, profiling was enabled via the following code:\r\n\r\n```python\r\nimport onnxruntime as ort\r\n\r\nopts = ort.SessionOptions()\r\nopts.enable_profiling = True\r\n\r\nsession = ort.InferenceSession(path, opts,\r\n  [\"CUDAExecutionProvider\", \"CPUExecutionProvider\"])\r\nsession.run(None, inputs)\r\n```\r\n\r\nOnce the program exited, a profiling JSON file was generated. I took a look at that to find the longest running nodes.\r\n\r\n```\r\njq . onnxruntime_profile.json | grep dur | cut -d \":\" -f2 | sort --numeric\r\n```\r\n\r\nSkipping nodes for the full model run and session initialization, I was seeing nodes like this: `feed_forward/w_1/Conv_kernel_time`.  Reading the [documentation](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#configuration-options), the following setting stood out, `cudnn_conv_algo_search`. \r\n\r\nThe program was re-run with that setting changed (to either HEURISTIC or DEFAULT).\r\n\r\n```python\r\nimport onnxruntime as ort\r\n\r\nopts = ort.SessionOptions()\r\nopts.enable_profiling = True\r\n\r\nsession = ort.InferenceSession(path, opts, \r\n  [(\"CUDAExecutionProvider\", {\"cudnn_conv_algo_search\": \"DEFAULT\"}), \"CPUExecutionProvider\"])\r\nsession.run(None, inputs)\r\n```\r\n\r\n_This time the performance was equal to or even slightly better than the PyTorch model on the GPU._\r\n\r\nI'm not sure why ONNX defaults to an EXHAUSTIVE search. In reading similar [code in PyTorch](https://github.com/pytorch/pytorch/blob/master/aten/src/ATen/native/cudnn/Conv_v7.cpp#L270), it doesn't appear PyTorch does (looks like it defaults to what ONNX calls HEURISTIC) and that is the performance difference in my case.\r\n\r\nHope this helps anyone running into performance issues one way or another. Looking at the original post, there were a lot of Conv operations, so it's worth a try.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1330442188/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -911,8 +911,8 @@
         "body": "My understanding is that cuDNN only caches the results when the input shape is static. I was able to confirm this same behavior with a Torch model having dynamic input shapes exported to ONNX.\r\n\r\nBenchmark mode in PyTorch is what ONNX calls EXHAUSTIVE and EXHAUSTIVE is the [default ONNX setting per the documentation](https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#cudnn_conv_algo_search). PyTorch defaults to using `cudnnGetConvolutionForwardAlgorithm_v7` which is much faster. So in this case with dynamic inputs, it leads to the Torch model appearing to run faster. \r\n\r\nI wrote an article with detailed steps on this comparison. \r\nhttps://medium.com/neuml/debug-onnx-gpu-performance-c9290fe07459\r\n\r\nThis link also has a related discussion.\r\nhttps://discuss.pytorch.org/t/what-does-torch-backends-cudnn-benchmark-do/5936/3",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1336147260/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 3,
+            "+1": 3,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

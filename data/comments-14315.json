@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1400829483",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/14315#issuecomment-1400829483",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/14315",
+        "id": 1400829483,
+        "node_id": "IC_kwDOCVq1mM5TfvYr",
+        "user": {
+            "login": "stevenlix",
+            "id": 38092805,
+            "node_id": "MDQ6VXNlcjM4MDkyODA1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/38092805?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stevenlix",
+            "html_url": "https://github.com/stevenlix",
+            "followers_url": "https://api.github.com/users/stevenlix/followers",
+            "following_url": "https://api.github.com/users/stevenlix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stevenlix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stevenlix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stevenlix/subscriptions",
+            "organizations_url": "https://api.github.com/users/stevenlix/orgs",
+            "repos_url": "https://api.github.com/users/stevenlix/repos",
+            "events_url": "https://api.github.com/users/stevenlix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stevenlix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-23T19:00:40Z",
+        "updated_at": "2023-01-23T19:00:40Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "First, please enable 'trt_fp16_enable' along with 'trt_int8_enable'. For some kernels FP16 may be faster than INT8.\r\nIf perf is still the same, please try original FP32 model plus calibration table rather than QDQ approach so that TRT can have more freedom to decide how to do INT8 quantization for CNN models. What you need to do is to feed in original FP32 model and provide calibration table flatbuffer file location by trt_int8_calibration_table_name in TRT provider options",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1400829483/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

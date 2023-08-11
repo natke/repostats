@@ -295,8 +295,8 @@
         "body": "onnx c++/c headers need to check for nullptr. Use `if (theptr) release(theptr)` instead of today's blind `release(theptr)`. I discuss this in my OP.\r\n\r\n> So, even you know GetApi() is null, what you can do except crashing the process?\r\nDon't crash. Test and release only if it is non-null. This is SOP for even the most core functions like `free()`\r\n\r\nAs we know, the env is singular...only one. I forget but when I isolated this bug, I think deep down the env is a singleton or something similar. When classes/struct are defined in the app, having a single env as a static member of a class, singleton, etc. is a common approach. Naturally, you know about the static initialization fiasco...and its partner the static deinitialization fiasco. The orders of init and deinit are not guaranteed across translation units and in general you CAN NOT base rules no things like `main()`.\r\n\r\nWho writes code with `main()`? Today we write DLLs and event loops and more complex applications. Making a rule based on `main()` is doomed to fail in anything but the most basic applications. 😁 and in the very link you provide me is a `//TODO: Fix the C API issue` and `//If we don't do this, it will crash` which identifies that...yes...the API is currently broken. The solutions I provide above can address many of them.\r\n\r\nTest for non-null...then release. Don't do it blindly.\r\n\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1247832107/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,
@@ -603,8 +603,8 @@
         "body": "> delete nullptr; is always valid. I haven't seen a case that it would crash.\r\n\r\nFalse.\r\nAnd to repeat again as I wrote, it is undefined by C++ spec and the implementer of the deleting function is responsible for handling. Please google this topic for detailed C++ spec and discussions on this.\r\n\r\nSTL and default deleters handle nullptr being passed to the deleters. But custom ones like I discussed DO NOT.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1335490294/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

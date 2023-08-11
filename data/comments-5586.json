@@ -75,8 +75,8 @@
         "body": "I can confirm the bug. It is possible to reproduce it by modifying the example from #5499 with an additional clamp() operation in the model:\r\n\r\n```\r\nimport numpy as np\r\nimport torch\r\nfrom onnxruntime.quantization import quantize_dynamic, quantize_static, QuantType\r\nfrom onnxruntime.quantization.calibrate import CalibrationDataReader\r\n\r\nclass CalibrationDataProvider(CalibrationDataReader):\r\n    def __init__(self):\r\n        super(CalibrationDataProvider, self).__init__()\r\n        self.counter = 0\r\n\r\n    def get_next(self):\r\n        if self.counter > 2:\r\n            return None\r\n        else:\r\n            self.counter += 1\r\n            return {'x': np.random.randn(2, 4).astype(np.float32)}\r\n\r\nclass Model(torch.nn.Module):\r\n    def __init__(self):\r\n        super().__init__()\r\n        self.n = int(1)\r\n\r\n    def forward(self, x):\r\n        f = x.shape[0]\r\n        y = x.reshape(-1, f)\r\n        z = y.clamp(min=-1.0, max=1.0)  # this is the problem now\r\n        return z\r\n\r\nmodel = Model().float()\r\n\r\ndummy_input = (torch.randn(2, 4), )\r\ntorch.onnx.export(\r\n    model,\r\n    dummy_input,\r\n    'model.onnx',\r\n    input_names=('x',),\r\n    export_params=True,\r\n    training=False,\r\n    opset_version=11)\r\n\r\ncdr = CalibrationDataProvider()\r\n\r\nquantize_static(model_input='model.onnx',\r\n                model_output='model_q.onnx',\r\n                calibration_data_reader=cdr)\r\n```\r\n\r\nThis simple model shows that the `Clip`-node has an empty `attributes` list and the `min` and `max` parameters are in fact additional inputs. Maybe this is relevant for the bug.\r\n\r\nONNX Runtime version 1.6.0.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/745217274/reactions",
-            "total_count": 1,
-            "+1": 1,
+            "total_count": 2,
+            "+1": 2,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

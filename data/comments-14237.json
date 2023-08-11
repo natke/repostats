@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1379704378",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/14237#issuecomment-1379704378",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/14237",
+        "id": 1379704378,
+        "node_id": "IC_kwDOCVq1mM5SPJ46",
+        "user": {
+            "login": "skottmckay",
+            "id": 979079,
+            "node_id": "MDQ6VXNlcjk3OTA3OQ==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/979079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/skottmckay",
+            "html_url": "https://github.com/skottmckay",
+            "followers_url": "https://api.github.com/users/skottmckay/followers",
+            "following_url": "https://api.github.com/users/skottmckay/following{/other_user}",
+            "gists_url": "https://api.github.com/users/skottmckay/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/skottmckay/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/skottmckay/subscriptions",
+            "organizations_url": "https://api.github.com/users/skottmckay/orgs",
+            "repos_url": "https://api.github.com/users/skottmckay/repos",
+            "events_url": "https://api.github.com/users/skottmckay/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/skottmckay/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-12T01:43:12Z",
+        "updated_at": "2023-01-12T01:43:12Z",
+        "author_association": "MEMBER",
+        "body": "I believe the issue is the module needs to use a Loop and has dynamic input sizes, which requires using torch scripting to export to onnx.\r\n\r\nhttps://pytorch.org/docs/stable/onnx.html#tracing-vs-scripting\r\n\r\nUnfortunately that isn't working well. Some things in ModuleList require an interface to be specified for the torch scripting to work (doable), `reversed` [isn't supported](https://pytorch.org/docs/stable/jit_language_reference_v2.html#python-built-in-functions-support), and neither is converting a dynamically sized list to tuple. \r\n\r\ne.g. for first issue\r\n```py\r\n# define interface for items in ModuleList\r\n@torch.jit.interface\r\nclass TensorToTensorInterface(torch.nn.Module):\r\n    def forward(self, input: torch.Tensor) -> torch.Tensor:\r\n        pass\r\n\r\n# update code to first retrieve item from list and call 'forward'\r\nclass RefinePyramid(nn.Module):\r\n    def forward(self, x):\r\n        ....\r\n            # orig: feature: self.adaptive[i](conv_ftr)\r\n            conv2d: TensorToTensorInterface = self.adaptive[i]\r\n            feature = conv2d.forward(conv_ftr)\r\n```\r\n\r\ne.g for second issue\r\n```py\r\n        # torch script doesn't support 'reversed', and can't convert feature_list of dynamic size to tuple\r\n        return tuple(reversed(feature_list))\r\n```\r\n\r\nYou could update the model to manually reverse the list and hardcode the length to workaround that, but there are multiple places that would require that change. \r\n\r\n```py\r\n        assert(num_features == 5)  # only support default length of list, and manually reverse the list into tuple of fixed lenth\r\n        return (feature_list[4], feature_list[3], feature_list[2], feature_list[1], feature_list[0])\r\n```\r\n\r\nGiven this appears to be an issue with the model not being compatible with torch script, if you have any follow up questions about how best to update the model to make it exportable using torch script it would be better asked on https://github.com/pytorch/pytorch/issues or to the model author.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1379704378/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

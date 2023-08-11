@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+import glob
 from dateutil import parser
 
 TOKEN=os.getenv('GITHUB_TOKEN')
@@ -8,11 +9,11 @@ PAGE_SIZE=100
 
 num_issues = PAGE_SIZE
 
-list = [*range(1, 133)]
-for index in list:
+issue_files = glob.glob('data/issues-*.json')
+for issue_file in issue_files:
 
-    print(index)
-    with open(f'data/issues-{index}.json', encoding="utf8") as f:
+    print(issue_file)
+    with open(issue_file, encoding="utf8") as f:
         d = json.load(f)
 
         for x in d:

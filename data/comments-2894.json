@@ -71,7 +71,7 @@
         },
         "created_at": "2020-01-23T08:21:48Z",
         "updated_at": "2020-01-23T08:21:48Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "I do not see this. the error message is as follows: \r\n\r\nTraceback (most recent call last):\r\n  File \"xx\\run_sid_eval.py\", line 23, in <module>\r\n    import onnxruntime as rt\r\n  File \"C:\\ProgramData\\Anaconda3\\lib\\site-packages\\onnxruntime\\__init__.py\", line 12, in <module>\r\n    from onnxruntime.capi._pybind_state import get_all_providers, get_available_providers, get_device, RunOptions, SessionOptions, set_default_logger_severity, NodeArg, ModelMetadata, GraphOptimizationLevel, ExecutionMode\r\nImportError: cannot import name 'get_all_providers' from 'onnxruntime.capi._pybind_state' (C:\\ProgramData\\Anaconda3\\lib\\site-packages\\onnxruntime\\capi\\_pybind_state.py)",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/577575336/reactions",
@@ -291,7 +291,7 @@
         },
         "created_at": "2020-01-28T02:24:45Z",
         "updated_at": "2020-01-28T02:24:45Z",
-        "author_association": "NONE",
+        "author_association": "MEMBER",
         "body": "Thank you! the issue is solved. I forgot to put cudnn into path. ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/579049655/reactions",

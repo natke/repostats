@@ -467,7 +467,7 @@
         },
         "created_at": "2020-04-23T04:24:46Z",
         "updated_at": "2020-04-23T04:24:46Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "I tested your model ssd_mobilenet_v2_fpn_coco_v19.26032020_tensorrt.onnx and it went through ( I don't have data set so can't verify the accuracy though). Like we mentioned before, go to cmake/external/ and run: git submodule update --remote onnx-tensorrt (which will get you the latest parser fixes), then compile ORT with flag --skip_submodule_sync",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/618169290/reactions",
@@ -643,7 +643,7 @@
         },
         "created_at": "2020-04-24T00:51:28Z",
         "updated_at": "2020-04-24T00:51:28Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Probably the build log is good enough to look at. Or can you share your model?",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/618742976/reactions",
@@ -819,7 +819,7 @@
         },
         "created_at": "2020-04-30T16:44:37Z",
         "updated_at": "2020-04-30T16:44:37Z",
-        "author_association": "MEMBER",
+        "author_association": "CONTRIBUTOR",
         "body": "Regarding TRT, I run your model and saw the same issue you posted. Thanks for raising it up. I will dig further into it as soon as I can. ",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/621970129/reactions",

@@ -130,5 +130,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1497279026",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/8772#issuecomment-1497279026",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/8772",
+        "id": 1497279026,
+        "node_id": "IC_kwDOCVq1mM5ZPqoy",
+        "user": {
+            "login": "bouachalazhar",
+            "id": 78004884,
+            "node_id": "MDQ6VXNlcjc4MDA0ODg0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/78004884?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bouachalazhar",
+            "html_url": "https://github.com/bouachalazhar",
+            "followers_url": "https://api.github.com/users/bouachalazhar/followers",
+            "following_url": "https://api.github.com/users/bouachalazhar/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bouachalazhar/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bouachalazhar/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bouachalazhar/subscriptions",
+            "organizations_url": "https://api.github.com/users/bouachalazhar/orgs",
+            "repos_url": "https://api.github.com/users/bouachalazhar/repos",
+            "events_url": "https://api.github.com/users/bouachalazhar/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bouachalazhar/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-05T10:41:39Z",
+        "updated_at": "2023-04-05T10:41:39Z",
+        "author_association": "NONE",
+        "body": "> > @thiagocrepaldi : Would it be possible to add the windows wheels instead? We are currently trying to use onnxruntime on both Linux and Windows and would like to be able to support both platforms.\r\n> \r\n> @liqunfu We are looking into it internally, as there are several considerations for this (which windows versions, etc), but until there, we will at least fix the classifiers and save people's time :)\r\n\r\nSame problem : \r\n```\r\nLazhar Bouacha@PC-LAZHAR MINGW64 ~\r\n$ python -m pip install onnxruntime-training==1.14.1\r\nERROR: Could not find a version that satisfies the requirement onnxruntime-training==1.14.1 (from versions: none)\r\nERROR: No matching distribution found for onnxruntime-training==1.14.1\r\n\r\nLazhar Bouacha@PC-LAZHAR MINGW64 ~\r\n$ python -m pip install onnxruntime-training==1.14.0\r\nERROR: Could not find a version that satisfies the requirement onnxruntime-training==1.14.0 (from versions: none)\r\nERROR: No matching distribution found for onnxruntime-training==1.14.0\r\n\r\nLazhar Bouacha@PC-LAZHAR MINGW64 ~\r\n$ python -m pip install onnxruntime-training\r\nERROR: Could not find a version that satisfies the requirement onnxruntime-training (from versions: none)\r\nERROR: No matching distribution found for onnxruntime-training\r\n\r\nLazhar Bouacha@PC-LAZHAR MINGW64 ~\r\n$ python -m pip install onnxruntime-training==1.7.0\r\nERROR: Could not find a version that satisfies the requirement onnxruntime-training==1.7.0 (from versions: none)\r\nERROR: No matching distribution found for onnxruntime-training==1.7.0\r\n```\r\n\r\n```\r\n------------------\r\nSystem Information\r\n------------------\r\n         Operating System: Windows 11 Home 64-bit (10.0, Build 22624) (22621.ni_release.220506-1250)\r\n\t          Version: 22H2\r\n      System Manufacturer: ASUSTeK COMPUTER INC.\r\n             System Model: ZenBook UX325EA_UX325EA\r\n                Processor: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz (8 CPUs), ~2.8GHz\r\n\t\t     Chip: Intel(R) Iris(R) Xe Graphics (iGPU)\r\n                   Memory: 32768MB RAM, ~32GB\r\n          DirectX Version: DirectX 12\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1497279026/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

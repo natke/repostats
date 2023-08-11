@@ -119,8 +119,8 @@
         "body": "After further investigation, I've found this:\r\n\r\nI think Microsoft.ML.OnnxRuntime.DirectML 1.11.0 is available only for x64, and 1.12.0 is available for both x64 and x86, but to simplify the POC, I am compiling exclusively for x64\r\n\r\n```csproj\r\n<Project Sdk=\"Microsoft.NET.Sdk\">\r\n\r\n  <PropertyGroup>\r\n    <OutputType>Exe</OutputType>\r\n    <TargetFramework>net6.0</TargetFramework>\r\n    <Platforms>x64</Platforms>\r\n  </PropertyGroup>\r\n\r\n  <ItemGroup>\r\n    <Content Include=\"resnet50-v2-7.onnx\" CopyToOutputDirectory=\"PreserveNewest\" />\r\n  </ItemGroup>\r\n\r\n  <ItemGroup>    \r\n    <PackageReference Include=\"Microsoft.ML.OnnxRuntime.DirectML\" Version=\"1.12.0\" />\r\n  </ItemGroup>\r\n\r\n</Project>\r\n```\r\n\r\nIf I compile this project using 1.12.0, the produced binaries look like this:\r\n![imagen](https://user-images.githubusercontent.com/5433822/180600110-ae01f3a3-2760-49fd-8e68-eb1fe37ece24.png)\r\n\r\nIf I compile with the previous 1.11.0 (exact same project), the produced binaries look like this:\r\n![imagen](https://user-images.githubusercontent.com/5433822/180600127-9013e321-955c-4907-8a77-99b0ea1d9a49.png)\r\n\r\nThe obvious difference is the missing DirectML.dll  in 1.12.0 (compiling for x86 or AnyCPU also has DirectML.dll missing)\r\n\r\nSo, what's missing in the csproj that prevents DirectML to be included in the binaries?\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1193097376/reactions",
-            "total_count": 0,
-            "+1": 0,
+            "total_count": 1,
+            "+1": 1,
             "-1": 0,
             "laugh": 0,
             "hooray": 0,

@@ -1230,5 +1230,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1549351768",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/5679#issuecomment-1549351768",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/5679",
+        "id": 1549351768,
+        "node_id": "IC_kwDOCVq1mM5cWTtY",
+        "user": {
+            "login": "zx-lhb",
+            "id": 98244381,
+            "node_id": "U_kgDOBdsXHQ",
+            "avatar_url": "https://avatars.githubusercontent.com/u/98244381?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zx-lhb",
+            "html_url": "https://github.com/zx-lhb",
+            "followers_url": "https://api.github.com/users/zx-lhb/followers",
+            "following_url": "https://api.github.com/users/zx-lhb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zx-lhb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zx-lhb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zx-lhb/subscriptions",
+            "organizations_url": "https://api.github.com/users/zx-lhb/orgs",
+            "repos_url": "https://api.github.com/users/zx-lhb/repos",
+            "events_url": "https://api.github.com/users/zx-lhb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zx-lhb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-05-16T09:52:23Z",
+        "updated_at": "2023-05-16T09:52:23Z",
+        "author_association": "NONE",
+        "body": "> To feed a float16 into the API, you can call a non-templated version of Ort::Value::CreateTensor() and pass a pointer to the buffer. The last argument must have a value of ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT16. Each float16 is assumed to be of size uitn16_t which is two bytes. The above referenced PR allows you to use a templated version. You can call CreateTensorOrt::Float16_t() which will do the same thing for you as above but will automatically set the last argument.\r\n\r\nhi, I create input tensor this way, but lt does not work, did I missed something? \r\n```cpp\r\nOrt::Value input_tensor = Ort::Value::CreateTensor(memory_info, input_tensor_values.data(),\r\n\t\t\t\t\tpatchSize[0]*patchSize[1]*patchSize[2], input_node_dims.data(), 5,\r\n\t\t\t\t\tONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT16);\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1549351768/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

@@ -394,5 +394,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1623120734",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/8162#issuecomment-1623120734",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/8162",
+        "id": 1623120734,
+        "node_id": "IC_kwDOCVq1mM5gvtte",
+        "user": {
+            "login": "ChristophHornung",
+            "id": 18534790,
+            "node_id": "MDQ6VXNlcjE4NTM0Nzkw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/18534790?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ChristophHornung",
+            "html_url": "https://github.com/ChristophHornung",
+            "followers_url": "https://api.github.com/users/ChristophHornung/followers",
+            "following_url": "https://api.github.com/users/ChristophHornung/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ChristophHornung/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ChristophHornung/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ChristophHornung/subscriptions",
+            "organizations_url": "https://api.github.com/users/ChristophHornung/orgs",
+            "repos_url": "https://api.github.com/users/ChristophHornung/repos",
+            "events_url": "https://api.github.com/users/ChristophHornung/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ChristophHornung/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-07-06T07:17:58Z",
+        "updated_at": "2023-07-06T07:17:58Z",
+        "author_association": "NONE",
+        "body": "I ran into the same issue when trying to dockerize my code into an alpine image.\r\n\r\nThe way I solved it was to first install the onnxruntime package\r\n\r\n```dockerfile \r\nRUN apk add --no-cache onnxruntime --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ -X http://dl-cdn.alpinelinux.org/alpine/edge/community/ -X http://dl-cdn.alpinelinux.org/alpine/edge/main\r\n```\r\n\r\nfor some reason this would still give the same \"Unable to load library\" error. I also had to copy the onnxruntime.so into the same folder as my app\r\n\r\n```dockerfile \r\nRUN cp /usr/lib/libonnxruntime.so.1.15.1 /app/onnxruntime.so\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1623120734/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

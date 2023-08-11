@@ -115,7 +115,7 @@
         },
         "created_at": "2022-09-06T12:40:52Z",
         "updated_at": "2022-09-06T12:40:52Z",
-        "author_association": "NONE",
+        "author_association": "CONTRIBUTOR",
         "body": "We have encountered this issue in general feature engineering contexts many times. We work primarily with tabular data and would like our ONNX models to mirror our existing pandas-based pipelines as closely as possible. Pandas pretty much always defaults to `double`, though, which made us run into this issue here. Not having `Split` is very limiting in this regard. The missing `double`-implementation for `IsNaN` can be worked around with `Not` and `Equal`, but that is still an unfortunate paper cut.\r\n\r\nIt would be great to have these included in `onnxruntime` in the future.",
         "reactions": {
             "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1238096726/reactions",

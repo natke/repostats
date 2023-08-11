@@ -86,5 +86,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1571517444",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/2118#issuecomment-1571517444",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/2118",
+        "id": 1571517444,
+        "node_id": "IC_kwDOCVq1mM5dq3QE",
+        "user": {
+            "login": "cena001plus",
+            "id": 37894345,
+            "node_id": "MDQ6VXNlcjM3ODk0MzQ1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37894345?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/cena001plus",
+            "html_url": "https://github.com/cena001plus",
+            "followers_url": "https://api.github.com/users/cena001plus/followers",
+            "following_url": "https://api.github.com/users/cena001plus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/cena001plus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/cena001plus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/cena001plus/subscriptions",
+            "organizations_url": "https://api.github.com/users/cena001plus/orgs",
+            "repos_url": "https://api.github.com/users/cena001plus/repos",
+            "events_url": "https://api.github.com/users/cena001plus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/cena001plus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-06-01T07:38:19Z",
+        "updated_at": "2023-06-01T07:38:19Z",
+        "author_association": "NONE",
+        "body": "> ```\r\n> import onnx\r\n> mp = onnx.load_model('aa.onnx')\r\n> mp.graph.input[0].type.tensor_type.shape.dim[0].dim_param = 'None'\r\n> onnx.save(mp, 'aa_batch.onnx')\r\n> ```\r\n> \r\n> [C++] after session_ load aa_batch.onnx. `auto output_tensors = session_->Run(Ort::RunOptions{ nullptr }, input_node_names.data(), &input_tensor, 1, output_node_names.data(), 1);` It runs very fast! Thanks @hariharans29\r\n\r\nCan it also speed up by simply modifying the model to dynamic input, without modifying the output node, and not batching the input data? Hope to hear from you.",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1571517444/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1652862967",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/16876#issuecomment-1652862967",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/16876",
+        "id": 1652862967,
+        "node_id": "IC_kwDOCVq1mM5ihK_3",
+        "user": {
+            "login": "panpan-wu",
+            "id": 59639417,
+            "node_id": "MDQ6VXNlcjU5NjM5NDE3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/59639417?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/panpan-wu",
+            "html_url": "https://github.com/panpan-wu",
+            "followers_url": "https://api.github.com/users/panpan-wu/followers",
+            "following_url": "https://api.github.com/users/panpan-wu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/panpan-wu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/panpan-wu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/panpan-wu/subscriptions",
+            "organizations_url": "https://api.github.com/users/panpan-wu/orgs",
+            "repos_url": "https://api.github.com/users/panpan-wu/repos",
+            "events_url": "https://api.github.com/users/panpan-wu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/panpan-wu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-07-27T03:40:01Z",
+        "updated_at": "2023-07-27T03:49:11Z",
+        "author_association": "NONE",
+        "body": "The output of to_onnx.py\r\n\r\n```\r\nFramework not specified. Using pt to export to ONNX.\r\nuse_past = False is different than use_present_in_outputs = True, the value of use_present_in_outputs value will be used for the outputs.\r\nUsing framework PyTorch: 1.12.1+cu113\r\nOverriding 1 configuration item(s)\r\n\t- use_cache -> True\r\n/llm/anaconda3/envs/nlu_llm_optimum/lib/python3.10/site-packages/transformers/models/bloom/modeling_bloom.py:105: TracerWarning: torch.tensor results are registered as constants in the trace. You can safely ignore this warning if you use this function to create tensors out of constant variables that would be the same every time you call this function. In any other case, this might cause the trace to be incorrect.\r\n  base = torch.tensor(\r\n/llm/anaconda3/envs/nlu_llm_optimum/lib/python3.10/site-packages/transformers/models/bloom/modeling_bloom.py:660: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!\r\n  if src_length > 1:\r\n/llm/anaconda3/envs/nlu_llm_optimum/lib/python3.10/site-packages/transformers/models/bloom/modeling_bloom.py:267: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor').\r\n  batch_size = batch_size_and_num_heads // self.num_heads\r\nSaving external data to one file...\r\nUsing framework PyTorch: 1.12.1+cu113\r\nOverriding 1 configuration item(s)\r\n\t- use_cache -> True\r\nAsked a sequence length of 16, but a sequence length of 1 will be used with use_past == True for `input_ids`.\r\nSaving external data to one file...\r\nAsked a sequence length of 16, but a sequence length of 1 will be used with use_past == True for `input_ids`.\r\n```\r\n\r\nwarning info when infer\r\n\r\n```\r\n2023-07-27 11:46:54.391884922 [W:onnxruntime:, session_state.cc:1169 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1652862967/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

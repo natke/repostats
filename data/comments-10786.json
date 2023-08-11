@@ -174,5 +174,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1354902535",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10786#issuecomment-1354902535",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10786",
+        "id": 1354902535,
+        "node_id": "IC_kwDOCVq1mM5QwiwH",
+        "user": {
+            "login": "TajinderSingh-1",
+            "id": 30046037,
+            "node_id": "MDQ6VXNlcjMwMDQ2MDM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30046037?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TajinderSingh-1",
+            "html_url": "https://github.com/TajinderSingh-1",
+            "followers_url": "https://api.github.com/users/TajinderSingh-1/followers",
+            "following_url": "https://api.github.com/users/TajinderSingh-1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TajinderSingh-1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TajinderSingh-1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TajinderSingh-1/subscriptions",
+            "organizations_url": "https://api.github.com/users/TajinderSingh-1/orgs",
+            "repos_url": "https://api.github.com/users/TajinderSingh-1/repos",
+            "events_url": "https://api.github.com/users/TajinderSingh-1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TajinderSingh-1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-12-16T14:09:26Z",
+        "updated_at": "2022-12-16T14:09:26Z",
+        "author_association": "NONE",
+        "body": "> I do some following tests. first, using the same number processing and threading\r\n> \r\n> 1. Initializing onnxruntime mode using `onnxruntime.InferenceSession` in every process, one image inference cost time is slower around 3x than multithread. For example, using processing cost 1.2s,  using threading cost 0.4s.\r\n> 2. Initializing onnxruntime mode, and shareing class to every process, one image inference cost time is slower 1.3x than multithread. For example, using processing cost 0.52s,  using threading cost 0.4s.\r\n> \r\n> So. i get the following guesses: onnxruntime has fully utilized cpu resources, using multi onnxruntime model can only be slower in mutilprocessing.\r\n\r\nThis is a bit unrelated, but how do you pass the onxxruntime session through multiple processes? I get this error when I try to share the onnxruntime session with other processes:\r\n   \r\n     ForkingPickler(file, protocol).dump(obj)\r\n    TypeError: can't pickle onnxruntime.capi.onnxruntime_pybind11_state.InferenceSession objects\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1354902535/reactions",
+            "total_count": 1,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 1
+        },
+        "performed_via_github_app": null
     }
 ]

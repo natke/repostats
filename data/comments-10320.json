@@ -262,5 +262,49 @@
             "eyes": 0
         },
         "performed_via_github_app": null
+    },
+    {
+        "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1485469062",
+        "html_url": "https://github.com/microsoft/onnxruntime/issues/10320#issuecomment-1485469062",
+        "issue_url": "https://api.github.com/repos/microsoft/onnxruntime/issues/10320",
+        "id": 1485469062,
+        "node_id": "IC_kwDOCVq1mM5YinWG",
+        "user": {
+            "login": "SolomidHero",
+            "id": 28161779,
+            "node_id": "MDQ6VXNlcjI4MTYxNzc5",
+            "avatar_url": "https://avatars.githubusercontent.com/u/28161779?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SolomidHero",
+            "html_url": "https://github.com/SolomidHero",
+            "followers_url": "https://api.github.com/users/SolomidHero/followers",
+            "following_url": "https://api.github.com/users/SolomidHero/following{/other_user}",
+            "gists_url": "https://api.github.com/users/SolomidHero/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/SolomidHero/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/SolomidHero/subscriptions",
+            "organizations_url": "https://api.github.com/users/SolomidHero/orgs",
+            "repos_url": "https://api.github.com/users/SolomidHero/repos",
+            "events_url": "https://api.github.com/users/SolomidHero/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/SolomidHero/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-03-27T16:41:42Z",
+        "updated_at": "2023-03-27T16:41:42Z",
+        "author_association": "NONE",
+        "body": "For anybody who didn't understand how to use answer on getting dimensions, shapes, etc. \r\nI couldn't too, but managed to solve using c++ api.\r\nHere is the code:\r\n```cpp\r\nauto type_and_shape = session_.GetInputTypeInfo(i).GetTensorTypeAndShapeInfo();  // TypeAndShapeInfo\r\ntype_and_shape.GetShape(); // std::vector< int64_t >\r\n\r\n// can use also\r\n// type_and_shape.GetDimensions\r\n// type_and_shape.GetSymbolicDimensions\r\n\r\n```\r\nfrom the docs https://onnxruntime.ai/docs/api/c/struct_ort_1_1_tensor_type_and_shape_info.html\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/microsoft/onnxruntime/issues/comments/1485469062/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
     }
 ]
