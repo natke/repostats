@@ -1,18 +1,20 @@
 import csv
 import json
 import glob
+import re
 import os
 from dateutil import parser
 
 c = csv.writer(open("data/sla.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
 
-issue_files = glob.glob('data/issues-*.json')
+issue_files = glob.glob('data/*issues-*.json')
+start_file = issue_files[0]
+prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
 for issue_file in issue_files:
 
     with open(issue_file, encoding="utf8") as f:
         d = json.load(f)
-
 
     for x in d:
         if not "pull_request" in x:
@@ -25,7 +27,7 @@ for issue_file in issue_files:
                 time_to_close = (parser.isoparse(x["closed_at"]) - created).days
 
             # Events data: labeling etc
-            events_file=f'data/events-{id}.json'
+            events_file=f'{prefix}-events-{id}.json'
             first_update = ''
             time_to_update = ''
             update_type = ''
@@ -46,7 +48,7 @@ for issue_file in issue_files:
                 time_to_update = (first_update - created).days
             
             # Comments data
-            comments_file=f'data/comments-{id}.json'
+            comments_file=f'{prefix}-comments-{id}.json'
             first_comment = ''
             time_to_comment = ''
 
