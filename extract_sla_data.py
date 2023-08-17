@@ -3,14 +3,32 @@ import json
 import glob
 import re
 import os
+import datetime
+import argparse
 from dateutil import parser
 
-c = csv.writer(open("data/sla.csv", "w", newline=''))
-c.writerow(['id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
+argparser = argparse.ArgumentParser()
+argparser.add_argument('--org', type=str, default = 'microsoft', help='org to query')
+argparser.add_argument('--repo', type=str, default = 'onnxruntime', help='repo to query')
+argparser.add_argument("--labels", type=str, help="Comma separated labels to query")
 
-issue_files = glob.glob('data/*issues-*.json')
+args = argparser.parse_args()
+
+org = args.org
+repo = args.repo
+labels = args.labels.replace(":", "")
+
+file_string = 'data/' + org + '-' + repo + labels + '-issues-*.json'
+issue_files = glob.glob(file_string)
 start_file = issue_files[0]
 prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
+
+date = datetime.date.today().strftime('%Y-%m-%d')
+
+c = csv.writer(open(f'{prefix}-sla-{date}.csv', "w", newline=''))
+c.writerow(['id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
+
+
 for issue_file in issue_files:
 
     with open(issue_file, encoding="utf8") as f:

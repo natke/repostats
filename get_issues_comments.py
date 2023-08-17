@@ -9,14 +9,21 @@ from dateutil import parser
 TOKEN=os.getenv('GITHUB_TOKEN')
 
 argparser = argparse.ArgumentParser()
+argparser.add_argument('--org', type=str, default = 'microsoft', help='org to query')
+argparser.add_argument('--repo', type=str, default = 'onnxruntime', help='repo to query')
 argparser.add_argument('--start_page', type=int, help='Start page for issues query')
 argparser.add_argument('--end_page', type=int, help='End page for issues query')
+argparser.add_argument("--labels", type=str, help="Comma separated labels to query")
 args = argparser.parse_args()
 
+org = args.org
+repo = args.repo
 start_page = args.start_page
 end_page = args.end_page
+labels = args.labels.replace(":", "")
 
-issue_files = glob.glob('data/*issues-*.json')
+file_string = 'data/' + org + '-' + repo + labels + '-issues-*.json'
+issue_files = glob.glob(file_string)
 start_file = issue_files[0]
 end_file = issue_files[-1]
 prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
