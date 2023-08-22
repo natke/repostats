@@ -16,9 +16,13 @@ args = argparser.parse_args()
 
 org = args.org
 repo = args.repo
-labels = args.labels.replace(":", "")
-
-file_string = 'data/' + org + '-' + repo + labels + '-issues-*.json'
+labels = args.labels
+if labels != None:
+  labels = labels.replace(":", "")
+  file_string = 'data/' + org + '-' + repo + labels + '-issues-*.json'
+else:
+  file_string = 'data/' + org + '-' + repo + '-issues-*.json'
+  
 issue_files = glob.glob(file_string)
 start_file = issue_files[0]
 prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
@@ -26,7 +30,7 @@ prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
 date = datetime.date.today().strftime('%Y-%m-%d')
 
 c = csv.writer(open(f'{prefix}-sla-{date}.csv', "w", newline=''))
-c.writerow(['id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
+c.writerow(['org','repos','labels','id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
 
 
 for issue_file in issue_files:
@@ -82,7 +86,7 @@ for issue_file in issue_files:
             if first_comment != '':
                 time_to_comment = (first_comment - created).days
               
-            c.writerow([id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+            c.writerow([org, repo, labels, id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
 
 
 
