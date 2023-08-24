@@ -29,8 +29,10 @@ prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
 
 date = datetime.date.today().strftime('%Y-%m-%d')
 
+label_list_string = ''
+
 c = csv.writer(open(f'{prefix}-sla-{date}.csv', "w", newline=''))
-c.writerow(['org','repos','labels','id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
+c.writerow(['org','repos','filter', 'labels', 'id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
 
 
 for issue_file in issue_files:
@@ -47,6 +49,14 @@ for issue_file in issue_files:
             time_to_close =  ''
             if (x["closed_at"]):
                 time_to_close = (parser.isoparse(x["closed_at"]) - created).days
+
+            # Get labels for issue
+            label_data = x["labels"]
+            if label_data:
+                print(f'There are labels: {label_data}')
+                label_list = [o["name"] for o in label_data]
+                label_list_string = ';'.join(label_list)
+                print(label_list)
 
             # Events data: labeling etc
             events_file=f'{prefix}-events-{id}.json'
@@ -86,7 +96,7 @@ for issue_file in issue_files:
             if first_comment != '':
                 time_to_comment = (first_comment - created).days
               
-            c.writerow([org, repo, labels, id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+            c.writerow([org, repo, labels, label_list_string, id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
 
 
 
