@@ -11,17 +11,20 @@ argparser = argparse.ArgumentParser()
 argparser.add_argument('--org', type=str, default = 'microsoft', help='org to query')
 argparser.add_argument('--repo', type=str, default = 'onnxruntime', help='repo to query')
 argparser.add_argument("--labels", type=str, help="Comma separated labels to query")
+argparser.add_argument('--data_dir', type=str, default= 'data', help='Folder containing source data and where SLA data will be written')
 
 args = argparser.parse_args()
 
 org = args.org
 repo = args.repo
-labels = args.labels
-if labels != None:
-  labels = labels.replace(":", "")
-  file_string = 'data/' + org + '-' + repo + labels + '-issues-*.json'
+label_filter = args.labels
+data_dir = args.data_dir
+
+if label_filter:
+  label_filter_string = label_filter.replace(",", "-").replace(" ", "-")
+  file_string = f'{data_dir}/{org}-{repo}-{label_filter_string}-issues-*.json'
 else:
-  file_string = 'data/' + org + '-' + repo + '-issues-*.json'
+  file_string = f'{data_dir}/{org}-{repo}-issues-*.json'
   
 issue_files = glob.glob(file_string)
 start_file = issue_files[0]
@@ -29,7 +32,7 @@ prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
 
 date = datetime.date.today().strftime('%Y-%m-%d')
 
-label_list_string = ''
+labels_list = []
 
 c = csv.writer(open(f'{prefix}-sla-{date}.csv', "w", newline=''))
 c.writerow(['org','repos','filter', 'labels', 'id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
@@ -53,10 +56,8 @@ for issue_file in issue_files:
             # Get labels for issue
             label_data = x["labels"]
             if label_data:
-                print(f'There are labels: {label_data}')
-                label_list = [o["name"] for o in label_data]
-                label_list_string = ';'.join(label_list)
-                print(label_list)
+                labels_list = [o["name"] for o in label_data]
+                print(labels_list)
 
             # Events data: labeling etc
             events_file=f'{prefix}-events-{id}.json'
@@ -95,8 +96,14 @@ for issue_file in issue_files:
 
             if first_comment != '':
                 time_to_comment = (first_comment - created).days
-              
-            c.writerow([org, repo, labels, label_list_string, id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+
+            # Check if the issue is labeled
+            if not labels_list:
+              print("No labels")
+              c.writerow([org, repo, label_filter, '', id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+            else:
+                for label in labels_list:              
+                    c.writerow([org, repo, label_filter, label, id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
 
 
 

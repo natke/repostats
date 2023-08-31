@@ -20,9 +20,13 @@ org = args.org
 repo = args.repo
 start_page = args.start_page
 end_page = args.end_page
-labels = args.labels.replace(":", "")
+label_filter = args.labels
+label_filter_string = ''
 
-file_string = 'data/' + org + '-' + repo + labels + '-issues-*.json'
+if label_filter:
+  label_filter_string = f'-{label_filter.replace(",", "-").replace(" ", "-")}'
+
+file_string = f'data/{org}-{repo}{label_filter_string}-issues-*.json'
 issue_files = glob.glob(file_string)
 start_file = issue_files[0]
 end_file = issue_files[-1]

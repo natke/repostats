@@ -18,7 +18,8 @@ start_page = args.start_page
 end_page = args.end_page
 org = args.org
 repo = args.repo
-labels = args.labels
+label_filter = args.labels
+label_filter = args.labels
 
 num_issues = PAGE_SIZE
 page=start_page
@@ -27,10 +28,15 @@ page=start_page
 while (num_issues == PAGE_SIZE and (end_page == -1 or page <= end_page)):
   # Create an API request 
   url = f'https://api.github.com/repos/{org}/{repo}/issues'
-  if labels != None:
-    url += f'?labels={labels}'
+  if label_filter:
+    url += f'?labels={label_filter}'
+    file = f'data/{org}-{repo}-{label_filter.replace(",","-").replace(" ", "-")}-issues-{page:06d}.json'
+  else:
+    file = f'data/{org}-{repo}-issues-{page:06d}.json'
   headers={'Authorization': f'token {TOKEN}'}  
   params = {'per_page': 100, 'page': page, 'state': "all", 'direction': "asc"}
+
+  print(url)
   response = requests.get(url, headers=headers, params=params)
 
   response_data = response.json()
@@ -40,7 +46,7 @@ while (num_issues == PAGE_SIZE and (end_page == -1 or page <= end_page)):
 
   ordered_page = f'{page:06d}'
 
-  with open(f'data/{org}-{repo}{labels.replace(":","")}-issues-{ordered_page}.json', 'w', encoding='utf-8') as f:
+  with open(file, 'w', encoding='utf-8') as f:
     json.dump(response_data, f, ensure_ascii=False, indent=4)
 
   page=page+1
