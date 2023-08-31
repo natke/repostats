@@ -26,7 +26,7 @@ label_filter_string = ''
 if label_filter:
   label_filter_string = f'-{label_filter.replace(",", "-").replace(" ", "-")}'
 
-file_string = f'data/{org}-{repo}-{label_filter_string}-issues-*.json'
+file_string = f'data/{org}-{repo}{label_filter_string}-issues-*.json'
 issue_files = glob.glob(file_string)
 start_file = issue_files[0]
 end_file = issue_files[-1]
