@@ -35,7 +35,7 @@ date = datetime.date.today().strftime('%Y-%m-%d')
 labels_list = []
 
 c = csv.writer(open(f'{prefix}-sla-{date}.csv', "w", newline=''))
-c.writerow(['org','repos','filter', 'labels', 'id', 'title','state','created','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
+c.writerow(['org','repos','filter', 'labels', 'id', 'title','state','created','assignee','first_event', 'first_comment', 'closed', 'time_to_event', 'event_type', 'time_to_comment', 'time_to_close', 'url'])
 
 
 for issue_file in issue_files:
@@ -49,6 +49,11 @@ for issue_file in issue_files:
             id = x["number"]
             print(f'Issue: {id}')
             created = parser.isoparse(x["created_at"])
+
+            assignee = ''
+            if (x["assignee"]):
+                assignee = x["assignee"]["login"]
+
             time_to_close =  ''
             if (x["closed_at"]):
                 time_to_close = (parser.isoparse(x["closed_at"]) - created).days
@@ -100,10 +105,10 @@ for issue_file in issue_files:
             # Check if the issue is labeled
             if not labels_list:
               print("No labels")
-              c.writerow([org, repo, label_filter, '', id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+              c.writerow([org, repo, label_filter, '', id, x["title"].encode('utf-8'), x["state"], x["created_at"], assignee, first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
             else:
                 for label in labels_list:              
-                    c.writerow([org, repo, label_filter, label, id, x["title"].encode('utf-8'), x["state"], x["created_at"], first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
+                    c.writerow([org, repo, label_filter, label, id, x["title"].encode('utf-8'), x["state"], x["created_at"], assignee, first_update, first_comment, x["closed_at"], time_to_update, update_type, time_to_comment, time_to_close, x["url"]])
 
 
 
