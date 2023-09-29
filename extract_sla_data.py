@@ -26,7 +26,7 @@ if label_filter:
 else:
   file_string = f'{data_dir}/{org}-{repo}-issues-*.json'
   
-issue_files = glob.glob(file_string)
+issue_files = sorted(glob.glob(file_string))
 start_file = issue_files[0]
 prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
 

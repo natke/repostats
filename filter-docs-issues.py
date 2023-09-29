@@ -8,7 +8,7 @@ from dateutil import parser
 c = csv.writer(open("data/docs-issues2.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'url', 'Update Made'])
 
-issue_files = glob.glob('data/issues-*.json')
+issue_files = sorted(glob.glob('data/issues-*.json'))
 for issue_file in issue_files:
 
     with open(issue_file, encoding="utf8") as f:

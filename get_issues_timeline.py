@@ -16,7 +16,7 @@ args = argparser.parse_args()
 start_page = args.start_page
 end_page = args.end_page
 
-issue_files = glob.glob('data/*issues-*.json')
+issue_files = sorted(glob.glob('data/*issues-*.json'))
 start_file = issue_files[0]
 end_file = issue_files[-1]
 prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]

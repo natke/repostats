@@ -27,7 +27,7 @@ if label_filter:
   label_filter_string = f'-{label_filter.replace(",", "-").replace(" ", "-")}'
 
 file_string = f'data/{org}-{repo}{label_filter_string}-issues-*.json'
-issue_files = glob.glob(file_string)
+issue_files = sorted(glob.glob(file_string))
 start_file = issue_files[0]
 end_file = issue_files[-1]
 prefix = re.findall('(.*-.*)-issues-.*', start_file)[0]
@@ -38,6 +38,7 @@ if start_page is None:
 if end_page is None:
   end_page = int(re.findall( '\d+', end_file)[0])
 
+print(f'Start page: {start_page} End page: {end_page} Start file: {start_file} End file: {end_file}')
 list = [*range(start_page, end_page+1)]
 for index in list:
 

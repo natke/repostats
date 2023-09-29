@@ -7,7 +7,7 @@ from dateutil import parser
 c = csv.writer(open("data/mobile-issues.csv", "w", newline=''))
 c.writerow(['id', 'title','state','created','closed', 'time_to_close', 'url'])
 
-issue_files = glob.glob('data/issues-*.json')
+issue_files = sorted(glob.glob('data/issues-*.json'))
 for issue_file in issue_files:
 
     print(issue_file)
