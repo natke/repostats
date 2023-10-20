@@ -59,6 +59,7 @@ for issue_file in issue_files:
                 time_to_close = (parser.isoparse(x["closed_at"]) - created).days
 
             # Get labels for issue
+            labels_list = []
             label_data = x["labels"]
             if label_data:
                 labels_list = [o["name"] for o in label_data]
