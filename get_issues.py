@@ -19,7 +19,6 @@ end_page = args.end_page
 org = args.org
 repo = args.repo
 label_filter = args.labels
-label_filter = args.labels
 
 num_issues = PAGE_SIZE
 page=start_page
